@@ -1,0 +1,20 @@
+/////////////////////////////////////////
+//////////////// CONFIG ////////////////
+///////////////////////////////////////
+@import 'custom/base/global';
+@import 'custom/base/normalize';
+@import 'custom/base/slick';
+@import 'custom/base/fonts';
+@import 'custom/base/colors';
+@import 'custom/base/settings';
+@import 'custom/mixins/transitions';
+
+/////////////////////////////////////////
+////////////////// BLOCS ///////////////
+///////////////////////////////////////
+@import 'custom/blocs/login';
+@import 'custom/blocs/dashbord';
+@import 'custom/blocs/nav-bar';
+@import 'custom/blocs/home';
+@import 'custom/blocs/products';
+@import 'custom/blocs/single-product';

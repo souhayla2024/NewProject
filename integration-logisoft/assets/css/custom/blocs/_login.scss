@@ -1,0 +1,103 @@
+.login-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #4b6cb7, #182848);
+    font-family: "Poppins", sans-serif;
+    padding: 0 15px;
+
+    .login-card {
+        background: #fff;
+        padding: 2.5rem 3rem;
+        border-radius: 20px;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        width: 100%;
+        max-width: 380px;
+        text-align: center;
+        animation: fadeIn 0.8s ease-in-out;
+
+        h2 {
+            color: #182848;
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 1.2rem;
+
+            .form-group {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+
+                label {
+                    color: #333;
+                    font-size: 0.9rem;
+                    margin-bottom: 0.4rem;
+                }
+
+                input {
+                    width: 100%;
+                    padding: 0.8rem 1rem;
+                    border: 1px solid #ccc;
+                    border-radius: 8px;
+                    font-size: 0.95rem;
+                    transition: border-color 0.3s;
+
+                    &:focus {
+                        outline: none;
+                        border-color: #4b6cb7;
+                        box-shadow: 0 0 0 3px rgba(75, 108, 183, 0.2);
+                    }
+                }
+            }
+
+            .btn-login {
+                background: #4b6cb7;
+                color: #fff;
+                border: none;
+                padding: 0.9rem;
+                border-radius: 8px;
+                cursor: pointer;
+                font-size: 1rem;
+                font-weight: 600;
+                transition: all 0.3s;
+
+                &:hover {
+                    background: #3a5795;
+                    transform: translateY(-2px);
+                }
+            }
+
+            .forgot-password {
+                display: block;
+                margin-top: 0.5rem;
+                font-size: 0.9rem;
+                color: #4b6cb7;
+                text-decoration: none;
+                transition: color 0.3s;
+
+                &:hover {
+                    color: #182848;
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

@@ -1,0 +1,150 @@
+//Futura
+$FuturaPT-Medium: "FuturaPT-Medium";
+
+//Roboto
+$Roboto-Bold: "Roboto-Bold";
+$Roboto-Medium: "Roboto-Medium";
+$Roboto-Light: "Roboto-Light"; //300
+$Roboto-LightItalic: "Roboto-LightItalic";
+$Roboto-Regular: "Roboto-Regular";
+$Roboto-Thin: "Roboto-Thin";
+$Roboto-ThinItalic: "Roboto-ThinItalic";
+
+//roboto Slab
+$RobotoSlab-Regular: "RobotoSlab-Regular"; //400
+$RobotoSlab-Medium: "RobotoSlab-Medium"; //500
+$RobotoSlab-Thin: "RobotoSlab-Thin";
+$RobotoSlab-Light: "RobotoSlab-Light";
+
+//rooboto slab 
+@font-face {
+	font-family: "RobotoSlab-Medium";
+	src: url("../inc/fonts/roboto/RobotoSlab-Medium.ttf");
+	src: url("../inc/fonts/roboto/RobotoSlab-Medium.woff");
+	src: url("../inc/fonts/roboto/RobotoSlab-Medium.woff2");
+	src: url("../inc/fonts/roboto/RobotoSlab-Medium.otf");
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: "RobotoSlab-Regular";
+	src: url("../inc/fonts/roboto/RobotoSlab-Regular.ttf");
+	src: url("../inc/fonts/roboto/RobotoSlab-Regular.woff");
+	src: url("../inc/fonts/roboto/RobotoSlab-Regular.woff2");
+	src: url("../inc/fonts/roboto/RobotoSlab-Regular.otf");
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: "RobotoSlab-Thin";
+	src: url("../inc/fonts/roboto/RobotoSlab-Thin.ttf");
+	src: url("../inc/fonts/roboto/RobotoSlab-Thin.woff");
+	src: url("../inc/fonts/roboto/RobotoSlab-Thin.woff2");
+	src: url("../inc/fonts/roboto/RobotoSlab-Thin.otf");
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: "RobotoSlab-Light";
+	src: url("../inc/fonts/roboto/RobotoSlab-Light.ttf");
+	src: url("../inc/fonts/roboto/RobotoSlab-Light.woff");
+	src: url("../inc/fonts/roboto/RobotoSlab-Light.woff2");
+	src: url("../inc/fonts/roboto/RobotoSlab-Light.otf");
+	font-weight: normal;
+	font-style: normal;
+}
+
+//Futura
+
+@font-face {
+	font-family: "FuturaPT-Medium";
+	src: url("../inc/fonts/futura/FuturaPT-Medium.ttf");
+	src: url("../inc/fonts/futura/FuturaPT-Medium.svg");
+	src: url("../inc/fonts/futura/FuturaPT-Medium.woff");
+	src: url("../inc/fonts/futura/FuturaPT-Medium.woff2");
+	font-weight: normal;
+	font-style: normal;
+}
+
+
+//Roboto
+
+
+@font-face {
+	font-family: "Roboto-Bold";
+	src: url("../inc/fonts/roboto/Roboto-Bold.ttf");
+	src: url("../inc/fonts/roboto/Roboto-Bold.svg");
+	src: url("../inc/fonts/roboto/Roboto-Bold.woff");
+	src: url("../inc/fonts/roboto/Roboto-Bold.woff2");
+	font-weight: normal;
+	font-style: normal;
+}
+
+
+
+
+@font-face {
+	font-family: "Roboto-Light";
+	src: url("../inc/fonts/roboto/Roboto-Light.ttf");
+	src: url("../inc/fonts/roboto/Roboto-Light.ttf");
+	src: url("../inc/fonts/roboto/Roboto-Light.ttf");
+	src: url("../inc/fonts/roboto/Roboto-Light.ttf");
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: "Roboto-LightItalic";
+	src: url("../inc/fonts/roboto/Roboto-LightItalic.ttf");
+	src: url("../inc/fonts/roboto/Roboto-LightItalic.svg");
+	src: url("../inc/fonts/roboto/Roboto-LightItalic.woff");
+	src: url("../inc/fonts/roboto/Roboto-LightItalic.woff2");
+	font-weight: normal;
+	font-style: normal;
+}
+
+
+
+
+@font-face {
+	font-family: "Roboto-Regular";
+	src: url("../inc/fonts/roboto/Roboto-Regular.ttf");
+	src: url("../inc/fonts/roboto/Roboto-Regular.svg");
+	src: url("../inc/fonts/roboto/Roboto-Regular.woff");
+	src: url("../inc/fonts/roboto/Roboto-Regular.woff2");
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: "Roboto-Medium";
+	src: url("../inc/fonts/roboto/Roboto-Medium.ttf");
+	src: url("../inc/fonts/roboto/Roboto-Medium.svg");
+	src: url("../inc/fonts/roboto/Roboto-Medium.woff");
+	src: url("../inc/fonts/roboto/Roboto-Medium.woff2");
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: "Roboto-Thin";
+	src: url("../inc/fonts/roboto/Roboto-Thin.ttf");
+	src: url("../inc/fonts/roboto/Roboto-Thin.svg");
+	src: url("../inc/fonts/roboto/Roboto-Thin.woff");
+	src: url("../inc/fonts/roboto/Roboto-Thin.woff2");
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: "Roboto-ThinItalic";
+	src: url("../inc/fonts/roboto/Roboto-ThinItalic.ttf");
+	src: url("../inc/fonts/roboto/Roboto-ThinItalic.svg");
+	src: url("../inc/fonts/roboto/Roboto-ThinItalic.woff");
+	src: url("../inc/fonts/roboto/Roboto-ThinItalic.woff2");
+	font-weight: normal;
+	font-style: normal;
+}
