@@ -1,0 +1,28 @@
+#main {
+    min-height: calc(100vh - (var(--header, 1header) + var(--footer, 1footer)));
+    width: 100%;
+}
+.center-content {
+    margin: 0 auto;
+    width: 100%;
+    padding: 0 15px;
+    // max-width: 1760px;
+}
+
+
+
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 100px;
+
+}
+
+@media (max-width: 1023px) {
+    .center-content {
+        padding: 0 20px;
+    }
+
+  
+}
+
