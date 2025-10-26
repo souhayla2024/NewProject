@@ -9,56 +9,114 @@
         <div class="list-menu">
             <ul class="list-menu-top">
                 <li class="item-list-menu-nav {{ app.request.get('_route') == 'home' ? 'active' : '' }}">
-                    <a href="{{ path('home') }}" class="link-item-list-menu-nav">
+                    <a href="{{ path('app_products') }}" class="link-item-list-menu-nav">
                         <span class="picto"><img src="{{ asset('inc/home.svg') }}" alt="Accueil"></span>
                         <span class="title-item">Accueil</span>
                     </a>
                 </li>
 
+                <!-- Menu Paramètres -->
+                <li class="item-list-menu-nav {{ app.request.get('_route') starts with 'app_products' or app.request.get('_route') starts with 'app_pays' or app.request.get('_route') starts with 'app_ville' or app.request.get('_route') starts with 'app_utilisateur' ? 'active' : '' }}">
+                    <span class="link-item-list-menu-nav">
+                        <span class="picto"><img src="{{ asset('inc/param.svg') }}" alt="Paramètres"></span>
+                        <span class="title-item">Paramètres</span>
+                    </span>
+                    <ul class="sub-menu-items">
+                        <li class="item-sub-menu"><a href="{{ path('app_products') }}" class="link-item-sub-menu">Configurations</a></li>
+                        <li class="item-sub-menu"><a href="{{ path('app_products') }}" class="link-item-sub-menu">Pays</a></li>
+                        <li class="item-sub-menu"><a href="{{ path('app_products') }}" class="link-item-sub-menu">Sous-Pays</a></li>
+                        <li class="item-sub-menu"><a href="{{ path('app_products') }}" class="link-item-sub-menu">Ville</a></li>
+                        <li class="item-sub-menu"><a href="{{ path('app_products') }}" class="link-item-sub-menu">Apporteur</a></li>
+                        <li class="item-sub-menu"><a href="{{ path('app_products') }}" class="link-item-sub-menu">Commerciaux</a></li>
+                        <li class="item-sub-menu"><a href="{{ path('app_products') }}" class="link-item-sub-menu">Assurance</a></li>
+                        <li class="item-sub-menu"><a href="{{ path('app_products') }}" class="link-item-sub-menu">Type Assurance</a></li>
+                        <li class="item-sub-menu"><a href="{{ path('app_products') }}" class="link-item-sub-menu">Type Prestation</a></li>
+                        <li class="item-sub-menu"><a href="{{ path('app_products') }}" class="link-item-sub-menu">Type Produit</a></li>
+                        <li class="item-sub-menu"><a href="{{ path('app_products') }}" class="link-item-sub-menu">Affréteur Aérien</a></li>
+                        <li class="item-sub-menu"><a href="{{ path('app_products') }}" class="link-item-sub-menu">Type de règlement</a></li>
+                        <li class="item-sub-menu"><a href="{{ path('app_products') }}" class="link-item-sub-menu">Banque</a></li>
+                        <li class="item-sub-menu"><a href="{{ path('app_products') }}" class="link-item-sub-menu">Frais de modification</a></li>
+                        <li class="item-sub-menu"><a href="{{ path('app_products') }}" class="link-item-sub-menu">Frais d'annulation</a></li>
+                        <li class="item-sub-menu"><a href="{{ path('app_products') }}" class="link-item-sub-menu">Niveau</a></li>
+                        <li class="item-sub-menu"><a href="{{ path('app_products') }}" class="link-item-sub-menu">Utilisateurs</a></li>
+                        <li class="item-sub-menu"><a href="{{ path('app_products') }}" class="link-item-sub-menu">Occupation chambres</a></li>
+                        <li class="item-sub-menu"><a href="{{ path('app_products') }}" class="link-item-sub-menu">Catégorie chambre</a></li>
+                        <li class="item-sub-menu"><a href="{{ path('app_products') }}" class="link-item-sub-menu">Base Cure</a></li>
+                        <li class="item-sub-menu"><a href="{{ path('app_products') }}" class="link-item-sub-menu">Monnaie</a></li>
+                        <li class="item-sub-menu"><a href="{{ path('app_products') }}" class="link-item-sub-menu">Département</a></li>
+                        <li class="item-sub-menu"><a href="{{ path('app_products') }}" class="link-item-sub-menu">Région</a></li>
+                        <li class="item-sub-menu"><a href="{{ path('app_products') }}" class="link-item-sub-menu">Type d'option</a></li>
+                        <li class="item-sub-menu"><a href="{{ path('app_products') }}" class="link-item-sub-menu">Type de promo</a></li>
+                        <li class="item-sub-menu"><a href="{{ path('app_products') }}" class="link-item-sub-menu">Pension Orchestra</a></li>
+                        <li class="item-sub-menu"><a href="{{ path('app_products') }}" class="link-item-sub-menu">Commission</a></li>
+                    </ul>
+                </li>
+
+                <!-- Menu Clients -->
+                <li class="item-list-menu-nav {{ app.request.get('_route') starts with 'app_products' or app.request.get('_route') starts with 'app_products' or app.request.get('_route') starts with 'app_products' ? 'active' : '' }}">
+                    <span class="link-item-list-menu-nav">
+                        <span class="picto"><img src="{{ asset('inc/profil.svg') }}" alt="Clients"></span>
+                        <span class="title-item">Clients</span>
+                    </span>
+                    <ul class="sub-menu-items">
+                        <li class="item-sub-menu"><a href="{{ path('app_products') }}" class="link-item-sub-menu">Mise à jour Clients</a></li>
+                        <li class="item-sub-menu"><a href="{{ path('app_products') }}" class="link-item-sub-menu">Réseau de clients</a></li>
+                        <li class="item-sub-menu"><a href="{{ path('app_products') }}" class="link-item-sub-menu">Groupement clients</a></li>
+                        <li class="item-sub-menu"><a href="{{ path('app_products') }}" class="link-item-sub-menu">Type clients</a></li>
+                        <li class="item-sub-menu"><a href="{{ path('app_products') }}" class="link-item-sub-menu">Sous-réseau</a></li>
+                        <li class="item-sub-menu"><a href="{{ path('app_products') }}" class="link-item-sub-menu">Super-réseau</a></li>
+                    </ul>
+                </li>
+
+                <!-- Menu Produit -->
                 <li class="item-list-menu-nav {{ app.request.get('_route') starts with 'app_products' ? 'active' : '' }}">
                     <span class="link-item-list-menu-nav">
                         <span class="picto"><img src="{{ asset('inc/product.svg') }}" alt="Produits"></span>
-                        <span class="title-item">Produits</span>
+                        <span class="title-item">Produit</span>
                     </span>
                     <ul class="sub-menu-items">
                         <li class="item-sub-menu"><a href="{{ path('app_products') }}" class="link-item-sub-menu">Liste des produits</a></li>
-                        <li class="item-sub-menu"><a href="#" class="link-item-sub-menu">Créer un produit</a></li>
-                        <li class="item-sub-menu"><a href="#" class="link-item-sub-menu">Catégories</a></li>
-                        <li class="item-sub-menu"><a href="#" class="link-item-sub-menu">Statistiques</a></li>
+                        <li class="item-sub-menu"><a href="{{ path('app_products', {'id': 'new'}) }}" class="link-item-sub-menu">Créer un produit</a></li>
+                        <li class="item-sub-menu"><a href="#" class="link-item-sub-menu">Produit complémentaire</a></li>
+                        <li class="item-sub-menu"><a href="#" class="link-item-sub-menu">Cure & établissement</a></li>
+                        <li class="item-sub-menu"><a href="#" class="link-item-sub-menu">Listes produits</a></li>
+                        <li class="item-sub-menu"><a href="#" class="link-item-sub-menu">Listes tarifs</a></li>
+                        <li class="item-sub-menu"><a href="#" class="link-item-sub-menu">Listes stocks</a></li>
+                        <li class="item-sub-menu"><a href="#" class="link-item-sub-menu">Listes Retro hôtels</a></li>
+                        <li class="item-sub-menu"><a href="#" class="link-item-sub-menu">Réceptif</a></li>
+                        <li class="item-sub-menu"><a href="#" class="link-item-sub-menu">Groupe Hôtel</a></li>
                     </ul>
                 </li>
-                
- 
+
+                <!-- Menu Transport -->
                 <li class="item-list-menu-nav {{ app.request.get('_route') starts with 'app_products' ? 'active' : '' }}">
                     <span class="link-item-list-menu-nav">
-                        <span class="picto"><img src="{{ asset('inc/receptifs.svg') }}" alt="Réceptifs"></span>
-                        <span class="title-item">Réceptifs</span>
-                    </span>
-                    <ul class="sub-menu-items">
-                        <li class="item-sub-menu"><a href="#" class="link-item-sub-menu">Sous Menu 1</a></li>
-                        <li class="item-sub-menu"><a href="#" class="link-item-sub-menu">Sous Menu 2</a></li>
-                        <li class="item-sub-menu"><a href="#" class="link-item-sub-menu">Sous Menu 3</a></li>
-                        <li class="item-sub-menu"><a href="#" class="link-item-sub-menu">Sous Menu 4</a></li>
-                    </ul>
-                </li>
-                
-                <li class="item-list-menu-nav {{ app.request.get('_route') == 'app_products' ? 'active' : '' }}">
-                    <a href="{{ path('app_products') }}" class="link-item-list-menu-nav">
-                        <span class="picto"><img src="{{ asset('inc/param.svg') }}" alt="Paramètres"></span>
-                        <span class="title-item">Paramétrages</span>
-                    </a>
-                </li>
-                
-                <li class="item-list-menu-nav {{ app.request.get('_route') == 'app_products' ? 'active' : '' }}">
-                    <a href="{{ path('app_products') }}" class="link-item-list-menu-nav">
                         <span class="picto"><img src="{{ asset('inc/transport.svg') }}" alt="Transport"></span>
                         <span class="title-item">Transport</span>
-                    </a>
+                    </span>
+                    <ul class="sub-menu-items">
+                        <li class="item-sub-menu"><a href="http://localhost:8000/vol/" class="link-item-sub-menu">Mise à jours vols</a></li>
+                        <li class="item-sub-menu"><a href="http://localhost:8000/vol/" class="link-item-sub-menu">Liste des vols</a></li>
+                        <li class="item-sub-menu"><a href="#" class="link-item-sub-menu">Convocation Aéroport</a></li>
+                        <li class="item-sub-menu"><a href="#" class="link-item-sub-menu">Modification en série</a></li>
+                        <li class="item-sub-menu"><a href="#" class="link-item-sub-menu">Forfait étranger</a></li>
+                    </ul>
+                </li>
+
+                <!-- Menu Plateau Résa -->
+                 <li class="item-list-menu-nav {{ app.request.get('_route') starts with 'app_products' or app.request.get('_route') starts with 'app_pays' or app.request.get('_route') starts with 'app_ville' or app.request.get('_route') starts with 'app_utilisateur' ? 'active' : '' }}">
+                    <span class="link-item-list-menu-nav">
+                        <span class="picto"><img src="{{ asset('inc/receptifs.svg') }}" alt="Plateau Résa"></span>
+                        <span class="title-item">Plateau Résa</span>
+                    </span>
+                    <ul class="sub-menu-items">
+                        <li class="item-sub-menu"><a href="/dossier/list-dossier.php" class="link-item-sub-menu">Recherche Dossiers</a></li>
+                    </ul>
                 </li>
             </ul>
             
             <ul class="list-menu-bottom">
-                <li class="item-list-menu-nav">
+    <li class="item-list-menu-nav">
                     <a href="{{ path('app_products') }}" class="link-item-list-menu-nav">
                         <span class="picto profile"><img src="{{ asset('inc/profil.svg') }}" alt="Profil"></span>
                         <span class="title-item">El euch mamdouh</span>
