@@ -1,0 +1,148 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Produit : Soumaya nkhili - Logisoft{% endblock %}
+
+{% block content %}
+<section id="single-product">
+    <div class="center-content">
+        <div id="header">
+            <div class="header-section-products">
+                <span class="sub-title-section">Produit : Soumaya nkhili</span>
+                <ul class="tabulation-items">
+                    <li title="Fiche produit">
+                        <label for="tab1" role="button">
+                            <i class="fa-solid fa-box"></i>
+                            <span>Fiche produit</span>
+                        </label>
+                    </li>
+                    <li title="Stock">
+                        <label for="tab2" role="button">
+                            <i class="fa-solid fa-warehouse"></i>
+                            <span>Stock</span>
+                        </label>
+                    </li>
+                    <li title="Tarif">
+                        <label for="tab3" role="button">
+                            <i class="fa-solid fa-tags"></i>
+                            <span>Tarif</span>
+                        </label>
+                    </li>
+                    <li title="Promotion">
+                        <label for="tab4" role="button">
+                            <i class="fa-solid fa-bullhorn"></i>
+                            <span>Promotion</span>
+                        </label>
+                    </li>
+                    <li title="Option">
+                        <label for="tab5" role="button">
+                            <i class="fa-solid fa-list"></i>
+                            <span>Option</span>
+                        </label>
+                    </li>
+                    <li title="Stop Sale">
+                        <label for="tab6" role="button">
+                            <i class="fa-solid fa-ban"></i>
+                            <span>Stop Sale</span>
+                        </label>
+                    </li>
+                    <li title="Garanties">
+                        <label for="tab7" role="button">
+                            <i class="fa-solid fa-shield-halved"></i>
+                            <span>Garanties</span>
+                        </label>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="content-single-product-bottom">
+            <div class="info-product-left">
+                <div class="thumbnail">
+                    <img src="{{ asset('inc/product.png') }}" alt="Produit Soumaya nkhili">
+                </div>
+                <div class="product-info">
+                    <span class="product-name">Soumaya nkhili</span>
+                    <span class="product-code">Code produit : <span class="code">HOO7562</span></span>
+                    <span class="product-pays">Pays : <span class="location">Algerie</span></span>
+                    <span class="product-status">Statut : <span class="stat-desc success">Ouvert à la vente</span></span>
+                </div>
+            </div>
+
+            <div class="tabs">
+                <span class="close-info"></span>
+                
+
+                <input type="radio" id="tab1" name="tab-control" checked>
+                <input type="radio" id="tab2" name="tab-control">
+                <input type="radio" id="tab3" name="tab-control">
+                <input type="radio" id="tab4" name="tab-control">
+                <input type="radio" id="tab5" name="tab-control">
+                <input type="radio" id="tab6" name="tab-control">
+                <input type="radio" id="tab7" name="tab-control">
+
+                <div class="content">
+
+                    <section class="tab-section">
+                        {{ include('products/tabs/_fiche_produit.html.twig') }}
+                    </section>
+
+  
+                    <section class="tab-section">
+                        {{ include('products/tabs/_stock.html.twig') }}
+                    </section>
+
+
+                    <section class="tab-section">
+                        <div class="group-section">
+                            <h3>Tarif</h3>
+                            <div class="partie">
+                                <p>Configuration des tarifs du produit...</p>
+                            </div>
+                        </div>
+                    </section>
+
+
+                    <section class="tab-section">
+                        <div class="group-section">
+                            <h3>Promotion</h3>
+                            <div class="partie">
+                                <p>Configuration des promotions du produit...</p>
+                            </div>
+                        </div>
+                    </section>
+
+
+                    <section class="tab-section">
+                        <div class="group-section">
+                            <h3>Option</h3>
+                            <div class="partie">
+                                <p>Configuration des options du produit...</p>
+                            </div>
+                        </div>
+                    </section>
+
+
+                    <section class="tab-section">
+                        <div class="group-section">
+                            <h3>Stop Sale</h3>
+                            <div class="partie">
+                                <p>Configuration des arrêts de vente...</p>
+                            </div>
+                        </div>
+                    </section>
+
+
+                    <section class="tab-section">
+                        <div class="group-section">
+                            <h3>Garanties</h3>
+                            <div class="partie">
+                                <p>Configuration des garanties du produit...</p>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

@@ -1,0 +1,18 @@
+NewVersion/integration-logisoft$ 
+npm install
+npx gulp
+npm update gulp-sass sass
+npm run dev
+npm run build
+
+npx gulp styles
+npx gulp vendorsJS
+npx gulp customJS
+npx gulp includes
+
+
+NewVersion$ 
+cp integration-logisoft/build/css/style.css public/css/
+cp integration-logisoft/build/js/*.js public/js/
+cp -r integration-logisoft/build/inc/fonts/* public/fonts/
+cp -r integration-logisoft/build/inc/img/* public/images/

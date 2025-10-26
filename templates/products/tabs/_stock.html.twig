@@ -1,0 +1,396 @@
+<div class="group-section">
+    <h3>Catégorie</h3>
+    <div class="btn-group-header">
+        <div class="btns-right">
+            <button class="btn btn-white">Stock par catégorie</button>
+            <button class="btn btn-white">Stocks confondus</button>
+        </div>
+    </div>
+    <div class="partie">
+        <div class="row-group">
+            <div class="form-group row-3">
+                <label>Catégorie de chambre :</label>
+                <select name="" id="">
+                    <option value="1">lorem</option>
+                    <option value="2">lorem</option>
+                    <option value="3">lorem</option>
+                </select>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="group-section">
+    <h3>Vue d'ensemble</h3>
+    <div class="btn-group-header">
+        <div class="btns-left">
+            <button class="btn btn-white">Suivi</button>
+            <button class="btn btn-lightgray">Supprimé</button>
+            <button class="btn btn-darkblue">Mettre à jour</button>
+            <button class="btn btn-blue"> Ajouter un stock</button>
+        </div>
+    </div>
+    <div class="partie">
+        <div class="row-group">
+            <span>Recherche Période</span>
+            <div class="form-group row-5">
+                <label for="release-date">De</label>
+                <input type="date" id="release-date" name="release-date">
+            </div>
+            <div class="form-group row-5">
+                <label for="end-date">A</label>
+                <input type="date" id="end-date" name="end-date">
+            </div>
+            <button type="submit">Rechercher</button>
+        </div>
+
+        <div class="row-group">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Jour</th>
+                        <th>Stock</th>
+                        <th>Vendu</th>
+                        <th>Total </br>stock</th>
+                        <th>Total </br>vendu</th>
+                        <th>Dispo</th>
+                        <th>Statut</th>
+                        <th>Rétro</th>
+                        <th>Contrat</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>2025-10-20</td>
+                        <td>Lundi</td>
+                        <td>100</td>
+                        <td>20</td>
+                        <td>100</td>
+                        <td>20</td>
+                        <td>80</td>
+                        <td>AL</td>
+                        <td>1</td>
+                        <td>Par arrivée</td>
+                    </tr>
+                    <tr>
+                        <td>2025-10-21</td>
+                        <td>Mardi</td>
+                        <td>50</td>
+                        <td>10</td>
+                        <td>150</td>
+                        <td>30</td>
+                        <td>40</td>
+                        <td>AL</td>
+                        <td>3</td>
+                        <td>Par arrivée</td>
+                    </tr>
+                    <tr>
+                        <td>2025-10-22</td>
+                        <td>Mercredi</td>
+                        <td>30</td>
+                        <td>25</td>
+                        <td>180</td>
+                        <td>55</td>
+                        <td>5</td>
+                        <td>AL</td>
+                        <td>1</td>
+                        <td>Par arrivée</td>
+                    </tr>
+                    <tr>
+                        <td>2025-10-22</td>
+                        <td>Mercredi</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>180</td>
+                        <td>55</td>
+                        <td>5</td>
+                        <td>AL</td>
+                        <td>1</td>
+                        <td>Par arrivée</td>
+                    </tr>
+                    <tr>
+                        <td>2025-10-22</td>
+                        <td>Mercredi</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>180</td>
+                        <td>55</td>
+                        <td>5</td>
+                        <td>AL</td>
+                        <td>1</td>
+                        <td>Par arrivée</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<div class="group-section">
+    <h2><strong>Ajoutez un stock</strong></h2>
+    <h3>Générateur de stock</h3>
+    <div class="partie">
+        <div class="row-group">
+            <span> Période</span>
+            <div class="form-group row-5">
+                <label for="release-date">De</label>
+                <input type="date" id="release-date" name="release-date">
+            </div>
+            <div class="form-group row-5">
+                <label for="end-date">A</label>
+                <input type="date" id="end-date" name="end-date">
+            </div>
+        </div>
+        <div class="row-group">
+            <div class="form-group checkbox-group row-4">
+                <span>Statut :</span>
+                <div class="checkbox-wrapper">
+                    <input id="al" type="radio" name="choix" />
+                    <label for="al">AL</label>
+                </div>
+                <div class="checkbox-wrapper">
+                    <input id="rq" type="radio" name="choix" />
+                    <label for="rq">RQ</label>
+                </div>
+                <div class="checkbox-wrapper">
+                    <input id="cn" type="radio" name="choix" />
+                    <label for="cn">CN</label>
+                </div>
+            </div>
+            <div class="form-group checkbox-group row-4">
+                <span>Contrat :</span>
+                <div class="checkbox-wrapper">
+                    <input id="by-night" type="radio" name="contrat" />
+                    <label for="by-night">Par nuit</label>
+                </div>
+                <div class="checkbox-wrapper">
+                    <input id="by-comming" type="radio" name="contrat" />
+                    <label for="by-comming">Par arrivée</label>
+                </div>
+            </div>
+            <div class="form-group checkbox-group row-4">
+                <span>Stock Global :</span>
+                <div class="checkbox-wrapper">
+                    <input id="yes" type="radio" name="stock-global" />
+                    <label for="yes">Oui</label>
+                </div>
+                <div class="checkbox-wrapper">
+                    <input id="no" type="radio" name="stock-global" />
+                    <label for="no">Non</label>
+                </div>
+            </div>
+        </div>
+
+        <div class="row-group">
+            <span>Retro:</span>
+            <div class="form-group row-4">
+                <label>Retro AL:</label>
+                <input type="text">
+            </div>
+            <div class="form-group row-4">
+                <label>Durée</label>
+                <input type="text">
+            </div>
+        </div>
+        <div class="row-group">
+            <!-- liste case a coché -->
+            <div class="form-group listing-chexbox">
+                <div class="select-all-item">
+                    <label>
+                        <span>Jours d'opération :</span>
+                        <input type="checkbox" class="select-all"> Sélectionner tous
+                    </label>
+                </div>
+                <div class="items">
+                    <label>
+                        <input type="checkbox" class="item-check" value="lundi"> Lundi
+                    </label>
+                    <label>
+                        <input type="checkbox" class="item-check" value="mardi"> Mardi
+                    </label>
+                    <label>
+                        <input type="checkbox" class="item-check" value="mercredi"> Mercredi
+                    </label>
+                    <label>
+                        <input type="checkbox" class="item-check" value="jeudi"> Jeudi
+                    </label>
+                    <label>
+                        <input type="checkbox" class="item-check" value="vendredi"> Vendredi
+                    </label>
+                    <label>
+                        <input type="checkbox" class="item-check" value="samedi"> Samedi
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <div class="row-group">
+            <div class="form-group row-5">
+                <label>Total Stock:</label>
+                <input type="text">
+            </div>
+            <div class="form-group row-5">
+                <label>Total Vendu</label>
+                <input type="text">
+            </div>
+            <div class="form-group row-5 ">
+                <label>Total Dispo</label>
+                <input type="text">
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Code Occupation<a href="#" class="arrow-tri"></a></th>
+                        <th>Occupation Chambre <a href="#" class="arrow-tri"></a></th>
+                        <th>Capacité <a href="#" class="arrow-tri"></a></th>
+                        <th>Stock <a href="#" class="arrow-tri"></a></th>
+                        <th>Vendu <a href="#" class="arrow-tri"></a></th>
+                        <th>Dispo<a href="#" class="arrow-tri"></a></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>198017</td>
+                        <td>1/2 DOUBLE</td>
+                        <td>1</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<div class="group-section">
+    <h3>Stock produit</h3>
+    <div class="partie">
+        <div class="row-group">
+            <span> Recherche Période:</span>
+            <div class="form-group row-5">
+                <label>De</label>
+                <input type="date">
+            </div>
+            <div class="form-group row-5">
+                <label>A</label>
+                <input type="date">
+            </div>
+            <div class="form-group row-5">
+                <label>Nombre de jours</label>
+                <input type="text">
+            </div>
+        </div>
+
+        <!-- Multi Select -->
+        <div class="row-group">
+            <div class="form-group multi-select">
+                <div class="form-group-content">
+                    <label>Categories de chambre</label>
+                    <div class="multi-select-dropdown">
+                        <span class="btn-dropdown"></span>
+                        <div class="dropdown-selected">Toutes les catégories</div>
+                        <div class="dropdown-options">
+                            <label><input type="checkbox" value="Categorie 1"> Categorie 1</label>
+                            <label><input type="checkbox" value="Categorie 2"> Categorie 2</label>
+                            <label><input type="checkbox" value="Categorie 3"> Categorie 3</label>
+                            <label><input type="checkbox" value="Categorie 4"> Categorie 4</label>
+                            <label><input type="checkbox" value="Categorie 5"> Categorie 5</label>
+                            <label><input type="checkbox" value="Categorie 6"> Categorie 6</label>
+                            <label><input type="checkbox" value="Categorie 7"> Categorie 7</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group-btn-submit">
+                    <span class="loop"></span>
+                    <span class="btn-submit">Rechercher</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="row-group">
+            <table id="myTable">
+                <thead>
+                    <tr>
+                        <th>Date<br><input type="date"></th>
+                        <th>Jour<br><input type="text" placeholder="Rechercher..."></th>
+                        <th>Total stock<br><input type="text" placeholder="Rechercher..."></th>
+                        <th>Total vente<br><input type="text" placeholder="Rechercher..."></th>
+                        <th>Total dispo<br><input type="text" placeholder="Rechercher..."></th>
+                        <th>Dispo min sur les 7 nuits suivantes<br><input type="text" placeholder="Rechercher..."></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>2025-10-22</td>
+                        <td>Mercredi</td>
+                        <td>120</td>
+                        <td>45</td>
+                        <td>75</td>
+                        <td>10</td>
+                    </tr>
+                    <tr>
+                        <td>2025-10-23</td>
+                        <td>Jeudi</td>
+                        <td>80</td>
+                        <td>25</td>
+                        <td>55</td>
+                        <td>5</td>
+                    </tr>
+                    <tr>
+                        <td>2025-10-24</td>
+                        <td>Vendredi</td>
+                        <td>60</td>
+                        <td>40</td>
+                        <td>20</td>
+                        <td>10</td>
+                    </tr>
+                    <tr>
+                        <td>2025-10-25</td>
+                        <td>Samedi</td>
+                        <td>50</td>
+                        <td>20</td>
+                        <td>30</td>
+                        <td>5</td>
+                    </tr>
+                    <tr>
+                        <td>2025-10-26</td>
+                        <td>Dimanche</td>
+                        <td>70</td>
+                        <td>35</td>
+                        <td>35</td>
+                        <td>8</td>
+                    </tr>
+                    <tr>
+                        <td>2025-10-27</td>
+                        <td>Lundi</td>
+                        <td>90</td>
+                        <td>30</td>
+                        <td>60</td>
+                        <td>15</td>
+                    </tr>
+                    <tr>
+                        <td>2025-10-28</td>
+                        <td>Mardi</td>
+                        <td>100</td>
+                        <td>50</td>
+                        <td>50</td>
+                        <td>10</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<!-- Group brtns footer -->
+<div class="btn-group-footer">
+    <div class="btns-left">
+        <button class="btn btn-blue">Générer le stock</button>
+    </div>
+    <div class="btns-right">
+        <button class="btn btn-white">Annuler</button>
+        <button class="btn btn-blue">Enregistrer</button>
+    </div>
+</div>

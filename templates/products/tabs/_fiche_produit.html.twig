@@ -1,0 +1,339 @@
+<div class="group-section">
+    <h3>Identité</h3>
+    <div class="btn-group-header">
+        <div class="btns-left">
+            <button class="btn btn-white">Suivi</button>
+            <button class="btn btn-darkblue">Mettre à jour</button>
+        </div>
+    </div>
+    <div class="partie">
+        <div class="row-group">
+            <div class="form-group row-2">
+                <label>Nom du produit :</label>
+                <input type="text">
+            </div>
+            <div class="form-group row-4">
+                <label>Statut :</label>
+                <input type="text">
+            </div>
+        </div>
+        <div class="row-group">
+            <div class="form-group row-4">
+                <label>Type de produit :</label>
+                <input type="text">
+            </div>
+            <div class="form-group row-4">
+                <label>Type de sous produit :</label>
+                <input type="text">
+            </div>
+        </div>
+        <div class="row-group">
+            <div class="form-group row-4">
+                <label>Catégorie :</label>
+                <input type="text">
+            </div>
+            <div class="form-group row-4">
+                <label>Group Hotelier :</label>
+                <input type="text">
+            </div>
+        </div>
+        <div class="row-group">
+            <div class="form-group row-4">
+                <label>Pays :</label>
+                <input type="text">
+            </div>
+            <div class="form-group row-8">
+                <label>Code ISO :</label>
+                <input type="text">
+            </div>
+            <div class="form-group row-4">
+                <label>Sous Pays :</label>
+                <input type="text">
+            </div>
+        </div>
+        <div class="row-group">
+            <div class="form-group row-4">
+                <label>Adress postale :</label>
+                <input type="text">
+            </div>
+            <div class="form-group row-4">
+                <label>Code postale :</label>
+                <input type="text">
+            </div>
+            <div class="form-group row-4">
+                <label>Ville :</label>
+                <input type="text">
+            </div>
+        </div>
+        <div class="row-group">
+            <div class="form-group row-4">
+                <label>Logitude:</label>
+                <input type="text">
+            </div>
+            <div class="form-group row-4">
+                <label>latitude:</label>
+                <input type="text">
+            </div>
+            <div class="form-group row-4">
+                <label>Code trip advisor:</label>
+                <input type="text">
+            </div>
+        </div>
+        <div class="row-group">
+            <div class="form-group row-3">
+                <label>Pension:</label>
+                <input type="text">
+            </div>
+            <div class="form-group row-3">
+                <label>Régle tarifaire:</label>
+                <input type="text">
+            </div>
+        </div>
+        <div class="row-group">
+            <div class="form-group row-2">
+                <label>Remarque :</label>
+                <textarea name="descripion"></textarea>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="group-section">
+    <h3>Contact</h3>
+    <div class="partie">
+        <div class="row-group">
+            <div class="form-group row-4">
+                <label>Responsable - Service Commercial :</label>
+                <input type="text">
+            </div>
+            <div class="form-group row-4">
+                <label>Télèphone - Service Commercial :</label>
+                <input type="text">
+            </div>
+            <div class="form-group row-4">
+                <label>Adresse Mail - Service Commercial :</label>
+                <input type="text">
+            </div>
+        </div>
+        <div class="row-group">
+            <div class="form-group row-4">
+                <label>Responsable - Service Réservation :</label>
+                <input type="text">
+            </div>
+            <div class="form-group row-4">
+                <label>Télèphone - Service Réservation :</label>
+                <input type="text">
+            </div>
+            <div class="form-group row-4">
+                <label>Adresse Mail - Service Réservation :</label>
+                <input type="text">
+            </div>
+        </div>
+        <div class="row-group">
+            <div class="form-group row-4">
+                <label>Adress Mail - ServiceComptable :</label>
+                <input type="text">
+            </div>
+            <div class="form-group row-4">
+                <label>Adress Mail - Autre :</label>
+                <input type="text">
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Partie Logistique -->
+<div class="group-section">
+    <h3>Logistique</h3>
+    <div class="partie">
+        <div class="row-group">
+            <div class="form-group row-4">
+                <label>Aéroport de destination 1:</label>
+                <input type="text">
+            </div>
+            <div class="form-group row-4">
+                <label>Aéroport de destination 2:</label>
+                <input type="text">
+            </div>
+            <div class="form-group row-4">
+                <label>Réceptif au agence associée:</label>
+                <input type="text">
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Partie Enfant -->
+<div class="group-section">
+    <h3>Enfant</h3>
+    <div class="partie">
+        <div class="row-group">
+            <div class="form-group checkbox-group">
+                <span>Bébé autorisé :</span>
+                <div class="checkbox-wrapper">
+                    <input id="baby-yes" type="radio" name="bebe" value="oui"> <label for="baby-yes">Oui</label>
+                </div>
+                <div class="checkbox-wrapper">
+                    <input id="baby-no" type="radio" name="bebe" value="non"> <label for="baby-no">Non</label>
+                </div>
+            </div>
+        </div>
+
+        <div class="row-group">
+            <h4>Tableau enfants</h4>
+            <table>
+                <thead>
+                    <tr>
+                        <th>N° <a href="#" class="arrow-tri"></a></th>
+                        <th>Type <a href="#" class="arrow-tri"></a></th>
+                        <th>Âge min <a href="#" class="arrow-tri"></a></th>
+                        <th>Âge max <a href="#" class="arrow-tri"></a></th>
+                        <th>Âge min <a href="#" class="arrow-tri"></a></th>
+                        <th>Âge max <a href="#" class="arrow-tri"></a></th>
+                        <th>Action <a href="#" class="arrow-tri"></a></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>Bébé</td>
+                        <td>0</td>
+                        <td>2</td>
+                        <td>0</td>
+                        <td>2</td>
+                        <td><button class="view" title="Visualiser"><span class="picto-see"></span></button></td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Enfant</td>
+                        <td>3</td>
+                        <td>12</td>
+                        <td>3</td>
+                        <td>12</td>
+                        <td><button class="view" title="Visualiser"><span class="picto-see"></span> </button></td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>Enfant</td>
+                        <td>3</td>
+                        <td>12</td>
+                        <td>3</td>
+                        <td>12</td>
+                        <td><button class="view" title="Visualiser"><span class="picto-see"></span> </button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<!-- Partie Catégories et occupation -->
+<div class="group-section">
+    <h3>Catégories et occupation</h3>
+    <div class="partie">
+        <div class="row-group">
+            <table>
+                <thead>
+                    <tr>
+                        <th>N° <a href="#" class="arrow-tri"></a></th>
+                        <th>Code catégorie <a href="#" class="arrow-tri"></a></th>
+                        <th>Catégorie <a href="#" class="arrow-tri"></a></th>
+                        <th>Action <a href="#" class="arrow-tri"></a></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>65443</td>
+                        <td>1 BEDROOM SUIT LAND VIEW</td>
+                        <td><button class="view" title="Visualiser"><span class="picto-see"></span></button></td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>65444</td>
+                        <td>1 CHAMBRE STANDARD</td>
+                        <td><button class="view" title="Visualiser"><span class="picto-see"></span></button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="row-group">
+            <h4>Tableau Occupation</h4>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Code occupation</th>
+                        <th>Chambre</th>
+                        <th>Min-Ad</th>
+                        <th>Max-Ad</th>
+                        <th>Min-Enf</th>
+                        <th>Max-Enf</th>
+                        <th>Max-Bébé</th>
+                        <th>Capacité</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>OCC01</td>
+                        <td>Double</td>
+                        <td>1</td>
+                        <td>2</td>
+                        <td>0</td>
+                        <td>2</td>
+                        <td>1</td>
+                        <td>3</td>
+                        <td><button class="view" title="Visualiser"><span class="picto-see"></span></button></td>
+                    </tr>
+                    <tr>
+                        <td>OCC02</td>
+                        <td>Suite</td>
+                        <td>2</td>
+                        <td>4</td>
+                        <td>0</td>
+                        <td>2</td>
+                        <td>1</td>
+                        <td>5</td>
+                        <td><button class="view" title="Visualiser"><span class="picto-see"></span></button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+
+<div class="group-section">
+    <h3>Autre</h3>
+    <div class="partie">
+        <div class="row-group">
+            <div class="form-group checkbox-group">
+                <span>Sales & Report :</span>
+                <div class="checkbox-wrapper">
+                    <input id="sales-actif" type="radio" name="sales" value="actif"> <label for="sales-actif">Actif</label>
+                </div>
+                <div class="checkbox-wrapper">
+                    <input id="sales-inactif" type="radio" name="sales" value="inactif"> <label for="sales-inactif">Inactif</label>
+                </div>
+            </div>
+        </div>
+        <div class="row-group">
+            <div class="form-group checkbox-group">
+                <span>Impression document :</span>
+                <div class="checkbox-wrapper">
+                    <input id="lang-fr" type="radio" name="langdoc" value="fr"> <label for="lang-fr">Français</label>
+                </div>
+                <div class="checkbox-wrapper">
+                    <input id="lang-en" type="radio" name="langdoc" value="en"> <label for="lang-en">Anglais</label>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="btn-group-footer">
+    <div class="btns-right">
+        <button class="btn btn-white">Annuler</button>
+        <button class="btn btn-blue">Enregistrer</button>
+    </div>
+</div>

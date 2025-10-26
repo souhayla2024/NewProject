@@ -1,0 +1,77 @@
+<nav class="nav-bar">
+    <div class="burger-nav">
+        <span class="arrow"></span>
+    </div>
+    <div class="menu-nav">
+        <div class="logo-top">
+            <img src="{{ asset('inc/logo-logisoft.png') }}" alt="Logo Logisoft">
+        </div>
+        <div class="list-menu">
+            <ul class="list-menu-top">
+                <li class="item-list-menu-nav {{ app.request.get('_route') == 'home' ? 'active' : '' }}">
+                    <a href="{{ path('home') }}" class="link-item-list-menu-nav">
+                        <span class="picto"><img src="{{ asset('inc/home.svg') }}" alt="Accueil"></span>
+                        <span class="title-item">Accueil</span>
+                    </a>
+                </li>
+
+                <li class="item-list-menu-nav {{ app.request.get('_route') starts with 'app_products' ? 'active' : '' }}">
+                    <span class="link-item-list-menu-nav">
+                        <span class="picto"><img src="{{ asset('inc/product.svg') }}" alt="Produits"></span>
+                        <span class="title-item">Produits</span>
+                    </span>
+                    <ul class="sub-menu-items">
+                        <li class="item-sub-menu"><a href="{{ path('app_products') }}" class="link-item-sub-menu">Liste des produits</a></li>
+                        <li class="item-sub-menu"><a href="#" class="link-item-sub-menu">Créer un produit</a></li>
+                        <li class="item-sub-menu"><a href="#" class="link-item-sub-menu">Catégories</a></li>
+                        <li class="item-sub-menu"><a href="#" class="link-item-sub-menu">Statistiques</a></li>
+                    </ul>
+                </li>
+                
+ 
+                <li class="item-list-menu-nav {{ app.request.get('_route') starts with 'app_products' ? 'active' : '' }}">
+                    <span class="link-item-list-menu-nav">
+                        <span class="picto"><img src="{{ asset('inc/receptifs.svg') }}" alt="Réceptifs"></span>
+                        <span class="title-item">Réceptifs</span>
+                    </span>
+                    <ul class="sub-menu-items">
+                        <li class="item-sub-menu"><a href="#" class="link-item-sub-menu">Sous Menu 1</a></li>
+                        <li class="item-sub-menu"><a href="#" class="link-item-sub-menu">Sous Menu 2</a></li>
+                        <li class="item-sub-menu"><a href="#" class="link-item-sub-menu">Sous Menu 3</a></li>
+                        <li class="item-sub-menu"><a href="#" class="link-item-sub-menu">Sous Menu 4</a></li>
+                    </ul>
+                </li>
+                
+                <li class="item-list-menu-nav {{ app.request.get('_route') == 'app_products' ? 'active' : '' }}">
+                    <a href="{{ path('app_products') }}" class="link-item-list-menu-nav">
+                        <span class="picto"><img src="{{ asset('inc/param.svg') }}" alt="Paramètres"></span>
+                        <span class="title-item">Paramétrages</span>
+                    </a>
+                </li>
+                
+                <li class="item-list-menu-nav {{ app.request.get('_route') == 'app_products' ? 'active' : '' }}">
+                    <a href="{{ path('app_products') }}" class="link-item-list-menu-nav">
+                        <span class="picto"><img src="{{ asset('inc/transport.svg') }}" alt="Transport"></span>
+                        <span class="title-item">Transport</span>
+                    </a>
+                </li>
+            </ul>
+            
+            <ul class="list-menu-bottom">
+                <li class="item-list-menu-nav">
+                    <a href="{{ path('app_products') }}" class="link-item-list-menu-nav">
+                        <span class="picto profile"><img src="{{ asset('inc/profil.svg') }}" alt="Profil"></span>
+                        <span class="title-item">El euch mamdouh</span>
+                    </a>
+                </li>
+                
+                <li class="item-list-menu-nav">
+                    <a href="{{ path('app_products') }}" class="link-item-list-menu-nav">
+                        <span class="picto"><img src="{{ asset('inc/logout.svg') }}" alt="Déconnexion"></span>
+                        <span class="title-item">Déconnexion</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
