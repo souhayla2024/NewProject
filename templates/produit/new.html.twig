@@ -1,11 +1,185 @@
+{# templates/produit/new.html.twig #}
 {% extends 'base.html.twig' %}
 
-{% block title %}New Produit{% endblock %}
+{% block title %}Nouveau Produit - Logisoft{% endblock %}
 
-{% block body %}
-    <h1>Create new Produit</h1>
+{% block content %}
+<section id="single-product">
+    <div class="center-content">
+        <div id="header">
+            <div class="header-section-products">
+                <span class="sub-title-section">Nouveau Produit</span>
+                <ul class="tabulation-items">
+                    <li title="Fiche produit">
+                        <label for="tab1" role="button" class="active">
+                            <i class="fa-solid fa-box"></i>
+                            <span>Fiche produit</span>
+                        </label>
+                    </li>
+                    <li title="Stock">
+                        <label for="tab2" role="button">
+                            <i class="fa-solid fa-warehouse"></i>
+                            <span>Stock</span>
+                        </label>
+                    </li>
+                    <li title="Tarif">
+                        <label for="tab3" role="button">
+                            <i class="fa-solid fa-tags"></i>
+                            <span>Tarif</span>
+                        </label>
+                    </li>
+                </ul>
+            </div>
+        </div>
 
-    {{ include('produit/_form.html.twig') }}
+        <div class="content-single-product-bottom">
+            <div class="info-product-left">
+                <div class="thumbnail">
+                    <img src="{{ asset('inc/product.png') }}" alt="Nouveau produit">
+                </div>
+                <div class="product-info">
+                    <span class="product-name">Nouveau Produit</span>
+                    <span class="product-code">Code produit : <span class="code">À définir</span></span>
+                    <span class="product-status">Statut : <span class="stat-desc warning">En création</span></span>
+                </div>
+            </div>
 
-    <a href="{{ path('app_produit_index') }}">back to list</a>
+            <div class="tabs">
+                <span class="close-info"></span>
+                
+                <input type="radio" id="tab1" name="tab-control" checked>
+                <input type="radio" id="tab2" name="tab-control">
+                <input type="radio" id="tab3" name="tab-control">
+
+                <div class="content">
+                    {# Tab 1: Fiche produit avec le formulaire #}
+                    <section class="tab-section">
+                        <div class="group-section">
+                            <h3>Informations du produit</h3>
+                            <div class="partie">
+                                {{ form_start(form, {'attr': {'class': 'product-form'} }) }}
+                                
+                                <div class="form-grid">
+                                    {# Section Informations de base #}
+                                    <div class="form-section">
+                                        <h4>Informations de base</h4>
+                                        <div class="form-row">
+                                            <div class="form-group">
+                                                {{ form_label(form.codeprod, 'Code produit') }}
+                                                {{ form_widget(form.codeprod, {'attr': {'class': 'form-control'} }) }}
+                                            </div>
+                                            <div class="form-group">
+                                                {{ form_label(form.libprod, 'Libellé produit') }}
+                                                {{ form_widget(form.libprod, {'attr': {'class': 'form-control'} }) }}
+                                            </div>
+                                        </div>
+                                        <div class="form-row">
+                                            <div class="form-group">
+                                                {{ form_label(form.libprod2, 'Libellé produit 2') }}
+                                                {{ form_widget(form.libprod2, {'attr': {'class': 'form-control'} }) }}
+                                            </div>
+                                            <div class="form-group">
+                                                {{ form_label(form.typeproduit, 'Type produit') }}
+                                                {{ form_widget(form.typeproduit, {'attr': {'class': 'form-control'} }) }}
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    {# Section Contact #}
+                                    <div class="form-section">
+                                        <h4>Contact</h4>
+                                        <div class="form-group">
+                                            {{ form_label(form.adresse, 'Adresse') }}
+                                            {{ form_widget(form.adresse, {'attr': {'class': 'form-control'} }) }}
+                                        </div>
+                                        <div class="form-row">
+                                            <div class="form-group">
+                                                {{ form_label(form.cp, 'Code postal') }}
+                                                {{ form_widget(form.cp, {'attr': {'class': 'form-control'} }) }}
+                                            </div>
+                                            <div class="form-group">
+                                                {{ form_label(form.libville, 'Ville') }}
+                                                {{ form_widget(form.libville, {'attr': {'class': 'form-control'} }) }}
+                                            </div>
+                                        </div>
+                                        <div class="form-row">
+                                            <div class="form-group">
+                                                {{ form_label(form.tel1, 'Téléphone 1') }}
+                                                {{ form_widget(form.tel1, {'attr': {'class': 'form-control'} }) }}
+                                            </div>
+                                            <div class="form-group">
+                                                {{ form_label(form.email, 'Email') }}
+                                                {{ form_widget(form.email, {'attr': {'class': 'form-control'} }) }}
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    {# Section Configuration #}
+                                    <div class="form-section">
+                                        <h4>Configuration</h4>
+                                        <div class="form-row">
+                                            <div class="form-group">
+                                                {{ form_label(form.vendable, 'Vendable') }}
+                                                {{ form_widget(form.vendable, {'attr': {'class': 'form-control'} }) }}
+                                            </div>
+                                            <div class="form-group">
+                                                {{ form_label(form.archiver, 'Archivé') }}
+                                                {{ form_widget(form.archiver, {'attr': {'class': 'form-control'} }) }}
+                                            </div>
+                                        </div>
+                                        <div class="form-row">
+                                            <div class="form-group">
+                                                {{ form_label(form.statut, 'Statut') }}
+                                                {{ form_widget(form.statut, {'attr': {'class': 'form-control'} }) }}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-actions">
+                                    <button type="submit" class="btn btn-primary">
+                                        <i class="fa-solid fa-save"></i>
+                                        Créer le produit
+                                    </button>
+                                    <a href="{{ path('app_produit_index') }}" class="btn btn-secondary">
+                                        <i class="fa-solid fa-arrow-left"></i>
+                                        Retour à la liste
+                                    </a>
+                                </div>
+                                
+                                {{ form_end(form) }}
+                            </div>
+                        </div>
+                    </section>
+
+                    {# Tab 2: Stock (vide pour l'instant) #}
+                    <section class="tab-section">
+                        <div class="group-section">
+                            <h3>Gestion des stocks</h3>
+                            <div class="partie">
+                                <p class="info-message">
+                                    <i class="fa-solid fa-info-circle"></i>
+                                    La gestion des stocks sera disponible après la création du produit.
+                                </p>
+                            </div>
+                        </div>
+                    </section>
+
+                    {# Tab 3: Tarif (vide pour l'instant) #}
+                    <section class="tab-section">
+                        <div class="group-section">
+                            <h3>Gestion des tarifs</h3>
+                            <div class="partie">
+                                <p class="info-message">
+                                    <i class="fa-solid fa-info-circle"></i>
+                                    La gestion des tarifs sera disponible après la création du produit.
+                                </p>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 {% endblock %}
