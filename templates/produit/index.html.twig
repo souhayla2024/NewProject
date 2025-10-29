@@ -1,0 +1,84 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Produits - Logisoft{% endblock %}
+
+{% block content %}
+<section id="products-wrapper">
+    <div class="center-content">
+        <div class="header-section-products">
+            <h2 class="title-section">Produits</h2>
+            <span class="sub-title-section">Liste des produits</span>
+            <div class="group-btns">
+                <button class="btn-left" type="submit">📄 Exporter</button>
+                <a href="{{ path('app_single_product', {'id': 'new'}) }}" class="btn-right" type="button"> + Créer un produit</a>
+            </div>
+        </div>
+
+        <div class="table-wrapper">
+            <table class="custom-table">
+                <thead>
+                  
+                    <tr>
+                        <th>Code <a href="#" class="arrow-tri"></a></th>
+                        <th>Nom <a href="#" class="arrow-tri"></a></th>
+                        <th>Pays <a href="#" class="arrow-tri"></a></th>
+                        <th>Sous-pays <a href="#" class="arrow-tri"></a></th>
+                        <th>Type <a href="#" class="arrow-tri"></a></th>
+                        <th>Sous-type <a href="#" class="arrow-tri"></a></th>
+                        <th>Groupe Hôtelier<a href="#" class="arrow-tri"></a></th>
+                        <th>Réceptif <a href="#" class="arrow-tri"></a></th>
+                        <th>Statut <a href="#" class="arrow-tri"></a></th>
+                        <th>Action </th>
+                    </tr>
+                    <tr class="filters">
+                        <th><input type="text" placeholder="Rechercher..." /></th>
+                        <th><input type="text" placeholder="Rechercher..." /></th>
+                        <th><input type="text" placeholder="Rechercher..." /></th>
+                        <th><input type="text" placeholder="Rechercher..." /></th>
+                        <th><input type="text" placeholder="Rechercher..." /></th>
+                        <th><input type="text" placeholder="Rechercher..." /></th>
+                        <th><input type="text" placeholder="Rechercher..." /></th>
+                        <th><input type="text" placeholder="Rechercher..." /></th>
+                        <th><input type="text" placeholder="Rechercher..." /></th>
+                        <th><input type="text" placeholder="Rechercher..." /></th>
+                    </tr>
+                </thead>
+                <tbody>
+                {% for produit in produits %}
+                    <tr>
+
+                <td>{{ produit.codeprod }}</td>
+                <td>{{ produit.libprod }}</td>
+                <td>{{ produit.libpays }}</td>
+                <td>{{ produit.libville }}</td>
+                <td>{{ produit.libtypeprod }}</td>
+                <td>{{ produit.typeproduit }}</td>
+                <td>{{ produit.libgroupe }}</td>
+                <td>{{ produit.email }}</td>
+                <th>No</th>
+
+                {# <a href="{{ path('app_produit_show', {'seqprod': produit.seqprod}) }}">show</a>
+                    <a href="{{ path('app_produit_edit', {'seqprod': produit.seqprod}) }}">edit</a> #}
+                        <td class="actions">
+                            <a href="{{ path('app_produit_show', {'seqprod': produit.seqprod}) }}" class="view" title="Visualiser"></a>
+                            <button class="delete" title="Supprimer"></button>
+                        </td>
+                    </tr>
+                    {% else %}
+            <tr>
+                <td colspan="179">no records found</td>
+            </tr>
+        {% endfor %}
+                </tbody>
+            </table>
+            <div class="pagination">
+                <span class="first"></span>
+                <span class="prev"></span>
+                <span class="info">1 to 10 of 7125</span>
+                <span class="next"></span>
+                <span class="last"></span>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

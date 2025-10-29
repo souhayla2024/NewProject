@@ -1,0 +1,730 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Produit{% endblock %}
+
+{% block body %}
+    <h1>Produit</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Seqprod</th>
+                <td>{{ produit.seqprod }}</td>
+            </tr>
+            <tr>
+                <th>Codeprod</th>
+                <td>{{ produit.codeprod }}</td>
+            </tr>
+            <tr>
+                <th>Libprod</th>
+                <td>{{ produit.libprod }}</td>
+            </tr>
+            <tr>
+                <th>Libprod2</th>
+                <td>{{ produit.libprod2 }}</td>
+            </tr>
+            <tr>
+                <th>Libtypeprod</th>
+                <td>{{ produit.libtypeprod }}</td>
+            </tr>
+            <tr>
+                <th>Typeproduit</th>
+                <td>{{ produit.typeproduit }}</td>
+            </tr>
+            <tr>
+                <th>Libgroupe</th>
+                <td>{{ produit.libgroupe }}</td>
+            </tr>
+            <tr>
+                <th>Adresse</th>
+                <td>{{ produit.adresse }}</td>
+            </tr>
+            <tr>
+                <th>Cp</th>
+                <td>{{ produit.cp }}</td>
+            </tr>
+            <tr>
+                <th>Libville</th>
+                <td>{{ produit.libville }}</td>
+            </tr>
+            <tr>
+                <th>Libpays</th>
+                <td>{{ produit.libpays }}</td>
+            </tr>
+            <tr>
+                <th>Patron</th>
+                <td>{{ produit.patron }}</td>
+            </tr>
+            <tr>
+                <th>Email</th>
+                <td>{{ produit.email }}</td>
+            </tr>
+            <tr>
+                <th>Email2</th>
+                <td>{{ produit.email2 }}</td>
+            </tr>
+            <tr>
+                <th>Tel1</th>
+                <td>{{ produit.tel1 }}</td>
+            </tr>
+            <tr>
+                <th>Tel2</th>
+                <td>{{ produit.tel2 }}</td>
+            </tr>
+            <tr>
+                <th>Faxhotel</th>
+                <td>{{ produit.faxhotel }}</td>
+            </tr>
+            <tr>
+                <th>Faxresa</th>
+                <td>{{ produit.faxresa }}</td>
+            </tr>
+            <tr>
+                <th>Libmonnaie</th>
+                <td>{{ produit.libmonnaie }}</td>
+            </tr>
+            <tr>
+                <th>Libprest</th>
+                <td>{{ produit.libprest }}</td>
+            </tr>
+            <tr>
+                <th>Vendable</th>
+                <td>{{ produit.vendable }}</td>
+            </tr>
+            <tr>
+                <th>Sansprix</th>
+                <td>{{ produit.sansprix }}</td>
+            </tr>
+            <tr>
+                <th>Nomreceptif</th>
+                <td>{{ produit.nomreceptif }}</td>
+            </tr>
+            <tr>
+                <th>Chambre1</th>
+                <td>{{ produit.chambre1 }}</td>
+            </tr>
+            <tr>
+                <th>Chambre2</th>
+                <td>{{ produit.chambre2 }}</td>
+            </tr>
+            <tr>
+                <th>Chambre3</th>
+                <td>{{ produit.chambre3 }}</td>
+            </tr>
+            <tr>
+                <th>Chambre4</th>
+                <td>{{ produit.chambre4 }}</td>
+            </tr>
+            <tr>
+                <th>Chambre5</th>
+                <td>{{ produit.chambre5 }}</td>
+            </tr>
+            <tr>
+                <th>Chambre6</th>
+                <td>{{ produit.chambre6 }}</td>
+            </tr>
+            <tr>
+                <th>Chambre7</th>
+                <td>{{ produit.chambre7 }}</td>
+            </tr>
+            <tr>
+                <th>Transfert</th>
+                <td>{{ produit.transfert }}</td>
+            </tr>
+            <tr>
+                <th>Location</th>
+                <td>{{ produit.location }}</td>
+            </tr>
+            <tr>
+                <th>Contrat</th>
+                <td>{{ produit.contrat }}</td>
+            </tr>
+            <tr>
+                <th>Seqfour</th>
+                <td>{{ produit.seqfour }}</td>
+            </tr>
+            <tr>
+                <th>Nomfour</th>
+                <td>{{ produit.nomfour }}</td>
+            </tr>
+            <tr>
+                <th>Cee</th>
+                <td>{{ produit.cee }}</td>
+            </tr>
+            <tr>
+                <th>Obs</th>
+                <td>{{ produit.obs }}</td>
+            </tr>
+            <tr>
+                <th>Ageenfant1</th>
+                <td>{{ produit.ageenfant1 }}</td>
+            </tr>
+            <tr>
+                <th>Ageenfant2</th>
+                <td>{{ produit.ageenfant2 }}</td>
+            </tr>
+            <tr>
+                <th>Ageenfant3</th>
+                <td>{{ produit.ageenfant3 }}</td>
+            </tr>
+            <tr>
+                <th>Confirmation</th>
+                <td>{{ produit.confirmation }}</td>
+            </tr>
+            <tr>
+                <th>Ccompta</th>
+                <td>{{ produit.ccompta }}</td>
+            </tr>
+            <tr>
+                <th>Libtypechambre1</th>
+                <td>{{ produit.libtypechambre1 }}</td>
+            </tr>
+            <tr>
+                <th>Libtypechambre2</th>
+                <td>{{ produit.libtypechambre2 }}</td>
+            </tr>
+            <tr>
+                <th>Libtypechambre3</th>
+                <td>{{ produit.libtypechambre3 }}</td>
+            </tr>
+            <tr>
+                <th>Libtypechambre4</th>
+                <td>{{ produit.libtypechambre4 }}</td>
+            </tr>
+            <tr>
+                <th>Libtypechambre5</th>
+                <td>{{ produit.libtypechambre5 }}</td>
+            </tr>
+            <tr>
+                <th>Libtypechambre6</th>
+                <td>{{ produit.libtypechambre6 }}</td>
+            </tr>
+            <tr>
+                <th>Libtypechambre7</th>
+                <td>{{ produit.libtypechambre7 }}</td>
+            </tr>
+            <tr>
+                <th>Capacite6</th>
+                <td>{{ produit.capacite6 }}</td>
+            </tr>
+            <tr>
+                <th>Capacite7</th>
+                <td>{{ produit.capacite7 }}</td>
+            </tr>
+            <tr>
+                <th>Ageenfant1de</th>
+                <td>{{ produit.ageenfant1de }}</td>
+            </tr>
+            <tr>
+                <th>Ageenfant2de</th>
+                <td>{{ produit.ageenfant2de }}</td>
+            </tr>
+            <tr>
+                <th>Ageenfant3de</th>
+                <td>{{ produit.ageenfant3de }}</td>
+            </tr>
+            <tr>
+                <th>Ageenfant1a</th>
+                <td>{{ produit.ageenfant1a }}</td>
+            </tr>
+            <tr>
+                <th>Ageenfant2a</th>
+                <td>{{ produit.ageenfant2a }}</td>
+            </tr>
+            <tr>
+                <th>Ageenfant3a</th>
+                <td>{{ produit.ageenfant3a }}</td>
+            </tr>
+            <tr>
+                <th>Enfantgratuit</th>
+                <td>{{ produit.enfantgratuit }}</td>
+            </tr>
+            <tr>
+                <th>Marge</th>
+                <td>{{ produit.marge }}</td>
+            </tr>
+            <tr>
+                <th>Separer</th>
+                <td>{{ produit.separer }}</td>
+            </tr>
+            <tr>
+                <th>Attente</th>
+                <td>{{ produit.attente }}</td>
+            </tr>
+            <tr>
+                <th>Envoi</th>
+                <td>{{ produit.envoi }}</td>
+            </tr>
+            <tr>
+                <th>Archiver</th>
+                <td>{{ produit.archiver }}</td>
+            </tr>
+            <tr>
+                <th>Aero1</th>
+                <td>{{ produit.aero1 }}</td>
+            </tr>
+            <tr>
+                <th>Aero2</th>
+                <td>{{ produit.aero2 }}</td>
+            </tr>
+            <tr>
+                <th>Aero3</th>
+                <td>{{ produit.aero3 }}</td>
+            </tr>
+            <tr>
+                <th>Freesale</th>
+                <td>{{ produit.freesale }}</td>
+            </tr>
+            <tr>
+                <th>StatutVente</th>
+                <td>{{ produit.statutVente }}</td>
+            </tr>
+            <tr>
+                <th>Tpladulte</th>
+                <td>{{ produit.tpladulte }}</td>
+            </tr>
+            <tr>
+                <th>Codecuriste</th>
+                <td>{{ produit.codecuriste }}</td>
+            </tr>
+            <tr>
+                <th>Nomcuriste</th>
+                <td>{{ produit.nomcuriste }}</td>
+            </tr>
+            <tr>
+                <th>Delairetro</th>
+                <td>{{ produit.delairetro }}</td>
+            </tr>
+            <tr>
+                <th>Categ</th>
+                <td>{{ produit.categ }}</td>
+            </tr>
+            <tr>
+                <th>Nbenfde1</th>
+                <td>{{ produit.nbenfde1 }}</td>
+            </tr>
+            <tr>
+                <th>Nbenfde2</th>
+                <td>{{ produit.nbenfde2 }}</td>
+            </tr>
+            <tr>
+                <th>Nbenfde3</th>
+                <td>{{ produit.nbenfde3 }}</td>
+            </tr>
+            <tr>
+                <th>Nbenfde4</th>
+                <td>{{ produit.nbenfde4 }}</td>
+            </tr>
+            <tr>
+                <th>Nbenfa1</th>
+                <td>{{ produit.nbenfa1 }}</td>
+            </tr>
+            <tr>
+                <th>Nbenfa2</th>
+                <td>{{ produit.nbenfa2 }}</td>
+            </tr>
+            <tr>
+                <th>Nbenfa3</th>
+                <td>{{ produit.nbenfa3 }}</td>
+            </tr>
+            <tr>
+                <th>Nbenfa4</th>
+                <td>{{ produit.nbenfa4 }}</td>
+            </tr>
+            <tr>
+                <th>Nbadultepayant1</th>
+                <td>{{ produit.nbadultepayant1 }}</td>
+            </tr>
+            <tr>
+                <th>Nbadultepayant2</th>
+                <td>{{ produit.nbadultepayant2 }}</td>
+            </tr>
+            <tr>
+                <th>Nbadultepayant3</th>
+                <td>{{ produit.nbadultepayant3 }}</td>
+            </tr>
+            <tr>
+                <th>Nbadultepayant4</th>
+                <td>{{ produit.nbadultepayant4 }}</td>
+            </tr>
+            <tr>
+                <th>Catenf1</th>
+                <td>{{ produit.catenf1 }}</td>
+            </tr>
+            <tr>
+                <th>Catenf2</th>
+                <td>{{ produit.catenf2 }}</td>
+            </tr>
+            <tr>
+                <th>Catenf3</th>
+                <td>{{ produit.catenf3 }}</td>
+            </tr>
+            <tr>
+                <th>Catenf4</th>
+                <td>{{ produit.catenf4 }}</td>
+            </tr>
+            <tr>
+                <th>Reducenf1</th>
+                <td>{{ produit.reducenf1 }}</td>
+            </tr>
+            <tr>
+                <th>Reducenf2</th>
+                <td>{{ produit.reducenf2 }}</td>
+            </tr>
+            <tr>
+                <th>Reducenf3</th>
+                <td>{{ produit.reducenf3 }}</td>
+            </tr>
+            <tr>
+                <th>Reducenf4</th>
+                <td>{{ produit.reducenf4 }}</td>
+            </tr>
+            <tr>
+                <th>Login</th>
+                <td>{{ produit.login }}</td>
+            </tr>
+            <tr>
+                <th>Implangue</th>
+                <td>{{ produit.implangue }}</td>
+            </tr>
+            <tr>
+                <th>Mdp</th>
+                <td>{{ produit.mdp }}</td>
+            </tr>
+            <tr>
+                <th>Age1</th>
+                <td>{{ produit.age1 }}</td>
+            </tr>
+            <tr>
+                <th>Age2</th>
+                <td>{{ produit.age2 }}</td>
+            </tr>
+            <tr>
+                <th>Age3</th>
+                <td>{{ produit.age3 }}</td>
+            </tr>
+            <tr>
+                <th>Age4</th>
+                <td>{{ produit.age4 }}</td>
+            </tr>
+            <tr>
+                <th>Age5</th>
+                <td>{{ produit.age5 }}</td>
+            </tr>
+            <tr>
+                <th>Age6</th>
+                <td>{{ produit.age6 }}</td>
+            </tr>
+            <tr>
+                <th>Age7</th>
+                <td>{{ produit.age7 }}</td>
+            </tr>
+            <tr>
+                <th>Age8</th>
+                <td>{{ produit.age8 }}</td>
+            </tr>
+            <tr>
+                <th>Codepays</th>
+                <td>{{ produit.codepays }}</td>
+            </tr>
+            <tr>
+                <th>Engagement</th>
+                <td>{{ produit.engagement }}</td>
+            </tr>
+            <tr>
+                <th>Ageenfant4</th>
+                <td>{{ produit.ageenfant4 }}</td>
+            </tr>
+            <tr>
+                <th>Ageenfant4de</th>
+                <td>{{ produit.ageenfant4de }}</td>
+            </tr>
+            <tr>
+                <th>Ageenfant4a</th>
+                <td>{{ produit.ageenfant4a }}</td>
+            </tr>
+            <tr>
+                <th>Stockglobal</th>
+                <td>{{ produit.stockglobal }}</td>
+            </tr>
+            <tr>
+                <th>Bebe</th>
+                <td>{{ produit.bebe }}</td>
+            </tr>
+            <tr>
+                <th>Typeachat</th>
+                <td>{{ produit.typeachat }}</td>
+            </tr>
+            <tr>
+                <th>Seqsouspays</th>
+                <td>{{ produit.seqsouspays }}</td>
+            </tr>
+            <tr>
+                <th>Ageenfanta1</th>
+                <td>{{ produit.ageenfanta1 }}</td>
+            </tr>
+            <tr>
+                <th>Ageenfanta2</th>
+                <td>{{ produit.ageenfanta2 }}</td>
+            </tr>
+            <tr>
+                <th>Ageenfanta3</th>
+                <td>{{ produit.ageenfanta3 }}</td>
+            </tr>
+            <tr>
+                <th>Ageenfanta4</th>
+                <td>{{ produit.ageenfanta4 }}</td>
+            </tr>
+            <tr>
+                <th>Bebea</th>
+                <td>{{ produit.bebea }}</td>
+            </tr>
+            <tr>
+                <th>Seqregletarifaire</th>
+                <td>{{ produit.seqregletarifaire }}</td>
+            </tr>
+            <tr>
+                <th>Sansbebe</th>
+                <td>{{ produit.sansbebe }}</td>
+            </tr>
+            <tr>
+                <th>Seqcuriste</th>
+                <td>{{ produit.seqcuriste }}</td>
+            </tr>
+            <tr>
+                <th>Idpays</th>
+                <td>{{ produit.idpays }}</td>
+            </tr>
+            <tr>
+                <th>Seqtypeprod</th>
+                <td>{{ produit.seqtypeprod }}</td>
+            </tr>
+            <tr>
+                <th>Seqgroupe</th>
+                <td>{{ produit.seqgroupe }}</td>
+            </tr>
+            <tr>
+                <th>Seqprest</th>
+                <td>{{ produit.seqprest }}</td>
+            </tr>
+            <tr>
+                <th>Seqreceptif</th>
+                <td>{{ produit.seqreceptif }}</td>
+            </tr>
+            <tr>
+                <th>Doclangue</th>
+                <td>{{ produit.doclangue }}</td>
+            </tr>
+            <tr>
+                <th>Etablissement</th>
+                <td>{{ produit.etablissement }}</td>
+            </tr>
+            <tr>
+                <th>Chambre8</th>
+                <td>{{ produit.chambre8 }}</td>
+            </tr>
+            <tr>
+                <th>EnfantInterdit</th>
+                <td>{{ produit.enfantInterdit }}</td>
+            </tr>
+            <tr>
+                <th>BebeInterdit</th>
+                <td>{{ produit.bebeInterdit }}</td>
+            </tr>
+            <tr>
+                <th>Obs1</th>
+                <td>{{ produit.obs1 }}</td>
+            </tr>
+            <tr>
+                <th>Obsroom</th>
+                <td>{{ produit.obsroom }}</td>
+            </tr>
+            <tr>
+                <th>Descriptif</th>
+                <td>{{ produit.descriptif }}</td>
+            </tr>
+            <tr>
+                <th>Achatfixe</th>
+                <td>{{ produit.achatfixe }}</td>
+            </tr>
+            <tr>
+                <th>Promo</th>
+                <td>{{ produit.promo }}</td>
+            </tr>
+            <tr>
+                <th>Stay</th>
+                <td>{{ produit.stay }}</td>
+            </tr>
+            <tr>
+                <th>Cureincluse</th>
+                <td>{{ produit.cureincluse }}</td>
+            </tr>
+            <tr>
+                <th>Codeterrestre</th>
+                <td>{{ produit.codeterrestre }}</td>
+            </tr>
+            <tr>
+                <th>OkRefnet</th>
+                <td>{{ produit.okRefnet }}</td>
+            </tr>
+            <tr>
+                <th>OkRefnet2</th>
+                <td>{{ produit.okRefnet2 }}</td>
+            </tr>
+            <tr>
+                <th>ExclureCalculAutomatique</th>
+                <td>{{ produit.exclureCalculAutomatique }}</td>
+            </tr>
+            <tr>
+                <th>Statut</th>
+                <td>{{ produit.statut }}</td>
+            </tr>
+            <tr>
+                <th>OVoyages</th>
+                <td>{{ produit.oVoyages }}</td>
+            </tr>
+            <tr>
+                <th>Capacite1</th>
+                <td>{{ produit.capacite1 }}</td>
+            </tr>
+            <tr>
+                <th>Capacite2</th>
+                <td>{{ produit.capacite2 }}</td>
+            </tr>
+            <tr>
+                <th>Capacite3</th>
+                <td>{{ produit.capacite3 }}</td>
+            </tr>
+            <tr>
+                <th>Capacite4</th>
+                <td>{{ produit.capacite4 }}</td>
+            </tr>
+            <tr>
+                <th>Capacite5</th>
+                <td>{{ produit.capacite5 }}</td>
+            </tr>
+            <tr>
+                <th>Capacite8</th>
+                <td>{{ produit.capacite8 }}</td>
+            </tr>
+            <tr>
+                <th>Chambre9</th>
+                <td>{{ produit.chambre9 }}</td>
+            </tr>
+            <tr>
+                <th>Chambre10</th>
+                <td>{{ produit.chambre10 }}</td>
+            </tr>
+            <tr>
+                <th>Chambre11</th>
+                <td>{{ produit.chambre11 }}</td>
+            </tr>
+            <tr>
+                <th>Chambre12</th>
+                <td>{{ produit.chambre12 }}</td>
+            </tr>
+            <tr>
+                <th>Libtypechambre8</th>
+                <td>{{ produit.libtypechambre8 }}</td>
+            </tr>
+            <tr>
+                <th>Ageenfant5</th>
+                <td>{{ produit.ageenfant5 }}</td>
+            </tr>
+            <tr>
+                <th>Ageenfant6</th>
+                <td>{{ produit.ageenfant6 }}</td>
+            </tr>
+            <tr>
+                <th>Ageenfant5de</th>
+                <td>{{ produit.ageenfant5de }}</td>
+            </tr>
+            <tr>
+                <th>Ageenfant6de</th>
+                <td>{{ produit.ageenfant6de }}</td>
+            </tr>
+            <tr>
+                <th>Ageenfant5a</th>
+                <td>{{ produit.ageenfant5a }}</td>
+            </tr>
+            <tr>
+                <th>Ageenfant6a</th>
+                <td>{{ produit.ageenfant6a }}</td>
+            </tr>
+            <tr>
+                <th>Ageenfanta5</th>
+                <td>{{ produit.ageenfanta5 }}</td>
+            </tr>
+            <tr>
+                <th>Ageenfanta6</th>
+                <td>{{ produit.ageenfanta6 }}</td>
+            </tr>
+            <tr>
+                <th>Nbenfde5</th>
+                <td>{{ produit.nbenfde5 }}</td>
+            </tr>
+            <tr>
+                <th>Nbenfde6</th>
+                <td>{{ produit.nbenfde6 }}</td>
+            </tr>
+            <tr>
+                <th>Nbenfa5</th>
+                <td>{{ produit.nbenfa5 }}</td>
+            </tr>
+            <tr>
+                <th>Nbenfa6</th>
+                <td>{{ produit.nbenfa6 }}</td>
+            </tr>
+            <tr>
+                <th>Nbadultepayant5</th>
+                <td>{{ produit.nbadultepayant5 }}</td>
+            </tr>
+            <tr>
+                <th>Nbadultepayant6</th>
+                <td>{{ produit.nbadultepayant6 }}</td>
+            </tr>
+            <tr>
+                <th>Catenf5</th>
+                <td>{{ produit.catenf5 }}</td>
+            </tr>
+            <tr>
+                <th>Catenf6</th>
+                <td>{{ produit.catenf6 }}</td>
+            </tr>
+            <tr>
+                <th>Reducenf5</th>
+                <td>{{ produit.reducenf5 }}</td>
+            </tr>
+            <tr>
+                <th>Reducenf6</th>
+                <td>{{ produit.reducenf6 }}</td>
+            </tr>
+            <tr>
+                <th>Age9</th>
+                <td>{{ produit.age9 }}</td>
+            </tr>
+            <tr>
+                <th>Age10</th>
+                <td>{{ produit.age10 }}</td>
+            </tr>
+            <tr>
+                <th>Age11</th>
+                <td>{{ produit.age11 }}</td>
+            </tr>
+            <tr>
+                <th>Age12</th>
+                <td>{{ produit.age12 }}</td>
+            </tr>
+            <tr>
+                <th>No</th>
+                <td>{{ produit.no }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_produit_index') }}">back to list</a>
+
+    <a href="{{ path('app_produit_edit', {'seqprod': produit.seqprod}) }}">edit</a>
+
+    {{ include('produit/_delete_form.html.twig') }}
+{% endblock %}
