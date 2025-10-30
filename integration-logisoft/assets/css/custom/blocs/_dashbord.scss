@@ -7,7 +7,7 @@
   padding-left: 80px;
   .main-wrapper-left {
     position: fixed;
-    width: auto;
+    width: 100%;
     max-width: 80px;
     min-height: 100vh;
     height: 100%;
@@ -16,11 +16,65 @@
     bottom: 0;
     z-index: 9;
     background-color: $blue-dark;
+    /* Transition pour width et opacity */
     @include transitions;
+    &:hover {
+      width: 100%;
+      max-width: 175px;
+      @include transitions;
+
+      .nav-bar {
+        height: 100%;
+        .burger-nav {
+          visibility: visible;
+          opacity: 1;
+        }
+        .menu-nav {
+          .list-menu {
+            .list-menu-top {
+              .item-list-menu-nav {
+                .link-item-list-menu-nav {
+                  .picto {
+                    display: block;
+
+                    padding: 5px;
+                  }
+                  .title-item {
+                    width: auto;
+                    visibility: visible;
+                    opacity: 1;
+                    margin-left: 5px;
+                    @include transitions;
+                  }
+                }
+                .sub-menu-items {
+                  display: block;
+                }
+              }
+            }
+            .list-menu-bottom {
+              .item-list-menu-nav {
+                .link-item-list-menu-nav {
+                  text-align: left;
+                  .title-item {
+                    margin-left: 5px;
+                    width: auto;
+                    visibility: visible;
+                    opacity: 1;
+                    @include transitions;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
   }
   .main-wrapper-right {
     position: relative;
     margin-left: auto;
+    padding-left: 10px;
     width: 100%;
     background-color: $white;
     min-height: 100vh;
@@ -32,11 +86,8 @@
 
   &.active {
     .main-wrapper-left {
-      visibility: visible;
-      opacity: 1;
-      width: auto;
-      max-width: 215px;
-      display: block;
+      width: 100%;
+      max-width: 175px;
       @include transitions;
 
       .nav-bar {
@@ -101,62 +152,6 @@
           width: calc(100% - var(--mainwrapperleft));
           margin-left: auto;
           @include transitions;
-        }
-      }
-    }
-  }
-  &.is-hovered {
-    .main-wrapper-left {
-      visibility: visible;
-      opacity: 1;
-      width: auto;
-      max-width: 215px;
-      display: block;
-      @include transitions;
-      .nav-bar {
-        height: 100%;
-        .burger-nav {
-          visibility: visible;
-          opacity: 1;
-        }
-        .menu-nav {
-          .list-menu {
-            .list-menu-top {
-              .item-list-menu-nav {
-                .link-item-list-menu-nav {
-                  .picto {
-                    display: block;
-
-                    padding: 5px;
-                  }
-                  .title-item {
-                    width: auto;
-                    visibility: visible;
-                    opacity: 1;
-                    margin-left: 5px;
-                    @include transitions;
-                  }
-                }
-                .sub-menu-items {
-                  display: block;
-                }
-              }
-            }
-            .list-menu-bottom {
-              .item-list-menu-nav {
-                .link-item-list-menu-nav {
-                  text-align: left;
-                  .title-item {
-                    margin-left: 5px;
-                    width: auto;
-                    visibility: visible;
-                    opacity: 1;
-                    @include transitions;
-                  }
-                }
-              }
-            }
-          }
         }
       }
     }

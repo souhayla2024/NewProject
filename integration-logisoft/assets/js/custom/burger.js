@@ -1,6 +1,6 @@
 $(document).ready(function () {
   menuBurger()
-  relloverMenuBurger()
+  // relloverMenuBurger()
 })
 
 function menuBurger() {
