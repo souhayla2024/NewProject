@@ -19,6 +19,7 @@ class Produit
     private string $codeprod = '';
 
     #[ORM\Column(name: 'LIBPROD', type: Types::STRING, length: 80, options: ['default' => ''])]
+    #[Assert\NotBlank]
     private string $libprod = '';
 
     #[ORM\Column(name: 'LIBPROD2', type: Types::STRING, length: 70, options: ['default' => ''])]
@@ -349,6 +350,7 @@ class Produit
     private int $typeachat = 0;
 
     #[ORM\Column(name: 'SEQSOUSPAYS', type: Types::INTEGER, options: ['default' => 0])]
+    #[Assert\Type('integer')]
     private int $seqsouspays = 0;
 
     #[ORM\Column(name: 'AGEENFANTA1', type: Types::STRING, length: 15, options: ['default' => ''])]
@@ -376,6 +378,7 @@ class Produit
     private int $seqcuriste = 0;
 
     #[ORM\Column(name: 'IDPAYS', type: Types::INTEGER, options: ['default' => 0])]
+    #[Assert\Type('integer')]
     private int $idpays = 0;
 
     #[ORM\Column(name: 'SEQTYPEPROD', type: Types::INTEGER, options: ['default' => 0])]
@@ -513,13 +516,11 @@ class Produit
     #[ORM\Column(name: 'NBENFA6', type: Types::INTEGER, options: ['default' => 0])]
     private int $nbenfa6 = 0;
 
-
     #[ORM\Column(name: 'NBADULTEPAYANT5', type: Types::INTEGER, options: ['default' => 0])]
     private int $nbadultepayant5 = 0;
 
     #[ORM\Column(name: 'NBADULTEPAYANT6', type: Types::INTEGER, options: ['default' => 0])]
     private int $nbadultepayant6 = 0;
-
 
     #[ORM\Column(name: 'CATENF5', type: Types::INTEGER, options: ['default' => 0])]
     private int $catenf5 = 0;
@@ -527,13 +528,11 @@ class Produit
     #[ORM\Column(name: 'CATENF6', type: Types::INTEGER, options: ['default' => 0])]
     private int $catenf6 = 0;
 
-
     #[ORM\Column(name: 'REDUCENF5', type: Types::DECIMAL, precision: 5, scale: 2, options: ['default' => 0])]
     private string $reducenf5 = '0';
 
     #[ORM\Column(name: 'REDUCENF6', type: Types::DECIMAL, precision: 5, scale: 2, options: ['default' => 0])]
     private string $reducenf6 = '0';
-
 
     #[ORM\Column(name: 'AGE9', type: Types::INTEGER, options: ['default' => 0])]
     private int $age9 = 0;
@@ -547,9 +546,190 @@ class Produit
     #[ORM\Column(name: 'AGE12', type: Types::INTEGER, options: ['default' => 0])]
     private int $age12 = 0;
 
-    #[ORM\Column(length: 255)]
-    private ?string $no = null;
+    #[ORM\Column(name: 'NO', type: Types::STRING, length: 255, options: ['default' => ''])]
+    private string $no = '';
 
+
+    public function __construct()
+    {
+        $this->codeprod = '';
+        $this->libprod = '';
+        $this->libprod2 = '';
+        $this->libtypeprod = '';
+        $this->libgroupe = '';
+        $this->adresse = '';
+        $this->cp = '';
+        $this->libville = '';
+        $this->libpays = '';
+        $this->patron = '';
+        $this->email = '';
+        $this->email2 = '';
+        $this->tel1 = '';
+        $this->tel2 = '';
+        $this->faxhotel = '';
+        $this->faxresa = '';
+        $this->libmonnaie = '';
+        $this->libprest = '';
+        $this->nomreceptif = '';
+        $this->seqfour = '';
+        $this->nomfour = '';
+        $this->obs = '';
+        $this->ageenfant1 = '';
+        $this->ageenfant2 = '';
+        $this->ageenfant3 = '';
+        $this->confirmation = '0';
+        $this->ccompta = '';
+        $this->libtypechambre1 = '';
+        $this->libtypechambre2 = '';
+        $this->libtypechambre3 = '';
+        $this->libtypechambre4 = '';
+        $this->libtypechambre5 = '';
+        $this->libtypechambre6 = '';
+        $this->libtypechambre7 = '';
+        $this->aero1 = '';
+        $this->aero2 = '';
+        $this->aero3 = '';
+        $this->codecuriste = '';
+        $this->nomcuriste = '';
+        $this->categ = '';
+        $this->login = '';
+        $this->mdp = '';
+        $this->codepays = '';
+        $this->ageenfant4 = '';
+        $this->ageenfanta1 = '';
+        $this->ageenfanta2 = '';
+        $this->ageenfanta3 = '';
+        $this->ageenfanta4 = '';
+        $this->obs1 = '';
+        $this->obsroom = '';
+        $this->descriptif = '';
+        $this->stay = '';
+        $this->codeterrestre = '';
+        $this->statut = '';
+        $this->libtypechambre8 = '';
+        $this->ageenfant5 = '';
+        $this->ageenfant6 = '';
+        $this->ageenfanta5 = '';
+        $this->ageenfanta6 = '';
+        $this->no = '';
+        $this->typeproduit = 1;
+        $this->vendable = 0;
+        $this->sansprix = 0;
+        $this->chambre1 = 0;
+        $this->chambre2 = 0;
+        $this->chambre3 = 0;
+        $this->chambre4 = 0;
+        $this->chambre5 = 0;
+        $this->chambre6 = 0;
+        $this->chambre7 = 0;
+        $this->transfert = 0;
+        $this->location = 0;
+        $this->contrat = 0;
+        $this->cee = 0;
+        $this->capacite6 = 0;
+        $this->capacite7 = 0;
+        $this->ageenfant1de = 0;
+        $this->ageenfant2de = 0;
+        $this->ageenfant3de = 0;
+        $this->ageenfant1a = 0;
+        $this->ageenfant2a = 0;
+        $this->ageenfant3a = 0;
+        $this->enfantgratuit = 0;
+        $this->marge = 0;
+        $this->separer = 0;
+        $this->attente = 0;
+        $this->envoi = 0;
+        $this->archiver = 0;
+        $this->freesale = 0;
+        $this->statutVente = 0;
+        $this->tpladulte = 0;
+        $this->delairetro = 0;
+        $this->nbenfde1 = 0;
+        $this->nbenfde2 = 0;
+        $this->nbenfde3 = 0;
+        $this->nbenfde4 = 0;
+        $this->nbenfa1 = 0;
+        $this->nbenfa2 = 0;
+        $this->nbenfa3 = 0;
+        $this->nbenfa4 = 0;
+        $this->nbadultepayant1 = 0;
+        $this->nbadultepayant2 = 0;
+        $this->nbadultepayant3 = 0;
+        $this->nbadultepayant4 = 0;
+        $this->catenf1 = 0;
+        $this->catenf2 = 0;
+        $this->catenf3 = 0;
+        $this->catenf4 = 0;
+        $this->implangue = 0;
+        $this->age1 = 0;
+        $this->age2 = 0;
+        $this->age3 = 0;
+        $this->age4 = 0;
+        $this->age5 = 0;
+        $this->age6 = 0;
+        $this->age7 = 0;
+        $this->age8 = 0;
+        $this->engagement = 1;
+        $this->ageenfant4de = 0;
+        $this->ageenfant4a = 0;
+        $this->stockglobal = 0;
+        $this->bebe = 0;
+        $this->typeachat = 0;
+        $this->seqsouspays = 0;
+        $this->bebea = 0;
+        $this->seqregletarifaire = 0;
+        $this->sansbebe = 0;
+        $this->seqcuriste = 0;
+        $this->idpays = 0;
+        $this->seqtypeprod = 0;
+        $this->seqgroupe = 0;
+        $this->seqprest = 0;
+        $this->seqreceptif = 0;
+        $this->doclangue = 0;
+        $this->etablissement = 0;
+        $this->chambre8 = 0;
+        $this->enfantInterdit = 0;
+        $this->bebeInterdit = 0;
+        $this->achatfixe = 0;
+        $this->promo = 0;
+        $this->cureincluse = 0;
+        $this->okRefnet = 0;
+        $this->okRefnet2 = 0;
+        $this->exclureCalculAutomatique = 0;
+        $this->oVoyages = 0;
+        $this->capacite1 = 0;
+        $this->capacite2 = 0;
+        $this->capacite3 = 0;
+        $this->capacite4 = 0;
+        $this->capacite5 = 0;
+        $this->capacite8 = 0;
+        $this->chambre9 = 0;
+        $this->chambre10 = 0;
+        $this->chambre11 = 0;
+        $this->chambre12 = 0;
+        $this->ageenfant5de = 0;
+        $this->ageenfant6de = 0;
+        $this->ageenfant5a = 0;
+        $this->ageenfant6a = 0;
+        $this->nbenfde5 = 0;
+        $this->nbenfde6 = 0;
+        $this->nbenfa5 = 0;
+        $this->nbenfa6 = 0;
+        $this->nbadultepayant5 = 0;
+        $this->nbadultepayant6 = 0;
+        $this->catenf5 = 0;
+        $this->catenf6 = 0;
+        $this->age9 = 0;
+        $this->age10 = 0;
+        $this->age11 = 0;
+        $this->age12 = 0;
+        $this->reducenf1 = '0';
+        $this->reducenf2 = '0';
+        $this->reducenf3 = '0';
+        $this->reducenf4 = '0';
+        $this->reducenf5 = '0';
+        $this->reducenf6 = '0';
+    }
     public function getNo(): ?string
     {
         return $this->no;

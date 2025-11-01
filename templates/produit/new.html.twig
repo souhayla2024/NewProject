@@ -1,7 +1,6 @@
-{# templates/produit/new.html.twig #}
 {% extends 'base.html.twig' %}
 
-{% block title %}Nouveau Produit - Logisoft{% endblock %}
+{% block title %}Produit : Soumaya nkhili - Logisoft{% endblock %}
 
 {% block content %}
 <section id="single-product">
@@ -28,6 +27,30 @@
                             <span>Tarif</span>
                         </label>
                     </li>
+                    <li title="Promotion">
+                        <label for="tab4" role="button">
+                            <i class="fa-solid fa-bullhorn"></i>
+                            <span>Promotion</span>
+                        </label>
+                    </li>
+                    <li title="Option">
+                        <label for="tab5" role="button">
+                            <i class="fa-solid fa-list"></i>
+                            <span>Option</span>
+                        </label>
+                    </li>
+                    <li title="Stop Sale">
+                        <label for="tab6" role="button">
+                            <i class="fa-solid fa-ban"></i>
+                            <span>Stop Sale</span>
+                        </label>
+                    </li>
+                    <li title="Garanties">
+                        <label for="tab7" role="button">
+                            <i class="fa-solid fa-shield-halved"></i>
+                            <span>Garanties</span>
+                        </label>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -50,132 +73,319 @@
                 <input type="radio" id="tab1" name="tab-control" checked>
                 <input type="radio" id="tab2" name="tab-control">
                 <input type="radio" id="tab3" name="tab-control">
+                <input type="radio" id="tab4" name="tab-control">
+                <input type="radio" id="tab5" name="tab-control">
+                <input type="radio" id="tab6" name="tab-control">
+                <input type="radio" id="tab7" name="tab-control">
 
                 <div class="content">
                     {# Tab 1: Fiche produit avec le formulaire #}
                     <section class="tab-section">
+                        {{ form_start(form, {'attr': {'class': 'product-form'} }) }}
+                        
+                        {# Section Identité #}
                         <div class="group-section">
-                            <h3>Informations du produit</h3>
+                            <h3>Identité</h3>
+                            <div class="btn-group-header">
+                                <div class="btns-left">
+                                    <button class="btn btn-white">Suivi</button>
+                                    <button class="btn btn-darkblue">Mettre à jour</button>
+                                </div>
+                            </div>
                             <div class="partie">
-                                {{ form_start(form, {'attr': {'class': 'product-form'} }) }}
+                                <div class="row-group">
+                                    <div class="form-group row-4">
+                                        {{ form_label(form.idpays, 'Pays') }}
+                                        {{ form_widget(form.idpays, {'attr': {'class': 'form-control'} }) }}
+                                    </div>
+                                    <div class="form-group row-4">
+                                        {{ form_label(form.seqsouspays, 'Sous-pays') }}
+                                        {{ form_widget(form.seqsouspays, {'attr': {'class': 'form-control'} }) }}
+                                    </div>
+                                    <div class="form-group row-4">
+                                        {{ form_label(form.libtypeprod, 'Type de produit') }}
+                                        {{ form_widget(form.libtypeprod, {'attr': {'class': 'form-control'} }) }}
+                                    </div>
+                                </div>
                                 
-                                <div class="form-grid">
-                                    {# Section Informations de base #}
-                                    <div class="form-section">
-                                        <h4>Informations de base</h4>
-                                        <div class="form-row">
-                                            <div class="form-group">
-                                                {{ form_label(form.codeprod, 'Code produit') }}
-                                                {{ form_widget(form.codeprod, {'attr': {'class': 'form-control'} }) }}
-                                            </div>
-                                            <div class="form-group">
-                                                {{ form_label(form.libprod, 'Libellé produit') }}
-                                                {{ form_widget(form.libprod, {'attr': {'class': 'form-control'} }) }}
-                                            </div>
-                                        </div>
-                                        <div class="form-row">
-                                            <div class="form-group">
-                                                {{ form_label(form.libprod2, 'Libellé produit 2') }}
-                                                {{ form_widget(form.libprod2, {'attr': {'class': 'form-control'} }) }}
-                                            </div>
-                                            <div class="form-group">
-                                                {{ form_label(form.typeproduit, 'Type produit') }}
-                                                {{ form_widget(form.typeproduit, {'attr': {'class': 'form-control'} }) }}
-                                            </div>
-                                        </div>
+                                <div class="row-group">
+                                    <div class="form-group row-4">
+                                        {{ form_label(form.codeprod, 'Code produit') }}
+                                        {{ form_widget(form.codeprod, {'attr':{'disabled': 'disabled'} }) }}
                                     </div>
-
-                                    {# Section Contact #}
-                                    <div class="form-section">
-                                        <h4>Contact</h4>
-                                        <div class="form-group">
-                                            {{ form_label(form.adresse, 'Adresse') }}
-                                            {{ form_widget(form.adresse, {'attr': {'class': 'form-control'} }) }}
-                                        </div>
-                                        <div class="form-row">
-                                            <div class="form-group">
-                                                {{ form_label(form.cp, 'Code postal') }}
-                                                {{ form_widget(form.cp, {'attr': {'class': 'form-control'} }) }}
-                                            </div>
-                                            <div class="form-group">
-                                                {{ form_label(form.libville, 'Ville') }}
-                                                {{ form_widget(form.libville, {'attr': {'class': 'form-control'} }) }}
-                                            </div>
-                                        </div>
-                                        <div class="form-row">
-                                            <div class="form-group">
-                                                {{ form_label(form.tel1, 'Téléphone 1') }}
-                                                {{ form_widget(form.tel1, {'attr': {'class': 'form-control'} }) }}
-                                            </div>
-                                            <div class="form-group">
-                                                {{ form_label(form.email, 'Email') }}
-                                                {{ form_widget(form.email, {'attr': {'class': 'form-control'} }) }}
-                                            </div>
-                                        </div>
+                                    <div class="form-group row-8">
+                                        {{ form_label(form.libprod, 'Produit') }}
+                                        {{ form_widget(form.libprod, {'attr':{'required': 'required'} }) }}
                                     </div>
+                                </div>
+                                
+                                <div class="row-group">
+                                    <div class="form-group row-4">
+                                        {{ form_label(form.categ, 'Catégorie') }}
+                                        {{ form_widget(form.categ, {'attr':{'required': 'required'} }) }}
+                                    </div>
+                                    <div class="form-group row-8">
+                                        {{ form_label(form.libprod2, 'Titre internet') }}
+                                        {{ form_widget(form.libprod2, {'attr': {'class': 'form-control'} }) }}
+                                    </div>
+                                </div>
+                                
+                                <div class="row-group">
+                                    <div class="form-group row-12">
+                                        {{ form_label(form.adresse, 'Adresse') }}
+                                        {{ form_widget(form.adresse, {'attr': {'class': 'form-control'} }) }}
+                                    </div>
+                                </div>
+                                
+                                <div class="row-group">
+                                    <div class="form-group row-3">
+                                        {{ form_label(form.cp, 'Code postal') }}
+                                        {{ form_widget(form.cp, {'attr': {'class': 'form-control'} }) }}
+                                    </div>
+                                    <div class="form-group row-4">
+                                        {{ form_label(form.libville, 'Ville') }}
+                                        {{ form_widget(form.libville, {'attr': {'class': 'form-control'} }) }}
+                                    </div>
+                                    <div class="form-group row-5">
+                                        {{ form_label(form.ccompta, 'Code comptable') }}
+                                        {{ form_widget(form.ccompta, {'attr': {'class': 'form-control'} }) }}
+                                    </div>
+                                </div>
+                                
+                                <div class="row-group">
+                                    <div class="form-group row-4">
+                                        {{ form_label(form.tel1, 'Téléphone 1') }}
+                                        {{ form_widget(form.tel1, {'attr': {'class': 'form-control'} }) }}
+                                    </div>
+                                    <div class="form-group row-4">
+                                        {{ form_label(form.faxhotel, 'Fax') }}
+                                        {{ form_widget(form.faxhotel, {'attr': {'class': 'form-control'} }) }}
+                                    </div>
+                                    <div class="form-group row-4">
+                                        {{ form_label(form.patron, 'Responsable') }}
+                                        {{ form_widget(form.patron, {'attr': {'class': 'form-control'} }) }}
+                                    </div>
+                                </div>
+                                
+                                <div class="row-group">
+                                    <div class="form-group row-6">
+                                        {{ form_label(form.libgroupe, 'Groupe') }}
+                                        {{ form_widget(form.libgroupe, {'attr': {'class': 'form-control'} }) }}
+                                    </div>
+                                    <div class="form-group row-6">
+                                        {{ form_label(form.libprest, 'Prestation') }}
+                                        {{ form_widget(form.libprest, {'attr': {'class': 'form-control'} }) }}
+                                    </div>
+                                </div>
+                                
+                                <div class="row-group">
+                                    <div class="form-group row-12">
+                                        {{ form_label(form.obs, 'Observation') }}
+                                        {{ form_widget(form.obs, {'attr':{'rows': '3'} }) }}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
 
-                                    {# Section Configuration #}
-                                    <div class="form-section">
-                                        <h4>Configuration</h4>
-                                        <div class="form-row">
-                                            <div class="form-group">
-                                                {{ form_label(form.vendable, 'Vendable') }}
-                                                {{ form_widget(form.vendable, {'attr': {'class': 'form-control'} }) }}
-                                            </div>
-                                            <div class="form-group">
-                                                {{ form_label(form.archiver, 'Archivé') }}
-                                                {{ form_widget(form.archiver, {'attr': {'class': 'form-control'} }) }}
-                                            </div>
-                                        </div>
-                                        <div class="form-row">
-                                            <div class="form-group">
-                                                {{ form_label(form.statut, 'Statut') }}
-                                                {{ form_widget(form.statut, {'attr': {'class': 'form-control'} }) }}
-                                            </div>
+                        {# Section Contact #}
+                        <div class="group-section">
+                            <h3>Contact</h3>
+                            <div class="partie">
+                                <div class="row-group">
+                                    <div class="form-group row-6">
+                                        {{ form_label(form.email2, 'Service comptable') }}
+                                        {{ form_widget(form.email2, {'attr': {'class': 'form-control'} }) }}
+                                    </div>
+                                    <div class="form-group row-6">
+                                        {{ form_label(form.email, 'Service réservation') }}
+                                        {{ form_widget(form.email, {'attr': {'class': 'form-control'} }) }}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        {# Section Commercial #}
+                        <div class="group-section">
+                            <h3>Commercial</h3>
+                            <div class="partie">
+                                <div class="row-group">
+                                    <div class="form-group row-4">
+                                        {{ form_label(form.statutVente, 'Statut de vente') }}
+                                        {{ form_widget(form.statutVente, {'attr': {'class': 'form-control'} }) }}
+                                    </div>
+                                    <div class="form-group row-4">
+                                        {{ form_label(form.seqregletarifaire, 'Règle tarifaire') }}
+                                        {{ form_widget(form.seqregletarifaire, {'attr': {'class': 'form-control'} }) }}
+                                    </div>
+                                    <div class="form-group row-4">
+                                        <div class="checkbox-group">
+                                            {{ form_label(form.sansbebe, 'Bébés non autorisé') }}
+                                            {{ form_widget(form.sansbebe) }}
                                         </div>
                                     </div>
                                 </div>
+                                
+                                <div class="row-group">
+                                    <div class="form-group row-3">
+                                        {{ form_label(form.aero1, 'Aéroport (1)') }}
+                                        {{ form_widget(form.aero1, {'attr': {'class': 'form-control'} }) }}
+                                    </div>
+                                    <div class="form-group row-3">
+                                        {{ form_label(form.aero2, 'Aéroport (2)') }}
+                                        {{ form_widget(form.aero2, {'attr': {'class': 'form-control'} }) }}
+                                    </div>
+                                    <div class="form-group row-3">
+                                        {{ form_label(form.nomreceptif, 'Réceptif') }}
+                                        {{ form_widget(form.nomreceptif, {'attr': {'class': 'form-control'} }) }}
+                                    </div>
+                                    <div class="form-group row-3">
+                                        {{ form_label(form.marge, 'Marge') }}
+                                        {{ form_widget(form.marge, {'attr': {'class': 'form-control'} }) }}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
 
-                                <div class="form-actions">
-                                    <button type="submit" class="btn btn-primary">
-                                        <i class="fa-solid fa-save"></i>
-                                        Créer le produit
-                                    </button>
-                                    <a href="{{ path('app_produit_index') }}" class="btn btn-secondary">
-                                        <i class="fa-solid fa-arrow-left"></i>
-                                        Retour à la liste
-                                    </a>
+                        {# Section Curiste et Fournisseur #}
+                        <div class="group-section">
+                            <h3>Curiste et Fournisseur</h3>
+                            <div class="partie">
+                                <div class="row-group">
+                                    <div class="form-group row-3">
+                                        {{ form_label(form.codecuriste, 'Code curiste') }}
+                                        {{ form_widget(form.codecuriste, {'attr': {'class': 'form-control'} }) }}
+                                    </div>
+                                    <div class="form-group row-5">
+                                        {{ form_label(form.nomcuriste, 'Nom curiste') }}
+                                        {{ form_widget(form.nomcuriste, {'attr': {'class': 'form-control'} }) }}
+                                    </div>
+                                    <div class="form-group row-4">
+                                        {{ form_label(form.seqfour, 'Code fournisseur') }}
+                                        {{ form_widget(form.seqfour, {'attr': {'class': 'form-control'} }) }}
+                                    </div>
                                 </div>
                                 
-                                {{ form_end(form) }}
+                                <div class="row-group">
+                                    <div class="form-group row-12">
+                                        {{ form_label(form.nomfour, 'Nom fournisseur') }}
+                                        {{ form_widget(form.nomfour, {'attr': {'class': 'form-control'} }) }}
+                                    </div>
+                                </div>
                             </div>
                         </div>
+
+                        {# Section Âges enfants à l'achat #}
+                        <div class="group-section">
+                            <h3>Âges enfants à l'achat</h3>
+                            <div class="partie">
+                                <div class="row-group">
+                                    <div class="form-group row-3">
+                                        <label>Enfant(1)</label>
+                                        <div class="age-inputs">
+                                            {{ form_widget(form.age1, {'attr':{'placeholder': 'De'} }) }}
+                                            {{ form_widget(form.age2, {'attr':{'placeholder': 'À'} }) }}
+                                            {{ form_widget(form.ageenfanta1, {'attr':{'placeholder': 'Âge'} }) }}
+                                        </div>
+                                    </div>
+                                    <div class="form-group row-3">
+                                        <label>Enfant(2)</label>
+                                        <div class="age-inputs">
+                                            {{ form_widget(form.age3, {'attr':{'placeholder': 'De'} }) }}
+                                            {{ form_widget(form.age4, {'attr':{'placeholder': 'À'} }) }}
+                                            {{ form_widget(form.ageenfanta2, {'attr':{'placeholder': 'Âge'} }) }}
+                                        </div>
+                                    </div>
+                                    <div class="form-group row-3">
+                                        <label>Enfant(3)</label>
+                                        <div class="age-inputs">
+                                            {{ form_widget(form.age5, {'attr':{'placeholder': 'De'} }) }}
+                                            {{ form_widget(form.age6, {'attr':{'placeholder': 'À'} }) }}
+                                            {{ form_widget(form.ageenfanta3, {'attr':{'placeholder': 'Âge'} }) }}
+                                        </div>
+                                    </div>
+                                    <div class="form-group row-3">
+                                        <label>Enfant(4)</label>
+                                        <div class="age-inputs">
+                                            {{ form_widget(form.age7, {'attr':{'placeholder': 'De'} }) }}
+                                            {{ form_widget(form.age8, {'attr':{'placeholder': 'À'} }) }}
+                                            {{ form_widget(form.ageenfanta4, {'attr':{'placeholder': 'Âge'} }) }}
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="row-group">
+                                    <div class="form-group row-6">
+                                        <label>Bébé</label>
+                                        {{ form_widget(form.bebea, {'attr':{'placeholder': 'Âge max bébé'} }) }}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        {# Section Âges enfants à la vente #}
+                        <div class="group-section">
+                            <h3>Âges enfants à la vente</h3>
+                            <div class="partie">
+                                <div class="row-group">
+                                    <div class="form-group row-6">
+                                        <label>Enfant(s) Age 1</label>
+                                        <div class="age-inputs">
+                                            {{ form_widget(form.ageenfant1de, {'attr':{'placeholder': 'De'} }) }}
+                                            {{ form_widget(form.ageenfant1a, {'attr':{'placeholder': 'À'} }) }}
+                                            {{ form_widget(form.ageenfant1, {'attr':{'placeholder': 'Âge'} }) }}
+                                        </div>
+                                    </div>
+                                    <div class="form-group row-6">
+                                        <label>Enfant(s) Age 2</label>
+                                        <div class="age-inputs">
+                                            {{ form_widget(form.ageenfant2de, {'attr':{'placeholder': 'De'} }) }}
+                                            {{ form_widget(form.ageenfant2a, {'attr':{'placeholder': 'À'} }) }}
+                                            {{ form_widget(form.ageenfant2, {'attr':{'placeholder': 'Âge'} }) }}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        {# Section Configuration #}
+                        <div class="group-section">
+                            <h3>Configuration</h3>
+                            <div class="partie">
+                                <div class="row-group">
+                                    <div class="form-group row-6">
+                                        <label>Stock Global</label>
+                                        <div class="radio-group">
+                                            {{ form_widget(form.stockglobal) }}
+                                        </div>
+                                    </div>
+                                    <div class="form-group row-6">
+                                        <label>Type d'achat</label>
+                                        <div class="radio-group">
+                                            {{ form_widget(form.typeachat) }}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        {# Boutons d'action #}
+                        <div class="form-actions">
+                            <button type="submit" class="btn btn-primary">
+                                <i class="fa-solid fa-save"></i>
+                                Créer le produit
+                            </button>
+                            <a href="{{ path('app_produit_index') }}" class="btn btn-secondary">
+                                <i class="fa-solid fa-arrow-left"></i>
+                                Retour à la liste
+                            </a>
+                        </div>
+                        
+                        {{ form_end(form) }}
                     </section>
 
-                    {# Tab 2: Stock (vide pour l'instant) #}
+                    {# Autres onglets #}
                     <section class="tab-section">
-                        <div class="group-section">
-                            <h3>Gestion des stocks</h3>
-                            <div class="partie">
-                                <p class="info-message">
-                                    <i class="fa-solid fa-info-circle"></i>
-                                    La gestion des stocks sera disponible après la création du produit.
-                                </p>
-                            </div>
-                        </div>
-                    </section>
-
-                    {# Tab 3: Tarif (vide pour l'instant) #}
-                    <section class="tab-section">
-                        <div class="group-section">
-                            <h3>Gestion des tarifs</h3>
-                            <div class="partie">
-                                <p class="info-message">
-                                    <i class="fa-solid fa-info-circle"></i>
-                                    La gestion des tarifs sera disponible après la création du produit.
-                                </p>
-                            </div>
-                        </div>
+                        {# ... autres onglets ... #}
                     </section>
                 </div>
             </div>
