@@ -2,7 +2,7 @@
 
 $(document).ready(function () {
   menuBurger();
-  relloverMenuBurger();
+  // relloverMenuBurger()
 });
 function menuBurger() {
   var burger = $('.burger-nav');
@@ -72,6 +72,7 @@ function checkAllcheckbox(container) {
       });
     });
   });
+  // Initialiser chaque groupe séparément
 }
 document.querySelectorAll('.listing-chexbox').forEach(function (group) {
   checkAllcheckbox(group);
