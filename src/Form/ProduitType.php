@@ -487,8 +487,8 @@ class ProduitType extends AbstractType
             ->add('seqfour', TextType::class, $commonTextAttr)
             ->add('nomfour', TextType::class, $commonTextAttr)
             ->add('obs', TextareaType::class, $commonTextareaAttr)
-            ->add('ageenfant1', TextType::class, $commonTextAttr)
-            ->add('ageenfant2', TextType::class, $commonTextAttr)
+            // ->add('ageenfant1', TextType::class, $commonTextAttr)
+            // ->add('ageenfant2', TextType::class, $commonTextAttr)
             ->add('ccompta', TextType::class, $commonTextAttr)
             ->add('ageenfant1de', IntegerType::class, array_merge($commonChoiceAttr, [
                 'empty_data' => 0
@@ -668,20 +668,38 @@ class ProduitType extends AbstractType
                 ],
                 'empty_data' => 0
             ]))
-            ->add('stockglobal', ChoiceType::class, array_merge($commonChoiceAttr, [
-                'choices' => [
-                    'Oui' => 1,
-                    'Non' => 2
+            ->add('stockglobal', ChoiceType::class, [
+                'attr' => [
+                    'class' => 'form-control mode',
+                    'style' => 'background: rgb(232, 240, 254);'
                 ],
-                'empty_data' => 0
-            ]))
-            ->add('typeachat', ChoiceType::class, array_merge($commonChoiceAttr, [
                 'choices' => [
-                    'Par personne' => 1,
-                    'Par chambre' => 2
+                    'Oui' => 0,
+                    'Non' => 1
                 ],
-                'empty_data' => 0
-            ]))
+                'expanded' => true, 
+                'placeholder' => false,    
+                'multiple' => false,    
+                'required' => false,
+                'empty_data' => 0,
+                'label' => false      
+            ])
+            ->add('typeachat', ChoiceType::class, [
+                'attr' => [
+                    'class' => 'form-control mode',
+                    'style' => 'background: rgb(232, 240, 254);'
+                ],
+                'choices' => [
+                    'Oui' => 0,
+                    'Non' => 1
+                ],
+                'expanded' => true, 
+                'placeholder' => false,    
+                'multiple' => false,    
+                'required' => false,
+                'empty_data' => 0,
+                'label' => false      
+            ])
 
             ->add('ageenfant3de', IntegerType::class, array_merge($commonChoiceAttr, [
                 'empty_data' => 0

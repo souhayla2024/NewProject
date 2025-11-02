@@ -584,17 +584,28 @@
 									<h3>Configuration</h3>
 									<div class="partie">
 										<div class="row-group">
-											<div class="form-group row-6">
-												<label>Stock Global</label>
-												<div class="radio-group">
-													{{ form_widget(form.stockglobal) }}
-												</div>
+											<div class="form-group checkbox-group">
+												<span>Stock Global :</span>
+												{% for choice in form.stockglobal %}
+													<div class="checkbox-wrapper">
+														{{ form_widget(choice, {'attr': {'id': 'baby-' ~ (choice.vars.value == 0 ? 'yes' : 'no')} }) }}
+														<label for="baby-{{ choice.vars.value == 0 ? 'yes' : 'no' }}">
+															{{ choice.vars.label }}
+														</label>
+													</div>
+												{% endfor %}
 											</div>
-											<div class="form-group row-6">
-												<label>Type d'achat</label>
-												<div class="radio-group">
-													{{ form_widget(form.typeachat) }}
-												</div>
+										
+											<div class="form-group checkbox-group">
+												<span>Type d'achat :</span>
+												{% for choice in form.typeachat %}
+													<div class="checkbox-wrapper">
+														{{ form_widget(choice, {'attr': {'id': 'baby-' ~ (choice.vars.value == 0 ? 'yes' : 'no')} }) }}
+														<label for="baby-{{ choice.vars.value == 0 ? 'yes' : 'no' }}">
+															{{ choice.vars.label }}
+														</label>
+													</div>
+												{% endfor %}
 											</div>
 										</div>
 									</div>
@@ -602,10 +613,6 @@
 
 								{# Boutons d'action #}
 								<div class="form-actions">
-									<button type="submit" class="btn btn-primary">
-										<i class="fa-solid fa-save"></i>
-										Créer le produit
-									</button>
 									<a href="{{ path('app_produit_index') }}" class="btn btn-secondary">
 										<i class="fa-solid fa-arrow-left"></i>
 										Retour à la liste

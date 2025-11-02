@@ -10,14 +10,13 @@
             <span class="sub-title-section">Liste des produits</span>
             <div class="group-btns">
                 <button class="btn-left" type="submit">📄 Exporter</button>
-                <a <a href="{{ path('app_produit_new') }}" class="btn-right" type="button"> + Créer un produit</a>
+                <a href="{{ path('app_produit_new') }}" class="btn-right" type="button"> + Créer un produit</a>
             </div>
         </div>
 
         <div class="table-wrapper">
             <table class="custom-table">
                 <thead>
-                  
                     <tr>
                         <th>Code <a href="#" class="arrow-tri"></a></th>
                         <th>Nom <a href="#" class="arrow-tri"></a></th>
@@ -46,29 +45,32 @@
                 <tbody>
                 {% for produit in produits %}
                     <tr>
-
-                <td>{{ produit.codeprod }}</td>
-                <td>{{ produit.libprod }}</td>
-                <td>{{ produit.libpays }}</td>
-                <td>{{ produit.libville }}</td>
-                <td>{{ produit.libtypeprod }}</td>
-                <td>{{ produit.typeproduit }}</td>
-                <td>{{ produit.libgroupe }}</td>
-                <td>{{ produit.email }}</td>
-                <th>No</th>
-
-                {# <a href="{{ path('app_produit_show', {'seqprod': produit.seqprod}) }}">show</a>
-                    <a href="{{ path('app_produit_edit', {'seqprod': produit.seqprod}) }}">edit</a> #}
+                        <td>{{ produit.codeprod }}</td>
+                        <td>{{ produit.libprod }}</td>
+                        <td>{{ produit.libpays }}</td>
+                        <td>{{ produit.libville }}</td>
+                        <td>{{ produit.libtypeprod }}</td>
+                        <td>{{ produit.typeproduit }}</td>
+                        <td>{{ produit.libgroupe }}</td>
+                        <td>{{ produit.email }}</td>
+                        <th>No</th>
                         <td class="actions">
-                            <a href="{{ path('app_produit_show', {'seqprod': produit.seqprod}) }}" class="view" title="Visualiser"></a>
-                            <button class="delete" title="Supprimer"></button>
+     
+                             <form method="post" action="{{ path('app_produit_edit', {'seqprod': produit.seqprod}) }}" style="display: inline;">
+                                <input type="hidden" name="_token" value="{{ csrf_token('edit' ~ produit.seqprod) }}">
+                                <button class="view" title="Modifier"></button>
+                            </form>
+                            <form method="post" action="{{ path('app_produit_delete', {'seqprod': produit.seqprod}) }}" style="display: inline;" onsubmit="return confirm('Êtes-vous sûr de vouloir supprimer ce produit ?');">
+                                <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ produit.seqprod) }}">
+                                <button class="delete" title="Supprimer"></button>
+                            </form>
                         </td>
                     </tr>
-                    {% else %}
-            <tr>
-                <td colspan="179">no records found</td>
-            </tr>
-        {% endfor %}
+                {% else %}
+                    <tr>
+                        <td colspan="10">Aucun produit trouvé</td>
+                    </tr>
+                {% endfor %}
                 </tbody>
             </table>
             <div class="pagination">

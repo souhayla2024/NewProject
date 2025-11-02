@@ -1,13 +1,649 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Edit Produit{% endblock %}
+{% block title %}Produit : Soumaya nkhili - Logisoft
+{% endblock %}
 
-{% block body %}
-    <h1>Edit Produit</h1>
+{% block content %}
+	<section id="single-product">
+		<div class="center-content">
+			<div id="header">
+				<div class="header-section-products">
+					<span class="sub-title-section">Modifier Produit</span>
+					<ul class="tabulation-items">
+						<li title="Fiche produit">
+							<label for="tab1" role="button" class="active">
+								<i class="fa-solid fa-box"></i>
+								<span>Fiche produit</span>
+							</label>
+						</li>
+						<li title="Stock">
+							<label for="tab2" role="button">
+								<i class="fa-solid fa-warehouse"></i>
+								<span>Stock</span>
+							</label>
+						</li>
+						<li title="Tarif">
+							<label for="tab3" role="button">
+								<i class="fa-solid fa-tags"></i>
+								<span>Tarif</span>
+							</label>
+						</li>
+						<li title="Promotion">
+							<label for="tab4" role="button">
+								<i class="fa-solid fa-bullhorn"></i>
+								<span>Promotion</span>
+							</label>
+						</li>
+						<li title="Option">
+							<label for="tab5" role="button">
+								<i class="fa-solid fa-list"></i>
+								<span>Option</span>
+							</label>
+						</li>
+						<li title="Stop Sale">
+							<label for="tab6" role="button">
+								<i class="fa-solid fa-ban"></i>
+								<span>Stop Sale</span>
+							</label>
+						</li>
+						<li title="Garanties">
+							<label for="tab7" role="button">
+								<i class="fa-solid fa-shield-halved"></i>
+								<span>Garanties</span>
+							</label>
+						</li>
+					</ul>
+				</div>
+			</div>
+        {# Messages flash #}
+        {% for message in app.flashes('success') %}
+            <div class="alert alert-success">
+                {{ message }}
+            </div>
+        {% endfor %}
+        {% for message in app.flashes('error') %}
+            <div class="alert alert-danger">
+                {{ message }}
+            </div>
+        {% endfor %}
 
-    {{ include('produit/_form.html.twig', {'button_label': 'Update'}) }}
+        <div class="content-single-product-bottom">
+            				<div class="info-product-left">
+					<div class="thumbnail">
+						<img src="{{ asset('inc/product.png') }}" alt="Nouveau produit">
+					</div>
+					<div class="product-info">
+						<span class="product-name">Nouveau Produit</span>
+						<span class="product-code">Code produit :
+							<span class="code">À définir</span>
+						</span>
+						<span class="product-status">Statut :
+							<span class="stat-desc warning">En création</span>
+						</span>
+					</div>
+				</div>
 
-    <a href="{{ path('app_produit_index') }}">back to list</a>
+				<div class="tabs">
+					<span class="close-info"></span>
 
-    {{ include('produit/_delete_form.html.twig') }}
+					<input type="radio" id="tab1" name="tab-control" checked>
+					<input type="radio" id="tab2" name="tab-control">
+					<input type="radio" id="tab3" name="tab-control">
+					<input type="radio" id="tab4" name="tab-control">
+					<input type="radio" id="tab5" name="tab-control">
+					<input type="radio" id="tab6" name="tab-control">
+					<input type="radio" id="tab7" name="tab-control">
+
+					<div
+						class="content">
+						{# Tab 1: Fiche produit avec le formulaire #}
+						<section class="tab-section">
+							{{ form_start(form, {'attr': {'class': 'product-form'} }) }}
+
+
+                        {# Afficher les erreurs générales du formulaire #}
+                        {{ form_errors(form) }}
+
+                        {# Section Identité #}
+                        <div class="group-section">
+                            <h3>Identité</h3>
+                            <div class="btn-group-header">
+                                <div class="btns-left">
+                                    <button type="button" class="btn btn-white">Suivi</button>
+                                    <button class="btn btn-darkblue">Mettre à jour</button>
+                                </div>
+                            </div>
+                            <div class="partie">
+                                <div class="row-group">
+                                    <div class="form-group row-4">
+                                        {{ form_label(form.codeprod, 'Code produit') }}
+                                        {{ form_widget(form.codeprod, {'attr': {'readonly': 'readonly', 'class': 'form-control'} }) }}
+                                        {{ form_errors(form.codeprod) }}
+                                    </div>
+                                    <div class="form-group row-4">
+                                        {{ form_label(form.libprod, 'Produit') }}
+                                        {{ form_widget(form.libprod, {'attr': {'class': 'form-control'} }) }}
+                                        {{ form_errors(form.libprod) }}
+                                    </div>
+                                    <div class="form-group row-4">
+                                        {{ form_label(form.categ, 'Catégorie') }}
+                                        {{ form_widget(form.categ, {'attr': {'class': 'form-control'} }) }}
+                                        {{ form_errors(form.categ) }}
+                                    </div>
+                                    <div class="form-group row-4">
+                                        {{ form_label(form.libtypeprod, 'Type de produit') }}
+                                        {{ form_widget(form.libtypeprod, {'attr': {'class': 'form-control'} }) }}
+                                        {{ form_errors(form.libtypeprod) }}
+                                    </div>
+                                </div>
+
+                                <div class="row-group">
+                                    <div class="form-group row-3">
+                                        {{ form_label(form.libprod2, 'Titre internet') }}
+                                        {{ form_widget(form.libprod2, {'attr': {'class': 'form-control'} }) }}
+                                        {{ form_errors(form.libprod2) }}
+                                    </div>
+                                    <div class="form-group row-3">
+                                        {{ form_label(form.idpays, 'Pays') }}
+                                        {{ form_widget(form.idpays, {'attr': {'class': 'form-control'} }) }}
+                                        {{ form_errors(form.idpays) }}
+                                    </div>
+                                    <div class="form-group row-3">
+                                        {{ form_label(form.seqsouspays, 'Sous-pays') }}
+                                        {{ form_widget(form.seqsouspays, {'attr': {'class': 'form-control'} }) }}
+                                        {{ form_errors(form.seqsouspays) }}
+                                    </div>
+                                </div>
+
+                                <div class="row-group">
+                                    <div class="form-group row-4">
+                                        {{ form_label(form.adresse, 'Adresse') }}
+                                        {{ form_widget(form.adresse, {'attr': {'class': 'form-control'} }) }}
+                                        {{ form_errors(form.adresse) }}
+                                    </div>
+                                    <div class="form-group row-4">
+                                        {{ form_label(form.cp, 'Code postal') }}
+                                        {{ form_widget(form.cp, {'attr': {'class': 'form-control'} }) }}
+                                        {{ form_errors(form.cp) }}
+                                    </div>
+                                    <div class="form-group row-4">
+                                        {{ form_label(form.libville, 'Ville') }}
+                                        {{ form_widget(form.libville, {'attr': {'class': 'form-control'} }) }}
+                                        {{ form_errors(form.libville) }}
+                                    </div>
+                                    <div class="form-group row-4">
+                                        {{ form_label(form.ccompta, 'Code comptable') }}
+                                        {{ form_widget(form.ccompta, {'attr': {'class': 'form-control'} }) }}
+                                        {{ form_errors(form.ccompta) }}
+                                    </div>
+                                </div>
+
+                                <div class="row-group">
+                                    <div class="form-group row-3">
+                                        {{ form_label(form.tel1, 'Téléphone 1') }}
+                                        {{ form_widget(form.tel1, {'attr': {'class': 'form-control'} }) }}
+                                        {{ form_errors(form.tel1) }}
+                                    </div>
+                                    <div class="form-group row-3">
+                                        {{ form_label(form.faxhotel, 'Fax') }}
+                                        {{ form_widget(form.faxhotel, {'attr': {'class': 'form-control'} }) }}
+                                        {{ form_errors(form.faxhotel) }}
+                                    </div>
+                                    <div class="form-group row-3">
+                                        {{ form_label(form.patron, 'Responsable') }}
+                                        {{ form_widget(form.patron, {'attr': {'class': 'form-control'} }) }}
+                                        {{ form_errors(form.patron) }}
+                                    </div>
+                                </div>
+
+                                <div class="row-group">
+                                    <div class="form-group row-2">
+                                        {{ form_label(form.libgroupe, 'Groupe') }}
+                                        {{ form_widget(form.libgroupe, {'attr': {'class': 'form-control'} }) }}
+                                        {{ form_errors(form.libgroupe) }}
+                                    </div>
+                                    <div class="form-group row-2">
+                                        {{ form_label(form.libprest, 'Prestation') }}
+                                        {{ form_widget(form.libprest, {'attr': {'class': 'form-control'} }) }}
+                                        {{ form_errors(form.libprest) }}
+                                    </div>
+                                </div>
+
+                                <div class="row-group">
+                                    <div class="form-group row-12">
+                                        {{ form_label(form.obs, 'Observation') }}
+                                        {{ form_widget(form.obs, {'attr': {'rows': '3', 'class': 'form-control'} }) }}
+                                        {{ form_errors(form.obs) }}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        {# Section Contact #}
+                        <div class="group-section">
+                            <h3>Contact</h3>
+                            <div class="partie">
+                                <div class="row-group">
+                                    <div class="form-group row-2">
+                                        {{ form_label(form.email2, 'Service comptable') }}
+                                        {{ form_widget(form.email2, {'attr': {'class': 'form-control'} }) }}
+                                        {{ form_errors(form.email2) }}
+                                    </div>
+                                    <div class="form-group row-2">
+                                        {{ form_label(form.email, 'Service réservation') }}
+                                        {{ form_widget(form.email, {'attr': {'class': 'form-control'} }) }}
+                                        {{ form_errors(form.email) }}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        {# Section Commercial #}
+                        <div class="group-section">
+                            <h3>Commercial</h3>
+                            <div class="partie">
+                                <div class="row-group">
+                                    <div class="form-group row-2">
+                                        {{ form_label(form.statutVente, 'Statut de vente') }}
+                                        {{ form_widget(form.statutVente, {'attr': {'class': 'form-control'} }) }}
+                                        {{ form_errors(form.statutVente) }}
+                                    </div>
+                                    <div class="form-group row-2">
+                                        {{ form_label(form.seqregletarifaire, 'Règle tarifaire') }}
+                                        {{ form_widget(form.seqregletarifaire, {'attr': {'class': 'form-control'} }) }}
+                                        {{ form_errors(form.seqregletarifaire) }}
+                                    </div>
+                                </div>
+
+                                <div class="row-group">
+                                    <div class="form-group row-4">
+                                        {{ form_label(form.aero1, 'Aéroport (1)') }}
+                                        {{ form_widget(form.aero1, {'attr': {'class': 'form-control'} }) }}
+                                        {{ form_errors(form.aero1) }}
+                                    </div>
+                                    <div class="form-group row-4">
+                                        {{ form_label(form.aero2, 'Aéroport (2)') }}
+                                        {{ form_widget(form.aero2, {'attr': {'class': 'form-control'} }) }}
+                                        {{ form_errors(form.aero2) }}
+                                    </div>
+                                    <div class="form-group row-4">
+                                        {{ form_label(form.nomreceptif, 'Réceptif') }}
+                                        {{ form_widget(form.nomreceptif, {'attr': {'class': 'form-control'} }) }}
+                                        {{ form_errors(form.nomreceptif) }}
+                                    </div>
+                                    <div class="form-group row-4">
+                                        {{ form_label(form.marge, 'Marge') }}
+                                        {{ form_widget(form.marge, {'attr': {'class': 'form-control'} }) }}
+                                        {{ form_errors(form.marge) }}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        {# Section Curiste et Fournisseur #}
+                        <div class="group-section">
+                            <h3>Curiste et Fournisseur</h3>
+                            <div class="partie">
+                                <div class="row-group">
+                                    <div class="form-group row-3">
+                                        {{ form_label(form.codecuriste, 'Code curiste') }}
+                                        {{ form_widget(form.codecuriste, {'attr': {'class': 'form-control'} }) }}
+                                        {{ form_errors(form.codecuriste) }}
+                                    </div>
+                                    <div class="form-group row-3">
+                                        {{ form_label(form.nomcuriste, 'Nom curiste') }}
+                                        {{ form_widget(form.nomcuriste, {'attr': {'class': 'form-control'} }) }}
+                                        {{ form_errors(form.nomcuriste) }}
+                                    </div>
+                                    <div class="form-group row-3">
+                                        {{ form_label(form.seqfour, 'Code fournisseur') }}
+                                        {{ form_widget(form.seqfour, {'attr': {'class': 'form-control'} }) }}
+                                        {{ form_errors(form.seqfour) }}
+                                    </div>
+                                </div>
+
+                                <div class="row-group">
+                                    <div class="form-group row-12">
+                                        {{ form_label(form.nomfour, 'Nom fournisseur') }}
+                                        {{ form_widget(form.nomfour, {'attr': {'class': 'form-control'} }) }}
+                                        {{ form_errors(form.nomfour) }}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        {# Section Enfants avec design tableau #}
+                        <div class="group-section">
+                            <h3>Enfant</h3>
+                            <div class="partie">
+                                {# Checkbox Bébé autorisé #}
+                                <div class="row-group">
+                                    <div class="form-group checkbox-group">
+                                        <span>Bébé autorisé :</span>
+                                        {% for choice in form.sansbebe %}
+                                            <div class="checkbox-wrapper">
+                                                {{ form_widget(choice, {'attr': {'id': 'baby-' ~ (choice.vars.value == 0 ? 'yes' : 'no')} }) }}
+                                                <label for="baby-{{ choice.vars.value == 0 ? 'yes' : 'no' }}">
+                                                    {{ choice.vars.label }}
+                                                </label>
+                                            </div>
+                                            {{ form_errors(choice) }}
+                                        {% endfor %}
+                                    </div>
+                                </div>
+
+                                {# Tableau des âges enfants #}
+                                <div class="row-group">
+                                    <h4>Age Enfant(s) à l'achat</h4>
+                                    <table class="children-table">
+                                        <thead>
+                                            <tr>
+                                                <th>N°</th>
+                                                <th>Type</th>
+                                                <th>Âge min (Achat)</th>
+                                                <th>Âge max (Achat)</th>
+                                                <th>Âge min (Vente)</th>
+                                                <th>Âge max (Vente)</th>
+                                                <th>Âge affiché</th>
+                                                <th>Action</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            {# Enfant 1 #}
+                                            <tr>
+                                                <td>1</td>
+                                                <td>Enfant</td>
+                                                <td>
+                                                    {{ form_widget(form.age1, {'attr': {
+                                                        'class': 'form-control table-input',
+                                                        'placeholder': 'Min'
+                                                    } }) }}
+                                                    {{ form_errors(form.age1) }}
+                                                </td>
+                                                <td>
+                                                    {{ form_widget(form.age2, {'attr': {
+                                                        'class': 'form-control table-input',
+                                                        'placeholder': 'Max'
+                                                    } }) }}
+                                                    {{ form_errors(form.age2) }}
+                                                </td>
+                                                <td>
+                                                    {{ form_widget(form.ageenfant1de, {'attr': {
+                                                        'class': 'form-control table-input',
+                                                        'placeholder': 'Min'
+                                                    } }) }}
+                                                    {{ form_errors(form.ageenfant1de) }}
+                                                </td>
+                                                <td>
+                                                    {{ form_widget(form.ageenfant1a, {'attr': {
+                                                        'class': 'form-control table-input',
+                                                        'placeholder': 'Max'
+                                                    } }) }}
+                                                    {{ form_errors(form.ageenfant1a) }}
+                                                </td>
+                                                <td>
+                                                    {{ form_widget(form.ageenfanta1, {'attr': {
+                                                        'class': 'form-control table-input',
+                                                        'placeholder': 'Âge'
+                                                    } }) }}
+                                                    {{ form_errors(form.ageenfanta1) }}
+                                                </td>
+                                                <td>
+                                                    <button type="button" class="view" title="Visualiser">
+                                                        <span class="picto-see"></span>
+                                                    </button>
+                                                </td>
+                                            </tr>
+
+                                            {# Enfant 2 #}
+                                            <tr>
+                                                <td>2</td>
+                                                <td>Enfant</td>
+                                                <td>
+                                                    {{ form_widget(form.age3, {'attr': {
+                                                        'class': 'form-control table-input',
+                                                        'placeholder': 'Min'
+                                                    } }) }}
+                                                    {{ form_errors(form.age3) }}
+                                                </td>
+                                                <td>
+                                                    {{ form_widget(form.age4, {'attr': {
+                                                        'class': 'form-control table-input',
+                                                        'placeholder': 'Max'
+                                                    } }) }}
+                                                    {{ form_errors(form.age4) }}
+                                                </td>
+                                                <td>
+                                                    {{ form_widget(form.ageenfant2de, {'attr': {
+                                                        'class': 'form-control table-input',
+                                                        'placeholder': 'Min'
+                                                    } }) }}
+                                                    {{ form_errors(form.ageenfant2de) }}
+                                                </td>
+                                                <td>
+                                                    {{ form_widget(form.ageenfant2a, {'attr': {
+                                                        'class': 'form-control table-input',
+                                                        'placeholder': 'Max'
+                                                    } }) }}
+                                                    {{ form_errors(form.ageenfant2a) }}
+                                                </td>
+                                                <td>
+                                                    {{ form_widget(form.ageenfanta2, {'attr': {
+                                                        'class': 'form-control table-input',
+                                                        'placeholder': 'Âge'
+                                                    } }) }}
+                                                    {{ form_errors(form.ageenfanta2) }}
+                                                </td>
+                                                <td>
+                                                    <button type="button" class="view" title="Visualiser">
+                                                        <span class="picto-see"></span>
+                                                    </button>
+                                                </td>
+                                            </tr>
+
+                                            {# Bébé #}
+                                            <tr>
+                                                <td>5</td>
+                                                <td>Bébé</td>
+                                                <td>0</td>
+                                                <td>
+                                                    {{ form_widget(form.bebea, {'attr': {
+                                                        'class': 'form-control table-input',
+                                                        'placeholder': 'Âge max'
+                                                    } }) }}
+                                                    {{ form_errors(form.bebea) }}
+                                                </td>
+                                                <td>0</td>
+                                                <td></td>
+                                                <td></td>
+                                                <td>
+                                                    <button type="button" class="view" title="Visualiser">
+                                                        <span class="picto-see"></span>
+                                                    </button>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+
+                                    <h4>Age Enfant(s) à la vente</h4>
+                                    <table class="children-table">
+                                        <thead>
+                                            <tr>
+                                                <th>N°</th>
+                                                <th>Type</th>
+                                                <th>Âge min (Achat)</th>
+                                                <th>Âge max (Achat)</th>
+                                                <th>Âge min (Vente)</th>
+                                                <th>Âge max (Vente)</th>
+                                                <th>Âge affiché</th>
+                                                <th>Action</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            {# Enfant 3 #}
+                                            <tr>
+                                                <td>3</td>
+                                                <td>Enfant</td>
+                                                <td>
+                                                    {{ form_widget(form.age5, {'attr': {
+                                                        'class': 'form-control table-input',
+                                                        'placeholder': 'Min'
+                                                    } }) }}
+                                                    {{ form_errors(form.age5) }}
+                                                </td>
+                                                <td>
+                                                    {{ form_widget(form.age6, {'attr': {
+                                                        'class': 'form-control table-input',
+                                                        'placeholder': 'Max'
+                                                    } }) }}
+                                                    {{ form_errors(form.age6) }}
+                                                </td>
+                                                <td>
+                                                    {{ form_widget(form.ageenfant3de, {'attr': {
+                                                        'class': 'form-control table-input',
+                                                        'placeholder': 'Min'
+                                                    } }) }}
+                                                    {{ form_errors(form.ageenfant3de) }}
+                                                </td>
+                                                <td>
+                                                    {{ form_widget(form.ageenfant3a, {'attr': {
+                                                        'class': 'form-control table-input',
+                                                        'placeholder': 'Max'
+                                                    } }) }}
+                                                    {{ form_errors(form.ageenfant3a) }}
+                                                </td>
+                                                <td>
+                                                    {{ form_widget(form.ageenfanta3, {'attr': {
+                                                        'class': 'form-control table-input',
+                                                        'placeholder': 'Âge'
+                                                    } }) }}
+                                                    {{ form_errors(form.ageenfanta3) }}
+                                                </td>
+                                                <td>
+                                                    <button type="button" class="view" title="Visualiser">
+                                                        <span class="picto-see"></span>
+                                                    </button>
+                                                </td>
+                                            </tr>
+
+                                            {# Enfant 4 #}
+                                            <tr>
+                                                <td>4</td>
+                                                <td>Enfant</td>
+                                                <td>
+                                                    {{ form_widget(form.age7, {'attr': {
+                                                        'class': 'form-control table-input',
+                                                        'placeholder': 'Min'
+                                                    } }) }}
+                                                    {{ form_errors(form.age7) }}
+                                                </td>
+                                                <td>
+                                                    {{ form_widget(form.age8, {'attr': {
+                                                        'class': 'form-control table-input',
+                                                        'placeholder': 'Max'
+                                                    } }) }}
+                                                    {{ form_errors(form.age8) }}
+                                                </td>
+                                                <td>
+                                                    {{ form_widget(form.ageenfant4de, {'attr': {
+                                                        'class': 'form-control table-input',
+                                                        'placeholder': 'Min'
+                                                    } }) }}
+                                                    {{ form_errors(form.ageenfant4de) }}
+                                                </td>
+                                                <td>
+                                                    {{ form_widget(form.ageenfant4a, {'attr': {
+                                                        'class': 'form-control table-input',
+                                                        'placeholder': 'Max'
+                                                    } }) }}
+                                                    {{ form_errors(form.ageenfant4a) }}
+                                                </td>
+                                                <td>
+                                                    {{ form_widget(form.ageenfanta4, {'attr': {
+                                                        'class': 'form-control table-input',
+                                                        'placeholder': 'Âge'
+                                                    } }) }}
+                                                    {{ form_errors(form.ageenfanta4) }}
+                                                </td>
+                                                <td>
+                                                    <button type="button" class="view" title="Visualiser">
+                                                        <span class="picto-see"></span>
+                                                    </button>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+
+                        {# Section Configuration #}
+                        <div class="group-section">
+                            <h3>Configuration</h3>
+                            <div class="partie">
+                                <div class="row-group">
+                                    <div class="form-group checkbox-group">
+                                        <span>Stock Global :</span>
+                                        {% for choice in form.stockglobal %}
+                                            <div class="checkbox-wrapper">
+                                                {{ form_widget(choice, {'attr': {'id': 'stock-' ~ choice.vars.value} }) }}
+                                                <label for="stock-{{ choice.vars.value }}">
+                                                    {{ choice.vars.label }}
+                                                </label>
+                                            </div>
+                                            {{ form_errors(choice) }}
+                                        {% endfor %}
+                                    </div>
+                                
+                                    <div class="form-group checkbox-group">
+                                        <span>Type d'achat :</span>
+                                        {% for choice in form.typeachat %}
+                                            <div class="checkbox-wrapper">
+                                                {{ form_widget(choice, {'attr': {'id': 'typeachat-' ~ choice.vars.value} }) }}
+                                                <label for="typeachat-{{ choice.vars.value }}">
+                                                    {{ choice.vars.label }}
+                                                </label>
+                                            </div>
+                                            {{ form_errors(choice) }}
+                                        {% endfor %}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        {# UN SEUL BOUTON DE SOUMISSION à la fin du formulaire #}
+                        <div class="form-actions">
+                            <a href="{{ path('app_produit_index') }}" class="btn btn-secondary">
+                                <i class="fa-solid fa-arrow-left"></i>
+                                Retour à la liste
+                            </a>
+                        </div>
+
+                        {{ form_end(form) }}
+                    </section>
+
+                    {# Autres onglets #}
+                    <section class="tab-section">
+                        <p>Contenu de l'onglet Stock à venir...</p>
+                    </section>
+                    <section class="tab-section">
+                        <p>Contenu de l'onglet Tarif à venir...</p>
+                    </section>
+                    <section class="tab-section">
+                        <p>Contenu de l'onglet Promotion à venir...</p>
+                    </section>
+                    <section class="tab-section">
+                        <p>Contenu de l'onglet Option à venir...</p>
+                    </section>
+                    <section class="tab-section">
+                        <p>Contenu de l'onglet Stop Sale à venir...</p>
+                    </section>
+                    <section class="tab-section">
+                        <p>Contenu de l'onglet Garanties à venir...</p>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 {% endblock %}
