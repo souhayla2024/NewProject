@@ -142,12 +142,6 @@ class ProduitType extends AbstractType
             // ->add('capacite7', IntegerType::class, array_merge($commonChoiceAttr, [
             //     'empty_data' => 0
             // ]))
-            // ->add('ageenfant3de', IntegerType::class, array_merge($commonChoiceAttr, [
-            //     'empty_data' => 0
-            // ]))
-            // ->add('ageenfant3a', IntegerType::class, array_merge($commonChoiceAttr, [
-            //     'empty_data' => 0
-            // ]))
             // ->add('enfantgratuit', ChoiceType::class, array_merge($commonChoiceAttr, [
             //     'choices' => [
             //         'Oui' => 1,
@@ -275,12 +269,6 @@ class ProduitType extends AbstractType
             //     'empty_data' => 1
             // ]))
             // ->add('ageenfant4', TextType::class, $commonTextAttr)
-            // ->add('ageenfant4de', IntegerType::class, array_merge($commonChoiceAttr, [
-            //     'empty_data' => 0
-            // ]))
-            // ->add('ageenfant4a', IntegerType::class, array_merge($commonChoiceAttr, [
-            //     'empty_data' => 0
-            // ]))
             // ->add('bebe', ChoiceType::class, array_merge($commonChoiceAttr, [
             //     'choices' => [
             //         'Oui' => 1,
@@ -574,8 +562,6 @@ class ProduitType extends AbstractType
             ]))
             ->add('ageenfanta1', TextType::class, $commonTextAttr)
             ->add('ageenfanta2', TextType::class, $commonTextAttr)
-            ->add('ageenfanta3', TextType::class, $commonTextAttr)
-            ->add('ageenfanta4', TextType::class, $commonTextAttr)
             ->add('bebea', IntegerType::class, array_merge($commonChoiceAttr, [
                 'empty_data' => 0
             ]))
@@ -585,13 +571,22 @@ class ProduitType extends AbstractType
                 ],
                 'empty_data' => 0
             ]))
-            ->add('sansbebe', ChoiceType::class, array_merge($commonChoiceAttr, [
-                'choices' => [
-                    'Oui' => 1,
-                    'Non' => 0
+            ->add('sansbebe', ChoiceType::class, [
+                'attr' => [
+                    'class' => 'form-control mode',
+                    'style' => 'background: rgb(232, 240, 254);'
                 ],
-                'empty_data' => 0
-            ]))
+                'choices' => [
+                    'Oui' => 0,
+                    'Non' => 1
+                ],
+                'expanded' => true, 
+                'placeholder' => false,    
+                'multiple' => false,    
+                'required' => false,
+                'empty_data' => 0,
+                'label' => false      
+            ])
             ->add('idpays', ChoiceType::class, array_merge($commonChoiceAttr, [
                 'choices' => [
                     'ARGENTINE' => 9,
@@ -687,6 +682,21 @@ class ProduitType extends AbstractType
                 ],
                 'empty_data' => 0
             ]))
+
+            ->add('ageenfant3de', IntegerType::class, array_merge($commonChoiceAttr, [
+                'empty_data' => 0
+            ]))
+            ->add('ageenfant3a', IntegerType::class, array_merge($commonChoiceAttr, [
+                'empty_data' => 0
+            ]))
+            ->add('ageenfant4de', IntegerType::class, array_merge($commonChoiceAttr, [
+                'empty_data' => 0
+            ]))
+            ->add('ageenfant4a', IntegerType::class, array_merge($commonChoiceAttr, [
+                'empty_data' => 0
+            ]))
+            ->add('ageenfanta3', TextType::class, $commonTextAttr)
+            ->add('ageenfanta4', TextType::class, $commonTextAttr)
         ;
         $builder->addEventListener(FormEvents::PRE_SET_DATA, function (FormEvent $event) {
             $produit = $event->getData();

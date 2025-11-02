@@ -1853,8 +1853,8 @@ ul {
   -webkit-appearance: none;
   -moz-appearance: none;
   width: 100%;
-  padding: 10px 40px 10px 15px;
-  font-size: 16px;
+  padding: 0px 10px 0px 15px;
+  font-size: 12px;
   border: 1px solid #ccc;
   border-radius: 5px;
   background-color: #fff;
@@ -2778,10 +2778,8 @@ ul {
 
 /* Pour les inputs number */
 .form-control input[type="number"] {
-  height: 38px;
   background: rgb(232, 240, 254) !important;
   font-family: inherit;
-  font-size: 14px;
 }
 
 /* Focus state pour tous les champs */
@@ -2795,4 +2793,44 @@ ul {
 .form-control:disabled {
   background-color: #e9ecef !important;
   opacity: 1;
+}
+
+
+.row-group .form-group label
+{
+  display: block;
+  font-weight: 600;
+  color: #222;
+  font-size: 13px;
+  margin-bottom: -7px;
+  margin-left: 25px;
+  position: relative;
+  z-index: 1;
+  background-color: #ffffff;
+  padding: 0 7px;
+  border-radius: 40px;
+}
+
+
+#single-product .content-single-product-bottom .tabs .content section .group-section .partie .row-group .form-group app_produit_index,
+#single-product .content-single-product-bottom .tabs .content section .group-section .partie .row-group .form-group input[type=email],
+#single-product .content-single-product-bottom .tabs .content section .group-section .partie .row-group .form-group input[type=tel],
+#single-product .content-single-product-bottom .tabs .content section .group-section .partie .row-group .form-group input[type=date],
+#single-product .content-single-product-bottom .tabs .content section .group-section .partie .row-group .form-group input[type=number],
+td input,
+#single-product .content-single-product-bottom .tabs .content .tab-section .group-section .partie .row-group .form-group app_produit_index,
+#single-product .content-single-product-bottom .tabs .content .tab-section .group-section .partie .row-group .form-group input[type=email],
+#single-product .content-single-product-bottom .tabs .content .tab-section .group-section .partie .row-group .form-group input[type=tel],
+#single-product .content-single-product-bottom .tabs .content .tab-section .group-section .partie .row-group .form-group input[type=number],
+#single-product .content-single-product-bottom .tabs .content .tab-section .group-section .partie .row-group .form-group input[type=date],
+td input {
+  font-family: "Segoe UI", sans-serif;
+  width: 100%;
+  padding: 6px 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+  background-color: #f9fafc;
 }
