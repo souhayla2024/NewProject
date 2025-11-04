@@ -123,12 +123,22 @@
                     </a>
                 </li>
                 
-                <li class="item-list-menu-nav">
-                    <a href="{{ path('app_produit_index') }}" class="link-item-list-menu-nav">
-                        <span class="picto"><img src="{{ asset('inc/logout.svg') }}" alt="Déconnexion"></span>
-                        <span class="title-item">Déconnexion</span>
-                    </a>
-                </li>
+{% if app.user %}
+<li class="item-list-menu-nav">
+    <form id="logout-form" action="{{ path('app_logout') }}" method="post" style="display: none;">
+        <input type="hidden" name="_csrf_token" value="{{ csrf_token('logout') }}">
+    </form>
+
+    <a href="#" class="link-item-list-menu-nav"
+       onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+        <span class="picto">
+            <img src="{{ asset('inc/logout.svg') }}" alt="Déconnexion">
+        </span>
+        <span class="title-item">Déconnexion</span>
+    </a>
+</li>
+{% endif %}
+
             </ul>
         </div>
     </div>

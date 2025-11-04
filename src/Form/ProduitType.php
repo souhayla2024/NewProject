@@ -26,7 +26,6 @@ class ProduitType extends AbstractType
         $commonTextAttr = [
             'attr' => [
                 'class' => 'form-control mode',
-                'style' => 'background: rgb(232, 240, 254);'
             ],
             'required' => false,
             'empty_data' => '' // Transforme null en chaîne vide
@@ -36,7 +35,6 @@ class ProduitType extends AbstractType
         $commonChoiceAttr = [
             'attr' => [
                 'class' => 'form-control mode',
-                'style' => 'background: rgb(232, 240, 254);'
             ],
             'required' => false,
             'empty_data' => 0 // Valeur par défaut pour les choix
@@ -46,7 +44,6 @@ class ProduitType extends AbstractType
         $commonTextareaAttr = [
             'attr' => [
                 'class' => 'form-control mode',
-                'style' => 'background: rgb(232, 240, 254);',
                 'rows' => 3
             ],
             'required' => false,
@@ -57,7 +54,6 @@ class ProduitType extends AbstractType
             ->add('codeprod', TextType::class, [
                 'attr' => [
                     'class' => 'form-control mode',
-                    'style' => 'background: rgb(232, 240, 254);',
                     'readonly' => 'readonly'
                 ],
                 'required' => false,
@@ -574,7 +570,6 @@ class ProduitType extends AbstractType
             ->add('sansbebe', ChoiceType::class, [
                 'attr' => [
                     'class' => 'form-control mode',
-                    'style' => 'background: rgb(232, 240, 254);'
                 ],
                 'choices' => [
                     'Oui' => 0,
@@ -664,14 +659,13 @@ class ProduitType extends AbstractType
                 ],
                 'attr' => [
                     'class' => 'form-control mode',
-                    'style' => 'font-weight: bold; background: rgb(232, 240, 254);'
+                    'style' => 'font-weight: bold;'
                 ],
                 'empty_data' => 0
             ]))
             ->add('stockglobal', ChoiceType::class, [
                 'attr' => [
                     'class' => 'form-control mode',
-                    'style' => 'background: rgb(232, 240, 254);'
                 ],
                 'choices' => [
                     'Oui' => 0,
@@ -687,7 +681,6 @@ class ProduitType extends AbstractType
             ->add('typeachat', ChoiceType::class, [
                 'attr' => [
                     'class' => 'form-control mode',
-                    'style' => 'background: rgb(232, 240, 254);'
                 ],
                 'choices' => [
                     'Oui' => 0,
@@ -726,7 +719,6 @@ class ProduitType extends AbstractType
                 $form->add('codeprod', TextType::class, [
                     'attr' => [
                         'class' => 'form-control mode',
-                        'style' => 'background: rgb(232, 240, 254);',
                         'readonly' => 'readonly'
                     ],
                     'required' => false,

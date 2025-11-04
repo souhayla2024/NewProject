@@ -2742,7 +2742,7 @@ ul {
 /* Pour les selects (dropdowns) */
 .form-group select {
   height: 38px;
-  background: rgb(232, 240, 254) !important;
+  background-color: #f9fafc !important;
   font-family: inherit;
   font-size: 14px;
   border: 1px solid #ccc;
@@ -2754,7 +2754,6 @@ ul {
 
 .form-group input {
   height: 38px;
-  background: rgb(232, 240, 254) !important;
   font-family: inherit;
   font-size: 14px;
   border: 1px solid #ccc;
@@ -2766,7 +2765,6 @@ ul {
 
 /* Pour les textareas */
 .form-control textarea {
-  background: rgb(232, 240, 254) !important;
   font-family: inherit;
   font-size: 14px;
   border: 1px solid #ccc;
@@ -2778,21 +2776,7 @@ ul {
 
 /* Pour les inputs number */
 .form-control input[type="number"] {
-  background: rgb(232, 240, 254) !important;
   font-family: inherit;
-}
-
-/* Focus state pour tous les champs */
-.form-control:focus {
-  border-color: #66afe9;
-  outline: 0;
-  box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, .6);
-}
-
-/* Pour les champs désactivés */
-.form-control:disabled {
-  background-color: #e9ecef !important;
-  opacity: 1;
 }
 
 
@@ -2806,7 +2790,6 @@ ul {
   margin-left: 25px;
   position: relative;
   z-index: 1;
-  background-color: #ffffff;
   padding: 0 7px;
   border-radius: 40px;
 }
