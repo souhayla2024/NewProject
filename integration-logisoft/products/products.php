@@ -35,7 +35,6 @@
                         <th><input type="text" placeholder="Rechercher..." /></th>
                         <th><input type="text" placeholder="Rechercher..." /></th>
                         <th><input type="text" placeholder="Rechercher..." /></th>
-                        <th></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -130,8 +129,99 @@
                             <button class="delete" title="Supprimer"></button>
                         </td>
                     </tr>
+                    <tr>
+                        <td>006</td>
+                        <td>Resort Tunis</td>
+                        <td>Tunisie</td>
+                        <td>Hammamet</td>
+                        <td>Resort</td>
+                        <td>4 étoiles</td>
+                        <td>Indépendant</td>
+                        <td>Oui</td>
+                        <td><span class="stat-desc success"></span>
+                        <td class="actions">
+                            <button class="view" title="Visualiser"></button>
+                            <button class="delete" title="Supprimer"></button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>006</td>
+                        <td>Resort Tunis</td>
+                        <td>Tunisie</td>
+                        <td>Hammamet</td>
+                        <td>Resort</td>
+                        <td>4 étoiles</td>
+                        <td>Indépendant</td>
+                        <td>Oui</td>
+                        <td><span class="stat-desc success"></span>
+                        <td class="actions">
+                            <button class="view" title="Visualiser"></button>
+                            <button class="delete" title="Supprimer"></button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>006</td>
+                        <td>Resort Tunis</td>
+                        <td>Tunisie</td>
+                        <td>Hammamet</td>
+                        <td>Resort</td>
+                        <td>4 étoiles</td>
+                        <td>Indépendant</td>
+                        <td>Oui</td>
+                        <td><span class="stat-desc success"></span>
+                        <td class="actions">
+                            <button class="view" title="Visualiser"></button>
+                            <button class="delete" title="Supprimer"></button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>006</td>
+                        <td>Resort Tunis</td>
+                        <td>Tunisie</td>
+                        <td>Hammamet</td>
+                        <td>Resort</td>
+                        <td>4 étoiles</td>
+                        <td>Indépendant</td>
+                        <td>Oui</td>
+                        <td><span class="stat-desc success"></span>
+                        <td class="actions">
+                            <button class="view" title="Visualiser"></button>
+                            <button class="delete" title="Supprimer"></button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>006</td>
+                        <td>Resort Tunis</td>
+                        <td>Tunisie</td>
+                        <td>Hammamet</td>
+                        <td>Resort</td>
+                        <td>4 étoiles</td>
+                        <td>Indépendant</td>
+                        <td>Oui</td>
+                        <td><span class="stat-desc success"></span>
+                        <td class="actions">
+                            <button class="view" title="Visualiser"></button>
+                            <button class="delete" title="Supprimer"></button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>006</td>
+                        <td>Resort Tunis</td>
+                        <td>Tunisie</td>
+                        <td>Hammamet</td>
+                        <td>Resort</td>
+                        <td>4 étoiles</td>
+                        <td>Indépendant</td>
+                        <td>Oui</td>
+                        <td><span class="stat-desc success"></span>
+                        <td class="actions">
+                            <button class="view" title="Visualiser"></button>
+                            <button class="delete" title="Supprimer"></button>
+                        </td>
+                    </tr>
                 </tbody>
             </table>
+
             <div class="pagination">
                 <span class="first"></span>
                 <span class="prev"></span>

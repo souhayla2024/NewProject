@@ -168,3 +168,101 @@ $(window).on('load', function () {
 $(window).on('resize', function () {
   setCssVariables();
 });
+"use strict";
+
+// Quand un utilisateur tape dans un champ de recherche
+document.querySelectorAll(".custom-table thead .filters input").forEach(function (input, colIndex) {
+  input.addEventListener("keyup", function () {
+    var filterValue = this.value.toLowerCase();
+    var table = this.closest("table");
+    var rows = table.querySelectorAll("tbody tr");
+    rows.forEach(function (row) {
+      var cell = row.children[colIndex];
+      var cellText = cell.textContent.toLowerCase();
+      // Vérifie si le texte correspond au filtre
+      if (cellText.includes(filterValue)) {
+        row.style.display = "";
+      } else {
+        row.style.display = "none";
+      }
+    });
+  });
+});
+"use strict";
+
+var table = document.querySelector(".custom-table");
+var tbody = table.querySelector("tbody");
+var rows = Array.from(tbody.querySelectorAll("tr"));
+var pagination = document.querySelector(".pagination");
+var info = pagination.querySelector(".info");
+var firstBtn = pagination.querySelector(".first");
+var prevBtn = pagination.querySelector(".prev");
+var nextBtn = pagination.querySelector(".next");
+var lastBtn = pagination.querySelector(".last");
+var rowsPerPage = 10;
+var currentPage = 1;
+var filteredRows = [].concat(rows); // pour la recherche + pagination combinées
+
+function renderTablePage(page) {
+  var totalRows = filteredRows.length;
+  var totalPages = Math.ceil(totalRows / rowsPerPage);
+
+  // bornes
+  if (page < 1) page = 1;
+  if (page > totalPages) page = totalPages;
+  currentPage = page;
+
+  // masque toutes les lignes
+  rows.forEach(function (r) {
+    return r.style.display = "none";
+  });
+
+  // affiche celles de la page courante
+  var start = (page - 1) * rowsPerPage;
+  var end = start + rowsPerPage;
+  filteredRows.slice(start, end).forEach(function (r) {
+    return r.style.display = "";
+  });
+
+  // met à jour l’info
+  var startInfo = totalRows === 0 ? 0 : start + 1;
+  var endInfo = Math.min(end, totalRows);
+  info.textContent = "".concat(startInfo, " \xE0 ").concat(endInfo, " sur ").concat(totalRows);
+
+  // désactive les boutons si besoin
+  firstBtn.disabled = prevBtn.disabled = page === 1;
+  nextBtn.disabled = lastBtn.disabled = page === totalPages;
+}
+
+// Événements pagination
+firstBtn.addEventListener("click", function () {
+  return renderTablePage(1);
+});
+prevBtn.addEventListener("click", function () {
+  return renderTablePage(currentPage - 1);
+});
+nextBtn.addEventListener("click", function () {
+  return renderTablePage(currentPage + 1);
+});
+lastBtn.addEventListener("click", function () {
+  var totalPages = Math.ceil(filteredRows.length / rowsPerPage);
+  renderTablePage(totalPages);
+});
+
+// Recherche par colonne (gère aussi la pagination)
+document.querySelectorAll(".custom-table thead .filters input").forEach(function (input, colIndex) {
+  input.addEventListener("keyup", function () {
+    var filterValues = Array.from(document.querySelectorAll(".filters input")).map(function (i) {
+      return i.value.toLowerCase();
+    });
+    filteredRows = rows.filter(function (row) {
+      return Array.from(row.children).every(function (cell, i) {
+        return cell.textContent.toLowerCase().includes(filterValues[i]);
+      });
+    });
+    renderTablePage(1); // remet à la première page
+  });
+});
+
+// initialisation
+renderTablePage(1);
