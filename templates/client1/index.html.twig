@@ -1,0 +1,77 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Produits - Logisoft{% endblock %}
+
+{% block content %}
+    <section id="products-wrapper">
+        <div class="center-content">
+            <div class="header-section-products">
+                <h2 class="title-section">Clients</h2>
+                <span class="sub-title-section">Liste des clients</span>
+                <div class="group-btns">
+                    <button class="btn-left" type="submit">📄 Exporter</button>
+                    <a href="{{ path('app_client_new') }}" class="btn-right" type="button"> + Créer un client</a>
+                </div>
+            </div>
+
+            <div class="table-wrapper">
+                <table class="custom-table">
+                    <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Nom</th>
+                        <th>Réseau</th>
+                        <th>Commission</th>
+                        <th>Commission</th>
+                        <th>Commission</th>
+                        <th>Commission</th>
+                        <th class="text-center" width="100">Actions</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% if clients is not empty %}
+                        {% for client in clients %}
+                            <tr>
+                                <td>{{ client.seqclt }}</td>
+                                <td>{{ client.nomclt }}</td>
+                                <td>{{ client.nomreseau }}</td>
+                                <td>{{ client.seqcomm.categorie ?? '' }}</td>
+                                <td class="text-center">
+                                    <div class="dropdown">
+                                        <button type="button"
+                                                class="btn p-0 dropdown-toggle hide-arrow"
+                                                data-bs-toggle="dropdown"
+                                                aria-expanded="false"
+                                                aria-label="Actions">
+                                            <i class="bx bx-dots-vertical-rounded"></i>
+                                        </button>
+                                        <ul class="dropdown-menu dropdown-menu-end">
+                                            <li>
+                                                <a class="dropdown-item"
+                                                   href="{{ path('app_client_edit', {'numclt': client.numclt}) }}"
+                                                   aria-label="Modifier">
+                                                    <i class="bx bx-edit-alt me-2"></i>Consulter | Modifier
+                                                </a>
+                                            </li>
+                                            <li>
+                                                {{ include('client/_delete_form.html.twig', {
+                                                    client: client,
+                                                    btn_class: 'dropdown-item'
+                                                }) }}
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </td>
+                            </tr>
+                        {% endfor %}
+                    {% else %}
+                        <tr>
+                            <td colspan="10" class="text-center p-2 text-center">Aucun client trouvé...</td>
+                        </tr>
+                    {% endif %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+{% endblock %}

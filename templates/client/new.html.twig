@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Client{% endblock %}
+
+{% block content %}
+    <h1>Create new Client</h1>
+<section id="single-product">
+    <div class="center-content">
+        <div id="header">
+            <div class="header-section-products">
+                <span class="sub-title-section">{{ client.nomclt ? 'Client : ' ~ client.nomclt : 'Client : Nouveau Client' }}</span>
+                <!-- Menu des tabs -->
+                <ul class="tabulation-items">
+                    <li title="Fiche produit">
+                    </li>
+                </ul>
+            </div>
+        </div>
+    {{ include('client/_form.html.twig') }}
+    </div>
+</section>
+    <a href="{{ path('app_client_index') }}">back to list</a>
+{% endblock %}

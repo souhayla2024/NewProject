@@ -1,6 +1,5 @@
 <section id="single-product">
     <div class="center-content">
-
         <div id="header">
             <div class="header-section-products">
                 <!-- <h2 class="title-section">Produit</h2> -->

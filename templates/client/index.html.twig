@@ -1,0 +1,211 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Client index{% endblock %}
+{% block stylesheets %}
+    .pagination-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    flex-wrap: wrap;
+    }
+
+    .pagination {
+    list-style: none;
+    display: flex;
+    gap: 6px;
+    padding: 0;
+    flex-wrap: wrap;
+    justify-content: center;
+    }
+
+    .pagination li a,
+    .pagination li span {
+    display: block;
+    padding: 6px 12px;
+    border-radius: 4px;
+    border: 1px solid #0c0a3b;
+    color: #0c0a3b;
+    text-decoration: none;
+    font-size: 14px;
+    transition: 0.2s;
+    }
+
+    .pagination li a:hover {
+    background-color: #0c0a3b;
+    color: white;
+    }
+
+    .pagination li.active span {
+    background-color: #0c0a3b;
+    color: white;
+    border-color: #0c0a3b;
+    }
+
+    .pagination li.disabled span {
+    opacity: 0.4;
+    cursor: not-allowed;
+    }
+    .table-responsive {
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    }
+    .custom-table {
+    min-width: 900px; /* force un scroll sur petits écrans */
+    border-collapse: collapse;
+    width: 100%;
+    }
+    .custom-table thead th {
+    position: sticky;
+    top: 0;
+    background: #fff;
+    z-index: 2;
+    }
+    .custom-table th, .custom-table td {
+    padding: 10px 12px;
+    border-bottom: 1px solid #eee;
+    text-align: left;
+    }
+    /* filtres: garder visibles sous le header sticky */
+    .custom-table thead .filters th {
+    position: sticky;
+    top: 42px; /* hauteur du premier header */
+    background: #fafafa;
+    z-index: 1;
+    }
+    .custom-table thead .filters input {
+    width: 100%;
+    padding: 6px 8px;
+    font-size: 0.9rem;
+    box-sizing: border-box;
+    }
+    @media (max-width: 480px) {
+    .custom-table { min-width: 700px; } /* un peu moins large sur très petit écran */
+    }
+    .custom-table td {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 180px;
+    position: relative; /* nécessaire pour le tooltip */
+    }
+
+    /* Tooltip (affiché au survol) */
+    .custom-table td:hover::after {
+    content: attr(data-fulltext);
+    position: absolute;
+    left: 0;
+    top: calc(100% + 4px);
+    white-space: normal;
+    background: #333;
+    color: #fff;
+    padding: 6px 10px;
+    border-radius: 4px;
+    font-size: 13px;
+    max-width: 320px;
+    z-index: 1000;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.25);
+    pointer-events: none;
+    }
+    .btn-left {
+    padding: 10px;
+    background-color: #0c0a3b;
+    font-family: "Roboto-Medium";
+    font-size: 14px;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    -webkit-transition: all 0.4s;
+    transition: all 0.4s;
+    }
+
+{% endblock %}
+
+{% block content %}
+    <section id="products-wrapper">
+        <div class="center-content">
+            <div class="header-section-products">
+                <h2 class="title-section">Clients</h2>
+                <span class="sub-title-section">Liste des clients</span>
+                <div class="group-btns">
+                    <button class="btn-left" type="submit">📄 Exporter</button>
+                    <a href="{{ path('app_client_new') }}" class="btn-right" type="button"> + Créer un client</a>
+                </div>
+            </div>
+            <div class="table-wrapper">
+                <form method="get" id="filtersForm">
+                    <div class="table-responsive">
+                        <table class="custom-table">
+                            <thead>
+                            <tr>
+                                <th>#<a href="#" class="arrow-tri"></a></th>
+                                <th>Code <a href="#" class="arrow-tri"></a></th>
+                                <th>Client <a href="#" class="arrow-tri"></a></th>
+                                <th>Adresse <a href="#" class="arrow-tri"></a></th>
+                                <th>Ville <a href="#" class="arrow-tri"></a></th>
+                                <th>Pays <a href="#" class="arrow-tri"></a></th>
+                                <th>Réseau <a href="#" class="arrow-tri"></a></th>
+                                <th>Actions </th>
+                            </tr>
+                            <tr class="filters">
+                                <th><input type="text" name="numclt"  placeholder="Rechercher..." value="{{ app.request.get('numclt') }}"></th>
+                                <th><input type="text" name="seqclt"  placeholder="Rechercher..." value="{{ app.request.get('seqclt') }}"></th>
+                                <th><input type="text" name="nomclt"  placeholder="Rechercher..." value="{{ app.request.get('nomclt') }}"></th>
+                                <th><input type="text" name="adresse" placeholder="Rechercher..." value="{{ app.request.get('adresse') }}"></th>
+                                <th><input type="text" name="ville"   placeholder="Rechercher..." value="{{ app.request.get('ville') }}"></th>
+                                <th><input type="text" name="pays"    placeholder="Rechercher..." value="{{ app.request.get('pays') }}"></th>
+                                <th><input type="text" name="nomreseau" placeholder="Rechercher..." value="{{ app.request.get('nomreseau') }}"></th>
+                                <th>
+                                    <button type="submit" class="btn btn-blue">Filtrer</button>
+                                    <a href="{{ path('app_client_index') }}">Réinitialiser</a>
+                                </th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {% for client in clients %}
+                                <tr>
+                                    <td>{{ client.numclt }}</td>
+                                    <td data-fulltext="{{ client.seqclt }}">{{ client.seqclt }}</td>
+                                    <td data-fulltext="{{ client.nomclt }}">{{ client.nomclt }}</td>
+                                    <td data-fulltext="{{ client.adresse }}">{{ client.adresse }}</td>
+                                    <td data-fulltext="{{ client.ville }}">{{ client.ville }}</td>
+                                    <td data-fulltext="{{ client.pays }}">{{ client.pays }}</td>
+                                    <td data-fulltext="{{ client.nomreseau }}">{{ client.nomreseau }}</td>
+                                    <td class="actions">
+                                        <form method="post" action="{{ path('app_client_edit', {'numclt': client.numclt}) }}" style="display:inline;">
+                                            <input type="hidden" name="_token" value="{{ csrf_token('edit' ~ client.numclt) }}">
+                                            <button class="view" title="Modifier"></button>
+                                        </form>
+                                        <form method="post" action="{{ path('app_client_delete', {'numclt': client.numclt}) }}" style="display:inline;" onsubmit="return confirm('Êtes-vous sûr de vouloir supprimer ce client ?');">
+                                            <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ client.numclt) }}">
+                                            <button class="delete" title="Supprimer"></button>
+                                        </form>
+                                    </td>
+                                </tr>
+                            {% else %}
+                                <tr><td colspan="8">no records found</td></tr>
+                            {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+
+                </form>
+                {# Rendu des liens de pagination (KnpPaginator) #}
+                <div class="pagination">
+                    {{ knp_pagination_render(clients, 'pagination/solplus_pagination.html.twig') }}
+                </div>
+
+                {# (optionnel) submit au ENTER sur les inputs #}
+                <script>
+                    document.querySelectorAll('.filters input').forEach(inp => {
+                        inp.addEventListener('keydown', e => {
+                            if (e.key === 'Enter') document.getElementById('filtersForm').submit();
+                        });
+                    });
+                </script>
+            </div>
+        </div>
+    </section>
+    {#    <a href="{{ path('app_client_new') }}">Create new</a> #}
+{% endblock %}

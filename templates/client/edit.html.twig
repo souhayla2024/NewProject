@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}RFT Client Information - {{ client.nomclt }}{% endblock %}
+
+{% block content %}
+<section id="single-product">
+    <div class="center-content">
+        <div id="header">
+            <div class="header-section-products">
+                <span class="sub-title-section">Client : {{ client.nomclt }}</span>
+                <!-- Menu des tabs -->
+                <ul class="tabulation-items">
+                    <li title="Fiche produit">
+                    </li>
+                </ul>
+            </div>
+        </div>
+    {{ include('client/_form.html.twig', {'button_label': 'Update'}) }}
+    </div>
+</section>
+    <a href="{{ path('app_client_index') }}">back to list</a>
+
+    {{ include('client/_delete_form.html.twig') }}
+{% endblock %}

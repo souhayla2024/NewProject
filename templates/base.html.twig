@@ -6,8 +6,9 @@
     <title>{% block title %}Logisoft{% endblock %}</title>
     <link href="{{ asset('css/style.css') }}?v={{ date().timestamp }}" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    
+    <style>
     {% block stylesheets %}{% endblock %}
+    </style>
 </head>
 <body>
     <section id="main-wrapper">
@@ -21,7 +22,7 @@
 
     <script src="{{ asset('js/vendor.js') }}?v={{ date().timestamp }}"></script>
     <script src="{{ asset('js/custom.js') }}?v={{ date().timestamp }}"></script>
-    
+
     {% block javascripts %}{% endblock %}
 </body>
 </html>

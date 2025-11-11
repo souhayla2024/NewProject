@@ -1,0 +1,3 @@
+knp_paginator:
+    template:
+        pagination: 'pagination/solplus_pagination.html.twig'

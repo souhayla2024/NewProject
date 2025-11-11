@@ -52,28 +52,29 @@ function closeInfo() {
   });
 }
 function checkAllcheckbox(container) {
-  var selectAll = container.querySelector('.select-all');
-  var items = container.querySelectorAll('.item-check');
 
-  // Sélectionner tous
-  selectAll.addEventListener('change', function () {
-    var _this = this;
-    items.forEach(function (item) {
-      item.checked = _this.checked;
-    });
-  });
+    // Empêche l’erreur si aucun tableau n’est trouvé
+    if (!container) return;
 
-  // Mise à jour du "Sélectionner tous"
-  items.forEach(function (item) {
-    item.addEventListener('change', function () {
-      // Ne regarde que les items de ce container
-      selectAll.checked = Array.from(items).every(function (i) {
-        return i.checked;
-      });
+    var selectAll = container.querySelector('.select-all');
+    var items = container.querySelectorAll('.item-check');
+
+    // Empêche l’erreur si le bouton "tout sélectionner" n’existe pas
+    if (!selectAll) return;
+
+    // Sélectionner/désélectionner tous
+    selectAll.addEventListener('change', function () {
+        items.forEach(item => item.checked = this.checked);
     });
-  });
-  // Initialiser chaque groupe séparément
+
+    // Mise à jour du "Sélectionner tous"
+    items.forEach(item => {
+        item.addEventListener('change', function () {
+            selectAll.checked = Array.from(items).every(i => i.checked);
+        });
+    });
 }
+
 document.querySelectorAll('.listing-chexbox').forEach(function (group) {
   checkAllcheckbox(group);
 });

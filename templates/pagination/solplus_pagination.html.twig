@@ -1,0 +1,57 @@
+{# templates/pagination/solplus_pagination.html.twig #}
+{% if pageCount > 1 %}
+    <nav class="pagination-wrapper">
+        <ul class="pagination">
+
+            {# Bouton Précédent #}
+            {% if previous is defined %}
+                <li><a href="{{ path(route, query|merge({ (pageParameterName): previous })) }}">&laquo;</a></li>
+            {% else %}
+                <li class="disabled"><span>&laquo;</span></li>
+            {% endif %}
+
+            {# Première page #}
+            {% if current != 1 %}
+                <li><a href="{{ path(route, query|merge({ (pageParameterName): 1 })) }}">1</a></li>
+            {% else %}
+                <li class="active"><span>1</span></li>
+            {% endif %}
+
+            {# Afficher "..." après la première page #}
+            {% if current > 4 %}
+                <li class="disabled"><span>…</span></li>
+            {% endif %}
+
+            {# Pages autour de la page courante #}
+            {% for page in (current - 2)..(current + 2) %}
+                {% if page > 1 and page < pageCount %}
+                    {% if page == current %}
+                        <li class="active"><span>{{ page }}</span></li>
+                    {% else %}
+                        <li><a href="{{ path(route, query|merge({ (pageParameterName): page })) }}">{{ page }}</a></li>
+                    {% endif %}
+                {% endif %}
+            {% endfor %}
+
+            {# Afficher "..." avant la dernière page #}
+            {% if current < pageCount - 3 %}
+                <li class="disabled"><span>…</span></li>
+            {% endif %}
+
+            {# Dernière page #}
+            {% if current != pageCount %}
+                <li><a href="{{ path(route, query|merge({ (pageParameterName): pageCount })) }}">{{ pageCount }}</a></li>
+            {% else %}
+                <li class="active"><span>{{ pageCount }}</span></li>
+            {% endif %}
+
+            {# Bouton Suivant #}
+            {% if next is defined %}
+                <li><a href="{{ path(route, query|merge({ (pageParameterName): next })) }}">&raquo;</a></li>
+            {% else %}
+                <li class="disabled"><span>&raquo;</span></li>
+            {% endif %}
+
+        </ul>
+    </nav>
+{% endif %}

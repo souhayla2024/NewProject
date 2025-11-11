@@ -39,7 +39,7 @@
                         <th><input type="text" placeholder="Rechercher..." /></th>
                         <th><input type="text" placeholder="Rechercher..." /></th>
                         <th><input type="text" placeholder="Rechercher..." /></th>
-                        <th><input type="text" placeholder="Rechercher..." /></th>
+{#                        <th><input type="text" placeholder="Rechercher..." /></th>#}
                     </tr>
                 </thead>
                 <tbody>
@@ -55,7 +55,7 @@
                         <td>{{ produit.email }}</td>
                         <th>No</th>
                         <td class="actions">
-     
+
                              <form method="post" action="{{ path('app_produit_edit', {'seqprod': produit.seqprod}) }}" style="display: inline;">
                                 <input type="hidden" name="_token" value="{{ csrf_token('edit' ~ produit.seqprod) }}">
                                 <button class="view" title="Modifier"></button>

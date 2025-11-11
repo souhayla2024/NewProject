@@ -1,0 +1,50 @@
+<div class="content-single-product-bottom">
+    <div class="tabs">
+        <!-- Onglets (boutons radios) -->
+        <input type="radio" id="tab1" name="tab-control" checked>
+        <!-- Contenu des tabs -->
+        <div class="content">
+            <!-- Tab 1 : Fiche produit -->
+            <section class="tab-section">
+                <div class="group-section">
+                    <div class="partie">
+                        <!-- row group -->
+                        <div class="row-group">
+                            <div class="form-group row-10">
+                                {{ form_label(form.seqclt, 'Code:') }}
+                                {{ form_widget(form.seqclt, {'attr':{'disabled': 'disabled'} }) }}
+                            </div>
+                            <div class="form-group row-6">
+                                {{ form_label(form.nomclt, 'Client:') }}
+                                {{ form_widget(form.nomclt, {'attr':{'required': 'required'} }) }}
+                            </div>
+                            <div class="form-group row-6">
+                                {{ form_label(form.nomreseau, 'Réseau:') }}
+                                {{ form_widget(form.nomreseau, {'attr':{'required': 'required'} }) }}
+                            </div>
+
+                            <div class="form-group row-6">
+                                {{ form_label(form.seqtypeclt, 'Type de client') }}
+                                {{ form_widget(form.seqtypeclt, {'attr': {'class': 'form-control'} }) }}
+                            </div>
+                        </div>
+                        <div class="row-group">
+                            <div class="form-group row-3">
+                                {{ form_label(form.adresse, 'Adresse 1:') }}
+                                {{ form_widget(form.adresse, { }) }}
+                            </div>
+                            <div class="form-group row-3">
+                                {{ form_label(form.adresse2, 'Adresse 2:') }}
+                                {{ form_widget(form.adresse2, {'attr':{'required': 'required'} }) }}
+                            </div>
+
+
+                    </div>
+                </div>
+                <!-- Group brtns footer -->
+
+            </section>
+
+        </div>
+    </div>
+</div>

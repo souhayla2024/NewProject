@@ -59,7 +59,7 @@
                         <span class="title-item">Clients</span>
                     </span>
                     <ul class="sub-menu-items">
-                        <li class="item-sub-menu"><a href="{{ path('app_produit_index') }}" class="link-item-sub-menu">Mise à jour Clients</a></li>
+                        <li class="item-sub-menu"><a href="{{ path('app_client_index') }}" class="link-item-sub-menu">Mise à jour Clients</a></li>
                         <li class="item-sub-menu"><a href="{{ path('app_produit_index') }}" class="link-item-sub-menu">Réseau de clients</a></li>
                         <li class="item-sub-menu"><a href="{{ path('app_produit_index') }}" class="link-item-sub-menu">Groupement clients</a></li>
                         <li class="item-sub-menu"><a href="{{ path('app_produit_index') }}" class="link-item-sub-menu">Type clients</a></li>
@@ -114,15 +114,15 @@
                     </ul>
                 </li>
             </ul>
-            
+
             <ul class="list-menu-bottom">
     <li class="item-list-menu-nav">
                     <a href="{{ path('app_produit_index') }}" class="link-item-list-menu-nav">
                         <span class="picto profile"><img src="{{ asset('inc/profil.svg') }}" alt="Profil"></span>
-                        <span class="title-item">El euch mamdouh</span>
+                        <span class="title-item">{{ app.user ? app.user.NOMUTIL : 'Invité' }}</span>
                     </a>
                 </li>
-                
+
 {% if app.user %}
 <li class="item-list-menu-nav">
     <form id="logout-form" action="{{ path('app_logout') }}" method="post" style="display: none;">
