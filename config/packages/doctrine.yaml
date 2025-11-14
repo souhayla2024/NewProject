@@ -10,7 +10,7 @@ doctrine:
                 # Port (par défaut : 1433)
                 port: '1433'
                 # Nom de la base de données
-                dbname: 'RFT_V1'
+                dbname: 'RFT_V2'
                 # Nom d'utilisateur
                 user: 'sa'
                 # Mot de passe

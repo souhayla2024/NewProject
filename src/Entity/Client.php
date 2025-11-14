@@ -47,8 +47,9 @@ class Client
     #[ORM\Column(name: 'VILLE', type: Types::STRING, length: 30, nullable: false, options: ['default' => ''])]
     private string $ville = '';
 
-    #[ORM\Column(name: 'PAYS', type: Types::STRING, length: 20, nullable: false, options: ['default' => ''])]
-    private string $pays = '';
+    #[ORM\ManyToOne(targetEntity: Pays::class)]
+    #[ORM\JoinColumn(name: 'IDPAYS', referencedColumnName: 'IDPAYS', nullable: true)]
+    private ?Pays $pays = null;
 
     #[ORM\Column(name: 'TEL1', type: Types::STRING, length: 20, nullable: false, options: ['default' => ''])]
     private string $tel1 = '';
@@ -218,9 +219,9 @@ class Client
     #[ORM\Column(name: 'SEQTYPEREGLE', type: Types::INTEGER, nullable: false, options: ['default' => 0])]
     private int $seqtyperegle = 0;
 
-    #[ORM\Column(name: 'SEQTYPECLT', type: Types::INTEGER, nullable: false, options: ['default' => 0])]
-    private int $seqtypeclt = 0;
-
+    #[ORM\ManyToOne(targetEntity: TypeClt::class)]
+    #[ORM\JoinColumn(name: 'SEQTYPECLT', referencedColumnName: 'SEQTYPECLT', nullable: true)] // nullable: true
+    private ?TypeClt $typeclt = null;
     #[ORM\Column(name: 'SEQCOMM', type: Types::INTEGER, nullable: false, options: ['default' => 0])]
     private int $seqcomm = 0;
 
@@ -298,9 +299,16 @@ class Client
     public function getVille(): string { return $this->ville; }
     public function setVille(?string $v): self { $this->ville = $v ?? ''; return $this; }
 
-    public function getPays(): string { return $this->pays; }
-    public function setPays(?string $v): self { $this->pays = $v ?? ''; return $this; }
+    public function getPays(): ?Pays
+    {
+        return $this->pays;
+    }
 
+    public function setPays(?Pays $pays): static
+    {
+        $this->pays = $pays;
+        return $this;
+    }
     public function getCommiss(): string { return $this->commiss; }
     public function setCommiss($v): self { $this->commiss = $this->formatDecimal($v, 6, 2); return $this; }
 
@@ -728,19 +736,16 @@ class Client
     /**
      * @return string
      */
-    public function getLibtypeclt(): string
+    public function getTypeclt(): ?TypeClt
     {
-        return $this->libtypeclt;
+        return $this->typeclt;
     }
 
-    /**
-     * @param string $libtypeclt
-     */
-    public function setLibtypeclt(string $libtypeclt): void
+    public function setTypeclt(?TypeClt $typeclt): static
     {
-        $this->libtypeclt = $libtypeclt;
+        $this->typeclt = $typeclt;
+        return $this;
     }
-
     /**
      * @return int
      */
@@ -1205,21 +1210,6 @@ class Client
         $this->seqtyperegle = $seqtyperegle;
     }
 
-    /**
-     * @return int
-     */
-    public function getSeqtypeclt(): int
-    {
-        return $this->seqtypeclt;
-    }
-
-    /**
-     * @param int $seqtypeclt
-     */
-    public function setSeqtypeclt(int $seqtypeclt): void
-    {
-        $this->seqtypeclt = $seqtypeclt;
-    }
 
     /**
      * @return int

@@ -58,7 +58,7 @@ class Utilisateur implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\Column(type: 'integer', name: 'SEQNIVEAU')]
     private int $SEQNIVEAU;
 
-    #[ORM\Column(type: 'string', length: 50, name: 'emailutil')]
+    #[ORM\Column(type: 'string', length: 50, name: 'EMAIL')]
     private string $emailutil;
 
     #[ORM\Column(type: 'string', length: 10, name: 'WEBLOGIN')]

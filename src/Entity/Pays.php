@@ -113,7 +113,7 @@ class Pays
     }
     public function __toString(): string
     {
-        return $this->getLIBPAYS(); // Remplacez getLibelle() par la propriété que vous voulez afficher
+        return $this->LIBPAYS ?? ''; // Retourne le nom du pays
     }
 
     /**

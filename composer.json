@@ -9,6 +9,7 @@
         "ext-iconv": "*",
         "doctrine/dbal": "^3",
         "doctrine/doctrine-bundle": "^2.18",
+        "doctrine/doctrine-laminas-hydrator": "^3.6",
         "doctrine/doctrine-migrations-bundle": "^3.5",
         "doctrine/orm": "^3.5",
         "knplabs/knp-paginator-bundle": "^6.9",
@@ -81,6 +82,9 @@
         }
     },
     "require-dev": {
-        "symfony/maker-bundle": "^1.64"
+        "doctrine/migrations": "^3.9",
+        "symfony/debug-bundle": "7.3.*",
+        "symfony/maker-bundle": "^1.64",
+        "symfony/web-profiler-bundle": "7.3.*"
     }
 }

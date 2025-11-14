@@ -1,50 +1,477 @@
-<div class="content-single-product-bottom">
-    <div class="tabs">
-        <!-- Onglets (boutons radios) -->
-        <input type="radio" id="tab1" name="tab-control" checked>
-        <!-- Contenu des tabs -->
-        <div class="content">
-            <!-- Tab 1 : Fiche produit -->
-            <section class="tab-section">
-                <div class="group-section">
-                    <div class="partie">
-                        <!-- row group -->
-                        <div class="row-group">
-                            <div class="form-group row-10">
-                                {{ form_label(form.seqclt, 'Code:') }}
-                                {{ form_widget(form.seqclt, {'attr':{'disabled': 'disabled'} }) }}
-                            </div>
-                            <div class="form-group row-6">
-                                {{ form_label(form.nomclt, 'Client:') }}
-                                {{ form_widget(form.nomclt, {'attr':{'required': 'required'} }) }}
-                            </div>
-                            <div class="form-group row-6">
-                                {{ form_label(form.nomreseau, 'Réseau:') }}
-                                {{ form_widget(form.nomreseau, {'attr':{'required': 'required'} }) }}
-                            </div>
+{# templates/client/_form.html.twig #}
 
-                            <div class="form-group row-6">
-                                {{ form_label(form.seqtypeclt, 'Type de client') }}
-                                {{ form_widget(form.seqtypeclt, {'attr': {'class': 'form-control'} }) }}
-                            </div>
+{{ form_start(form, {'attr': {'class': 'content-single-product-bottom'}}) }}
+
+<div class="tabs">
+    <!-- Onglets (boutons radios) -->
+    <input type="radio" id="tab1" name="tab-control" checked>
+
+    <!-- Contenu des tabs -->
+    <div class="content">
+        <!-- Tab 1 : Fiche client -->
+        <section class="tab-section">
+
+            {# ====================== IDENTIFICATION / BASE ====================== #}
+            <div class="group-section">
+                <div class="partie">
+
+                    <div class="row-group">
+                        <div class="form-group row-10">
+                            {{ form_label(form.seqclt, 'Code :') }}
+                            {{ form_widget(form.seqclt, {'attr': {'disabled': 'disabled'}}) }}
                         </div>
-                        <div class="row-group">
-                            <div class="form-group row-3">
-                                {{ form_label(form.adresse, 'Adresse 1:') }}
-                                {{ form_widget(form.adresse, { }) }}
+                        <div class="form-group row-3">
+                            {{ form_label(form.nomclt, 'Client :') }}
+                            {{ form_widget(form.nomclt) }}
+                        </div>
+                        <div class="form-group row-5">
+                            {{ form_label(form.nomreseau, 'Réseau :') }}
+                            {{ form_widget(form.nomreseau) }}
+                        </div>
+                        <div class="form-group row-5">
+                            {{ form_label(form.typeclt, 'Type Client :') }}
+                            {{ form_widget(form.typeclt, {'attr': {'class': 'form-control'}}) }}
+                            {% if form.typeclt.vars.choices is empty %}
+                                <small class="text-muted">Aucun type de client disponible</small>
+                            {% endif %}
+                        </div>
+{#                        <div class="form-group row-4">#}
+{#                            {{ form_label(form.sousreseau, 'Sous-réseau :') }}#}
+{#                            {{ form_widget(form.sousreseau) }}#}
+{#                        </div>#}
+                    </div>
+
+                    <div class="row-group">
+                            <div class="form-group row-2">
+                                {{ form_label(form.adresse, 'Adresse 1 :') }}
+                                {{ form_widget(form.adresse) }}
                             </div>
-                            <div class="form-group row-3">
-                                {{ form_label(form.adresse2, 'Adresse 2:') }}
-                                {{ form_widget(form.adresse2, {'attr':{'required': 'required'} }) }}
+                            <div class="form-group row-2">
+                                {{ form_label(form.adresse2, 'Adresse 2 :') }}
+                                {{ form_widget(form.adresse2) }}
                             </div>
+                    </div>
+                    <div class="row-group">
+                        <div class="form-group row-4">
+                            {{ form_label(form.cp, 'Code postal :') }}
+                            {{ form_widget(form.cp) }}
+                        </div>
+                        <div class="form-group row-4">
+                            {{ form_label(form.ville, 'Ville :') }}
+                            {{ form_widget(form.ville) }}
+                        </div>
+                        <div class="form-group row-4">
+                            {{ form_label(form.pays, 'Pays :') }}
+                            {{ form_widget(form.pays, {'attr': {'class': 'form-control'}}) }}
+                        </div>
+                    </div>
+                    <div class="row-group">
+                        <div class="form-group row-4">
+                            {{ form_label(form.seqcltpackdb, 'Seq PackDB :') }}
+                            {{ form_widget(form.seqcltpackdb) }}
+                        </div>
+                        <div class="form-group row-4">
+                            {{ form_label(form.refpackdb, 'Ref PackDB :') }}
+                            {{ form_widget(form.refpackdb) }}
+                        </div>
+                        <div class="form-group row-4">
+                            {{ form_label(form.refunique, 'Référence unique :') }}
+                            {{ form_widget(form.refunique) }}
+                        </div>
+                        <div class="form-group row-4">
+                            {{ form_label(form.categorie, 'Catégorie :') }}
+                            {{ form_widget(form.categorie) }}
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            {# ====================== ADRESSES ====================== #}
+            <div class="group-section">
+                <div class="partie">
 
 
+
+
+
+                </div>
+            </div>
+
+            {# ====================== CONTACTS ====================== #}
+            <div class="group-section">
+                <h3>Contact</h3>
+                <div class="partie">
+
+                    <div class="row-group">
+                        <div class="form-group row-4">
+                            {{ form_label(form.patron, 'Responsable (Commercial) :') }}
+                            {{ form_widget(form.patron) }}
+                        </div>
+                        <div class="form-group row-4">
+                            {{ form_label(form.tel1, 'Téléphone 1 :') }}
+                            {{ form_widget(form.tel1) }}
+                        </div>
+                        <div class="form-group row-4">
+                            {{ form_label(form.email, 'Email :') }}
+                            {{ form_widget(form.email) }}
+                        </div>
+                    </div>
+
+                    <div class="row-group">
+                        <div class="form-group row-4">
+                            {{ form_label(form.contact, 'Responsable (Réservation) :') }}
+                            {{ form_widget(form.contact) }}
+                        </div>
+                        <div class="form-group row-4">
+                            {{ form_label(form.tel2, 'Téléphone 2 :') }}
+                            {{ form_widget(form.tel2) }}
+                        </div>
+                        <div class="form-group row-4">
+                            {{ form_label(form.tel3, 'Téléphone 3 :') }}
+                            {{ form_widget(form.tel3) }}
+                        </div>
+                    </div>
+
+                    <div class="row-group">
+                        <div class="form-group row-6">
+                            {{ form_label(form.fax, 'Fax :') }}
+                            {{ form_widget(form.fax) }}
+                        </div>
+                        <div class="form-group row-6">
+                            {{ form_label(form.login, 'Login :') }}
+                            {{ form_widget(form.login) }}
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            {# ====================== COMPTA / RÈGLEMENT ====================== #}
+            <div class="group-section">
+                <h3>Comptabilité & Règlement</h3>
+                <div class="partie">
+
+                    <div class="row-group">
+                        <div class="form-group row-3">
+                            {{ form_label(form.ccompta, 'Code comptable :') }}
+                            {{ form_widget(form.ccompta) }}
+                        </div>
+                        <div class="form-group row-3">
+                            {{ form_label(form.libtyperegle, 'Libellé type règlement :') }}
+                            {{ form_widget(form.libtyperegle) }}
+                        </div>
+                        <div class="form-group row-3">
+                            {{ form_label(form.typeregle, 'Type règlement :') }}
+                            {{ form_widget(form.typeregle) }}
+                        </div>
+                        <div class="form-group row-3">
+                            {{ form_label(form.paiement, 'Paiement :') }}
+                            {{ form_widget(form.paiement) }}
+                        </div>
+                    </div>
+
+                    <div class="row-group">
+                        <div class="form-group row-3">
+                            {{ form_label(form.frais, 'Frais :') }}
+                            {{ form_widget(form.frais) }}
+                        </div>
+                        <div class="form-group row-3">
+                            {{ form_label(form.taxe, 'Taxe :') }}
+                            {{ form_widget(form.taxe) }}
+                        </div>
+                        <div class="form-group row-3">
+                            {{ form_label(form.taxecli, 'Taxe client :') }}
+                            {{ form_widget(form.taxecli) }}
+                        </div>
+                        <div class="form-group row-3">
+                            {{ form_label(form.comttc, 'Com TTC :') }}
+                            {{ form_widget(form.comttc) }}
+                        </div>
+                    </div>
+
+                    <div class="row-group">
+                        <div class="form-group row-4">
+                            {{ form_label(form.commiss, 'Com 1 :') }}
+                            {{ form_widget(form.commiss) }}
+                        </div>
+                        <div class="form-group row-4">
+                            {{ form_label(form.commiss2, 'Com 2 :') }}
+                            {{ form_widget(form.commiss2) }}
+                        </div>
+                        <div class="form-group row-4">
+                            {{ form_label(form.commiss3, 'Com 3 :') }}
+                            {{ form_widget(form.commiss3) }}
+                        </div>
+                        <div class="form-group row-4">
+                            {{ form_label(form.commiss4, 'Com 4 :') }}
+                            {{ form_widget(form.commiss4) }}
+                        </div>
+                    </div>
+
+                    <div class="row-group">
+                        <div class="form-group row-4">
+                            {{ form_label(form.ccredit, 'Crédit (code) :') }}
+                            {{ form_widget(form.ccredit) }}
+                        </div>
+                        <div class="form-group row-4">
+                            {{ form_label(form.codecommercial, 'Code commercial :') }}
+                            {{ form_widget(form.codecommercial) }}
+                        </div>
+                        <div class="form-group row-4">
+                            {{ form_label(form.couleur, 'Couleur :') }}
+                            {{ form_widget(form.couleur) }}
+                        </div>
+                        <div class="form-group row-4">
+                            {{ form_label(form.analytique, 'Analytique :') }}
+                            {{ form_widget(form.analytique) }}
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            {# ====================== PARAMÈTRES / DIVERS ====================== #}
+            <div class="group-section">
+                <h3>Paramètres / Divers</h3>
+                <div class="partie">
+
+                    <div class="row-group">
+
+                        <div class="form-group row-3">
+                            {{ form_label(form.groupeclient, 'Groupe client :') }}
+                            {{ form_widget(form.groupeclient) }}
+                        </div>
+                        <div class="form-group row-3">
+                            {{ form_label(form.libclassification, 'Classification :') }}
+                            {{ form_widget(form.libclassification) }}
+                        </div>
+                        <div class="form-group row-3">
+                            {{ form_label(form.abreviation, 'Abréviation :') }}
+                            {{ form_widget(form.abreviation) }}
+                        </div>
+                    </div>
+
+                    <div class="row-group">
+                        <div class="form-group row-4">
+                            {{ form_label(form.principal, 'Principal :') }}
+                            {{ form_widget(form.principal) }}
+                        </div>
+                        <div class="form-group row-4">
+                            {{ form_label(form.archiver, 'Archiver :') }}
+                            {{ form_widget(form.archiver) }}
+                        </div>
+                        <div class="form-group row-4">
+                            {{ form_label(form.blacklist, 'Blacklist :') }}
+                            {{ form_widget(form.blacklist) }}
+                        </div>
+                        <div class="form-group row-4">
+                            {{ form_label(form.litige, 'Litige :') }}
+                            {{ form_widget(form.litige) }}
+                        </div>
+                    </div>
+
+                    <div class="row-group">
+                        <div class="form-group row-3">
+                            {{ form_label(form.docLangue, 'Doc Langue :') }}
+                            {{ form_widget(form.docLangue) }}
+                        </div>
+                        <div class="form-group row-3">
+                            {{ form_label(form.comAnnul, 'Com Annul :') }}
+                            {{ form_widget(form.comAnnul) }}
+                        </div>
+                        <div class="form-group row-3">
+                            {{ form_label(form.tvaInvisible, 'TVA Invisible :') }}
+                            {{ form_widget(form.tvaInvisible) }}
+                        </div>
+                        <div class="form-group row-3">
+                            {{ form_label(form.pointcom, 'Point com :') }}
+                            {{ form_widget(form.pointcom) }}
+                        </div>
+                    </div>
+
+                    <div class="row-group">
+                        <div class="form-group row-4">
+                            {{ form_label(form.seqreseau, 'Seq Réseau :') }}
+                            {{ form_widget(form.seqreseau) }}
+                        </div>
+                        <div class="form-group row-4">
+                            {{ form_label(form.seqsousreseau, 'Seq Sous-Réseau :') }}
+                            {{ form_widget(form.seqsousreseau) }}
+                        </div>
+                        <div class="form-group row-4">
+                            {{ form_label(form.seqcommercial, 'Seq Commercial :') }}
+                            {{ form_widget(form.seqcommercial) }}
+                        </div>
+                    </div>
+
+                    <div class="row-group">
+                        <div class="form-group row-4">
+                            {{ form_label(form.seqtyperegle, 'Seq Type Règle :') }}
+                            {{ form_widget(form.seqtyperegle) }}
+                        </div>
+                        <div class="form-group row-4">
+                            {{ form_label(form.seqcomm, 'Seq Comm :') }}
+                            {{ form_widget(form.seqcomm) }}
+                        </div>
+                        <div class="form-group row-4">
+                            {{ form_label(form.seqconditionClient, 'Seq Condition Client :') }}
+                            {{ form_widget(form.seqconditionClient) }}
+                        </div>
+                        <div class="form-group row-4">
+                            {{ form_label(form.codepayeur, 'Code payeur :') }}
+                            {{ form_widget(form.codepayeur) }}
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            {# ====================== ACCÈS / LOGINS ====================== #}
+            <div class="group-section">
+                <h3>Accès & Identifiants</h3>
+                <div class="partie">
+
+                    <div class="row-group">
+                        <div class="form-group row-3">
+                            {{ form_label(form.mdp, 'Mot de passe :') }}
+                            {{ form_widget(form.mdp) }}
+                        </div>
+                        <div class="form-group row-3">
+                            {{ form_label(form.loginbtob, 'Login B2B :') }}
+                            {{ form_widget(form.loginbtob) }}
+                        </div>
+                        <div class="form-group row-3">
+                            {{ form_label(form.mdpbtob, 'MDP B2B :') }}
+                            {{ form_widget(form.mdpbtob) }}
+                        </div>
+                        <div class="form-group row-3">
+                            {{ form_label(form.loginbtobvol, 'Login B2B Vol :') }}
+                            {{ form_widget(form.loginbtobvol) }}
+                        </div>
+                    </div>
+
+                    <div class="row-group">
+                        <div class="form-group row-3">
+                            {{ form_label(form.mdpbtobvol, 'MDP B2B Vol :') }}
+                            {{ form_widget(form.mdpbtobvol) }}
+                        </div>
+                        <div class="form-group row-3">
+                            {{ form_label(form.paiementbtobvol, 'Paiement B2B Vol :') }}
+                            {{ form_widget(form.paiementbtobvol) }}
+                        </div>
+                        <div class="form-group row-3">
+                            {{ form_label(form.loginAdpack, 'Login Adpack :') }}
+                            {{ form_widget(form.loginAdpack) }}
+                        </div>
+                        <div class="form-group row-3">
+                            {{ form_label(form.mdpAdpack, 'MDP Adpack :') }}
+                            {{ form_widget(form.mdpAdpack) }}
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            {# ====================== LOGISTIQUE / TRANSPORT ====================== #}
+            <div class="group-section">
+                <h3>Logistique</h3>
+                <div class="partie">
+
+                    <div class="row-group">
+                        <div class="form-group row-4">
+                            {{ form_label(form.codeamadeus, 'Aéroport 1 / Code Amadeus :') }}
+                            {{ form_widget(form.codeamadeus) }}
+                        </div>
+                        <div class="form-group row-4">
+                            {{ form_label(form.loginGalileo, 'Aéroport 2 / Login Galileo :') }}
+                            {{ form_widget(form.loginGalileo) }}
+                        </div>
+                        <div class="form-group row-4">
+                            {{ form_label(form.mdpGalileo, 'Réceptif / MDP Galileo :') }}
+                            {{ form_widget(form.mdpGalileo) }}
+                        </div>
+                        <div class="form-group row-4">
+                            {{ form_label(form.codeAgence, 'Code Agence :') }}
+                            {{ form_widget(form.codeAgence) }}
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            {# ====================== OPTIONS / FLAGS ====================== #}
+            <div class="group-section">
+                <h3>Options / Flags</h3>
+                <div class="partie">
+
+                    <div class="row-group">
+                        <div class="form-group row-3">
+                            {{ form_label(form.annulationTechnique, 'Annulation technique :') }}
+                            {{ form_widget(form.annulationTechnique) }}
+                        </div>
+                        <div class="form-group row-3">
+                            {{ form_label(form.delaiAt, 'Délai AT :') }}
+                            {{ form_widget(form.delaiAt) }}
+                        </div>
+                        <div class="form-group row-3">
+                            {{ form_label(form.carnetvoyage, 'Carnet voyage :') }}
+                            {{ form_widget(form.carnetvoyage) }}
+                        </div>
+                        <div class="form-group row-3">
+                            {{ form_label(form.basculeAutoReglement, 'Bascule auto règlement :') }}
+                            {{ form_widget(form.basculeAutoReglement) }}
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            {# ====================== INFORMATIONS COMPLÉMENTAIRES ====================== #}
+            <div class="group-section">
+                <h3>Informations complémentaires</h3>
+                <div class="partie">
+
+                    <div class="row-group">
+                        <div class="form-group row-4">
+                            {{ form_label(form.datesaisie, 'Date saisie :') }}
+                            {{ form_widget(form.datesaisie) }}
+                        </div>
+                        <div class="form-group row-4">
+                            {{ form_label(form.convoc, 'Convoc :') }}
+                            {{ form_widget(form.convoc) }}
+                        </div>
+                        <div class="form-group row-4">
+                            {{ form_label(form.resa, 'Réservation (resa) :') }}
+                            {{ form_widget(form.resa) }}
+                        </div>
+                        <div class="form-group row-4">
+                            {{ form_label(form.comcoffret, 'Com coffret :') }}
+                            {{ form_widget(form.comcoffret) }}
+                        </div>
+                    </div>
+
+                    <div class="row-group">
+                        <div class="form-group row-12">
+                            {{ form_label(form.obs, 'Remarques :') }}
+                            {{ form_widget(form.obs, {'attr': {'rows': '3'}}) }}
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            {# ====================== PIED DE FORMULAIRE ====================== #}
+            <div class="group-section">
+                <div class="partie">
+                    <div class="row-group">
+                        <button class="btn">{{ button_label|default('Enregistrer') }}</button>
                     </div>
                 </div>
-                <!-- Group brtns footer -->
+            </div>
 
-            </section>
-
-        </div>
+        </section>
     </div>
 </div>
+
+{{ form_end(form) }}
