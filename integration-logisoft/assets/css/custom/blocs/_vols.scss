@@ -1,0 +1,1441 @@
+#vol-wrapper {
+    .header-section-vol {
+        padding: 10px 0;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+
+        .title-section {
+            font-family: $RobotoSlab-Medium;
+            font-size: 30px;
+            color: $black;
+            display: flex;
+            align-items: center;
+            .picto {
+                display: block;
+                width: 40px;
+                height: 40px;
+                padding: 5px;
+                transform: rotate(-45deg);
+                img {
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+        }
+
+        .group-btns {
+            margin-top: 30px;
+            margin-left: auto;
+            display: flex;
+            justify-content: flex-end;
+            column-gap: 15px;
+
+            .btn-left {
+                padding: 10px;
+                background-color: $blue-dark;
+                font-family: $Roboto-Medium;
+                font-size: 14px;
+                color: $white;
+                border: none;
+                border-radius: 6px;
+                cursor: pointer;
+                @include transitions;
+
+                &:hover {
+                    background: #09387f;
+                    @include transitions;
+                }
+            }
+
+            .btn-right {
+                padding: 10px 30px;
+                background-color: #06c;
+                font-family: $Roboto-Medium;
+                font-size: 14px;
+                color: $white;
+                border: none;
+                border-radius: 6px;
+                cursor: pointer;
+                @include transitions;
+
+                &:hover {
+                    background: #1976d2;
+                    @include transitions;
+                }
+            }
+        }
+    }
+
+    .group-section {
+        font-family: "Segoe UI", sans-serif;
+
+        h2 {
+            margin-bottom: 15px;
+            color: #004080;
+            text-transform: uppercase;
+            strong {
+                color: $pinky;
+                text-transform: uppercase;
+            }
+        }
+        h3 {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: #333;
+            border-left: 4px solid #004080;
+            padding-left: 10px;
+            text-transform: uppercase;
+        }
+
+        h4 {
+            font-size: 16px;
+            font-weight: 600;
+            margin: 15px 0 8px;
+            color: #333;
+            border-left: 4px solid #004080;
+            padding-left: 10px;
+            text-transform: uppercase;
+        }
+
+        .partie {
+            margin-bottom: 30px;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            background-color: $white;
+
+            .row-group {
+                display: flex;
+                align-items: center;
+                flex-wrap: wrap;
+                column-gap: 15px;
+                .form-group {
+                    margin-bottom: 12px;
+                    display: flex;
+                    flex-wrap: wrap;
+                    column-gap: 15px;
+                    width: 100%;
+
+                    // width: calc((100% / 3)- 15px);
+                    &.row-10 {
+                        width: calc((100% / 10) - 15px);
+                    }
+
+                    &.row-9 {
+                        width: calc((100% / 9) - 15px);
+                    }
+
+                    &.row-8 {
+                        width: calc((100% / 8) - 15px);
+                    }
+
+                    &.row-7 {
+                        width: calc((100% / 7) - 15px);
+                    }
+
+                    &.row-6 {
+                        width: calc((100% / 6) - 15px);
+                    }
+
+                    &.row-5 {
+                        width: calc((100% / 5) - 15px);
+                    }
+
+                    &.row-4 {
+                        width: calc((100% / 4) - 15px);
+                    }
+
+                    &.row-3 {
+                        width: calc((100% / 3) - 15px);
+                    }
+
+                    &.row-2 {
+                        width: calc((100% / 2) - 15px);
+                    }
+                    &.row-1 {
+                        width: calc(75% - 15px);
+                    }
+                    button {
+                        color: #fff;
+                        padding: 8px 16px;
+                        border: none;
+                        border-radius: 6px;
+                        cursor: pointer;
+                        transition: 0.2s;
+
+                        &:hover {
+                            background-color: #0066cc;
+                        }
+                    }
+
+                    // ***//////
+
+                    label {
+                        display: block;
+                        font-weight: 600;
+                        color: #222;
+                        font-size: 13px;
+                        margin-bottom: -7px;
+                        margin-left: 25px;
+                        position: relative;
+                        z-index: 1;
+                        background-color: #ffffff;
+                        padding: 0 7px;
+                        border-radius: 40px;
+                    }
+
+                    input[type="text"],
+                    input[type="email"],
+                    input[type="tel"],
+                    input[type="date"] {
+                        font-family: "Segoe UI", sans-serif;
+                        width: 100%;
+                        padding: 6px 10px;
+                        border: 1px solid #ccc;
+                        border-radius: 6px;
+                        font-size: 14px;
+                        transition: 0.2s;
+                        background-color: #f9fafc;
+                        &:focus {
+                            border-color: #004080;
+                            box-shadow: 0 0 4px rgba(0, 64, 128, 0.3);
+                            outline: none;
+                        }
+                    }
+
+                    textarea {
+                        font-family: "Segoe UI", sans-serif;
+                        width: 100%;
+                        padding: 6px 10px;
+                        border: 1px solid #ccc;
+                        border-radius: 6px;
+                        font-size: 14px;
+                        transition: 0.2s;
+                        background-color: #f9fafc;
+
+                        &:focus {
+                            border-color: #004080;
+                            box-shadow: 0 0 4px rgba(0, 64, 128, 0.3);
+                            outline: none;
+                        }
+                    }
+
+                    input[type="checkbox"],
+                    input[type="radio"] {
+                        display: block;
+                        accent-color: #004080;
+                        background-color: transparent;
+                        margin-right: 6px;
+                    }
+                    select {
+                        appearance: none;
+                        -webkit-appearance: none;
+                        -moz-appearance: none;
+
+                        width: 100%;
+                        padding: 10px 40px 10px 15px;
+                        font-size: 16px;
+                        border: 1px solid #ccc;
+                        border-radius: 5px;
+                        background-color: #fff;
+
+                        // flèche personnalisée
+                        background-image: url('data:image/svg+xml;charset=US-ASCII,<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12"><polygon points="0,0 12,0 6,6" fill="%23999"/></svg>');
+                        background-repeat: no-repeat;
+                        background-position: right 10px center;
+                        cursor: pointer;
+                        transition: border-color 0.2s, box-shadow 0.2s;
+
+                        &:focus {
+                            border-color: #007bff;
+                            outline: none;
+                            box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+                        }
+                    }
+
+                    &.checkbox-group {
+                        display: flex !important;
+                        flex-wrap: nowrap;
+                        align-items: center;
+
+                        // .checkbox-wrapper {
+                        //     display: flex !important;
+                        //     flex-wrap: wrap;
+                        //     align-items: center;
+
+                        //     input {
+                        //         margin-right: 5px;
+                        //     }
+
+                        //     label {
+                        //         background-color: transparent !important;
+                        //         margin-left: 0 !important;
+                        //         margin-bottom: 0;
+                        //         padding: 0 0;
+                        //         cursor: pointer;
+                        //     }
+                        // }
+                        .checkbox-wrapper {
+                            position: relative;
+                            display: inline-block;
+                            width: 50px;
+                            height: 26px;
+                            margin-right: 0;
+                            margin-left: 0;
+                            /* Le fond du switch */
+                            .switch {
+                                position: absolute;
+                                cursor: pointer;
+                                top: 0;
+                                left: 0;
+                                right: 0;
+                                bottom: 0;
+                                background-color: #ccc; /* gris désactivé */
+                                transition: 0.3s;
+                                border-radius: 26px;
+                                &::before {
+                                    position: absolute;
+                                    content: "";
+                                    height: 20px;
+                                    width: 20px;
+                                    left: 3px;
+                                    bottom: 3px;
+                                    background-color: white;
+                                    transition: 0.3s;
+                                    border-radius: 50%;
+                                }
+                            }
+                            input {
+                                opacity: 0;
+                                width: 0;
+                                height: 0;
+                            }
+                        }
+
+                        /* Quand la case est cochée */
+                        .checkbox-wrapper input:checked + .switch {
+                            background-color: #007bff; /* bleu */
+                        }
+
+                        .checkbox-wrapper input:checked + .switch::before {
+                            transform: translateX(24px);
+                        }
+
+                        /* Quand disabled */
+                        .checkbox-wrapper input:disabled + .switch {
+                            background-color: #e0e0e0; /* gris clair */
+                            cursor: not-allowed;
+                        }
+
+                        .checkbox-wrapper input:disabled + .switch::before {
+                            background-color: #bdbdbd;
+                        }
+                    }
+
+                    &.listing-chexbox {
+                        display: block;
+                        margin: 20px 0 40px;
+
+                        .select-all-item {
+                            label {
+                                width: fit-content;
+                                display: flex;
+                                align-items: center;
+                                gap: 4px;
+                                cursor: pointer;
+                                margin-left: 0;
+                                padding: 0 0;
+
+                                span {
+                                    font-size: 15px;
+                                }
+
+                                input[type="checkbox"] {
+                                    transform: scale(1.2);
+                                    cursor: pointer;
+                                }
+                            }
+                        }
+
+                        .items {
+                            display: flex;
+                            flex-wrap: wrap;
+                            margin-top: 20px;
+
+                            label {
+                                display: flex;
+                                align-items: center;
+                                gap: 4px;
+                                cursor: pointer;
+                                margin-left: 0;
+
+                                input[type="checkbox"] {
+                                    transform: scale(1.2);
+                                    cursor: pointer;
+                                }
+                            }
+                        }
+                    }
+
+                    &.multi-select {
+                        margin-top: 20px;
+                        display: flex;
+                        align-items: center;
+                        $border-color: #ccc;
+                        $border-radius: 6px;
+                        $hover-bg: #f0f0f0;
+                        $font-family: "Segoe UI", sans-serif;
+                        $bg-color: #fff;
+
+                        .form-group-content {
+                            max-width: 50%;
+                            width: 100%;
+
+                            label {
+                                width: fit-content;
+                            }
+
+                            .multi-select-dropdown {
+                                position: relative;
+                                background-color: #f9fafc;
+
+                                .btn-dropdown {
+                                    position: absolute;
+                                    right: 10px;
+                                    top: 10px;
+                                    width: 20px;
+                                    height: 20px;
+                                    background-image: url(../inc/img/dropdown-arrow.svg);
+                                    background-position: center;
+                                    background-repeat: no-repeat;
+                                    background-size: cover;
+                                    cursor: pointer;
+                                }
+
+                                .dropdown-selected {
+                                    border: 1px solid #ccc;
+                                    border-radius: 6px;
+                                    padding: 5px 10px;
+                                    min-height: 38px;
+                                    cursor: pointer;
+                                    display: flex;
+                                    flex-wrap: wrap;
+                                    align-items: center;
+                                    gap: 5px;
+
+                                    .selected-item {
+                                        background: #f0f0f0;
+                                        padding: 2px 6px;
+                                        border-radius: 4px;
+                                        display: flex;
+                                        align-items: center;
+                                        $font-family: "Segoe UI", sans-serif;
+                                        font-size: 12px;
+                                        color: $black;
+
+                                        .remove-item {
+                                            margin-left: 4px;
+                                            cursor: pointer;
+                                            font-weight: bold;
+                                        }
+                                    }
+
+                                    &.placeholder {
+                                        color: #999;
+                                    }
+                                }
+
+                                .dropdown-options {
+                                    display: none;
+                                    position: absolute;
+                                    top: 100%;
+                                    left: 0;
+                                    width: 100%;
+                                    border: 1px solid #ccc;
+                                    border-radius: 6px;
+                                    background: #fff;
+                                    z-index: 10;
+                                    max-height: 200px;
+                                    overflow-y: auto;
+                                    margin-top: 2px;
+                                    padding: 5px 0;
+
+                                    label {
+                                        display: flex;
+                                        padding: 5px 10px;
+                                        cursor: pointer;
+
+                                        &:hover {
+                                            background: #f9f9f9;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+
+                        .form-group-btn-submit {
+                            width: 100%;
+                            max-width: 160px;
+                            padding: 10px 5px;
+                            background-color: #06c;
+                            text-align: center;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            height: 100%;
+                            margin-top: 10px;
+                            border-radius: 5px;
+                            cursor: pointer;
+                            @include transitions;
+
+                            .loop {
+                                width: 15px;
+                                height: 15px;
+                                background-image: url(../inc/img/loupe.svg);
+                                background-position: center;
+                                background-repeat: no-repeat;
+                                background-size: cover;
+                                margin-right: 5px;
+                            }
+
+                            .btn-submit {
+                                font-family: "Segoe UI", sans-serif;
+                                font-size: 14px;
+                                color: $white;
+                                display: block;
+                                line-height: 1;
+                            }
+
+                            &:hover {
+                                opacity: 0.5;
+                                @include transitions;
+                            }
+                        }
+                    }
+                }
+                .validate {
+                    background-color: #0066cc;
+                    padding: 10px 25px 10px 15px;
+                    border: none;
+                    border-radius: 6px;
+                    cursor: pointer;
+                    transition: 0.2s;
+                    color: $white;
+                    display: flex;
+                    .loop {
+                        display: block;
+                        width: 15px;
+                        height: 15px;
+                        background-image: url(../inc/img/loupe.svg);
+                        background-position: center;
+                        background-repeat: no-repeat;
+                        background-size: cover;
+                        margin-right: 10px;
+                    }
+                    &:hover {
+                        background: #1976d2;
+                    }
+                }
+                .reset {
+                    background-color: transparent;
+                    padding: 8px 40px;
+                    border: 1px solid $blue-dark;
+                    border-radius: 6px;
+                    cursor: pointer;
+                    transition: 0.2s;
+                    color: $black;
+
+                    &:hover {
+                        opacity: 0.3;
+                    }
+                }
+            }
+        }
+    }
+
+    .table-wrapper {
+        margin-top: 30px;
+
+        .header-table {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+            .header-table-left {
+                label {
+                    font-family: "Segoe UI", sans-serif;
+                    font-size: 16px;
+                    color: #333;
+                    #rowsPerPageSelect {
+                        padding: 4px 8px;
+                        margin: 0 5px;
+                    }
+                }
+            }
+            .header-table-right {
+                label {
+                    font-family: "Segoe UI", sans-serif;
+                    font-size: 16px;
+                    color: #333;
+                }
+                input {
+                    font-family: "Segoe UI", sans-serif;
+                    padding: 6px 10px;
+                    border: 1px solid #ccc;
+                    border-radius: 4px;
+                }
+            }
+        }
+
+        .custom-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-family: "Segoe UI", sans-serif;
+            font-size: 14px;
+            table-layout: fixed;
+            overflow-x: auto;
+
+            thead {
+                background-color: $white;
+                border-bottom: 1px solid #ccc;
+
+                th {
+                    padding: 10px;
+                    text-align: left;
+                    font-weight: 600;
+                    // border: 1px solid #ccc;
+                    //white-space: nowrap; // empêche le retour à la ligne
+                    min-width: 135px;
+
+                    .arrow-tri {
+                        display: inline-block;
+                        width: 10px;
+                        height: 20px;
+                        background-image: url(../inc/img/arrow-tri.png);
+                        background-repeat: no-repeat;
+                        background-size: cover;
+                        background-position: center;
+                        float: right;
+                    }
+
+                    &:last-child {
+                        text-align: center;
+                    }
+                }
+
+                .filters {
+                    input {
+                        width: 100%;
+                        padding: 6px;
+                        border: 1px solid #ccc;
+                        border-radius: 6px;
+                        font-size: 13px;
+
+                        &:focus {
+                            outline: none;
+                            border-color: #004080;
+                            box-shadow: 0 0 4px rgba(0, 64, 128, 0.4);
+                        }
+                    }
+                }
+            }
+
+            tbody {
+                tr {
+                    border-bottom: 1px solid #ccc;
+                    background: #ececec;
+
+                    &:nth-child(even) {
+                        background: #fff;
+                    }
+
+                    td {
+                        padding: 10px;
+                        font-size: 12px;
+
+                        &.actions {
+                            text-align: center;
+
+                            button {
+                                width: 22px;
+                                height: 26px;
+                                border: none;
+                                cursor: pointer;
+                                background-repeat: no-repeat;
+                                background-size: 72%;
+                                background-position: center;
+                                background-color: #0c0a3b;
+                                border-radius: 6px;
+                                @include transitions;
+
+                                &.view {
+                                    background-image: url(../inc/img/see.svg);
+                                }
+
+                                &.delete {
+                                    background-image: url(../inc/img/delete.svg);
+                                }
+
+                                &:hover {
+                                    transform: scale(1.2);
+                                    @include transitions;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .pagination {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            gap: 8px;
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+            margin: 15px 0;
+
+            span {
+                display: inline-block;
+                padding: 5px 10px;
+                cursor: pointer;
+            }
+
+            .first {
+                width: 20px;
+                height: 20px;
+                background-image: url(../inc/img/double-arrow-left.svg);
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+            }
+
+            .arrow-prev {
+                width: 40px;
+                height: 20px;
+                background-image: url(../inc/img/arrow-left-pagination.svg);
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+            }
+
+            .info {
+                font-size: 18px;
+                border: none;
+                background: none;
+                cursor: default;
+                font-weight: 500;
+                color: #333;
+            }
+
+            .arrow-next {
+                width: 40px;
+                height: 20px;
+                background-image: url(../inc/img/arrow-right-pagination.svg);
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+            }
+
+            .last {
+                width: 20px;
+                height: 20px;
+                background-image: url(../inc/img/double-arrow-right.svg);
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+            }
+        }
+    }
+}
+
+@media (max-width: 1023px) {
+    #vol-wrapper {
+        .header-section-vol {
+            .title-section {
+                font-family: $RobotoSlab-Medium;
+                font-size: 30px;
+                color: $black;
+                display: flex;
+                align-items: center;
+                .picto {
+                    display: block;
+                    width: 40px;
+                    height: 40px;
+                    padding: 5px;
+                    transform: rotate(-45deg);
+                    img {
+                        width: 100%;
+                        height: 100%;
+                    }
+                }
+            }
+
+            .group-btns {
+                margin-top: 30px;
+                margin-left: auto;
+                display: flex;
+                justify-content: flex-end;
+                column-gap: 15px;
+
+                .btn-left {
+                    padding: 10px;
+                    background-color: $blue-dark;
+                    font-family: $Roboto-Medium;
+                    font-size: 14px;
+                    color: $white;
+                    border: none;
+                    border-radius: 6px;
+                    cursor: pointer;
+                    @include transitions;
+
+                    &:hover {
+                        background: #09387f;
+                        @include transitions;
+                    }
+                }
+
+                .btn-right {
+                    padding: 10px 30px;
+                    background-color: #06c;
+                    font-family: $Roboto-Medium;
+                    font-size: 14px;
+                    color: $white;
+                    border: none;
+                    border-radius: 6px;
+                    cursor: pointer;
+                    @include transitions;
+
+                    &:hover {
+                        background: #1976d2;
+                        @include transitions;
+                    }
+                }
+            }
+        }
+
+        .group-section {
+            font-family: "Segoe UI", sans-serif;
+
+            h2 {
+                margin-bottom: 15px;
+                color: #004080;
+                text-transform: uppercase;
+                strong {
+                    color: $pinky;
+                    text-transform: uppercase;
+                }
+            }
+            h3 {
+                font-size: 18px;
+                font-weight: 600;
+                margin-bottom: 15px;
+                color: #333;
+                border-left: 4px solid #004080;
+                padding-left: 10px;
+                text-transform: uppercase;
+            }
+
+            h4 {
+                font-size: 16px;
+                font-weight: 600;
+                margin: 15px 0 8px;
+                color: #333;
+                border-left: 4px solid #004080;
+                padding-left: 10px;
+                text-transform: uppercase;
+            }
+
+            .partie {
+                margin-bottom: 30px;
+                padding: 15px;
+                border: 1px solid #ddd;
+                border-radius: 10px;
+                background-color: $white;
+
+                .row-group {
+                    display: flex;
+                    align-items: center;
+                    flex-wrap: wrap;
+                    column-gap: 15px;
+                    .form-group {
+                        margin-bottom: 12px;
+                        display: flex;
+                        flex-wrap: wrap;
+                        column-gap: 15px;
+                        width: 100%;
+
+                        // width: calc((100% / 3)- 15px);
+                        &.row-10 {
+                            width: 100%;
+                        }
+
+                        &.row-9 {
+                            width: 100%;
+                        }
+
+                        &.row-8 {
+                            width: 100%;
+                        }
+
+                        &.row-7 {
+                            width: 100%;
+                        }
+
+                        &.row-6 {
+                            width: 100%;
+                        }
+
+                        &.row-5 {
+                            width: 100%;
+                        }
+
+                        &.row-4 {
+                            width: 100%;
+                        }
+
+                        &.row-3 {
+                            width: 100%;
+                        }
+
+                        &.row-2 {
+                            width: 100%;
+                        }
+                        &.row-1 {
+                            width: 100%;
+                        }
+                        button {
+                            color: #fff;
+                            padding: 8px 16px;
+                            border: none;
+                            border-radius: 6px;
+                            cursor: pointer;
+                            transition: 0.2s;
+
+                            &:hover {
+                                background-color: #0066cc;
+                            }
+                        }
+
+                        // ***//////
+
+                        label {
+                            display: block;
+                            font-weight: 600;
+                            color: #222;
+                            font-size: 13px;
+                            margin-bottom: -7px;
+                            margin-left: 25px;
+                            position: relative;
+                            z-index: 1;
+                            background-color: #ffffff;
+                            padding: 0 7px;
+                            border-radius: 40px;
+                        }
+
+                        input[type="text"],
+                        input[type="email"],
+                        input[type="tel"],
+                        input[type="date"] {
+                            font-family: "Segoe UI", sans-serif;
+                            width: 100%;
+                            padding: 6px 10px;
+                            border: 1px solid #ccc;
+                            border-radius: 6px;
+                            font-size: 14px;
+                            transition: 0.2s;
+                            background-color: #f9fafc;
+                            &:focus {
+                                border-color: #004080;
+                                box-shadow: 0 0 4px rgba(0, 64, 128, 0.3);
+                                outline: none;
+                            }
+                        }
+
+                        textarea {
+                            font-family: "Segoe UI", sans-serif;
+                            width: 100%;
+                            padding: 6px 10px;
+                            border: 1px solid #ccc;
+                            border-radius: 6px;
+                            font-size: 14px;
+                            transition: 0.2s;
+                            background-color: #f9fafc;
+
+                            &:focus {
+                                border-color: #004080;
+                                box-shadow: 0 0 4px rgba(0, 64, 128, 0.3);
+                                outline: none;
+                            }
+                        }
+
+                        input[type="checkbox"],
+                        input[type="radio"] {
+                            display: block;
+                            accent-color: #004080;
+                            background-color: transparent;
+                            margin-right: 6px;
+                        }
+                        select {
+                            appearance: none;
+                            -webkit-appearance: none;
+                            -moz-appearance: none;
+
+                            width: 100%;
+                            padding: 10px 40px 10px 15px;
+                            font-size: 16px;
+                            border: 1px solid #ccc;
+                            border-radius: 5px;
+                            background-color: #fff;
+
+                            // flèche personnalisée
+                            background-image: url('data:image/svg+xml;charset=US-ASCII,<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12"><polygon points="0,0 12,0 6,6" fill="%23999"/></svg>');
+                            background-repeat: no-repeat;
+                            background-position: right 10px center;
+                            cursor: pointer;
+                            transition: border-color 0.2s, box-shadow 0.2s;
+
+                            &:focus {
+                                border-color: #007bff;
+                                outline: none;
+                                box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+                            }
+                        }
+
+                        &.checkbox-group {
+                            display: flex !important;
+                            flex-wrap: nowrap;
+                            align-items: center;
+
+                            // .checkbox-wrapper {
+                            //     display: flex !important;
+                            //     flex-wrap: wrap;
+                            //     align-items: center;
+
+                            //     input {
+                            //         margin-right: 5px;
+                            //     }
+
+                            //     label {
+                            //         background-color: transparent !important;
+                            //         margin-left: 0 !important;
+                            //         margin-bottom: 0;
+                            //         padding: 0 0;
+                            //         cursor: pointer;
+                            //     }
+                            // }
+                            .checkbox-wrapper {
+                                position: relative;
+                                display: inline-block;
+                                width: 50px;
+                                height: 26px;
+                                margin-right: 0;
+                                margin-left: 0;
+                                /* Le fond du switch */
+                                .switch {
+                                    position: absolute;
+                                    cursor: pointer;
+                                    top: 0;
+                                    left: 0;
+                                    right: 0;
+                                    bottom: 0;
+                                    background-color: #ccc; /* gris désactivé */
+                                    transition: 0.3s;
+                                    border-radius: 26px;
+                                    &::before {
+                                        position: absolute;
+                                        content: "";
+                                        height: 20px;
+                                        width: 20px;
+                                        left: 3px;
+                                        bottom: 3px;
+                                        background-color: white;
+                                        transition: 0.3s;
+                                        border-radius: 50%;
+                                    }
+                                }
+                                input {
+                                    opacity: 0;
+                                    width: 0;
+                                    height: 0;
+                                }
+                            }
+
+                            /* Quand la case est cochée */
+                            .checkbox-wrapper input:checked + .switch {
+                                background-color: #007bff; /* bleu */
+                            }
+
+                            .checkbox-wrapper input:checked + .switch::before {
+                                transform: translateX(24px);
+                            }
+
+                            /* Quand disabled */
+                            .checkbox-wrapper input:disabled + .switch {
+                                background-color: #e0e0e0; /* gris clair */
+                                cursor: not-allowed;
+                            }
+
+                            .checkbox-wrapper input:disabled + .switch::before {
+                                background-color: #bdbdbd;
+                            }
+                        }
+
+                        &.listing-chexbox {
+                            display: block;
+                            margin: 20px 0 40px;
+
+                            .select-all-item {
+                                label {
+                                    width: fit-content;
+                                    display: flex;
+                                    align-items: center;
+                                    gap: 4px;
+                                    cursor: pointer;
+                                    margin-left: 0;
+                                    padding: 0 0;
+
+                                    span {
+                                        font-size: 15px;
+                                    }
+
+                                    input[type="checkbox"] {
+                                        transform: scale(1.2);
+                                        cursor: pointer;
+                                    }
+                                }
+                            }
+
+                            .items {
+                                display: flex;
+                                flex-wrap: wrap;
+                                margin-top: 20px;
+
+                                label {
+                                    display: flex;
+                                    align-items: center;
+                                    gap: 4px;
+                                    cursor: pointer;
+                                    margin-left: 0;
+
+                                    input[type="checkbox"] {
+                                        transform: scale(1.2);
+                                        cursor: pointer;
+                                    }
+                                }
+                            }
+                        }
+
+                        &.multi-select {
+                            margin-top: 20px;
+                            display: flex;
+                            align-items: center;
+                            $border-color: #ccc;
+                            $border-radius: 6px;
+                            $hover-bg: #f0f0f0;
+                            $font-family: "Segoe UI", sans-serif;
+                            $bg-color: #fff;
+
+                            .form-group-content {
+                                max-width: 50%;
+                                width: 100%;
+
+                                label {
+                                    width: fit-content;
+                                }
+
+                                .multi-select-dropdown {
+                                    position: relative;
+                                    background-color: #f9fafc;
+
+                                    .btn-dropdown {
+                                        position: absolute;
+                                        right: 10px;
+                                        top: 10px;
+                                        width: 20px;
+                                        height: 20px;
+                                        background-image: url(../inc/img/dropdown-arrow.svg);
+                                        background-position: center;
+                                        background-repeat: no-repeat;
+                                        background-size: cover;
+                                        cursor: pointer;
+                                    }
+
+                                    .dropdown-selected {
+                                        border: 1px solid #ccc;
+                                        border-radius: 6px;
+                                        padding: 5px 10px;
+                                        min-height: 38px;
+                                        cursor: pointer;
+                                        display: flex;
+                                        flex-wrap: wrap;
+                                        align-items: center;
+                                        gap: 5px;
+
+                                        .selected-item {
+                                            background: #f0f0f0;
+                                            padding: 2px 6px;
+                                            border-radius: 4px;
+                                            display: flex;
+                                            align-items: center;
+                                            $font-family: "Segoe UI", sans-serif;
+                                            font-size: 12px;
+                                            color: $black;
+
+                                            .remove-item {
+                                                margin-left: 4px;
+                                                cursor: pointer;
+                                                font-weight: bold;
+                                            }
+                                        }
+
+                                        &.placeholder {
+                                            color: #999;
+                                        }
+                                    }
+
+                                    .dropdown-options {
+                                        display: none;
+                                        position: absolute;
+                                        top: 100%;
+                                        left: 0;
+                                        width: 100%;
+                                        border: 1px solid #ccc;
+                                        border-radius: 6px;
+                                        background: #fff;
+                                        z-index: 10;
+                                        max-height: 200px;
+                                        overflow-y: auto;
+                                        margin-top: 2px;
+                                        padding: 5px 0;
+
+                                        label {
+                                            display: flex;
+                                            padding: 5px 10px;
+                                            cursor: pointer;
+
+                                            &:hover {
+                                                background: #f9f9f9;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+
+                            .form-group-btn-submit {
+                                width: 100%;
+                                max-width: 160px;
+                                padding: 10px 5px;
+                                background-color: #06c;
+                                text-align: center;
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+                                height: 100%;
+                                margin-top: 10px;
+                                border-radius: 5px;
+                                cursor: pointer;
+                                @include transitions;
+
+                                .loop {
+                                    width: 15px;
+                                    height: 15px;
+                                    background-image: url(../inc/img/loupe.svg);
+                                    background-position: center;
+                                    background-repeat: no-repeat;
+                                    background-size: cover;
+                                    margin-right: 5px;
+                                }
+
+                                .btn-submit {
+                                    font-family: "Segoe UI", sans-serif;
+                                    font-size: 14px;
+                                    color: $white;
+                                    display: block;
+                                    line-height: 1;
+                                }
+
+                                &:hover {
+                                    opacity: 0.5;
+                                    @include transitions;
+                                }
+                            }
+                        }
+                    }
+                    .validate {
+                        background-color: #0066cc;
+                        padding: 10px 25px 10px 15px;
+                        border: none;
+                        border-radius: 6px;
+                        cursor: pointer;
+                        transition: 0.2s;
+                        color: $white;
+                        display: flex;
+                        .loop {
+                            display: block;
+                            width: 15px;
+                            height: 15px;
+                            background-image: url(../inc/img/loupe.svg);
+                            background-position: center;
+                            background-repeat: no-repeat;
+                            background-size: cover;
+                            margin-right: 10px;
+                        }
+                        &:hover {
+                            background: #1976d2;
+                        }
+                    }
+                    .reset {
+                        background-color: transparent;
+                        padding: 8px 40px;
+                        border: 1px solid $blue-dark;
+                        border-radius: 6px;
+                        cursor: pointer;
+                        transition: 0.2s;
+                        color: $black;
+
+                        &:hover {
+                            opacity: 0.3;
+                        }
+                    }
+                }
+            }
+        }
+
+        .table-wrapper {
+            margin-top: 30px;
+
+            .header-table {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin-bottom: 10px;
+                .header-table-left {
+                    label {
+                        font-family: "Segoe UI", sans-serif;
+                        font-size: 16px;
+                        color: #333;
+                        #rowsPerPageSelect {
+                            padding: 4px 8px;
+                            margin: 0 5px;
+                        }
+                    }
+                }
+                .header-table-right {
+                    label {
+                        font-family: "Segoe UI", sans-serif;
+                        font-size: 16px;
+                        color: #333;
+                    }
+                    input {
+                        font-family: "Segoe UI", sans-serif;
+                        padding: 6px 10px;
+                        border: 1px solid #ccc;
+                        border-radius: 4px;
+                    }
+                }
+            }
+
+            .custom-table {
+                width: 100%;
+                border-collapse: collapse;
+                font-family: "Segoe UI", sans-serif;
+                font-size: 14px;
+                table-layout: fixed;
+                overflow-x: auto;
+                display: block;
+                thead {
+                    background-color: $white;
+                    border-bottom: 1px solid #ccc;
+
+                    th {
+                        // border: 1px solid #ccc;
+                        white-space: nowrap; // empêche le retour à la ligne
+                        min-width: 135px;
+
+                        .arrow-tri {
+                            display: inline-block;
+                            width: 10px;
+                            height: 20px;
+                            background-image: url(../inc/img/arrow-tri.png);
+                            background-repeat: no-repeat;
+                            background-size: cover;
+                            background-position: center;
+                            float: right;
+                        }
+
+                        &:last-child {
+                            text-align: center;
+                        }
+                    }
+
+                    .filters {
+                        input {
+                            width: 100%;
+                            padding: 6px;
+                            border: 1px solid #ccc;
+                            border-radius: 6px;
+                            font-size: 13px;
+
+                            &:focus {
+                                outline: none;
+                                border-color: #004080;
+                                box-shadow: 0 0 4px rgba(0, 64, 128, 0.4);
+                            }
+                        }
+                    }
+                }
+
+                tbody {
+                    tr {
+                        border-bottom: 1px solid #ccc;
+                        background: #ececec;
+
+                        &:nth-child(even) {
+                            background: #fff;
+                        }
+
+                        td {
+                            padding: 10px;
+                            font-size: 12px;
+
+                            &.actions {
+                                text-align: center;
+
+                                button {
+                                    width: 22px;
+                                    height: 26px;
+                                    border: none;
+                                    cursor: pointer;
+                                    background-repeat: no-repeat;
+                                    background-size: 72%;
+                                    background-position: center;
+                                    background-color: #0c0a3b;
+                                    border-radius: 6px;
+                                    @include transitions;
+
+                                    &.view {
+                                        background-image: url(../inc/img/see.svg);
+                                    }
+
+                                    &.delete {
+                                        background-image: url(../inc/img/delete.svg);
+                                    }
+
+                                    &:hover {
+                                        transform: scale(1.2);
+                                        @include transitions;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

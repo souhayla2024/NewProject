@@ -1,0 +1,1403 @@
+/* Container */
+.container {
+    padding: 16px 0;
+
+    /* STEPPER */
+    .stepper {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        margin-bottom: 18px;
+        padding-bottom: 12px;
+        position: relative;
+        z-index: 1;
+        .step {
+            background: transparent;
+            border: 0;
+            cursor: pointer;
+            align-items: center;
+            gap: 12px;
+            padding: 6px 14px;
+            position: relative;
+            z-index: 1;
+            .step_bubble {
+                width: 34px;
+                height: 34px;
+                border-radius: 50%;
+                display: block;
+                place-items: center;
+                background-color: $grey-light;
+                color: $blue-dark;
+                font-family: $Roboto-Medium;
+                font-size: 14px;
+                border: 1px solid $pinky;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin: 0 auto;
+            }
+            .step_label {
+                font-family: $Roboto-Medium;
+                font-size: 14px;
+                color: $pinky;
+                margin-top: 15px;
+            }
+            &.active {
+                .step_bubble {
+                    background-color: $pinky;
+                    box-shadow: 0 6px 18px white;
+                    color: $white;
+                }
+            }
+            &.completed {
+                .step_bubble {
+                    background-color: $blue;
+                    color: white;
+                    box-shadow: 0 0 6px rgba(0, 0, 0, 0.3);
+                    border: 1px solid $blue;
+                }
+                .step_label {
+                    color: $blue;
+                }
+            }
+        }
+        &::before {
+            content: "";
+            display: block;
+            background-color: $grey-light;
+            width: 100%;
+            height: 2px;
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            transform: translateY(-16px);
+            z-index: 0;
+        }
+        &::after {
+            content: "";
+            display: block;
+            background-color: $blue;
+            width: var(--progress-width, 0%);
+            height: 2px;
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            transform: translateY(-16px);
+            z-index: 0;
+        }
+    }
+
+    /* Panels */
+    #steps {
+        .panel {
+            background: transparent;
+            margin-top: 18px;
+            border-radius: 8px;
+            display: none;
+            &.active {
+                display: block;
+            }
+            // Content step
+            .content-step {
+                .continer-step {
+                    border-left: 4px solid $blue;
+                    border-radius: 10px;
+                    padding-left: 10px;
+                    .title-continer {
+                        font-family: $Roboto-Medium;
+                        font-size: 24px;
+                        color: $blue;
+                    }
+                    .group-section {
+                        font-family: "Segoe UI", sans-serif;
+
+                        h2 {
+                            margin-bottom: 15px;
+                            color: #004080;
+                            text-transform: uppercase;
+                            strong {
+                                color: $pinky;
+                                text-transform: uppercase;
+                            }
+                        }
+                        h3 {
+                            font-size: 18px;
+                            font-weight: 600;
+                            margin-bottom: 15px;
+                            color: #333;
+                            border-left: 4px solid #004080;
+                            padding-left: 10px;
+                            text-transform: uppercase;
+                        }
+
+                        h4 {
+                            font-size: 16px;
+                            font-weight: 600;
+                            margin: 15px 0 8px;
+                            color: #333;
+                            border-left: 4px solid #004080;
+                            padding-left: 10px;
+                            text-transform: uppercase;
+                        }
+
+                        .partie {
+                            margin-bottom: 30px;
+                            padding: 15px;
+                            border: 1px solid #ddd;
+                            border-radius: 10px;
+                            background-color: $white;
+                            h2 {
+                                font-family: $Roboto-Medium;
+                                font-size: 24px;
+                                color: $blue;
+                                text-transform: initial;
+                            }
+
+                            .row-group {
+                                display: flex;
+                                align-items: center;
+                                flex-wrap: wrap;
+                                column-gap: 15px;
+                                .form-group {
+                                    margin-bottom: 12px;
+                                    display: flex;
+                                    flex-wrap: wrap;
+                                    column-gap: 15px;
+                                    width: 100%;
+
+                                    // width: calc((100% / 3)- 15px);
+                                    &.row-10 {
+                                        width: calc((100% / 10) - 15px);
+                                    }
+
+                                    &.row-9 {
+                                        width: calc((100% / 9) - 15px);
+                                    }
+
+                                    &.row-8 {
+                                        width: calc((100% / 8) - 15px);
+                                    }
+
+                                    &.row-7 {
+                                        width: calc((100% / 7) - 15px);
+                                    }
+
+                                    &.row-6 {
+                                        width: calc((100% / 6) - 15px);
+                                    }
+
+                                    &.row-5 {
+                                        width: calc((100% / 5) - 15px);
+                                    }
+
+                                    &.row-4 {
+                                        width: calc((100% / 4) - 15px);
+                                    }
+
+                                    &.row-3 {
+                                        width: calc((100% / 3) - 15px);
+                                    }
+
+                                    &.row-2 {
+                                        width: calc((100% / 2) - 15px);
+                                    }
+                                    &.row-1 {
+                                        width: calc(75% - 15px);
+                                    }
+                                    @media (max-width: 1023px) {
+                                        // width: calc((100% / 3)- 15px);
+                                        &.row-10,
+                                        &.row-9,
+                                        &.row-8,
+                                        &.row-7,
+                                        &.row-6,
+                                        &.row-5,
+                                        &.row-4,
+                                        &.row-3,
+                                        &.row-2,
+                                        &.row-1 {
+                                            width: calc((100% / 3) - 15px);
+                                        }
+                                    }
+                                    @media (max-width: 767px) {
+                                        // width: calc((100% / 3)- 15px);
+                                        &.row-10,
+                                        &.row-9,
+                                        &.row-8,
+                                        &.row-7,
+                                        &.row-6,
+                                        &.row-5,
+                                        &.row-4,
+                                        &.row-3,
+                                        &.row-2,
+                                        &.row-1 {
+                                            width: 100%;
+                                        }
+                                    }
+
+                                    button {
+                                        color: #fff;
+                                        padding: 8px 16px;
+                                        border: none;
+                                        border-radius: 6px;
+                                        cursor: pointer;
+                                        transition: 0.2s;
+
+                                        &:hover {
+                                            background-color: #0066cc;
+                                        }
+                                    }
+
+                                    // ***//////
+
+                                    label {
+                                        display: block;
+                                        width: max-content;
+                                        font-weight: 600;
+                                        color: #222;
+                                        font-size: 13px;
+                                        margin-bottom: -7px;
+                                        margin-left: 5px;
+                                        position: relative;
+                                        z-index: 1;
+                                        background-color: #ffffff;
+                                        padding: 0 7px;
+                                        border-radius: 40px;
+                                    }
+
+                                    input[type="text"],
+                                    input[type="time"],
+                                    input[type="email"],
+                                    input[type="tel"],
+                                    input[type="date"] {
+                                        font-family: "Segoe UI", sans-serif;
+                                        width: 100%;
+                                        padding: 6px 10px;
+                                        border: 1px solid #ccc;
+                                        border-radius: 6px;
+                                        font-size: 14px;
+                                        transition: 0.2s;
+                                        background-color: #f9fafc;
+                                        &:focus {
+                                            border-color: #004080;
+                                            box-shadow: 0 0 4px
+                                                rgba(0, 64, 128, 0.3);
+                                            outline: none;
+                                        }
+                                    }
+
+                                    textarea {
+                                        font-family: "Segoe UI", sans-serif;
+                                        width: 100%;
+                                        padding: 6px 10px;
+                                        border: 1px solid #ccc;
+                                        border-radius: 6px;
+                                        font-size: 14px;
+                                        transition: 0.2s;
+                                        background-color: #f9fafc;
+
+                                        &:focus {
+                                            border-color: #004080;
+                                            box-shadow: 0 0 4px
+                                                rgba(0, 64, 128, 0.3);
+                                            outline: none;
+                                        }
+                                    }
+
+                                    input[type="checkbox"],
+                                    input[type="radio"] {
+                                        display: block;
+                                        accent-color: #004080;
+                                        background-color: transparent;
+                                        margin-right: 6px;
+                                    }
+
+                                    select {
+                                        appearance: none;
+                                        -webkit-appearance: none;
+                                        -moz-appearance: none;
+
+                                        width: 100%;
+                                        padding: 10px 40px 8px 15px;
+                                        font-size: 14px;
+                                        border: 1px solid #ccc;
+                                        border-radius: 5px;
+                                        background-color: #fff;
+
+                                        // flèche personnalisée
+                                        background-image: url('data:image/svg+xml;charset=US-ASCII,<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12"><polygon points="0,0 12,0 6,6" fill="%23999"/></svg>');
+                                        background-repeat: no-repeat;
+                                        background-position: right 10px top 15px;
+                                        cursor: pointer;
+                                        transition: border-color 0.2s,
+                                            box-shadow 0.2s;
+
+                                        &:focus {
+                                            border-color: #007bff;
+                                            outline: none;
+                                            box-shadow: 0 0 5px
+                                                rgba(0, 123, 255, 0.5);
+                                        }
+                                    }
+
+                                    &.checkbox-group {
+                                        display: flex !important;
+                                        flex-wrap: wrap;
+                                        align-items: center;
+                                        column-gap: 10px;
+
+                                        .checkbox-wrapper {
+                                            position: relative;
+                                            display: flex;
+                                            align-items: center;
+
+                                            input[type="radio"] {
+                                                appearance: none;
+                                                -webkit-appearance: none;
+                                                width: 18px;
+                                                height: 18px;
+                                                border: 2px solid #1e90ff;
+                                                border-radius: 50%;
+                                                box-shadow: 0 2px 6px
+                                                    rgba(30, 144, 255, 0.3);
+                                                position: relative;
+                                                transition: all 0.3s ease;
+                                                margin: 0 0;
+                                                &:checked::before {
+                                                    content: "";
+                                                    position: absolute;
+                                                    top: 50%;
+                                                    left: 50%;
+                                                    transform: translate(
+                                                        -50%,
+                                                        -50%
+                                                    );
+                                                    width: 12px;
+                                                    height: 12px;
+                                                    border-radius: 50%;
+                                                    background-color: #1e90ff;
+                                                }
+
+                                                &:hover {
+                                                    box-shadow: 0 0 8px
+                                                        rgba(30, 144, 255, 0.5);
+                                                }
+                                            }
+
+                                            label {
+                                                cursor: pointer;
+                                                font-family: "Roboto",
+                                                    sans-serif;
+                                                font-size: 14px;
+                                                color: #333;
+                                                user-select: none;
+                                                margin-left: 0;
+                                                margin-bottom: 0;
+                                            }
+                                        }
+                                        .text-validator {
+                                            margin-bottom: 0;
+                                        }
+                                    }
+
+                                    &.listing-chexbox {
+                                        display: block;
+                                        margin: 20px 0 40px;
+
+                                        .select-all-item {
+                                            label {
+                                                width: fit-content;
+                                                display: flex;
+                                                align-items: center;
+                                                gap: 4px;
+                                                cursor: pointer;
+                                                margin-left: 0;
+                                                padding: 0 0;
+
+                                                span {
+                                                    font-size: 15px;
+                                                }
+
+                                                input[type="checkbox"] {
+                                                    transform: scale(1.2);
+                                                    cursor: pointer;
+                                                }
+                                            }
+                                        }
+
+                                        .items {
+                                            display: flex;
+                                            flex-wrap: wrap;
+                                            margin-top: 20px;
+
+                                            label {
+                                                display: flex;
+                                                align-items: center;
+                                                gap: 4px;
+                                                cursor: pointer;
+                                                margin-left: 0;
+
+                                                input[type="checkbox"] {
+                                                    transform: scale(1.2);
+                                                    cursor: pointer;
+                                                }
+                                            }
+                                        }
+                                    }
+
+                                    &.multi-select {
+                                        margin-top: 20px;
+                                        display: flex;
+                                        align-items: center;
+                                        $border-color: #ccc;
+                                        $border-radius: 6px;
+                                        $hover-bg: #f0f0f0;
+                                        $font-family: "Segoe UI", sans-serif;
+                                        $bg-color: #fff;
+
+                                        .form-group-content {
+                                            max-width: 50%;
+                                            width: 100%;
+
+                                            label {
+                                                width: fit-content;
+                                            }
+
+                                            .multi-select-dropdown {
+                                                position: relative;
+                                                background-color: #f9fafc;
+
+                                                .btn-dropdown {
+                                                    position: absolute;
+                                                    right: 10px;
+                                                    top: 10px;
+                                                    width: 20px;
+                                                    height: 20px;
+                                                    background-image: url(../inc/img/dropdown-arrow.svg);
+                                                    background-position: center;
+                                                    background-repeat: no-repeat;
+                                                    background-size: cover;
+                                                    cursor: pointer;
+                                                }
+
+                                                .dropdown-selected {
+                                                    border: 1px solid #ccc;
+                                                    border-radius: 6px;
+                                                    padding: 5px 10px;
+                                                    min-height: 38px;
+                                                    cursor: pointer;
+                                                    display: flex;
+                                                    flex-wrap: wrap;
+                                                    align-items: center;
+                                                    gap: 5px;
+
+                                                    .selected-item {
+                                                        background: #f0f0f0;
+                                                        padding: 2px 6px;
+                                                        border-radius: 4px;
+                                                        display: flex;
+                                                        align-items: center;
+                                                        $font-family: "Segoe UI",
+                                                            sans-serif;
+                                                        font-size: 12px;
+                                                        color: $black;
+
+                                                        .remove-item {
+                                                            margin-left: 4px;
+                                                            cursor: pointer;
+                                                            font-weight: bold;
+                                                        }
+                                                    }
+
+                                                    &.placeholder {
+                                                        color: #999;
+                                                    }
+                                                }
+
+                                                .dropdown-options {
+                                                    display: none;
+                                                    position: absolute;
+                                                    top: 100%;
+                                                    left: 0;
+                                                    width: 100%;
+                                                    border: 1px solid #ccc;
+                                                    border-radius: 6px;
+                                                    background: #fff;
+                                                    z-index: 10;
+                                                    max-height: 200px;
+                                                    overflow-y: auto;
+                                                    margin-top: 2px;
+                                                    padding: 5px 0;
+
+                                                    label {
+                                                        display: flex;
+                                                        padding: 5px 10px;
+                                                        cursor: pointer;
+
+                                                        &:hover {
+                                                            background: #f9f9f9;
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+
+                                        .form-group-btn-submit {
+                                            width: 100%;
+                                            max-width: 160px;
+                                            padding: 10px 5px;
+                                            background-color: #06c;
+                                            text-align: center;
+                                            display: flex;
+                                            align-items: center;
+                                            justify-content: center;
+                                            height: 100%;
+                                            margin-top: 10px;
+                                            border-radius: 5px;
+                                            cursor: pointer;
+                                            @include transitions;
+
+                                            .loop {
+                                                width: 15px;
+                                                height: 15px;
+                                                background-image: url(../inc/img/loupe.svg);
+                                                background-position: center;
+                                                background-repeat: no-repeat;
+                                                background-size: cover;
+                                                margin-right: 5px;
+                                            }
+
+                                            .btn-submit {
+                                                font-family: "Segoe UI",
+                                                    sans-serif;
+                                                font-size: 14px;
+                                                color: $white;
+                                                display: block;
+                                                line-height: 1;
+                                            }
+
+                                            &:hover {
+                                                opacity: 0.5;
+                                                @include transitions;
+                                            }
+                                        }
+                                    }
+                                    .text-validator {
+                                        font-family: $Roboto-Regular;
+                                        font-size: 14px;
+                                        color: $blue;
+                                        display: block;
+                                    }
+                                    &.has-error {
+                                        input {
+                                            border: 2px solid $blue;
+                                        }
+                                    }
+                                }
+                                .validate {
+                                    background-color: #0066cc;
+                                    padding: 10px 25px 10px 15px;
+                                    border: none;
+                                    border-radius: 6px;
+                                    cursor: pointer;
+                                    transition: 0.2s;
+                                    color: $white;
+                                    display: flex;
+                                    .loop {
+                                        display: block;
+                                        width: 15px;
+                                        height: 15px;
+                                        background-image: url(../inc/img/loupe.svg);
+                                        background-position: center;
+                                        background-repeat: no-repeat;
+                                        background-size: cover;
+                                        margin-right: 10px;
+                                    }
+                                    &:hover {
+                                        background: #1976d2;
+                                    }
+                                }
+                                .reset {
+                                    background-color: transparent;
+                                    padding: 8px 40px;
+                                    border: 1px solid $blue-dark;
+                                    border-radius: 6px;
+                                    cursor: pointer;
+                                    transition: 0.2s;
+                                    color: $black;
+
+                                    &:hover {
+                                        opacity: 0.3;
+                                    }
+                                }
+                            }
+                            &.horizontal {
+                                padding: 0;
+                                display: grid;
+                                gap: 20px;
+                                grid-template-columns: repeat(
+                                    auto-fit,
+                                    minmax(250px, 1fr)
+                                );
+
+                                .row-group {
+                                    display: block;
+                                    border-left: 4px solid transparent;
+                                    border-radius: 10px;
+                                    padding: 15px;
+                                    &.__green {
+                                        border-left: 4px solid $green;
+                                        h4 {
+                                            color: $green;
+                                            border-left: 4px solid $green;
+                                        }
+                                    }
+
+                                    &.__blue {
+                                        border-left: 4px solid $blue;
+                                        h4 {
+                                            color: $blue;
+                                            border-left: 4px solid $blue;
+                                        }
+                                    }
+                                    &.__yellow {
+                                        border-left: 4px solid $yellow;
+
+                                        h4 {
+                                            color: $yellow;
+                                            border-left: 4px solid $yellow;
+                                        }
+                                    }
+                                    .form-group {
+                                        margin-bottom: 12px;
+                                        display: block;
+                                        width: 100%;
+
+                                        // width: calc((100% / 3)- 15px);
+                                        &.row-10,
+                                        &.row-9,
+                                        &.row-8,
+                                        &.row-7,
+                                        &.row-6,
+                                        &.row-5,
+                                        &.row-4,
+                                        &.row-3,
+                                        &.row-2,
+                                        &.row-1 {
+                                            width: 100%;
+                                        }
+                                        button {
+                                            color: #fff;
+                                            padding: 8px 16px;
+                                            border: none;
+                                            border-radius: 6px;
+                                            cursor: pointer;
+                                            transition: 0.2s;
+
+                                            &:hover {
+                                                background-color: #0066cc;
+                                            }
+                                        }
+
+                                        // ***//////
+
+                                        label {
+                                            display: block;
+                                            width: max-content;
+                                            font-weight: 600;
+                                            color: #222;
+                                            font-size: 13px;
+                                            margin-bottom: -7px;
+                                            margin-left: 5px;
+                                            position: relative;
+                                            z-index: 1;
+                                            background-color: #ffffff;
+                                            padding: 0 7px;
+                                            border-radius: 40px;
+                                        }
+
+                                        input[type="text"],
+                                        input[type="email"],
+                                        input[type="tel"],
+                                        input[type="date"] {
+                                            font-family: "Segoe UI", sans-serif;
+                                            width: 100%;
+                                            padding: 6px 10px;
+                                            border: 1px solid #ccc;
+                                            border-radius: 6px;
+                                            font-size: 14px;
+                                            transition: 0.2s;
+                                            background-color: #f9fafc;
+                                            &:focus {
+                                                border-color: #004080;
+                                                box-shadow: 0 0 4px
+                                                    rgba(0, 64, 128, 0.3);
+                                                outline: none;
+                                            }
+                                        }
+
+                                        textarea {
+                                            font-family: "Segoe UI", sans-serif;
+                                            width: 100%;
+                                            padding: 6px 10px;
+                                            border: 1px solid #ccc;
+                                            border-radius: 6px;
+                                            font-size: 14px;
+                                            transition: 0.2s;
+                                            background-color: #f9fafc;
+
+                                            &:focus {
+                                                border-color: #004080;
+                                                box-shadow: 0 0 4px
+                                                    rgba(0, 64, 128, 0.3);
+                                                outline: none;
+                                            }
+                                        }
+
+                                        input[type="checkbox"],
+                                        input[type="radio"] {
+                                            display: block;
+                                            accent-color: #004080;
+                                            background-color: transparent;
+                                            margin-right: 6px;
+                                        }
+                                        select {
+                                            appearance: none;
+                                            -webkit-appearance: none;
+                                            -moz-appearance: none;
+
+                                            width: 100%;
+                                            padding: 10px 40px 8px 15px;
+                                            font-size: 14px;
+                                            border: 1px solid #ccc;
+                                            border-radius: 5px;
+                                            background-color: #fff;
+
+                                            // flèche personnalisée
+                                            background-image: url('data:image/svg+xml;charset=US-ASCII,<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12"><polygon points="0,0 12,0 6,6" fill="%23999"/></svg>');
+                                            background-repeat: no-repeat;
+                                            background-position: right 10px top
+                                                15px;
+                                            cursor: pointer;
+                                            transition: border-color 0.2s,
+                                                box-shadow 0.2s;
+
+                                            &:focus {
+                                                border-color: #007bff;
+                                                outline: none;
+                                                box-shadow: 0 0 5px
+                                                    rgba(0, 123, 255, 0.5);
+                                            }
+                                        }
+                                        &.checkbox-simple {
+                                            .checkbox-wrapper {
+                                                display: flex !important;
+                                                flex-wrap: wrap;
+                                                align-items: center;
+
+                                                input {
+                                                    margin-right: 5px;
+                                                }
+
+                                                label {
+                                                    background-color: transparent !important;
+                                                    margin-left: 0 !important;
+                                                    margin-bottom: 0;
+                                                    padding: 0 0;
+                                                    cursor: pointer;
+                                                }
+                                            }
+                                        }
+
+                                        &.checkbox-group {
+                                            display: flex !important;
+                                            flex-wrap: nowrap;
+                                            align-items: center;
+
+                                            .checkbox-wrapper {
+                                                position: relative;
+                                                display: inline-block;
+                                                width: 50px;
+                                                height: 26px;
+                                                margin-right: 0;
+                                                margin-left: 0;
+                                                /* Le fond du switch */
+                                                .switch {
+                                                    position: absolute;
+                                                    cursor: pointer;
+                                                    top: 0;
+                                                    left: 0;
+                                                    right: 0;
+                                                    bottom: 0;
+                                                    background-color: #ccc; /* gris désactivé */
+                                                    transition: 0.3s;
+                                                    border-radius: 26px;
+                                                    &::before {
+                                                        position: absolute;
+                                                        content: "";
+                                                        height: 20px;
+                                                        width: 20px;
+                                                        left: 3px;
+                                                        bottom: 3px;
+                                                        background-color: white;
+                                                        transition: 0.3s;
+                                                        border-radius: 50%;
+                                                    }
+                                                }
+                                                input {
+                                                    opacity: 0;
+                                                    width: 0;
+                                                    height: 0;
+                                                }
+                                            }
+                                            .label-checkbox {
+                                                font-size: 14px;
+                                                color: $black;
+                                            }
+
+                                            /* Quand la case est cochée */
+                                            .checkbox-wrapper
+                                                input:checked
+                                                + .switch {
+                                                background-color: #007bff; /* bleu */
+                                            }
+
+                                            .checkbox-wrapper
+                                                input:checked
+                                                + .switch::before {
+                                                transform: translateX(24px);
+                                            }
+
+                                            /* Quand disabled */
+                                            .checkbox-wrapper
+                                                input:disabled
+                                                + .switch {
+                                                background-color: #e0e0e0; /* gris clair */
+                                                cursor: not-allowed;
+                                            }
+
+                                            .checkbox-wrapper
+                                                input:disabled
+                                                + .switch::before {
+                                                background-color: #bdbdbd;
+                                            }
+                                        }
+
+                                        &.listing-chexbox {
+                                            display: block;
+                                            margin: 20px 0 40px;
+
+                                            .select-all-item {
+                                                label {
+                                                    width: fit-content;
+                                                    display: flex;
+                                                    align-items: center;
+                                                    gap: 4px;
+                                                    cursor: pointer;
+                                                    margin-left: 0;
+                                                    padding: 0 0;
+
+                                                    span {
+                                                        font-size: 15px;
+                                                    }
+
+                                                    input[type="checkbox"] {
+                                                        transform: scale(1.2);
+                                                        cursor: pointer;
+                                                    }
+                                                }
+                                            }
+
+                                            .items {
+                                                display: flex;
+                                                flex-wrap: wrap;
+                                                margin-top: 20px;
+
+                                                label {
+                                                    display: flex;
+                                                    align-items: center;
+                                                    gap: 4px;
+                                                    cursor: pointer;
+                                                    margin-left: 0;
+
+                                                    input[type="checkbox"] {
+                                                        transform: scale(1.2);
+                                                        cursor: pointer;
+                                                    }
+                                                }
+                                            }
+                                        }
+
+                                        &.multi-select {
+                                            margin-top: 20px;
+                                            display: flex;
+                                            align-items: center;
+                                            $border-color: #ccc;
+                                            $border-radius: 6px;
+                                            $hover-bg: #f0f0f0;
+                                            $font-family: "Segoe UI", sans-serif;
+                                            $bg-color: #fff;
+
+                                            .form-group-content {
+                                                max-width: 50%;
+                                                width: 100%;
+
+                                                label {
+                                                    width: fit-content;
+                                                }
+
+                                                .multi-select-dropdown {
+                                                    position: relative;
+                                                    background-color: #f9fafc;
+
+                                                    .btn-dropdown {
+                                                        position: absolute;
+                                                        right: 10px;
+                                                        top: 10px;
+                                                        width: 20px;
+                                                        height: 20px;
+                                                        background-image: url(../inc/img/dropdown-arrow.svg);
+                                                        background-position: center;
+                                                        background-repeat: no-repeat;
+                                                        background-size: cover;
+                                                        cursor: pointer;
+                                                    }
+
+                                                    .dropdown-selected {
+                                                        border: 1px solid #ccc;
+                                                        border-radius: 6px;
+                                                        padding: 5px 10px;
+                                                        min-height: 38px;
+                                                        cursor: pointer;
+                                                        display: flex;
+                                                        flex-wrap: wrap;
+                                                        align-items: center;
+                                                        gap: 5px;
+
+                                                        .selected-item {
+                                                            background: #f0f0f0;
+                                                            padding: 2px 6px;
+                                                            border-radius: 4px;
+                                                            display: flex;
+                                                            align-items: center;
+                                                            $font-family: "Segoe UI",
+                                                                sans-serif;
+                                                            font-size: 12px;
+                                                            color: $black;
+
+                                                            .remove-item {
+                                                                margin-left: 4px;
+                                                                cursor: pointer;
+                                                                font-weight: bold;
+                                                            }
+                                                        }
+
+                                                        &.placeholder {
+                                                            color: #999;
+                                                        }
+                                                    }
+
+                                                    .dropdown-options {
+                                                        display: none;
+                                                        position: absolute;
+                                                        top: 100%;
+                                                        left: 0;
+                                                        width: 100%;
+                                                        border: 1px solid #ccc;
+                                                        border-radius: 6px;
+                                                        background: #fff;
+                                                        z-index: 10;
+                                                        max-height: 200px;
+                                                        overflow-y: auto;
+                                                        margin-top: 2px;
+                                                        padding: 5px 0;
+
+                                                        label {
+                                                            display: flex;
+                                                            padding: 5px 10px;
+                                                            cursor: pointer;
+
+                                                            &:hover {
+                                                                background: #f9f9f9;
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+
+                                            .form-group-btn-submit {
+                                                width: 100%;
+                                                max-width: 160px;
+                                                padding: 10px 5px;
+                                                background-color: #06c;
+                                                text-align: center;
+                                                display: flex;
+                                                align-items: center;
+                                                justify-content: center;
+                                                height: 100%;
+                                                margin-top: 10px;
+                                                border-radius: 5px;
+                                                cursor: pointer;
+                                                @include transitions;
+
+                                                .loop {
+                                                    width: 15px;
+                                                    height: 15px;
+                                                    background-image: url(../inc/img/loupe.svg);
+                                                    background-position: center;
+                                                    background-repeat: no-repeat;
+                                                    background-size: cover;
+                                                    margin-right: 5px;
+                                                }
+
+                                                .btn-submit {
+                                                    font-family: "Segoe UI",
+                                                        sans-serif;
+                                                    font-size: 14px;
+                                                    color: $white;
+                                                    display: block;
+                                                    line-height: 1;
+                                                }
+
+                                                &:hover {
+                                                    opacity: 0.5;
+                                                    @include transitions;
+                                                }
+                                            }
+                                        }
+                                        &.has-error {
+                                            input {
+                                                border: 2px solid $blue;
+                                            }
+                                        }
+                                    }
+                                    .validate {
+                                        background-color: #0066cc;
+                                        padding: 10px 25px 10px 15px;
+                                        border: none;
+                                        border-radius: 6px;
+                                        cursor: pointer;
+                                        transition: 0.2s;
+                                        color: $white;
+                                        display: flex;
+                                        .loop {
+                                            display: block;
+                                            width: 15px;
+                                            height: 15px;
+                                            background-image: url(../inc/img/loupe.svg);
+                                            background-position: center;
+                                            background-repeat: no-repeat;
+                                            background-size: cover;
+                                            margin-right: 10px;
+                                        }
+                                        &:hover {
+                                            background: #1976d2;
+                                        }
+                                    }
+                                    .reset {
+                                        background-color: transparent;
+                                        padding: 8px 40px;
+                                        border: 1px solid $blue-dark;
+                                        border-radius: 6px;
+                                        cursor: pointer;
+                                        transition: 0.2s;
+                                        color: $black;
+
+                                        &:hover {
+                                            opacity: 0.3;
+                                        }
+                                    }
+                                }
+                            }
+                            // table tarification
+                            /* ============================= */
+                            /* Variables */
+                            /* ============================= */
+
+                            /* ============================= */
+                            /* Container */
+                            /* ============================= */
+                            .pricing-container {
+                                display: flex;
+                                gap: 2rem;
+                                padding: 0;
+                                font-family: $Roboto-Regular;
+                                background-color: $bg-white;
+                            }
+                            @media (max-width: 1023px) {
+                                .pricing-container {
+                                    display: block;
+                                }
+                            }
+
+                            /* ============================= */
+                            /* Main Table Styles */
+                            /* ============================= */
+                            .pricing-table {
+                                width: 100%;
+                                max-width: 56rem; /* 4xl */
+                                border: 2px solid $border-color;
+                                border-radius: 1px;
+                                border-collapse: collapse;
+                                box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+                                overflow: hidden;
+
+                                th,
+                                td {
+                                    border: 1px solid $border-color;
+                                    font-size: 14px;
+                                    .title-cell {
+                                        display: block;
+                                        text-align: center;
+                                    }
+                                }
+                                tr {
+                                    border-left: 3px solid $border-color;
+                                }
+
+                                /* Header */
+                                &__header {
+                                    background-color: rgba(237, 233, 254, 0.8);
+
+                                    th {
+                                        font-size: 14px;
+                                        padding: 0.75rem;
+                                        font-style: italic;
+                                        color: $text-color;
+                                        text-align: center;
+
+                                        &:first-child {
+                                            text-align: left;
+                                            width: 8rem;
+                                        }
+
+                                        &:last-child {
+                                            width: 8rem;
+                                        }
+                                    }
+                                }
+
+                                /* Row & Label */
+                                &__row {
+                                    &--subtle {
+                                        background-color: rgba(
+                                            249,
+                                            250,
+                                            251,
+                                            0.3
+                                        );
+                                    }
+                                }
+
+                                &__label {
+                                    padding: 0.75rem;
+                                    font-weight: 700;
+                                    font-size: 0.875rem;
+                                    color: #1f2937;
+
+                                    &--merged {
+                                        background-color: rgba(
+                                            249,
+                                            250,
+                                            251,
+                                            0.3
+                                        );
+                                        vertical-align: middle;
+                                    }
+                                }
+
+                                /* Cells */
+                                &__cell {
+                                    padding: 0.5rem;
+
+                                    &--empty {
+                                        background-color: rgba(
+                                            249,
+                                            250,
+                                            251,
+                                            0.1
+                                        );
+                                    }
+
+                                    &--merged-yield {
+                                        padding: 1rem;
+                                        vertical-align: bottom;
+                                        position: relative;
+                                    }
+                                }
+
+                                /* Input Fields */
+                                &__input {
+                                    width: 100%;
+                                    height: 2rem;
+                                    padding: 0 0.5rem;
+                                    border: 1px solid $border-color;
+                                    border-radius: 0.25rem;
+                                    font-size: 0.875rem;
+                                    text-align: center;
+                                    outline: none;
+                                    transition: border-color 0.2s;
+
+                                    &:focus {
+                                        border-color: $primary-color;
+                                        box-shadow: 0 0 0 2px
+                                            rgba($primary-color, 0.1);
+                                    }
+                                }
+
+                                /* Yield Wrapper */
+                                &__yield-wrapper {
+                                    display: flex;
+                                    flex-direction: column;
+                                    gap: 0.25rem;
+                                    margin-bottom: 0.5rem;
+
+                                    span {
+                                        text-align: left;
+                                        color: $text-color;
+                                        font-weight: 500;
+                                        font-size: 0.875rem;
+                                    }
+
+                                    input {
+                                        text-align: left;
+                                    }
+                                }
+                            }
+
+                            /* ============================= */
+                            /* Taxes Side Panel */
+                            /* ============================= */
+                            .taxes-panel {
+                                width: 100%;
+                                max-width: 20rem;
+                                border: 1px solid $border-color;
+                                border-radius: 0.25rem;
+                                overflow: hidden;
+                                box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+                                flex-shrink: 0;
+
+                                &__header {
+                                    background-color: rgba(237, 233, 254, 0.8);
+                                    padding: 0.75rem;
+                                    border-bottom: 1px solid $border-color;
+
+                                    h3 {
+                                        margin: 0;
+                                        font-style: italic;
+                                        font-size: 15px;
+                                        color: $black;
+                                        text-align: center;
+                                        border-left: 0;
+                                        padding-left: 0;
+                                    }
+                                }
+
+                                &__content {
+                                    background-color: $bg-white;
+                                }
+
+                                &__table {
+                                    width: 100%;
+                                    border-collapse: collapse;
+
+                                    td {
+                                        border-bottom: 1px solid $border-color;
+
+                                        &:last-child {
+                                            border-left: 1px solid $border-color;
+                                        }
+                                    }
+
+                                    tr:last-child td {
+                                        border-bottom: none;
+                                    }
+                                }
+
+                                &__label {
+                                    padding: 0.75rem;
+                                    font-size: 0.875rem;
+                                    font-weight: 700;
+                                    color: $text-color;
+                                }
+
+                                &__input-cell {
+                                    padding: 0.5rem;
+                                }
+
+                                &__input {
+                                    width: 100%;
+                                    height: 2rem;
+                                    padding: 0 0.5rem;
+                                    border: 1px solid $border-color;
+                                    border-radius: 0.25rem;
+                                    font-size: 0.875rem;
+                                    outline: none;
+
+                                    &:focus {
+                                        border-color: $primary-color;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .footer-submit {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            .footer-part-left {
+                display: flex;
+                column-gap: 10px;
+                .prev {
+                    border: 1px solid $grey;
+                    background-color: $grey;
+                    font-size: 14px;
+                    font-family: $Roboto-Regular;
+                    padding: 5px 10px;
+                    border-radius: 6px;
+                    color: $white;
+                    cursor: pointer;
+                }
+                .reset {
+                    border: 1px solid $pinky;
+                    background-color: $white;
+                    font-size: 14px;
+                    font-family: $Roboto-Regular;
+                    padding: 5px 10px;
+                    border-radius: 6px;
+                    color: $pinky;
+                    cursor: pointer;
+                }
+            }
+            .footer-part-right {
+                display: flex;
+                column-gap: 10px;
+                .next {
+                    border: 1px solid $blue;
+                    background-color: $blue;
+                    font-size: 14px;
+                    font-family: $Roboto-Regular;
+                    padding: 5px 10px;
+                    border-radius: 6px;
+                    color: $white;
+                    cursor: pointer;
+                }
+                .submit {
+                    border: 1px solid $green;
+                    background-color: $green;
+                    font-size: 14px;
+                    font-family: $Roboto-Regular;
+                    padding: 5px 10px;
+                    border-radius: 6px;
+                    color: $white;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+}

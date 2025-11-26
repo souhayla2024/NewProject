@@ -1,0 +1,5 @@
+      <svg class="icon icon--info" width="28" height="28" viewBox="0 0 24 24" aria-hidden="true">
+              <circle cx="12" cy="12" r="10" fill="#0b78d9"/>
+              <rect x="11" y="10" width="2" height="7" fill="#fff"/>
+              <rect x="11" y="6" width="2" height="2" fill="#fff"/>
+            </svg>

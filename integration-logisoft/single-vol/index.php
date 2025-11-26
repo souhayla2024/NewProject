@@ -14,7 +14,9 @@
     <section id="main-wrapper">
         <div class="main-wrapper-left"><?php include '../inc/nav-bar.php'; ?></div>
         <div class="main-wrapper-right">
-            <div class="single-element"><?php include 'single-product.php'; ?></div>
+            <div class="single-element">
+                <?php include 'single-vol.php'; ?>
+            </div>
         </div>
     </section>
 
