@@ -46,7 +46,7 @@
                     margin-right: 10px;
 
                     label {
-                        font-family: "Segoe UI", sans-serif;
+                        font-family: "Gilroy", sans-serif;
                         font-size: 16px;
                         color: $black;
                         display: flex;
@@ -204,7 +204,7 @@
         .tabs {
             position: relative;
             width: 100%;
-            font-family: "Segoe UI", sans-serif;
+            font-family: "Gilroy", sans-serif;
             @include transitions;
 
             .close-info {
@@ -212,7 +212,7 @@
                 width: 22px;
                 height: 22px;
                 position: absolute;
-                top: 0;
+                top: -2px;
                 left: -26px;
                 z-index: 1;
                 background-image: url(../inc/img/close-info.png);
@@ -267,7 +267,7 @@
 
                 section,
                 .tab-section {
-                    font-family: "Segoe UI", sans-serif;
+                    font-family: "Gilroy", sans-serif;
                     background-color: #fff;
                     padding-bottom: 20px;
                     display: none;
@@ -418,10 +418,10 @@
                             }
                         }
                         h3 {
-                            font-size: 18px;
+                            font-size: 16px;
                             font-weight: 600;
                             margin-bottom: 15px;
-                            color: #333;
+                            color: $black;
                             border-left: 4px solid #004080;
                             padding-left: 10px;
                             text-transform: uppercase;
@@ -430,7 +430,7 @@
                         h4 {
                             font-size: 16px;
                             margin: 15px 0 8px;
-                            color: #555;
+                            color: $black;
                         }
 
                         .partie {
@@ -508,8 +508,8 @@
 
                                     label {
                                         display: block;
-                                        font-weight: 600;
-                                        color: #222;
+                                        font-weight: 400;
+                                        color: $black;
                                         font-size: 13px;
                                         margin-bottom: -7px;
                                         margin-left: 25px;
@@ -524,9 +524,9 @@
                                     input[type="email"],
                                     input[type="tel"],
                                     input[type="date"] {
-                                        font-family: "Segoe UI", sans-serif;
+                                        font-family: "Gilroy", sans-serif;
                                         width: 100%;
-                                        padding: 6px 10px;
+                                        padding: 10px 10px 8px;
                                         border: 1px solid #ccc;
                                         border-radius: 6px;
                                         font-size: 14px;
@@ -541,9 +541,9 @@
                                     }
 
                                     textarea {
-                                        font-family: "Segoe UI", sans-serif;
+                                        font-family: "Gilroy", sans-serif;
                                         width: 100%;
-                                        padding: 6px 10px;
+                                        padding: 10px 10px 8px;
                                         border: 1px solid #ccc;
                                         border-radius: 6px;
                                         font-size: 14px;
@@ -597,6 +597,9 @@
                                         display: flex !important;
                                         flex-wrap: wrap;
                                         align-items: center;
+                                        span {
+                                            font-size: 13px;
+                                        }
 
                                         .checkbox-wrapper {
                                             display: flex !important;
@@ -669,8 +672,8 @@
                                         $border-color: #ccc;
                                         $border-radius: 6px;
                                         $hover-bg: #f0f0f0;
-                                        $font-family: "Segoe UI", sans-serif;
-                                        $bg-color: #fff;
+                                        font-family: "Gilroy", sans-serif;
+                                        background-color: #fff;
 
                                         .form-group-content {
                                             max-width: 50%;
@@ -714,7 +717,7 @@
                                                         border-radius: 4px;
                                                         display: flex;
                                                         align-items: center;
-                                                        $font-family: "Segoe UI",
+                                                        font-family: "Gilroy",
                                                             sans-serif;
                                                         font-size: 12px;
                                                         color: $black;
@@ -785,7 +788,7 @@
                                             }
 
                                             .btn-submit {
-                                                font-family: "Segoe UI",
+                                                font-family: "Gilroy",
                                                     sans-serif;
                                                 font-size: 14px;
                                                 color: $white;
@@ -843,10 +846,10 @@
                                                 margin-left: 15px;
                                             }
                                             input {
-                                                font-family: "Segoe UI",
+                                                font-family: "Gilroy",
                                                     sans-serif;
                                                 width: 100%;
-                                                padding: 6px 10px;
+                                                padding: 10px 10px 8px;
                                                 border: 1px solid #ccc;
                                                 border-radius: 6px;
                                                 font-size: 14px;
@@ -1146,7 +1149,7 @@
                 .content {
                     section,
                     .tab-section {
-                        font-family: "Segoe UI", sans-serif;
+                        font-family: "Gilroy", sans-serif;
                         padding: 20px;
                         border-radius: 12px;
                         .group-section {
@@ -1206,9 +1209,9 @@
 
                                         label {
                                             display: block;
-                                            font-weight: 600;
+                                            font-weight: 400;
                                             margin-bottom: 5px;
-                                            color: #222;
+                                            color: $black;
                                         }
                                         textarea,
                                         input[type="text"],
@@ -1216,7 +1219,7 @@
                                         input[type="tel"],
                                         input[type="date"] {
                                             width: 100%;
-                                            padding: 8px 10px;
+                                            padding: 10px 10px 8px;
                                             border-radius: 6px;
                                             font-size: 14px;
                                             transition: 0.2s;
@@ -1353,7 +1356,7 @@
                         margin-right: 10px;
 
                         label {
-                            font-family: "Segoe UI", sans-serif;
+                            font-family: "Gilroy", sans-serif;
                             font-size: 16px;
                             color: $black;
                             display: flex;

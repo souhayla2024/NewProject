@@ -111,7 +111,7 @@
                         color: $blue;
                     }
                     .group-section {
-                        font-family: "Segoe UI", sans-serif;
+                        font-family: "Gilroy", sans-serif;
 
                         h2 {
                             margin-bottom: 15px;
@@ -126,7 +126,7 @@
                             font-size: 18px;
                             font-weight: 600;
                             margin-bottom: 15px;
-                            color: #333;
+                            color: $black;
                             border-left: 4px solid #004080;
                             padding-left: 10px;
                             text-transform: uppercase;
@@ -136,7 +136,7 @@
                             font-size: 16px;
                             font-weight: 600;
                             margin: 15px 0 8px;
-                            color: #333;
+                            color: $black;
                             border-left: 4px solid #004080;
                             padding-left: 10px;
                             text-transform: uppercase;
@@ -255,7 +255,7 @@
                                     label {
                                         display: block;
                                         width: max-content;
-                                        font-weight: 600;
+                                        font-weight: 400;
                                         color: #222;
                                         font-size: 13px;
                                         margin-bottom: -7px;
@@ -272,9 +272,9 @@
                                     input[type="email"],
                                     input[type="tel"],
                                     input[type="date"] {
-                                        font-family: "Segoe UI", sans-serif;
+                                        font-family: "Gilroy", sans-serif;
                                         width: 100%;
-                                        padding: 6px 10px;
+                                        padding: 10px 10px 8px;
                                         border: 1px solid #ccc;
                                         border-radius: 6px;
                                         font-size: 14px;
@@ -289,9 +289,9 @@
                                     }
 
                                     textarea {
-                                        font-family: "Segoe UI", sans-serif;
+                                        font-family: "Gilroy", sans-serif;
                                         width: 100%;
-                                        padding: 6px 10px;
+                                        padding: 10px 10px 8px;
                                         border: 1px solid #ccc;
                                         border-radius: 6px;
                                         font-size: 14px;
@@ -390,8 +390,8 @@
                                                 cursor: pointer;
                                                 font-family: "Roboto",
                                                     sans-serif;
-                                                font-size: 14px;
-                                                color: #333;
+                                                font-size: 13px;
+                                                color: $black;
                                                 user-select: none;
                                                 margin-left: 0;
                                                 margin-bottom: 0;
@@ -454,8 +454,8 @@
                                         $border-color: #ccc;
                                         $border-radius: 6px;
                                         $hover-bg: #f0f0f0;
-                                        $font-family: "Segoe UI", sans-serif;
-                                        $bg-color: #fff;
+                                        font-family: "Gilroy", sans-serif;
+                                        background-color: #fff;
 
                                         .form-group-content {
                                             max-width: 50%;
@@ -499,7 +499,7 @@
                                                         border-radius: 4px;
                                                         display: flex;
                                                         align-items: center;
-                                                        $font-family: "Segoe UI",
+                                                        font-family: "Gilroy",
                                                             sans-serif;
                                                         font-size: 12px;
                                                         color: $black;
@@ -570,7 +570,7 @@
                                             }
 
                                             .btn-submit {
-                                                font-family: "Segoe UI",
+                                                font-family: "Gilroy",
                                                     sans-serif;
                                                 font-size: 14px;
                                                 color: $white;
@@ -706,7 +706,7 @@
                                         label {
                                             display: block;
                                             width: max-content;
-                                            font-weight: 600;
+                                            font-weight: 400;
                                             color: #222;
                                             font-size: 13px;
                                             margin-bottom: -7px;
@@ -722,9 +722,9 @@
                                         input[type="email"],
                                         input[type="tel"],
                                         input[type="date"] {
-                                            font-family: "Segoe UI", sans-serif;
+                                            font-family: "Gilroy", sans-serif;
                                             width: 100%;
-                                            padding: 6px 10px;
+                                            padding: 10px 10px 8px;
                                             border: 1px solid #ccc;
                                             border-radius: 6px;
                                             font-size: 14px;
@@ -739,9 +739,9 @@
                                         }
 
                                         textarea {
-                                            font-family: "Segoe UI", sans-serif;
+                                            font-family: "Gilroy", sans-serif;
                                             width: 100%;
-                                            padding: 6px 10px;
+                                            padding: 10px 10px 8px;
                                             border: 1px solid #ccc;
                                             border-radius: 6px;
                                             font-size: 14px;
@@ -853,7 +853,7 @@
                                                 }
                                             }
                                             .label-checkbox {
-                                                font-size: 14px;
+                                                font-size: 13px;
                                                 color: $black;
                                             }
 
@@ -937,8 +937,8 @@
                                             $border-color: #ccc;
                                             $border-radius: 6px;
                                             $hover-bg: #f0f0f0;
-                                            $font-family: "Segoe UI", sans-serif;
-                                            $bg-color: #fff;
+                                            font-family: "Gilroy", sans-serif;
+                                            background-color: #fff;
 
                                             .form-group-content {
                                                 max-width: 50%;
@@ -982,7 +982,7 @@
                                                             border-radius: 4px;
                                                             display: flex;
                                                             align-items: center;
-                                                            $font-family: "Segoe UI",
+                                                            font-family: "Gilroy",
                                                                 sans-serif;
                                                             font-size: 12px;
                                                             color: $black;
@@ -1053,7 +1053,7 @@
                                                 }
 
                                                 .btn-submit {
-                                                    font-family: "Segoe UI",
+                                                    font-family: "Gilroy",
                                                         sans-serif;
                                                     font-size: 14px;
                                                     color: $white;
