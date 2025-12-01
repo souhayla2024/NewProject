@@ -94,14 +94,22 @@
                 </div>
                 <thead>
                     <tr>
-                        <th>Code <a href="#" class="arrow-tri"></a></th>
-                        <th>Nom <a href="#" class="arrow-tri"></a></th>
-                        <th>Pays <a href="#" class="arrow-tri"></a></th>
-                        <th>Sous-pays <a href="#" class="arrow-tri"></a></th>
+                        <th># <a href="#" class="arrow-tri"></a></th>
+                        <th>Numéro <a href="#" class="arrow-tri"></a></th>
+                        <th>Date <a href="#" class="arrow-tri"></a></th>
+                        <th>JO <a href="#" class="arrow-tri"></a></th>
+                        <th>Destination <a href="#" class="arrow-tri"></a></th>
+                        <th>Ville D <a href="#" class="arrow-tri"></a></th>
+                        <th>Heure D <a href="#" class="arrow-tri"></a></th>
+                        <th>Ville A <a href="#" class="arrow-tri"></a></th>
+                        <th>Heure A <a href="#" class="arrow-tri"></a></th>
+                        <th>Ville Via <a href="#" class="arrow-tri"></a></th>
                         <th>Type <a href="#" class="arrow-tri"></a></th>
-                        <th>Sous-type <a href="#" class="arrow-tri"></a></th>
-                        <th>Groupe Hôtelier<a href="#" class="arrow-tri"></a></th>
-                        <th>Réceptif <a href="#" class="arrow-tri"></a></th>
+                        <th>Compagnie <a href="#" class="arrow-tri"></a></th>
+                        <th>Ouvert <a href="#" class="arrow-tri"></a></th>
+                        <th>Vendu <a href="#" class="arrow-tri"></a></th>
+                        <th>Réservé <a href="#" class="arrow-tri"></a></th>
+                        <th>Prix <a href="#" class="arrow-tri"></a></th>
                         <th>Action </th>
                     </tr>
 
@@ -109,29 +117,21 @@
                 <tbody>
                     <tr>
                         <td>001</td>
-                        <td>Hotel Paris</td>
-                        <td>France</td>
-                        <td>Île-de-France</td>
-                        <td>Hôtel</td>
-                        <td>5 étoiles</td>
-                        <td>Accor</td>
-                        <td>Non</td>
-
-                        </td>
-                        <td class="actions">
-                            <button class="view" title="Visualiser"></button>
-                            <button class="delete" title="Supprimer"></button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>002</td>
-                        <td>Resort Tunis Lorem ipsum, </td>
-                        <td>Tunisie</td>
-                        <td>Hammamet</td>
-                        <td>Resort</td>
-                        <td>4 étoiles</td>
-                        <td>Indépendant</td>
-                        <td>Oui</td>
+                        <td>MH999</td>
+                        <td>13/10/2025</td>
+                        <td>1</td>
+                        <td>FRANCE</td>
+                        <td>DJE</td>
+                        <td>13:15:00</td>
+                        <td>PAR</td>
+                        <td>13:15:00</td>
+                        <td>DJE</td>
+                        <td>Aller</td>
+                        <td>AIR FRANCE</td>
+                        <td>15</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>150 €</td>
 
                         <td class="actions">
                             <button class="view" title="Visualiser"></button>
@@ -139,14 +139,22 @@
                         </td>
                     </tr>
                     <tr>
-                        <td>003</td>
-                        <td>Hotel Paris</td>
-                        <td>France</td>
-                        <td>dolor sit amet</td>
-                        <td>Hôtel</td>
-                        <td>5 étoiles</td>
-                        <td>Accor</td>
-                        <td>Non</td>
+                        <td>001</td>
+                        <td>MH999</td>
+                        <td>13/10/2025</td>
+                        <td>1</td>
+                        <td>FRANCE</td>
+                        <td>DJE</td>
+                        <td>13:15:00</td>
+                        <td>PAR</td>
+                        <td>13:15:00</td>
+                        <td>DJE</td>
+                        <td>Aller</td>
+                        <td>AIR FRANCE</td>
+                        <td>15</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>150 €</td>
 
                         <td class="actions">
                             <button class="view" title="Visualiser"></button>
@@ -154,14 +162,22 @@
                         </td>
                     </tr>
                     <tr>
-                        <td>004</td>
-                        <td>Resort Tunis</td>
-                        <td>Tunisie</td>
-                        <td>Hammamet</td>
-                        <td>Resort</td>
-                        <td>4 étoiles</td>
-                        <td>Indépendant</td>
-                        <td>Oui</td>
+                        <td>001</td>
+                        <td>MH999</td>
+                        <td>13/10/2025</td>
+                        <td>1</td>
+                        <td>FRANCE</td>
+                        <td>DJE</td>
+                        <td>13:15:00</td>
+                        <td>PAR</td>
+                        <td>13:15:00</td>
+                        <td>DJE</td>
+                        <td>Aller</td>
+                        <td>AIR FRANCE</td>
+                        <td>15</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>150 €</td>
 
                         <td class="actions">
                             <button class="view" title="Visualiser"></button>
@@ -169,14 +185,22 @@
                         </td>
                     </tr>
                     <tr>
-                        <td>005</td>
-                        <td>Hotel Paris</td>
-                        <td>France</td>
-                        <td>Île-de-France</td>
-                        <td>Hôtel</td>
-                        <td>5 étoiles</td>
-                        <td>Accor</td>
-                        <td>Non</td>
+                        <td>001</td>
+                        <td>MH999</td>
+                        <td>13/10/2025</td>
+                        <td>1</td>
+                        <td>FRANCE</td>
+                        <td>DJE</td>
+                        <td>13:15:00</td>
+                        <td>PAR</td>
+                        <td>13:15:00</td>
+                        <td>DJE</td>
+                        <td>Aller</td>
+                        <td>AIR FRANCE</td>
+                        <td>15</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>150 €</td>
 
                         <td class="actions">
                             <button class="view" title="Visualiser"></button>
@@ -184,14 +208,22 @@
                         </td>
                     </tr>
                     <tr>
-                        <td>006</td>
-                        <td>Resort Tunis</td>
-                        <td>Tunisie</td>
-                        <td>Hammamet</td>
-                        <td>Resort</td>
-                        <td>4 étoiles</td>
-                        <td>Indépendant</td>
-                        <td>Oui</td>
+                        <td>001</td>
+                        <td>MH999</td>
+                        <td>13/10/2025</td>
+                        <td>1</td>
+                        <td>FRANCE</td>
+                        <td>DJE</td>
+                        <td>13:15:00</td>
+                        <td>PAR</td>
+                        <td>13:15:00</td>
+                        <td>DJE</td>
+                        <td>Aller</td>
+                        <td>AIR FRANCE</td>
+                        <td>15</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>150 €</td>
 
                         <td class="actions">
                             <button class="view" title="Visualiser"></button>
@@ -199,14 +231,22 @@
                         </td>
                     </tr>
                     <tr>
-                        <td>006</td>
-                        <td>Resort Tunis</td>
-                        <td>Tunisie</td>
-                        <td>Hammamet</td>
-                        <td>Resort</td>
-                        <td>4 étoiles</td>
-                        <td>Indépendant</td>
-                        <td>Oui</td>
+                        <td>001</td>
+                        <td>MH999</td>
+                        <td>13/10/2025</td>
+                        <td>1</td>
+                        <td>FRANCE</td>
+                        <td>DJE</td>
+                        <td>13:15:00</td>
+                        <td>PAR</td>
+                        <td>13:15:00</td>
+                        <td>DJE</td>
+                        <td>Aller</td>
+                        <td>AIR FRANCE</td>
+                        <td>15</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>150 €</td>
 
                         <td class="actions">
                             <button class="view" title="Visualiser"></button>
@@ -214,14 +254,22 @@
                         </td>
                     </tr>
                     <tr>
-                        <td>006</td>
-                        <td>Resort Tunis</td>
-                        <td>Tunisie</td>
-                        <td>Hammamet</td>
-                        <td>Resort</td>
-                        <td>4 étoiles</td>
-                        <td>Indépendant</td>
-                        <td>Oui</td>
+                        <td>001</td>
+                        <td>MH999</td>
+                        <td>13/10/2025</td>
+                        <td>1</td>
+                        <td>FRANCE</td>
+                        <td>DJE</td>
+                        <td>13:15:00</td>
+                        <td>PAR</td>
+                        <td>13:15:00</td>
+                        <td>DJE</td>
+                        <td>Aller</td>
+                        <td>AIR FRANCE</td>
+                        <td>15</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>150 €</td>
 
                         <td class="actions">
                             <button class="view" title="Visualiser"></button>
@@ -229,14 +277,22 @@
                         </td>
                     </tr>
                     <tr>
-                        <td>006</td>
-                        <td>Resort Tunis</td>
-                        <td>Tunisie</td>
-                        <td>Hammamet</td>
-                        <td>Resort</td>
-                        <td>4 étoiles</td>
-                        <td>Indépendant</td>
-                        <td>Oui</td>
+                        <td>001</td>
+                        <td>MH999</td>
+                        <td>13/10/2025</td>
+                        <td>1</td>
+                        <td>FRANCE</td>
+                        <td>DJE</td>
+                        <td>13:15:00</td>
+                        <td>PAR</td>
+                        <td>13:15:00</td>
+                        <td>DJE</td>
+                        <td>Aller</td>
+                        <td>AIR FRANCE</td>
+                        <td>15</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>150 €</td>
 
                         <td class="actions">
                             <button class="view" title="Visualiser"></button>
@@ -244,14 +300,22 @@
                         </td>
                     </tr>
                     <tr>
-                        <td>006</td>
-                        <td>Resort Tunis</td>
-                        <td>Tunisie</td>
-                        <td>Hammamet</td>
-                        <td>Resort</td>
-                        <td>4 étoiles</td>
-                        <td>Indépendant</td>
-                        <td>Oui</td>
+                        <td>001</td>
+                        <td>MH999</td>
+                        <td>13/10/2025</td>
+                        <td>1</td>
+                        <td>FRANCE</td>
+                        <td>DJE</td>
+                        <td>13:15:00</td>
+                        <td>PAR</td>
+                        <td>13:15:00</td>
+                        <td>DJE</td>
+                        <td>Aller</td>
+                        <td>AIR FRANCE</td>
+                        <td>15</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>150 €</td>
 
                         <td class="actions">
                             <button class="view" title="Visualiser"></button>
@@ -259,14 +323,22 @@
                         </td>
                     </tr>
                     <tr>
-                        <td>006</td>
-                        <td>Resort Tunis</td>
-                        <td>Tunisie</td>
-                        <td>Hammamet</td>
-                        <td>Resort</td>
-                        <td>4 étoiles</td>
-                        <td>Indépendant</td>
-                        <td>Oui</td>
+                        <td>001</td>
+                        <td>MH999</td>
+                        <td>13/10/2025</td>
+                        <td>1</td>
+                        <td>FRANCE</td>
+                        <td>DJE</td>
+                        <td>13:15:00</td>
+                        <td>PAR</td>
+                        <td>13:15:00</td>
+                        <td>DJE</td>
+                        <td>Aller</td>
+                        <td>AIR FRANCE</td>
+                        <td>15</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>150 €</td>
 
                         <td class="actions">
                             <button class="view" title="Visualiser"></button>
@@ -274,20 +346,52 @@
                         </td>
                     </tr>
                     <tr>
-                        <td>006</td>
-                        <td>Resort Tunis</td>
-                        <td>Tunisie</td>
-                        <td>Hammamet</td>
-                        <td>Resort</td>
-                        <td>4 étoiles</td>
-                        <td>Indépendant</td>
-                        <td>Oui</td>
+                        <td>001</td>
+                        <td>MH999</td>
+                        <td>13/10/2025</td>
+                        <td>1</td>
+                        <td>FRANCE</td>
+                        <td>DJE</td>
+                        <td>13:15:00</td>
+                        <td>PAR</td>
+                        <td>13:15:00</td>
+                        <td>DJE</td>
+                        <td>Aller</td>
+                        <td>AIR FRANCE</td>
+                        <td>15</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>150 €</td>
 
                         <td class="actions">
                             <button class="view" title="Visualiser"></button>
                             <button class="delete" title="Supprimer"></button>
                         </td>
                     </tr>
+                    <tr>
+                        <td>001</td>
+                        <td>MH999</td>
+                        <td>13/10/2025</td>
+                        <td>1</td>
+                        <td>FRANCE</td>
+                        <td>DJE</td>
+                        <td>13:15:00</td>
+                        <td>PAR</td>
+                        <td>13:15:00</td>
+                        <td>DJE</td>
+                        <td>Aller</td>
+                        <td>AIR FRANCE</td>
+                        <td>15</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>150 €</td>
+
+                        <td class="actions">
+                            <button class="view" title="Visualiser"></button>
+                            <button class="delete" title="Supprimer"></button>
+                        </td>
+                    </tr>
+
                 </tbody>
             </table>
 

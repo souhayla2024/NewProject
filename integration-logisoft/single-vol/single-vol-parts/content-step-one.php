@@ -102,7 +102,7 @@
           <h4>Départ</h4>
           <div class="form-group row-5">
             <label>N° Séq:</label>
-            <input type="text" placeholder="Ex: 1234" required>
+            <input type="text" placeholder="Ex: 1234">
           </div>
           <div class="form-group row-5">
             <label>N° du vol :</label>
@@ -240,7 +240,7 @@
           </div>
           <div class="form-group row-8">
             <label>N° du vol :</label>
-            <input type="text" placeholder="Ex: 1234" required>
+            <input type="text" placeholder="Ex: 1234">
           </div>
 
           <div class="form-group row-8">

@@ -38,8 +38,28 @@
 
               <!-- Prix vente section -->
               <tr>
-                <td rowspan="3" class="pricing-table__label pricing-table__label--merged">Prix vente</td>
-                <td class="pricing-table__label">Forfait</td>
+                <td rowspan="3" class="pricing-table__label pricing-table__label--merged multi-field">
+                  <div class="row-group-multi-fields">
+                    <label for="" class="label-fields">Prix vente</label>
+                    <div class="group-fields">
+                      <span class="field">
+                        <span>Forfait</span>
+                      </span>
+
+                      <span class="field">
+                        <span>Internet</span>
+                      </span>
+
+                      <span class="field">
+                        <span>Vol sec</span>
+                      </span>
+                    </div>
+                  </div>
+
+
+                </td>
+                <!-- <td class="pricing-table__label">Forfait</td> -->
+                <td class="pricing-table__cell"><input type="text" class="pricing-table__input" value="0" /></td>
                 <td class="pricing-table__cell"><input type="text" class="pricing-table__input" value="0" /></td>
                 <td class="pricing-table__cell"><input type="text" class="pricing-table__input" value="0" /></td>
                 <td rowspan="4" class="pricing-table__cell">
@@ -49,14 +69,16 @@
               </tr>
 
               <tr>
-                <td class="pricing-table__label">Internet</td>
+                <!-- <td class="pricing-table__label">Internet</td> -->
+                <td class="pricing-table__cell"><input type="text" class="pricing-table__input" value="0" /></td>
                 <td class="pricing-table__cell"><input type="text" class="pricing-table__input" value="0" /></td>
                 <td class="pricing-table__cell"><input type="text" class="pricing-table__input" value="0" /></td>
                 <td class="pricing-table__cell pricing-table__cell--empty"></td>
               </tr>
 
               <tr>
-                <td class="pricing-table__label">Vol sec</td>
+                <!-- <td class="pricing-table__label">Vol sec</td> -->
+                <td class="pricing-table__cell"><input type="text" class="pricing-table__input" value="0" /></td>
                 <td class="pricing-table__cell"><input type="text" class="pricing-table__input" value="0" /></td>
                 <td class="pricing-table__cell"><input type="text" class="pricing-table__input" value="0" /></td>
                 <td class="pricing-table__cell pricing-table__cell--empty"></td>
@@ -133,6 +155,28 @@
 
           <!-- row group -->
         </div>
+
+
+      </div>
+      <div class="partie">
+        <table class="pricing-table">
+          <thead>
+            <tr class="pricing-table__header">
+              <th>Adulte</th>
+              <th>Enfant</th>
+              <th>Bébé</th>
+              <th>Cabine</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="pricing-table__row">
+              <td class="pricing-table__cell"><input type="text" class="pricing-table__input" value="25" /></td>
+              <td class="pricing-table__cell"><input type="text" class="pricing-table__input" value="20" /></td>
+              <td class="pricing-table__cell"><input type="text" class="pricing-table__input" value="10" /></td>
+              <td class="pricing-table__cell"><input type="text" class="pricing-table__input" value="8" /></td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     </div>
   </div>

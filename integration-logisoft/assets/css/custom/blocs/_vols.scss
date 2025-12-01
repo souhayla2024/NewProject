@@ -603,27 +603,28 @@
                 background-color: $white;
                 border-bottom: 1px solid #ccc;
 
-                th {
-                    padding: 10px;
-                    text-align: left;
-                    font-weight: 600;
-                    // border: 1px solid #ccc;
-                    //white-space: nowrap; // empêche le retour à la ligne
-                    min-width: 135px;
+                tr {
+                    th {
+                        padding: 10px;
+                        text-align: left;
+                        font-weight: 600;
+                        font-size: 13px;
+                        font-style: italic;
 
-                    .arrow-tri {
-                        display: inline-block;
-                        width: 10px;
-                        height: 20px;
-                        background-image: url(../inc/img/arrow-tri.png);
-                        background-repeat: no-repeat;
-                        background-size: cover;
-                        background-position: center;
-                        float: right;
-                    }
+                        .arrow-tri {
+                            display: inline-block;
+                            width: 10px;
+                            height: 20px;
+                            background-image: url(../inc/img/arrow-tri.png);
+                            background-repeat: no-repeat;
+                            background-size: cover;
+                            background-position: center;
+                            float: right;
+                        }
 
-                    &:last-child {
-                        text-align: center;
+                        &:last-child {
+                            text-align: center;
+                        }
                     }
                 }
 
@@ -655,7 +656,7 @@
 
                     td {
                         padding: 10px;
-                        font-size: 12px;
+                        font-size: 13px;
 
                         &.actions {
                             text-align: center;
