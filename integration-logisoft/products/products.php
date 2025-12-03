@@ -10,7 +10,25 @@
         </div>
 
         <div class="table-wrapper">
+            <div class="header-table">
+                <div class="header-table-left">
+                    <label>Afficher
+                        <select id="rowsPerPageSelect">
+                            <option value="5">5</option>
+                            <option value="10" selected>10</option>
+                            <option value="25">25</option>
+                            <option value="50">50</option>
+                        </select>
+                        entrées
+                    </label>
+                </div>
+                <div class="header-table-right">
+                    <label for="">Rechercher :</label>
+                    <input type="text" id="tableSearch" placeholder="Rechercher..." />
+                </div>
+            </div>
             <table class="custom-table">
+
                 <thead>
                     <tr>
                         <th>Code <a href="#" class="arrow-tri"></a></th>
@@ -219,14 +237,74 @@
                             <button class="delete" title="Supprimer"></button>
                         </td>
                     </tr>
+                    <tr>
+                        <td>006</td>
+                        <td>Resort Tunis</td>
+                        <td>Tunisie</td>
+                        <td>Hammamet</td>
+                        <td>Resort</td>
+                        <td>4 étoiles</td>
+                        <td>Indépendant</td>
+                        <td>Oui</td>
+                        <td><span class="stat-desc success"></span>
+                        <td class="actions">
+                            <button class="view" title="Visualiser"></button>
+                            <button class="delete" title="Supprimer"></button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>006</td>
+                        <td>Resort Tunis</td>
+                        <td>Tunisie</td>
+                        <td>Hammamet</td>
+                        <td>Resort</td>
+                        <td>4 étoiles</td>
+                        <td>Indépendant</td>
+                        <td>Oui</td>
+                        <td><span class="stat-desc success"></span>
+                        <td class="actions">
+                            <button class="view" title="Visualiser"></button>
+                            <button class="delete" title="Supprimer"></button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>006</td>
+                        <td>Resort Tunis</td>
+                        <td>Tunisie</td>
+                        <td>Hammamet</td>
+                        <td>Resort</td>
+                        <td>4 étoiles</td>
+                        <td>Indépendant</td>
+                        <td>Oui</td>
+                        <td><span class="stat-desc success"></span>
+                        <td class="actions">
+                            <button class="view" title="Visualiser"></button>
+                            <button class="delete" title="Supprimer"></button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>006</td>
+                        <td>Resort Tunis</td>
+                        <td>Tunisie</td>
+                        <td>Hammamet</td>
+                        <td>Resort</td>
+                        <td>4 étoiles</td>
+                        <td>Indépendant</td>
+                        <td>Oui</td>
+                        <td><span class="stat-desc success"></span>
+                        <td class="actions">
+                            <button class="view" title="Visualiser"></button>
+                            <button class="delete" title="Supprimer"></button>
+                        </td>
+                    </tr>
                 </tbody>
             </table>
 
             <div class="pagination">
                 <span class="first"></span>
-                <span class="prev"></span>
+                <span class="prev arrow-prev"></span>
                 <span class="info">1 to 10 of 7125</span>
-                <span class="next"></span>
+                <span class="next arrow-next"></span>
                 <span class="last"></span>
             </div>
         </div>

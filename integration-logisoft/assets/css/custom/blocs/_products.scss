@@ -63,6 +63,37 @@
     }
 
     .table-wrapper {
+        margin-top: 20px;
+        .header-table {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+            .header-table-left {
+                label {
+                    font-family: "Gilroy", sans-serif;
+                    font-size: 16px;
+                    color: $black;
+                    #rowsPerPageSelect {
+                        padding: 4px 8px;
+                        margin: 0 5px;
+                    }
+                }
+            }
+            .header-table-right {
+                label {
+                    font-family: "Gilroy", sans-serif;
+                    font-size: 16px;
+                    color: $black;
+                }
+                input {
+                    font-family: "Gilroy", sans-serif;
+                    padding: 10px 10px 8px;
+                    border: 1px solid #ccc;
+                    border-radius: 4px;
+                }
+            }
+        }
         .custom-table {
             width: 100%;
             border-collapse: collapse;
@@ -205,18 +236,18 @@
             }
 
             .first {
-                width: 40px;
+                width: 20px;
                 height: 20px;
-                background-image: url(../inc/img/arrow-left-pagination.svg);
+                background-image: url(../inc/img/double-arrow-left.svg);
                 background-position: center;
                 background-repeat: no-repeat;
                 background-size: cover;
             }
 
             .prev {
-                width: 20px;
+                width: 40px;
                 height: 20px;
-                background-image: url(../inc/img/double-arrow-left.svg);
+                background-image: url(../inc/img/arrow-left-pagination.svg);
                 background-position: center;
                 background-repeat: no-repeat;
                 background-size: cover;
@@ -232,18 +263,19 @@
             }
 
             .next {
-                width: 20px;
+                width: 40px;
                 height: 20px;
-                background-image: url(../inc/img/double-arrow-right.svg);
+                background-image: url(../inc/img/arrow-right-pagination.svg);
                 background-position: center;
                 background-repeat: no-repeat;
                 background-size: cover;
             }
 
             .last {
-                width: 40px;
+                width: 20px;
                 height: 20px;
-                background-image: url(../inc/img/arrow-right-pagination.svg);
+                background-image: url(../inc/img/double-arrow-right.svg);
+
                 background-position: center;
                 background-repeat: no-repeat;
                 background-size: cover;
