@@ -5,32 +5,32 @@ $(document).ready(function () {
   // relloverMenuBurger()
 });
 function menuBurger() {
-  var burger = $('.burger-nav');
-  var wrapper = $('#main-wrapper');
-  burger.on('click', function () {
-    var isActive = wrapper.hasClass('active');
-    wrapper.toggleClass('active');
+  var burger = $(".burger-nav");
+  var wrapper = $("#main-wrapper");
+  burger.on("click", function () {
+    var isActive = wrapper.hasClass("active");
+    wrapper.toggleClass("active");
 
     // Indique si le menu a été ouvert par clic
-    wrapper.data('clicked', !isActive);
+    wrapper.data("clicked", !isActive);
   });
 }
 function relloverMenuBurger() {
-  var left = $('.menu-nav');
-  var wrapper = $('#main-wrapper');
-  left.on('mouseenter', function () {
+  var left = $(".menu-nav");
+  var wrapper = $("#main-wrapper");
+  left.on("mouseenter", function () {
     // si le menu n’a pas été ouvert par clic → hover actif
-    if (!wrapper.data('clicked')) {
-      wrapper.addClass('is-hovered');
+    if (!wrapper.data("clicked")) {
+      wrapper.addClass("is-hovered");
     }
   });
-  left.on('mouseleave', function () {
+  left.on("mouseleave", function () {
     // si le menu n’a pas été ouvert par clic → hover actif
-    if (!wrapper.data('clicked')) {
+    if (!wrapper.data("clicked")) {
       setTimeout(function () {
         // on vérifie encore que la souris n’est pas revenue entre temps
-        if (!left.is(':hover')) {
-          wrapper.removeClass('is-hovered');
+        if (!left.is(":hover")) {
+          wrapper.removeClass("is-hovered");
         }
       }, 500);
     }
@@ -43,7 +43,7 @@ $(document).ready(function () {
   closeInfo();
   currentTabActive();
   multiSelect();
-  checkAllcheckbox();
+  // checkAllcheckbox();
 });
 function closeInfo() {
   $(".close-info").on("click", function () {
@@ -54,6 +54,9 @@ function closeInfo() {
 function checkAllcheckbox(container) {
   var selectAll = container.querySelector(".select-all");
   var items = container.querySelectorAll(".item-check");
+
+  // Si pas de selectAll, on quitte
+  if (!selectAll) return;
 
   // Sélectionner tous
   selectAll.addEventListener("change", function () {
@@ -66,14 +69,14 @@ function checkAllcheckbox(container) {
   // Mise à jour du "Sélectionner tous"
   items.forEach(function (item) {
     item.addEventListener("change", function () {
-      // Ne regarde que les items de ce container
       selectAll.checked = Array.from(items).every(function (i) {
         return i.checked;
       });
     });
   });
-  // Initialiser chaque groupe séparément
 }
+
+// Initialisation
 document.querySelectorAll(".listing-chexbox").forEach(function (group) {
   checkAllcheckbox(group);
 });
@@ -152,7 +155,10 @@ $(document).ready(function () {
 });
 function RenderTable() {
   var table = document.querySelector(".custom-table");
+  // Si le tableau n'existe pas, on arrête la fonction
+  if (!table) return;
   var tbody = table.querySelector("tbody");
+  if (!tbody) return;
   var rows = Array.from(tbody.querySelectorAll("tr"));
   var pagination = document.querySelector(".pagination");
   var info = pagination.querySelector(".info");

@@ -875,7 +875,7 @@ function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == 
             f = [],
             d = w,
             p = e || b && x.find.TAG("*", i),
-            h = A += null == d ? 1 : Math.random() || .1,
+            h = A += null == d ? 1 : Math.random() || 0.1,
             g = p.length;
           for (i && (w = t == T || t || i); l !== g && null != (o = p[l]); l++) {
             if (b && o) {
@@ -1183,7 +1183,7 @@ function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == 
           always: function always() {
             return s.done(arguments).fail(arguments), this;
           },
-          "catch": function _catch(e) {
+          catch: function _catch(e) {
             return a.then(null, e);
           },
           pipe: function pipe() {
@@ -1741,7 +1741,7 @@ function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == 
     pageY: !0,
     shiftKey: !0,
     view: !0,
-    "char": !0,
+    char: !0,
     code: !0,
     charCode: !0,
     key: !0,
@@ -2075,7 +2075,7 @@ function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == 
       u = 0;
     if (n === (r ? "border" : "content")) return 0;
     for (; a < 4; a += 2) "margin" === n && (u += _E.css(e, n + ne[a], !0, i)), r ? ("content" === n && (u -= _E.css(e, "padding" + ne[a], !0, i)), "margin" !== n && (u -= _E.css(e, "border" + ne[a] + "Width", !0, i))) : (u += _E.css(e, "padding" + ne[a], !0, i), "padding" !== n ? u += _E.css(e, "border" + ne[a] + "Width", !0, i) : s += _E.css(e, "border" + ne[a] + "Width", !0, i));
-    return !r && 0 <= o && (u += Math.max(0, Math.ceil(e["offset" + t[0].toUpperCase() + t.slice(1)] - o - u - s - .5)) || 0), u;
+    return !r && 0 <= o && (u += Math.max(0, Math.ceil(e["offset" + t[0].toUpperCase() + t.slice(1)] - o - u - s - 0.5)) || 0), u;
   }
   function et(e, t, n) {
     var r = Ie(e),
@@ -2146,7 +2146,7 @@ function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == 
             c = e.nodeType && (_E.cssNumber[t] || "px" !== l && +u) && te.exec(_E.css(e, t));
           if (c && c[3] !== l) {
             u /= 2, l = l || c[3], c = +u || 1;
-            while (a--) _E.style(e, t, c + l), (1 - o) * (1 - (o = s() / u || .5)) <= 0 && (a = 0), c /= o;
+            while (a--) _E.style(e, t, c + l), (1 - o) * (1 - (o = s() / u || 0.5)) <= 0 && (a = 0), c /= o;
             c *= 2, _E.style(e, t, c + l), n = n || [];
           }
           return n && (c = +c || +u || 0, i = n[1] ? c + (n[1] + 1) * n[2] : +n[2], r && (r.unit = l, r.start = c, r.end = i)), i;
@@ -2173,7 +2173,7 @@ function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == 
           o = !m.scrollboxSize() && "absolute" === i.position,
           a = (o || n) && "border-box" === _E.css(e, "boxSizing", !1, i),
           s = n ? Ze(e, u, n, a, i) : 0;
-        return a && o && (s -= Math.ceil(e["offset" + u[0].toUpperCase() + u.slice(1)] - parseFloat(i[u]) - Ze(e, u, "border", !1, i) - .5)), s && (r = te.exec(t)) && "px" !== (r[3] || "px") && (e.style[u] = t, t = _E.css(e, u)), Je(0, t, s);
+        return a && o && (s -= Math.ceil(e["offset" + u[0].toUpperCase() + u.slice(1)] - parseFloat(i[u]) - Ze(e, u, "border", !1, i) - 0.5)), s && (r = te.exec(t)) && "px" !== (r[3] || "px") && (e.style[u] = t, t = _E.css(e, u)), Je(0, t, s);
       }
     };
   }), _E.cssHooks.marginLeft = $e(m.reliableMarginLeft, function (e, t) {
@@ -2298,8 +2298,8 @@ function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == 
       }
     },
     propFix: {
-      "for": "htmlFor",
-      "class": "className"
+      for: "htmlFor",
+      class: "className"
     }
   }), m.optSelected || (_E.propHooks.selected = {
     get: function get(e) {

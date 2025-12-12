@@ -4,7 +4,10 @@ $(document).ready(function () {
 
 function RenderTable() {
     const table = document.querySelector(".custom-table");
+    // Si le tableau n'existe pas, on arrête la fonction
+    if (!table) return;
     const tbody = table.querySelector("tbody");
+    if (!tbody) return;
     const rows = Array.from(tbody.querySelectorAll("tr"));
 
     const pagination = document.querySelector(".pagination");

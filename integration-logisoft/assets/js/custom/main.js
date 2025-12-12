@@ -3,7 +3,7 @@ $(document).ready(function () {
     closeInfo();
     currentTabActive();
     multiSelect();
-    checkAllcheckbox();
+    // checkAllcheckbox();
 });
 
 function closeInfo() {
@@ -17,6 +17,9 @@ function checkAllcheckbox(container) {
     const selectAll = container.querySelector(".select-all");
     const items = container.querySelectorAll(".item-check");
 
+    // Si pas de selectAll, on quitte
+    if (!selectAll) return;
+
     // Sélectionner tous
     selectAll.addEventListener("change", function () {
         items.forEach((item) => {
@@ -27,12 +30,12 @@ function checkAllcheckbox(container) {
     // Mise à jour du "Sélectionner tous"
     items.forEach((item) => {
         item.addEventListener("change", function () {
-            // Ne regarde que les items de ce container
             selectAll.checked = Array.from(items).every((i) => i.checked);
         });
     });
-    // Initialiser chaque groupe séparément
 }
+
+// Initialisation
 document.querySelectorAll(".listing-chexbox").forEach(function (group) {
     checkAllcheckbox(group);
 });
