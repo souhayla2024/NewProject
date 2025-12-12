@@ -299,12 +299,12 @@
                     </tr>
                 </tbody>
             </table>
-
+            <!-- supprimé la class arrow laisse que arrow-prev ou arrow-next -->
             <div class="pagination">
                 <span class="first"></span>
-                <span class="prev arrow-prev"></span>
+                <span class="arrow-prev"></span>
                 <span class="info">1 to 10 of 7125</span>
-                <span class="next arrow-next"></span>
+                <span class="arrow-next"></span>
                 <span class="last"></span>
             </div>
         </div>

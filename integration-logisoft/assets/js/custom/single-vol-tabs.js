@@ -141,29 +141,37 @@ $(document).ready(function () {
     });
 
     /** ---------- VALIDATION LIVE ---------- **/
-    $("input[required], select[required], textarea[required]").each(
+    /** ---------- VALIDATION LIVE (corrigée) ---------- **/
+    $(document).on(
+        "input",
+        "input[required], textarea[required], select[required]",
         function () {
             const $input = $(this);
             const $group = $input.closest(".form-group");
             const $error = $group.find(".text-validator");
-            if ($error.length) $error.hide();
 
-            $input.on("blur", function () {
-                if (!$input.val() || !String($input.val()).trim()) {
-                    $group.addClass("has-error");
-                    if ($error.length) $error.show();
-                } else {
-                    $group.removeClass("has-error");
-                    if ($error.length) $error.hide();
-                }
-            });
+            if ($input.val().trim() !== "") {
+                $group.removeClass("has-error");
+                $error.hide();
+            }
+        }
+    );
 
-            $input.on("input", function () {
-                if ($input.val() && String($input.val()).trim()) {
-                    $group.removeClass("has-error");
-                    if ($error.length) $error.hide();
-                }
-            });
+    $(document).on(
+        "blur",
+        "input[required], textarea[required], select[required]",
+        function () {
+            const $input = $(this);
+            const $group = $input.closest(".form-group");
+            const $error = $group.find(".text-validator");
+
+            if ($input.val().trim() === "") {
+                $group.addClass("has-error");
+                $error.show();
+            } else {
+                $group.removeClass("has-error");
+                $error.hide();
+            }
         }
     );
 

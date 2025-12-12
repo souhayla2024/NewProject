@@ -526,12 +526,11 @@
                                     input[type="date"] {
                                         font-family: "Gilroy", sans-serif;
                                         width: 100%;
-                                        padding: 10px 10px 8px;
+                                        padding: 11px 11px 9px;
                                         border: 1px solid #ccc;
                                         border-radius: 6px;
                                         font-size: 14px;
                                         transition: 0.2s;
-                                        background-color: #f9fafc;
                                         &:focus {
                                             border-color: #004080;
                                             box-shadow: 0 0 4px
@@ -543,12 +542,11 @@
                                     textarea {
                                         font-family: "Gilroy", sans-serif;
                                         width: 100%;
-                                        padding: 10px 10px 8px;
+                                        padding: 11px 11px 9px;
                                         border: 1px solid #ccc;
                                         border-radius: 6px;
                                         font-size: 14px;
                                         transition: 0.2s;
-                                        background-color: #f9fafc;
 
                                         &:focus {
                                             border-color: #004080;
@@ -575,7 +573,6 @@
                                         font-size: 16px;
                                         border: 1px solid #ccc;
                                         border-radius: 5px;
-                                        background-color: #fff;
 
                                         // flèche personnalisée
                                         background-image: url('data:image/svg+xml;charset=US-ASCII,<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12"><polygon points="0,0 12,0 6,6" fill="%23999"/></svg>');
@@ -849,12 +846,12 @@
                                                 font-family: "Gilroy",
                                                     sans-serif;
                                                 width: 100%;
-                                                padding: 10px 10px 8px;
+                                                padding: 11px 11px 9px;
                                                 border: 1px solid #ccc;
                                                 border-radius: 6px;
                                                 font-size: 14px;
                                                 transition: 0.2s;
-                                                background-color: #f9fafc;
+                                                // background-color: #f9fafc;
                                                 &:focus {
                                                     border-color: #004080;
                                                     box-shadow: 0 0 4px
@@ -1219,7 +1216,7 @@
                                         input[type="tel"],
                                         input[type="date"] {
                                             width: 100%;
-                                            padding: 10px 10px 8px;
+                                            padding: 11px 11px 9px;
                                             border-radius: 6px;
                                             font-size: 14px;
                                             transition: 0.2s;

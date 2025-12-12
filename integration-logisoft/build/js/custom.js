@@ -164,29 +164,72 @@ function RenderTable() {
   var rowsSelect = document.querySelector("#rowsPerPageSelect");
   var rowsPerPage = parseInt(rowsSelect.value);
   var currentPage = 1;
+
+  // Contient les lignes filtrées (colonnes + global)
   var filteredRows = [].concat(rows);
+
+  /** RENDU DE LA PAGINATION **/
   function renderTablePage(page) {
     var totalRows = filteredRows.length;
-    var totalPages = Math.ceil(totalRows / rowsPerPage);
+    var totalPages = Math.ceil(totalRows / rowsPerPage) || 1;
     if (page < 1) page = 1;
     if (page > totalPages) page = totalPages;
     currentPage = page;
+
+    // On cache toutes les lignes
     rows.forEach(function (r) {
       return r.style.display = "none";
     });
+
+    // On affiche uniquement les lignes visibles
     var start = (page - 1) * rowsPerPage;
     var end = start + rowsPerPage;
     filteredRows.slice(start, end).forEach(function (r) {
       return r.style.display = "";
     });
+
+    // Update info
     var startInfo = totalRows === 0 ? 0 : start + 1;
     var endInfo = Math.min(end, totalRows);
     info.textContent = "".concat(startInfo, " \xE0 ").concat(endInfo, " sur ").concat(totalRows);
+
+    // Gestion des boutons
     firstBtn.disabled = prevBtn.disabled = page === 1;
     nextBtn.disabled = lastBtn.disabled = page === totalPages;
   }
 
-  // Pagination
+  /** FILTRE PAR COLONNE **/
+  document.querySelectorAll(".custom-table thead .filters input").forEach(function (input, colIndex) {
+    input.addEventListener("keyup", function () {
+      var filterValue = this.value.toLowerCase();
+
+      // MAJ filteredRows
+      filteredRows = rows.filter(function (row) {
+        var cell = row.children[colIndex];
+        return cell.textContent.toLowerCase().includes(filterValue);
+      });
+      renderTablePage(1);
+    });
+  });
+
+  /** FILTRE GLOBAL **/
+  searchInput.addEventListener("keyup", function () {
+    var term = this.value.toLowerCase();
+    filteredRows = rows.filter(function (row) {
+      return Array.from(row.children).some(function (cell) {
+        return cell.textContent.toLowerCase().includes(term);
+      });
+    });
+    renderTablePage(1);
+  });
+
+  /** CHANGEMENT NOMBRE DE LIGNES **/
+  rowsSelect.addEventListener("change", function () {
+    rowsPerPage = parseInt(this.value);
+    renderTablePage(1);
+  });
+
+  /** ÉVÈNEMENTS PAGINATION **/
   firstBtn.addEventListener("click", function () {
     return renderTablePage(1);
   });
@@ -201,44 +244,31 @@ function RenderTable() {
     renderTablePage(totalPages);
   });
 
-  // 🔍 Recherche globale
-  searchInput.addEventListener("keyup", function () {
-    var term = this.value.toLowerCase();
-    filteredRows = rows.filter(function (row) {
-      return Array.from(row.children).some(function (cell) {
-        return cell.textContent.toLowerCase().includes(term);
-      });
-    });
-    renderTablePage(1);
-  });
-
-  // 🔢 Changement du nombre de lignes
-  rowsSelect.addEventListener("change", function () {
-    rowsPerPage = parseInt(this.value);
-    renderTablePage(1);
-  });
+  // PREMIER RENDU
   renderTablePage(1);
 }
-"use strict";
+// // Quand un utilisateur tape dans un champ de recherche
+// document
+//     .querySelectorAll(".custom-table thead .filters input")
+//     .forEach((input, colIndex) => {
+//         input.addEventListener("keyup", function () {
+//             const filterValue = this.value.toLowerCase();
+//             const table = this.closest("table");
+//             const rows = table.querySelectorAll("tbody tr");
 
-// Quand un utilisateur tape dans un champ de recherche
-document.querySelectorAll(".custom-table thead .filters input").forEach(function (input, colIndex) {
-  input.addEventListener("keyup", function () {
-    var filterValue = this.value.toLowerCase();
-    var table = this.closest("table");
-    var rows = table.querySelectorAll("tbody tr");
-    rows.forEach(function (row) {
-      var cell = row.children[colIndex];
-      var cellText = cell.textContent.toLowerCase();
-      // Vérifie si le texte correspond au filtre
-      if (cellText.includes(filterValue)) {
-        row.style.display = "";
-      } else {
-        row.style.display = "none";
-      }
-    });
-  });
-});
+//             rows.forEach((row) => {
+//                 const cell = row.children[colIndex];
+//                 const cellText = cell.textContent.toLowerCase();
+//                 // Vérifie si le texte correspond au filtre
+//                 if (cellText.includes(filterValue)) {
+//                     row.style.display = "";
+//                 } else {
+//                     row.style.display = "none";
+//                 }
+//             });
+//         });
+//     });
+"use strict";
 "use strict";
 
 $(document).ready(function () {
@@ -368,26 +398,27 @@ $(document).ready(function () {
   });
 
   /** ---------- VALIDATION LIVE ---------- **/
-  $("input[required], select[required], textarea[required]").each(function () {
+  /** ---------- VALIDATION LIVE (corrigée) ---------- **/
+  $(document).on("input", "input[required], textarea[required], select[required]", function () {
     var $input = $(this);
     var $group = $input.closest(".form-group");
     var $error = $group.find(".text-validator");
-    if ($error.length) $error.hide();
-    $input.on("blur", function () {
-      if (!$input.val() || !String($input.val()).trim()) {
-        $group.addClass("has-error");
-        if ($error.length) $error.show();
-      } else {
-        $group.removeClass("has-error");
-        if ($error.length) $error.hide();
-      }
-    });
-    $input.on("input", function () {
-      if ($input.val() && String($input.val()).trim()) {
-        $group.removeClass("has-error");
-        if ($error.length) $error.hide();
-      }
-    });
+    if ($input.val().trim() !== "") {
+      $group.removeClass("has-error");
+      $error.hide();
+    }
+  });
+  $(document).on("blur", "input[required], textarea[required], select[required]", function () {
+    var $input = $(this);
+    var $group = $input.closest(".form-group");
+    var $error = $group.find(".text-validator");
+    if ($input.val().trim() === "") {
+      $group.addClass("has-error");
+      $error.show();
+    } else {
+      $group.removeClass("has-error");
+      $error.hide();
+    }
   });
 
   /** ---------- INIT ---------- **/

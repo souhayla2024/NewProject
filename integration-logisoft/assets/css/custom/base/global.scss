@@ -9,20 +9,16 @@
     // max-width: 1760px;
 }
 
-
-
-
 html {
     scroll-behavior: smooth;
     scroll-padding-top: 100px;
-
+}
+.hide-element {
+    display: block;
 }
 
 @media (max-width: 1023px) {
     .center-content {
         padding: 0 20px;
     }
-
-  
 }
-
