@@ -39,6 +39,176 @@ function relloverMenuBurger() {
 "use strict";
 
 $(document).ready(function () {
+  selectAllDaysForfait();
+  orderMylementsCards();
+  $(window).resize(function () {
+    orderMylementsCards();
+  });
+  addRowToTable();
+  addRowToTableOption();
+});
+function selectAllDaysForfait() {
+  var selectAll = document.getElementById("selectAllDays");
+  var days = document.querySelectorAll(".day-checkbox");
+  if (!selectAll || !days.length) return;
+
+  // CLICK SUR "TOUS LES JOURS"
+  selectAll.addEventListener("change", function () {
+    var _this = this;
+    days.forEach(function (day) {
+      day.checked = _this.checked;
+    });
+  });
+
+  // CLICK SUR UN JOUR
+  days.forEach(function (day) {
+    day.addEventListener("change", function () {
+      var allChecked = Array.from(days).every(function (d) {
+        return d.checked;
+      });
+      selectAll.checked = allChecked;
+    });
+  });
+}
+function orderMylementsCards() {
+  if (window.innerWidth < 1024) return;
+  var grid = document.querySelector(".type-one .type-masonry");
+  if (!grid) return;
+  new Masonry(grid, {
+    itemSelector: ".card",
+    gutter: 24 // espace entre les éléments
+  });
+}
+function addRowToTable() {
+  var STORAGE_KEY = "forfait_details_rows";
+
+  /* ================= INIT ================= */
+  window.addEventListener("load", function () {
+    renderStoredRows();
+  });
+
+  /* ================= ADD ROW ================= */
+  document.getElementById("addRow").addEventListener("click", function () {
+    var row = {
+      type: document.getElementById("type").value,
+      code: document.getElementById("code").value.trim(),
+      libelle: document.getElementById("libelle").value.trim(),
+      nuitee: document.getElementById("nuitee").value,
+      entree: document.getElementById("entree").value,
+      sortie: document.getElementById("sortie").value,
+      prix: document.getElementById("prix").value || "0"
+    };
+    if (!row.code || !row.libelle) return;
+    var data = getStoredRows();
+    data.push(row);
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+
+    // Utiliser l'index du dernier élément ajouté
+    appendRow(row, data.length - 1);
+    resetInputs();
+  });
+
+  /* ================= DELETE ROW ================= */
+  document.querySelector("#detailsTable tbody").addEventListener("click", function (e) {
+    if (!e.target.classList.contains("btn-delete")) return;
+    var index = e.target.closest("tr").dataset.index;
+    var data = getStoredRows();
+    data.splice(index, 1);
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+    renderStoredRows();
+  });
+
+  /* ================= FUNCTIONS ================= */
+
+  function getStoredRows() {
+    return JSON.parse(localStorage.getItem(STORAGE_KEY) || "[]");
+  }
+  function renderStoredRows() {
+    var tbody = document.querySelector("#detailsTable tbody");
+    if (!tbody) return;
+    tbody.innerHTML = "";
+    getStoredRows().forEach(function (row, index) {
+      return appendRow(row, index);
+    });
+  }
+  function appendRow(row, index) {
+    var tbody = document.querySelector("#detailsTable tbody");
+
+    // Si index non fourni, prendre le dernier élément stocké
+    if (index === undefined) {
+      var data = getStoredRows();
+      index = data.length - 1;
+    }
+    var tr = document.createElement("tr");
+    tr.dataset.index = index;
+    tr.innerHTML = "\n            <td>".concat(row.type, "</td>\n            <td>").concat(row.code, "</td>\n            <td>").concat(row.libelle, "</td>\n            <td>").concat(row.nuitee, "</td>\n            <td>").concat(row.entree, "</td>\n            <td>").concat(row.sortie, "</td>\n            <td>").concat(Number(row.prix || 0).toFixed(2), "</td>\n            <td><button class=\"btn-delete\">\u2715</button></td>\n        ");
+    tbody.appendChild(tr);
+  }
+  function resetInputs() {
+    document.querySelectorAll(".input-row input").forEach(function (i) {
+      return i.value = "";
+    });
+  }
+}
+// Initialisation
+addRowToTable();
+function addRowToTableOption() {
+  document.addEventListener("DOMContentLoaded", function () {
+    var STORAGE_KEY = "price_table_rows";
+    renderRows();
+    document.getElementById("addPriceRow").addEventListener("click", function () {
+      var row = {
+        code: document.getElementById("p_code").value.trim(),
+        nom: document.getElementById("p_nom").value.trim(),
+        prixVente: document.getElementById("p_prix_vente").value || "0",
+        apply: document.getElementById("p_apply").value,
+        prixDuree: document.getElementById("p_prix_duree").value || "0"
+      };
+      if (!row.code || !row.nom) return;
+      var data = getRows();
+      data.push(row);
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+      appendRow(row, data.length - 1);
+      resetInputs();
+    });
+    document.querySelector("#priceTable tbody").addEventListener("click", function (e) {
+      if (!e.target.classList.contains("btn-delete")) return;
+      var index = e.target.closest("tr").dataset.index;
+      var data = getRows();
+      data.splice(index, 1);
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+      renderRows();
+    });
+
+    /* ===== FUNCTIONS ===== */
+
+    function getRows() {
+      return JSON.parse(localStorage.getItem(STORAGE_KEY) || "[]");
+    }
+    function renderRows() {
+      var tbody = document.querySelector("#priceTable tbody");
+      tbody.innerHTML = "";
+      getRows().forEach(function (row, index) {
+        return appendRow(row, index);
+      });
+    }
+    function appendRow(row, index) {
+      var tr = document.createElement("tr");
+      tr.dataset.index = index;
+      tr.innerHTML = "\n            <td>".concat(row.code, "</td>\n            <td>").concat(row.nom, "</td>\n            <td>").concat(Number(row.prixVente).toFixed(2), "</td>\n            <td>").concat(row.apply, "</td>\n            <td>").concat(Number(row.prixDuree).toFixed(2), "</td>\n            <td><button class=\"btn-delete\">\u2715</button></td>\n        ");
+      document.querySelector("#priceTable tbody").appendChild(tr);
+    }
+    function resetInputs() {
+      document.querySelectorAll("#priceTable .input-row input").forEach(function (i) {
+        return i.value = "";
+      });
+    }
+  });
+}
+addRowToTableOption();
+"use strict";
+
+$(document).ready(function () {
   openSubMenu();
   closeInfo();
   currentTabActive();

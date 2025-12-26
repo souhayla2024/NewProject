@@ -3,7 +3,7 @@
         padding: 10px 25px;
 
         .title-section {
-            font-family: "Gilroy", sans-serif;
+            font-family: $Gilroy;
             font-weight: 700;
             font-size: 30px;
             color: $black;
@@ -71,7 +71,7 @@
             margin-bottom: 10px;
             .header-table-left {
                 label {
-                    font-family: "Gilroy", sans-serif;
+                    font-family: $Gilroy;
                     font-size: 16px;
                     color: $black;
                     #rowsPerPageSelect {
@@ -82,12 +82,12 @@
             }
             .header-table-right {
                 label {
-                    font-family: "Gilroy", sans-serif;
+                    font-family: $Gilroy;
                     font-size: 16px;
                     color: $black;
                 }
                 input {
-                    font-family: "Gilroy", sans-serif;
+                    font-family: $Gilroy;
                     padding: 10px 10px 8px;
                     border: 1px solid #ccc;
                     border-radius: 4px;
@@ -97,7 +97,7 @@
         .custom-table {
             width: 100%;
             border-collapse: collapse;
-            font-family: "Gilroy", sans-serif;
+            font-family: $Gilroy;
             font-size: 14px;
             table-layout: fixed;
             overflow-x: auto;

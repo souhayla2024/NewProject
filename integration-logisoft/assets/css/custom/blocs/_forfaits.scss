@@ -1,5 +1,5 @@
-#vol-wrapper {
-    .header-section-vol {
+#forfait-wrapper {
+    .header-section-forfait {
         padding: 10px 0;
         display: flex;
         align-items: center;
@@ -183,7 +183,7 @@
                         margin-left: 25px;
                         position: relative;
                         z-index: 1;
-                        background-color: $white;
+                        background-color: #ffffff;
                         padding: 0 7px;
                         border-radius: 40px;
                     }
@@ -240,8 +240,7 @@
                         font-size: 16px;
                         border: 1px solid #ccc;
                         border-radius: 5px;
-                        background-color: #fff;
-
+                        background-color: $white;
                         // flèche personnalisée
                         background-image: url('data:image/svg+xml;charset=US-ASCII,<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12"><polygon points="0,0 12,0 6,6" fill="%23999"/></svg>');
                         background-repeat: no-repeat;
@@ -260,7 +259,6 @@
                         display: flex !important;
                         flex-wrap: nowrap;
                         align-items: center;
-
                         .checkbox-wrapper {
                             position: relative;
                             display: inline-block;
@@ -318,6 +316,60 @@
                         }
                     }
 
+                    &.checkbox-group-v2 {
+                        display: flex !important;
+                        flex-wrap: wrap;
+                        align-items: center;
+                        column-gap: 10px;
+
+                        .checkbox-wrapper {
+                            position: relative;
+                            display: flex;
+                            align-items: center;
+
+                            input[type="radio"] {
+                                appearance: none;
+                                -webkit-appearance: none;
+                                width: 18px;
+                                height: 18px;
+                                border: 2px solid #1e90ff;
+                                border-radius: 50%;
+                                box-shadow: 0 2px 6px rgba(30, 144, 255, 0.3);
+                                position: relative;
+                                transition: all 0.3s ease;
+                                margin: 0 0;
+                                &:checked::before {
+                                    content: "";
+                                    position: absolute;
+                                    top: 50%;
+                                    left: 50%;
+                                    transform: translate(-50%, -50%);
+                                    width: 12px;
+                                    height: 12px;
+                                    border-radius: 50%;
+                                    background-color: #1e90ff;
+                                }
+
+                                &:hover {
+                                    box-shadow: 0 0 8px rgba(30, 144, 255, 0.5);
+                                }
+                            }
+
+                            label {
+                                cursor: pointer;
+                                font-family: "Roboto", sans-serif;
+                                font-size: 13px;
+                                color: $black;
+                                user-select: none;
+                                margin-left: 0;
+                                margin-bottom: 0;
+                            }
+                        }
+                        .text-validator {
+                            margin-bottom: 0;
+                        }
+                    }
+
                     &.listing-chexbox {
                         display: block;
                         margin: 20px 0 40px;
@@ -371,7 +423,8 @@
                         $border-radius: 6px;
                         $hover-bg: #f0f0f0;
                         $font-family: $Gilroy;
-                        background-color: $white;
+                        $bg-color: #fff;
+
                         .form-group-content {
                             max-width: 50%;
                             width: 100%;
@@ -507,6 +560,7 @@
                     transition: 0.2s;
                     color: $white;
                     display: flex;
+                    margin-left: auto;
                     .loop {
                         display: block;
                         width: 15px;
@@ -577,7 +631,7 @@
             border-collapse: collapse;
             font-family: $Gilroy;
             font-size: 14px;
-            table-layout: fixed;
+            // table-layout: fixed;
             overflow-x: auto;
 
             thead {
@@ -737,8 +791,8 @@
 }
 
 @media (max-width: 1023px) {
-    #vol-wrapper {
-        .header-section-vol {
+    #forfait-wrapper {
+        .header-section-forfait {
             .title-section {
                 font-family: $RobotoSlab-Medium;
                 font-size: 30px;
@@ -990,6 +1044,7 @@
                             display: flex !important;
                             flex-wrap: nowrap;
                             align-items: center;
+                            margin-bottom: 30px;
 
                             .checkbox-wrapper {
                                 position: relative;
@@ -1016,7 +1071,7 @@
                                         width: 20px;
                                         left: 3px;
                                         bottom: 3px;
-                                        background-color: $white;
+                                        background-color: white;
                                         transition: 0.3s;
                                         border-radius: 50%;
                                     }
@@ -1046,6 +1101,13 @@
                             .checkbox-wrapper input:disabled + .switch::before {
                                 background-color: #bdbdbd;
                             }
+                        }
+
+                        &.checkbox-group-v2 {
+                            flex-direction: column;
+                            align-items: flex-start;
+                            justify-content: flex-start;
+                            gap: 10px;
                         }
 
                         &.listing-chexbox {
@@ -1238,6 +1300,7 @@
                         transition: 0.2s;
                         color: $white;
                         display: flex;
+                        margin-left: 0;
                         .loop {
                             display: block;
                             width: 15px;

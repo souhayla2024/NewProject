@@ -46,7 +46,7 @@
                     margin-right: 10px;
 
                     label {
-                        font-family: "Gilroy", sans-serif;
+                        font-family: $Gilroy;
                         font-size: 16px;
                         color: $black;
                         display: flex;
@@ -204,7 +204,7 @@
         .tabs {
             position: relative;
             width: 100%;
-            font-family: "Gilroy", sans-serif;
+            font-family: $Gilroy;
             @include transitions;
 
             .close-info {
@@ -267,7 +267,7 @@
 
                 section,
                 .tab-section {
-                    font-family: "Gilroy", sans-serif;
+                    font-family: $Gilroy;
                     background-color: #fff;
                     padding-bottom: 20px;
                     display: none;
@@ -524,7 +524,7 @@
                                     input[type="email"],
                                     input[type="tel"],
                                     input[type="date"] {
-                                        font-family: "Gilroy", sans-serif;
+                                        font-family: $Gilroy;
                                         width: 100%;
                                         padding: 11px 11px 9px;
                                         border: 1px solid #ccc;
@@ -540,7 +540,7 @@
                                     }
 
                                     textarea {
-                                        font-family: "Gilroy", sans-serif;
+                                        font-family: $Gilroy;
                                         width: 100%;
                                         padding: 11px 11px 9px;
                                         border: 1px solid #ccc;
@@ -669,7 +669,7 @@
                                         $border-color: #ccc;
                                         $border-radius: 6px;
                                         $hover-bg: #f0f0f0;
-                                        font-family: "Gilroy", sans-serif;
+                                        font-family: $Gilroy;
                                         background-color: #fff;
 
                                         .form-group-content {
@@ -1146,7 +1146,7 @@
                 .content {
                     section,
                     .tab-section {
-                        font-family: "Gilroy", sans-serif;
+                        font-family: $Gilroy;
                         padding: 20px;
                         border-radius: 12px;
                         .group-section {
@@ -1353,7 +1353,7 @@
                         margin-right: 10px;
 
                         label {
-                            font-family: "Gilroy", sans-serif;
+                            font-family: $Gilroy;
                             font-size: 16px;
                             color: $black;
                             display: flex;
