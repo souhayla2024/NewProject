@@ -9,7 +9,9 @@ $(document).ready(function () {
 });
 document.addEventListener("DOMContentLoaded", () => {
     // Initialisation
-    addRowToTable();
+    if (document.getElementById("detailsTable")) {
+        addRowToTable();
+    }
 });
 
 function selectAllDaysForfait() {

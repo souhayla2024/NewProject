@@ -49,7 +49,9 @@ $(document).ready(function () {
 });
 document.addEventListener("DOMContentLoaded", function () {
   // Initialisation
-  addRowToTable();
+  if (document.getElementById("detailsTable")) {
+    addRowToTable();
+  }
 });
 function selectAllDaysForfait() {
   var selectAll = document.getElementById("selectAllDays");
