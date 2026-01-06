@@ -31,7 +31,7 @@
                     <div class="card-grid">
                         <div>
                             <label>Code de l'hôtel</label>
-                            <input value="H588">
+                            <input type="text" value="H588" required>
                         </div>
                         <div>
                             <label>Produits</label>
@@ -101,7 +101,7 @@
                             <input value="E259">
                         </div>
                         <div>
-                            <label>&nbsp;</label>
+                            <label>lorem ipsum</label>
                             <input value="GOLDEN TULIP PRESIDENT">
                         </div>
 
@@ -386,6 +386,17 @@
 
             </div>
 
+        </div>
+
+
+        <!-- btn's -->
+        <div class="footer-submit">
+            <div class="footer-part-left">
+                <button class="reset" type="reset">Annuler</button>
+            </div>
+            <div class="footer-part-right">
+                <button class="submit" type="submit">Enregistrer</button>
+            </div>
         </div>
     </div>
 

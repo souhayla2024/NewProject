@@ -194,10 +194,10 @@
                     input[type="date"] {
                         font-family: $Gilroy;
                         width: 100%;
-                        padding: 10px 10px 8px;
+                        padding: 12px 10px 8px;
                         border: 1px solid #ccc;
                         border-radius: 6px;
-                        font-size: 14px;
+                        font-size: 13px;
                         transition: 0.2s;
                         background-color: $white;
                         &:focus {
@@ -210,10 +210,10 @@
                     textarea {
                         font-family: $Gilroy;
                         width: 100%;
-                        padding: 10px 10px 8px;
+                        padding: 12px 10px 8px;
                         border: 1px solid #ccc;
                         border-radius: 6px;
-                        font-size: 14px;
+                        font-size: 13px;
                         transition: 0.2s;
                         background-color: $white;
                         &:focus {
@@ -237,7 +237,7 @@
 
                         width: 100%;
                         padding: 10px 40px 10px 15px;
-                        font-size: 16px;
+                        font-size: 13px;
                         border: 1px solid #ccc;
                         border-radius: 5px;
                         background-color: $white;
@@ -690,7 +690,7 @@
                     }
 
                     td {
-                        padding: 10px;
+                        padding: 4px 10px;
                         font-size: 13px;
 
                         &.actions {
