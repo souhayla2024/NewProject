@@ -39,13 +39,17 @@ function relloverMenuBurger() {
 "use strict";
 
 $(document).ready(function () {
+  //addRowToTable();
+  addRowToTableOption();
   selectAllDaysForfait();
   orderMylementsCards();
   $(window).resize(function () {
     orderMylementsCards();
   });
+});
+document.addEventListener("DOMContentLoaded", function () {
+  // Initialisation
   addRowToTable();
-  addRowToTableOption();
 });
 function selectAllDaysForfait() {
   var selectAll = document.getElementById("selectAllDays");
@@ -150,8 +154,6 @@ function addRowToTable() {
     });
   }
 }
-// Initialisation
-addRowToTable();
 function addRowToTableOption() {
   document.addEventListener("DOMContentLoaded", function () {
     var STORAGE_KEY = "price_table_rows";

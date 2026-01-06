@@ -1,11 +1,15 @@
 $(document).ready(function () {
+    //addRowToTable();
+    addRowToTableOption();
     selectAllDaysForfait();
     orderMylementsCards();
     $(window).resize(function () {
         orderMylementsCards();
     });
+});
+document.addEventListener("DOMContentLoaded", () => {
+    // Initialisation
     addRowToTable();
-    addRowToTableOption();
 });
 
 function selectAllDaysForfait() {
@@ -135,8 +139,6 @@ function addRowToTable() {
             .forEach((i) => (i.value = ""));
     }
 }
-// Initialisation
-addRowToTable();
 
 function addRowToTableOption() {
     document.addEventListener("DOMContentLoaded", () => {
