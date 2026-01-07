@@ -13,8 +13,8 @@ html {
     scroll-behavior: smooth;
     scroll-padding-top: 100px;
 }
-.hide-element {
-    display: block;
+.hidden {
+    display: none;
 }
 
 @media (max-width: 1023px) {

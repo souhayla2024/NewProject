@@ -247,7 +247,9 @@
                         background-repeat: no-repeat;
                         background-position: right 10px center;
                         cursor: pointer;
-                        transition: border-color 0.2s, box-shadow 0.2s;
+                        transition:
+                            border-color 0.2s,
+                            box-shadow 0.2s;
 
                         &:focus {
                             border-color: #007bff;
@@ -636,8 +638,11 @@
                     }
 
                     td {
-                        padding: 10px;
-                        font-size: 13px;
+                        padding: 4px 10px;
+                        font-size: 12px;
+                        white-space: nowrap;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
 
                         &.actions {
                             text-align: center;
@@ -977,7 +982,9 @@
                             background-repeat: no-repeat;
                             background-position: right 10px center;
                             cursor: pointer;
-                            transition: border-color 0.2s, box-shadow 0.2s;
+                            transition:
+                                border-color 0.2s,
+                                box-shadow 0.2s;
 
                             &:focus {
                                 border-color: #007bff;
