@@ -565,6 +565,7 @@
 
                 &:hover {
                     background: #15803d;
+                    @include transitions;
                 }
             }
             .btn-delete {
@@ -588,10 +589,14 @@
         }
         .footer-submit {
             display: flex;
-            justify-content: flex-end;
+            justify-content: space-between;
             align-items: center;
-            padding-right: 15px;
+            width: calc(100% - 20px);
+            padding: 20px;
             column-gap: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+            border-radius: 12px;
+            background-color: $white;
             .footer-part-left {
                 display: flex;
                 column-gap: 10px;
@@ -620,6 +625,10 @@
                     border-radius: 6px;
                     color: $white;
                     cursor: pointer;
+                    &:hover {
+                        background: #15803d;
+                        @include transitions;
+                    }
                 }
             }
         }

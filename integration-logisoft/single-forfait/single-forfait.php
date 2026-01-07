@@ -390,12 +390,14 @@
 
 
         <!-- btn's -->
-        <div class="footer-submit">
-            <div class="footer-part-left">
-                <button class="reset" type="reset">Annuler</button>
-            </div>
-            <div class="footer-part-right">
-                <button class="submit" type="submit">Enregistrer</button>
+        <div class="forfait-layout">
+            <div class="footer-submit">
+                <div class="footer-part-left">
+                    <button class="reset" type="reset">Annuler</button>
+                </div>
+                <div class="footer-part-right">
+                    <button class="submit" type="submit">Enregistrer</button>
+                </div>
             </div>
         </div>
     </div>
