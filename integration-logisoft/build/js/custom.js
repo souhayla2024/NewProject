@@ -661,3 +661,33 @@ function setCssVariables() {
   var mainwrapperleft = $(".main-wrapper-left").innerWidth();
   document.documentElement.style.setProperty("--mainwrapperleft", "".concat(mainwrapperleft, "px"));
 }
+"use strict";
+
+jQuery(function ($) {
+  var directions = {};
+  $("thead .arrow-tri").on("click", function (e) {
+    e.preventDefault();
+    var th = $(this).closest("th");
+    var table = th.closest("table");
+    var tbody = table.find("tbody");
+    var colIndex = th.index();
+    directions[colIndex] = !directions[colIndex];
+    var asc = directions[colIndex];
+    var rows = tbody.find("tr").get();
+    rows.sort(function (a, b) {
+      var A = $(a).children("td").eq(colIndex).text().trim();
+      var B = $(b).children("td").eq(colIndex).text().trim();
+      if ($.isNumeric(A) && $.isNumeric(B)) {
+        return asc ? A - B : B - A;
+      }
+      return asc ? A.localeCompare(B, "fr", {
+        sensitivity: "base"
+      }) : B.localeCompare(A, "fr", {
+        sensitivity: "base"
+      });
+    });
+    $.each(rows, function (i, row) {
+      tbody.append(row);
+    });
+  });
+});
