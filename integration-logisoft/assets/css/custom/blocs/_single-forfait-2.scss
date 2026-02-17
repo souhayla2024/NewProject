@@ -1,0 +1,697 @@
+.bo-container {
+    font-family: "Inter", sans-serif;
+    color: $text-color;
+    background-color: $bg-subtle;
+    padding: 15px;
+    .bo-header {
+        .bo-header-wrapper {
+            .title {
+                font-family: $Roboto-Medium;
+                font-size: 18px;
+                color: $pinky;
+                display: block;
+                text-transform: uppercase;
+            }
+        }
+    }
+
+    /* --- BO CARD --- */
+    .bo-content-wrapper {
+        margin-top: 25px;
+        .bo-card {
+            background-color: $bg-white;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            padding: 15px;
+            margin-bottom: 1.5rem;
+            h2 {
+                margin-bottom: 15px;
+                color: #004080;
+                text-transform: uppercase;
+                strong {
+                    color: $pinky;
+                    text-transform: uppercase;
+                }
+            }
+            h3 {
+                font-size: 16px;
+                font-weight: 600;
+                margin-bottom: 15px;
+                color: $black;
+                border-left: 4px solid #004080;
+                padding-left: 10px;
+                text-transform: uppercase;
+            }
+
+            h4 {
+                font-size: 16px;
+                margin: 15px 0 8px;
+                color: $black;
+            }
+
+            /* --- CLIENT --- */
+            .box-element {
+                display: flex;
+                justify-content: space-between;
+                gap: 15px;
+                .grid-wrapper {
+                    width: 100%;
+                    .bo-grid {
+                        margin-bottom: 12px;
+                        display: flex;
+                        flex-wrap: wrap;
+                        gap: 15px;
+                        width: 100%;
+
+                        .field {
+                            width: calc(50% - 10px);
+                            display: flex;
+                            flex-direction: column;
+                            &.row-10 {
+                                width: calc((100% / 10) - 15px);
+                            }
+
+                            &.row-9 {
+                                width: calc((100% / 9) - 15px);
+                            }
+
+                            &.row-8 {
+                                width: calc((100% / 8) - 15px);
+                            }
+
+                            &.row-7 {
+                                width: calc((100% / 7) - 10px);
+                            }
+
+                            &.row-6 {
+                                width: calc((100% / 6) - 10px);
+                            }
+
+                            &.row-5 {
+                                width: calc((100% / 5) - 10px);
+                            }
+
+                            &.row-4 {
+                                width: calc((100% / 4) - 10px);
+                            }
+
+                            &.row-3 {
+                                width: calc((100% / 3) - 10px);
+                            }
+
+                            &.row-2 {
+                                width: calc((100% / 2) - 10px);
+                            }
+                            &.row-1 {
+                                width: calc(75% - 10px);
+                            }
+                            &.row-0 {
+                                width: calc(100% - 5px);
+                            }
+
+                            label {
+                                display: block;
+                                font-weight: 400;
+                                color: $black;
+                                font-size: 13px;
+                                margin-bottom: -7px;
+                                margin-left: 25px;
+                                position: relative;
+                                z-index: 1;
+                                background-color: #ffffff;
+                                padding: 0 7px;
+                                border-radius: 40px;
+                                width: max-content;
+                            }
+
+                            input,
+                            select,
+                            textarea {
+                                font-family: $Gilroy;
+                                width: 100%;
+                                padding: 10px 10px 8px;
+                                border: 1px solid #ccc;
+                                border-radius: 6px;
+                                font-size: 13px;
+                                transition: 0.2s;
+                                &:focus {
+                                    border-color: #004080;
+                                    box-shadow: 0 0 4px rgba(0, 64, 128, 0.3);
+                                    outline: none;
+                                }
+                            }
+
+                            &.required input:invalid {
+                                border-color: $red;
+                            }
+
+                            .error {
+                                color: $red;
+                                font-size: 0.8rem;
+                                display: none;
+                                margin-top: 2px;
+                            }
+                        }
+                    }
+                }
+
+                /* --- Pax Summary --- */
+                .pax-summary {
+                    max-width: 330px;
+                    padding: 15px;
+                    border: 1px solid $border-color;
+                    border-radius: 8px;
+                    overflow: hidden;
+                    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+                    flex-shrink: 0;
+                    table-layout: fixed;
+
+                    h4 {
+                        font-size: 16px;
+                        font-weight: 600;
+                        margin-bottom: 15px;
+                        color: $black;
+                        text-transform: uppercase;
+                    }
+
+                    .pax-line {
+                        padding: 0.75rem;
+                        border: 1px solid $border-color;
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-between;
+                        background-color: rgba(237, 233, 254, 0.8);
+
+                        label {
+                            padding: 0.75rem;
+                            font-size: 0.875rem;
+                            font-weight: 700;
+                            color: $text-color;
+                        }
+
+                        input {
+                            width: 30%;
+                            height: 2rem;
+                            padding: 0 0.5rem;
+                            border: 1px solid $black;
+                            border-radius: 0.25rem;
+                            font-size: 0.875rem;
+                            outline: none;
+                        }
+                    }
+                }
+            }
+
+            /* --- TABLES --- */
+            .bo-table {
+                width: 100%;
+                border-collapse: collapse;
+                margin-top: 1rem;
+                font-size: 0.9rem;
+
+                th,
+                td {
+                    border: 1px solid $border-color;
+                    padding: 0.5rem 0.75rem;
+                    text-align: left;
+                    input,
+                    select,
+                    textarea {
+                        font-family: $Gilroy;
+                        width: 100%;
+                        padding: 10px 10px 8px;
+                        border: 1px solid #ccc;
+                        border-radius: 6px;
+                        font-size: 13px;
+                        transition: 0.2s;
+                        &:focus {
+                            border-color: #004080;
+                            box-shadow: 0 0 4px rgba(0, 64, 128, 0.3);
+                            outline: none;
+                        }
+                    }
+                    .btn-remove {
+                        display: block;
+
+                        background-color: $red;
+                        color: $white;
+                        border: none;
+                        padding: 8px 15px;
+                        border-radius: 8px;
+                        cursor: pointer;
+                        font-weight: 500;
+                        transition: background 0.2s ease;
+
+                        &:hover {
+                            background-color: $pinky;
+                        }
+                    }
+                }
+
+                th {
+                    background-color: $header-bg;
+                    color: $header-text;
+                    font-weight: 600;
+                }
+            }
+
+            /* --- Commentaires --- */
+            &.bo-comments {
+                .comments-grid {
+                    display: grid;
+                    grid-template-columns: 1fr 1fr;
+                    gap: 1rem;
+
+                    label {
+                        display: block;
+                        font-weight: 400;
+                        color: $black;
+                        font-size: 13px;
+                        margin-bottom: -7px;
+                        margin-left: 25px;
+                        position: relative;
+                        z-index: 1;
+                        background-color: #ffffff;
+                        padding: 0 7px;
+                        border-radius: 40px;
+                        width: max-content;
+                    }
+
+                    input,
+                    select,
+                    textarea {
+                        font-family: $Gilroy;
+                        width: 100%;
+                        padding: 10px 10px 8px;
+                        border: 1px solid #ccc;
+                        border-radius: 6px;
+                        font-size: 13px;
+                        transition: 0.2s;
+                        &:focus {
+                            border-color: #004080;
+                            box-shadow: 0 0 4px rgba(0, 64, 128, 0.3);
+                            outline: none;
+                        }
+                    }
+                }
+            }
+        }
+        .bo-card-wrapper {
+            background-color: $bg-white;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            padding: 15px;
+            margin-bottom: 1.5rem;
+            transition: transform 0.2s ease;
+            h2 {
+                margin-bottom: 15px;
+                color: #004080;
+                text-transform: uppercase;
+                strong {
+                    color: $pinky;
+                    text-transform: uppercase;
+                }
+            }
+            h3 {
+                font-size: 16px;
+                font-weight: 600;
+                margin-bottom: 15px;
+                color: $black;
+                border-left: 4px solid #004080;
+                padding-left: 10px;
+                text-transform: uppercase;
+            }
+
+            h4 {
+                font-size: 16px;
+                margin: 15px 0 8px;
+                color: $black;
+            }
+            .bo-grid {
+                margin-bottom: 12px;
+                display: flex;
+                flex-wrap: wrap;
+                gap: 15px;
+                width: 100%;
+
+                // width: calc((100% / 3)- 15px);
+
+                .field {
+                    display: flex;
+                    flex-direction: column;
+                    min-width: 100px;
+                    label {
+                        display: block;
+                        font-weight: 400;
+                        color: $black;
+                        font-size: 13px;
+                        margin-bottom: -7px;
+                        margin-left: 25px;
+                        position: relative;
+                        z-index: 1;
+                        background-color: #ffffff;
+                        padding: 0 7px;
+                        border-radius: 40px;
+                        width: max-content;
+                    }
+
+                    input,
+                    select,
+                    textarea {
+                        font-family: $Gilroy;
+                        width: 100%;
+                        padding: 10px 10px 8px;
+                        border: 1px solid #ccc;
+                        border-radius: 6px;
+                        font-size: 13px;
+                        transition: 0.2s;
+                        &:focus {
+                            border-color: #004080;
+                            box-shadow: 0 0 4px rgba(0, 64, 128, 0.3);
+                            outline: none;
+                        }
+                    }
+                    // input[type="number"] {
+                    //     max-width: 100px;
+                    // }
+                    &.row-12 {
+                        width: calc((100% / 12) - 15px);
+                    }
+                    &.row-11 {
+                        width: calc((100% / 11) - 15px);
+                    }
+
+                    &.row-10 {
+                        width: calc((100% / 10) - 15px);
+                    }
+
+                    &.row-9 {
+                        width: calc((100% / 9) - 15px);
+                    }
+
+                    &.row-8 {
+                        width: calc((100% / 8) - 15px);
+                    }
+
+                    &.row-7 {
+                        width: calc((100% / 7) - 15px);
+                    }
+
+                    &.row-6 {
+                        width: calc((100% / 6) - 15px);
+                    }
+
+                    &.row-5 {
+                        width: calc((100% / 5) - 15px);
+                    }
+
+                    &.row-4 {
+                        width: calc((100% / 4) - 15px);
+                    }
+
+                    &.row-3 {
+                        width: calc((100% / 3) - 15px);
+                    }
+
+                    &.row-2 {
+                        width: calc((100% / 2) - 15px);
+                    }
+                    &.row-1 {
+                        width: calc(75% - 15px);
+                    }
+                }
+            }
+            .btn {
+                display: block;
+                .btn-ad-element {
+                    font-family: $Roboto-Regular;
+                    font-size: 14px;
+                    display: block;
+                    margin-left: auto;
+                    background-color: $primary-color;
+                    color: $white;
+                    border: none;
+                    padding: 5px 40px;
+                    border-radius: 6px;
+                    cursor: pointer;
+                    transition: background 0.2s ease;
+
+                    &:hover {
+                        background-color: $blue;
+                    }
+                }
+            }
+        }
+    }
+    .bo-footer-wrapper {
+        margin-top: 25px;
+        background-color: $bg-white;
+        border-radius: 8px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        padding: 15px;
+        .footer-submit {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            column-gap: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+            border-radius: 12px;
+            background-color: $white;
+            .footer-part-left {
+                display: flex;
+                column-gap: 10px;
+
+                .reset {
+                    border: 1px solid $pinky;
+                    background-color: $white;
+                    font-size: 14px;
+                    font-family: $Roboto-Regular;
+                    padding: 5px 40px;
+                    border-radius: 6px;
+                    color: $pinky;
+                    cursor: pointer;
+                    @include transitions;
+                    &:hover {
+                        background: $pinky;
+                        color: $white;
+                        @include transitions;
+                    }
+                }
+            }
+            .footer-part-right {
+                display: flex;
+                column-gap: 10px;
+
+                .btn-call-to-action {
+                    border: 1px solid $blue;
+                    background-color: $blue;
+                    font-size: 14px;
+                    font-family: $Roboto-Regular;
+                    padding: 5px 40px;
+                    border-radius: 6px;
+                    color: $white;
+                    cursor: pointer;
+                    @include transitions;
+
+                    &:hover {
+                        background: $primary-color;
+                        @include transitions;
+                    }
+                }
+                .submit {
+                    border: 1px solid $green;
+                    background-color: $green;
+                    font-size: 14px;
+                    font-family: $Roboto-Regular;
+                    padding: 5px 40px;
+                    border-radius: 6px;
+                    color: $white;
+                    cursor: pointer;
+                    @include transitions;
+
+                    &:hover {
+                        background: #15803d;
+                        @include transitions;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 1023px) {
+    .bo-container {
+        .bo-content-wrapper {
+            .bo-card {
+                /* --- CLIENT --- */
+                .box-element {
+                    flex-direction: column;
+                    .grid-wrapper {
+                        width: 100%;
+                        .bo-grid {
+                            margin-bottom: 12px;
+                            display: flex;
+                            flex-wrap: wrap;
+                            gap: 15px;
+                            width: 100%;
+
+                            .field {
+                                width: calc(50% - 10px);
+                                display: flex;
+                                flex-direction: column;
+                                &.row-10 {
+                                    width: calc((100% / 10) - 15px);
+                                }
+
+                                &.row-9 {
+                                    width: calc((100% / 9) - 15px);
+                                }
+
+                                &.row-8 {
+                                    width: calc((100% / 8) - 15px);
+                                }
+
+                                &.row-7 {
+                                    width: calc((100% / 7) - 15px);
+                                }
+
+                                &.row-6 {
+                                    width: calc((100% / 6) - 15px);
+                                }
+
+                                &.row-5 {
+                                    width: calc((100% / 5) - 15px);
+                                }
+
+                                &.row-4 {
+                                    width: calc((100% / 4) - 15px);
+                                }
+
+                                &.row-3 {
+                                    width: calc((100% / 3) - 15px);
+                                }
+
+                                &.row-2 {
+                                    width: calc((100% / 2) - 15px);
+                                }
+                                &.row-1 {
+                                    width: calc(75% - 15px);
+                                }
+
+                                label {
+                                    display: block;
+                                    font-weight: 400;
+                                    color: $black;
+                                    font-size: 13px;
+                                    margin-bottom: -7px;
+                                    margin-left: 25px;
+                                    position: relative;
+                                    z-index: 1;
+                                    background-color: #ffffff;
+                                    padding: 0 7px;
+                                    border-radius: 40px;
+                                    width: max-content;
+                                }
+
+                                input,
+                                select,
+                                textarea {
+                                    font-family: $Gilroy;
+                                    width: 100%;
+                                    padding: 10px 10px 8px;
+                                    border: 1px solid #ccc;
+                                    border-radius: 6px;
+                                    font-size: 13px;
+                                    transition: 0.2s;
+                                    &:focus {
+                                        border-color: #004080;
+                                        box-shadow: 0 0 4px
+                                            rgba(0, 64, 128, 0.3);
+                                        outline: none;
+                                    }
+                                }
+
+                                &.required input:invalid {
+                                    border-color: $red;
+                                }
+
+                                .error {
+                                    color: $red;
+                                    font-size: 0.8rem;
+                                    display: none;
+                                    margin-top: 2px;
+                                }
+                            }
+                        }
+                    }
+
+                    /* --- Pax Summary --- */
+                    .pax-summary {
+                        max-width: 100%;
+                        padding: 15px;
+                        border: 1px solid $border-color;
+                        border-radius: 8px;
+                        overflow: hidden;
+                        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+                        flex-shrink: 0;
+                        table-layout: fixed;
+
+                        h4 {
+                            font-size: 16px;
+                            font-weight: 600;
+                            margin-bottom: 15px;
+                            color: $black;
+                            text-transform: uppercase;
+                        }
+
+                        .pax-line {
+                            padding: 0.75rem;
+                            border: 1px solid $border-color;
+                            display: flex;
+                            align-items: center;
+                            justify-content: space-between;
+                            background-color: rgba(237, 233, 254, 0.8);
+
+                            label {
+                                padding: 0.75rem;
+                                font-size: 0.875rem;
+                                font-weight: 700;
+                                color: $text-color;
+                            }
+
+                            input {
+                                width: 30%;
+                                height: 2rem;
+                                padding: 0 0.5rem;
+                                border: 1px solid $black;
+                                border-radius: 0.25rem;
+                                font-size: 0.875rem;
+                                outline: none;
+                            }
+                        }
+                    }
+                }
+                .bo-table {
+                    display: block;
+                    overflow: auto;
+                }
+            }
+        }
+    }
+}
+
+/* --- Responsive --- */
+@media (max-width: 768px) {
+    .bo-container {
+        .bo-content-wrapper {
+            .bo-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .bo-comments .comments-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    }
+}
