@@ -25,10 +25,7 @@
                             <input type="date" disabled>
                         </div>
 
-                        <div class="field ">
-                            <label>Vendeur</label>
-                            <input type="text" placeholder="vide.." disabled>
-                        </div>
+
 
 
 
@@ -37,52 +34,52 @@
                             <label>Destination</label>
                             <input type="text" placeholder="vide.." disabled>
                         </div>
-                    </div>
-                    <!-- group 2  -->
-                    <div class="bo-grid">
-                        <div class="field">
-                            <label>Libellé</label>
-                            <input type="text" placeholder="vide.." disabled>
-                        </div>
-
                         <div class="field">
                             <label>Région</label>
                             <input type="text" placeholder="vide.." disabled>
                         </div>
                     </div>
+                    <!-- group 2  -->
+                    <div class="bo-grid">
+                        <div class="field row-0">
+                            <label>Libellé</label>
+                            <input type="text" placeholder="vide.." disabled>
+                        </div>
+
+
+                    </div>
                     <!-- group 3  -->
                     <div class="bo-grid">
-                        <div class="field">
+                        <div class="field row-0">
                             <label>Prestation</label>
                             <input type="text" placeholder="vide.." disabled>
                         </div>
-                        <div class="field">
-                            <label>Date de Forfait</label>
-                            <input type="date" disabled>
-                        </div>
-                        <div class="field">
-                            <label>Jours</label>
-                            <input type="text" placeholder="vide.." disabled>
-                        </div>
 
-
-
-                        <div class="field">
-                            <label>Nuitées</label>
-                            <input type="text" placeholder="vide.." disabled>
-                        </div>
                     </div>
                     <!-- group 4  -->
                     <div class="bo-grid">
                         <div class="field">
-                            <label>Ville Départ</label>
+                            <label>date de Départ</label>
                             <input type="text" placeholder="vide.." disabled>
                         </div>
                         <div class="field">
                             <label>Date Option</label>
                             <input type="date">
                         </div>
+
+                        <div class="field">
+                            <label>Jours / Nuitées</label>
+                            <input type="text" placeholder="7/8" disabled>
+                        </div>
+                        <div class="field ">
+                            <label>Vendeur</label>
+                            <input type="text" placeholder="vide.." disabled>
+                        </div>
+
+
                     </div>
+
+
                 </div>
 
                 <div class="grid-wrapper">
@@ -202,12 +199,12 @@
             <h3>Ajouter une chambre</h3>
             <div class="bo-grid">
 
-                <div class=" field">
+                <div class=" field row-14">
                     <label for="code">Code</label>
                     <input type="text" placeholder="Code" id="code">
                 </div>
 
-                <div class="field">
+                <div class="field row-8">
                     <label for="categorie">Catégorie</label>
                     <select id="categorie">
                         <option>Vue sur mer</option>
@@ -216,22 +213,22 @@
                     </select>
                 </div>
 
-                <div class="field">
+                <div class="field row-10">
                     <label for="debut">Début</label>
                     <input type="date" id="debut">
                 </div>
 
-                <div class="field">
+                <div class="field row-10">
                     <label for="fin">Fin</label>
                     <input type="date" id="fin">
                 </div>
 
-                <div class="field row-12">
+                <div class="field row-18">
                     <label for="qte">Quantité</label>
                     <input type="number" id="qte" value="1">
                 </div>
 
-                <div class="field">
+                <div class="field row-10">
                     <label for="occupation">Occupation</label>
                     <select id="occupation">
                         <option value="1">Single</option>
@@ -240,22 +237,22 @@
                     </select>
                 </div>
 
-                <div class="field">
+                <div class="field row-10">
                     <label for="adulte">Adultes</label>
                     <select id="adulte"></select>
                 </div>
 
-                <div class="field">
+                <div class="field row-10">
                     <label for="enfant">Enfants</label>
                     <select id="enfant"></select>
                 </div>
 
-                <div class="field">
+                <div class="field row-10">
                     <label for="bebe">Bébés</label>
                     <select id="bebe"></select>
                 </div>
 
-                <div class="field">
+                <div class="field row-6">
                     <label for="prestation">Prestation</label>
                     <select id="prestation">
                         <option>All inclusive</option>

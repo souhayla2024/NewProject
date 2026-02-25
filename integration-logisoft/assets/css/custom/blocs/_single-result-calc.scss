@@ -1,4 +1,4 @@
-.bo-container {
+.bo-container-second-page {
     font-family: "Inter", sans-serif;
     color: $text-color;
     background-color: $bg-subtle;
@@ -48,19 +48,26 @@
                 margin: 15px 0 8px;
                 color: $black;
             }
-
+            &.bo-card-table {
+                max-height: 580px;
+                overflow: auto;
+                max-width: 1380px;
+            }
             /* --- TABLES --- */
             .bo-table {
-                width: 100%;
                 border-collapse: collapse;
                 margin-top: 1rem;
                 font-size: 0.9rem;
-
+                width: 100%;
                 th,
                 td {
                     border: 1px solid $border-color;
                     padding: 0.5rem 0.75rem;
                     text-align: left;
+                    input {
+                        width: 20px;
+                        height: 20px;
+                    }
                 }
 
                 th {
@@ -70,24 +77,20 @@
                 }
             }
             .group-calc-wrapper {
-                display: grid;
-                grid-template-columns: 1fr 1fr;
-                gap: 15px;
                 .calc-wrapper {
                     display: flex;
                     flex-direction: column;
                     gap: 12px;
 
-                    hr {
-                        border: none;
-                        border-top: 1px solid #e5e7eb;
-                        margin: 12px 0;
-                    }
+                    // hr {
+                    //     border: none;
+                    //     border-top: 1px solid #e5e7eb;
+                    //     margin: 12px 0;
+                    // }
 
                     .calc-row {
                         display: flex;
                         justify-content: space-between;
-                        align-items: center;
                         column-gap: 10px;
 
                         .label {
@@ -95,14 +98,20 @@
                             font-size: 14px;
                             color: #374151;
                             flex: 1;
+                            border-bottom: 1px solid #e5e7eb;
+                            padding-bottom: 5px;
                         }
                         .row-label {
                             display: flex;
+                            justify-items: flex-end;
+                            flex-wrap: wrap;
                             align-items: center;
-                            width: 60%;
                             gap: 8px;
-
                             text-align: right;
+                            width: 30%;
+                            input {
+                                height: 35px;
+                            }
                             select,
                             input {
                                 font-family: $Gilroy;
@@ -110,18 +119,44 @@
                                 border: 1px solid #ccc;
                                 border-radius: 6px;
                                 font-size: 13px;
-                                width: 100%;
                                 transition: 0.2s;
+                                width: 100%;
+                                margin-left: auto;
                                 &:focus {
                                     border-color: #004080;
                                     box-shadow: 0 0 4px rgba(0, 64, 128, 0.3);
                                     outline: none;
                                 }
+                                &.row-100 {
+                                    width: 100%;
+                                }
+                                &.row-50 {
+                                    width: calc(50% - 8px);
+                                }
+                                &.row-40 {
+                                    width: calc(40% - 8px);
+                                }
+                                &.row-30 {
+                                    width: calc(30% - 8px);
+                                }
+                                &.row-20 {
+                                    width: calc(20% - 8px);
+                                }
                             }
+                            // input[type="number"] {
+                            //     width: 100px;
+                            // }
 
                             input[readonly] {
                                 background: #f9fafb;
                                 color: #111827;
+                            }
+
+                            &.row-full {
+                                select,
+                                input {
+                                    width: 100%;
+                                }
                             }
                         }
                     }
@@ -135,6 +170,8 @@
             padding: 15px;
             margin-bottom: 1.5rem;
             transition: transform 0.2s ease;
+            max-width: 1380px;
+
             h2 {
                 margin-bottom: 15px;
                 color: #004080;
@@ -162,23 +199,19 @@
             .bo-grid {
                 margin-bottom: 12px;
                 display: flex;
-                flex-wrap: wrap;
-                gap: 15px;
+                gap: 10px;
                 width: 100%;
-
-                // width: calc((100% / 3)- 15px);
 
                 .field {
                     display: flex;
                     flex-direction: column;
-                    min-width: 100px;
                     label {
                         display: block;
                         font-weight: 400;
                         color: $black;
                         font-size: 13px;
                         margin-bottom: -7px;
-                        margin-left: 25px;
+                        margin-left: 2px;
                         position: relative;
                         z-index: 1;
                         background-color: #ffffff;
@@ -186,7 +219,9 @@
                         border-radius: 40px;
                         width: max-content;
                     }
-
+                    input {
+                        height: 35px;
+                    }
                     input,
                     select,
                     textarea {
@@ -203,9 +238,31 @@
                             outline: none;
                         }
                     }
-                    // input[type="number"] {
-                    //     max-width: 100px;
-                    // }
+                    &.row-20 {
+                        width: calc((100% / 20) - 15px);
+                    }
+                    &.row-19 {
+                        width: calc((100% / 19) - 15px);
+                    }
+                    &.row-18 {
+                        width: calc((100% / 18) - 15px);
+                    }
+                    &.row-17 {
+                        width: calc((100% / 17) - 15px);
+                    }
+                    &.row-16 {
+                        width: calc((100% / 16) - 15px);
+                    }
+                    &.row-15 {
+                        width: calc((100% / 15) - 15px);
+                    }
+
+                    &.row-14 {
+                        width: calc((100% / 14) - 15px);
+                    }
+                    &.row-13 {
+                        width: calc((100% / 13) - 15px);
+                    }
                     &.row-12 {
                         width: calc((100% / 12) - 15px);
                     }
@@ -249,7 +306,7 @@
                         width: calc((100% / 2) - 15px);
                     }
                     &.row-1 {
-                        width: calc(75% - 15px);
+                        width: calc(70% - 25px);
                     }
                 }
             }
@@ -335,7 +392,7 @@
 }
 
 @media (max-width: 1023px) {
-    .bo-container {
+    .bo-container-second-page {
         .bo-content-wrapper {
             .bo-card {
                 /* --- CLIENT --- */
@@ -351,7 +408,7 @@
 
 /* --- Responsive --- */
 @media (max-width: 768px) {
-    .bo-container {
+    .bo-container-second-page {
         .bo-content-wrapper {
             .bo-card {
                 h2 {
@@ -459,7 +516,7 @@
                     .field {
                         display: flex;
                         flex-direction: column;
-                        min-width: 100px;
+                        min-width: 75px;
                         width: 100% !important;
                     }
                 }

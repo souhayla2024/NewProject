@@ -57,16 +57,18 @@
                 .grid-wrapper {
                     width: 100%;
                     .bo-grid {
-                        margin-bottom: 12px;
+                        margin-bottom: 5px;
                         display: flex;
                         flex-wrap: wrap;
-                        gap: 15px;
+                        column-gap: 10px;
+                        grid-row: 5px;
                         width: 100%;
 
                         .field {
                             width: calc(50% - 10px);
                             display: flex;
                             flex-direction: column;
+                            // min-width: 75px;
                             &.row-10 {
                                 width: calc((100% / 10) - 15px);
                             }
@@ -106,7 +108,7 @@
                                 width: calc(75% - 10px);
                             }
                             &.row-0 {
-                                width: calc(100% - 5px);
+                                width: calc(100% - 10px);
                             }
 
                             label {
@@ -115,13 +117,16 @@
                                 color: $black;
                                 font-size: 13px;
                                 margin-bottom: -7px;
-                                margin-left: 25px;
+                                margin-left: 15px;
                                 position: relative;
                                 z-index: 1;
                                 background-color: #ffffff;
                                 padding: 0 7px;
                                 border-radius: 40px;
                                 width: max-content;
+                            }
+                            input {
+                                height: 35px;
                             }
 
                             input,
@@ -175,7 +180,7 @@
                     }
 
                     .pax-line {
-                        padding: 0.75rem;
+                        padding: 10px;
                         border: 1px solid $border-color;
                         display: flex;
                         align-items: center;
@@ -183,7 +188,7 @@
                         background-color: rgba(237, 233, 254, 0.8);
 
                         label {
-                            padding: 0.75rem;
+                            padding: 5px;
                             font-size: 0.875rem;
                             font-weight: 700;
                             color: $text-color;
@@ -214,6 +219,9 @@
                     border: 1px solid $border-color;
                     padding: 0.5rem 0.75rem;
                     text-align: left;
+                    input {
+                        height: 35px;
+                    }
                     input,
                     select,
                     textarea {
@@ -268,13 +276,16 @@
                         color: $black;
                         font-size: 13px;
                         margin-bottom: -7px;
-                        margin-left: 25px;
+                        margin-left: 15px;
                         position: relative;
                         z-index: 1;
                         background-color: #ffffff;
                         padding: 0 7px;
                         border-radius: 40px;
                         width: max-content;
+                    }
+                    input {
+                        height: 35px;
                     }
 
                     input,
@@ -328,10 +339,10 @@
                 color: $black;
             }
             .bo-grid {
-                margin-bottom: 12px;
+                margin-bottom: 5px;
                 display: flex;
-                flex-wrap: wrap;
-                gap: 15px;
+                //   flex-wrap: wrap;
+                gap: 10px;
                 width: 100%;
 
                 // width: calc((100% / 3)- 15px);
@@ -339,20 +350,24 @@
                 .field {
                     display: flex;
                     flex-direction: column;
-                    min-width: 100px;
+                    min-width: 75px;
                     label {
                         display: block;
                         font-weight: 400;
                         color: $black;
                         font-size: 13px;
                         margin-bottom: -7px;
-                        margin-left: 25px;
+                        margin-left: 15px;
                         position: relative;
                         z-index: 1;
                         background-color: #ffffff;
                         padding: 0 7px;
                         border-radius: 40px;
                         width: max-content;
+                    }
+                    select,
+                    input {
+                        height: 35px;
                     }
 
                     input,
@@ -371,9 +386,32 @@
                             outline: none;
                         }
                     }
-                    // input[type="number"] {
-                    //     max-width: 100px;
-                    // }
+
+                    &.row-20 {
+                        width: calc((100% / 20) - 15px);
+                    }
+                    &.row-19 {
+                        width: calc((100% / 19) - 15px);
+                    }
+                    &.row-18 {
+                        width: calc((100% / 18) - 15px);
+                    }
+                    &.row-17 {
+                        width: calc((100% / 17) - 15px);
+                    }
+                    &.row-16 {
+                        width: calc((100% / 16) - 15px);
+                    }
+                    &.row-15 {
+                        width: calc((100% / 15) - 15px);
+                    }
+
+                    &.row-14 {
+                        width: calc((100% / 14) - 15px);
+                    }
+                    &.row-13 {
+                        width: calc((100% / 13) - 15px);
+                    }
                     &.row-12 {
                         width: calc((100% / 12) - 15px);
                     }
@@ -533,51 +571,12 @@
                             margin-bottom: 12px;
                             display: flex;
                             flex-wrap: wrap;
-                            gap: 15px;
                             width: 100%;
 
                             .field {
                                 width: calc(50% - 10px);
                                 display: flex;
                                 flex-direction: column;
-                                &.row-10 {
-                                    width: calc((100% / 10) - 15px);
-                                }
-
-                                &.row-9 {
-                                    width: calc((100% / 9) - 15px);
-                                }
-
-                                &.row-8 {
-                                    width: calc((100% / 8) - 15px);
-                                }
-
-                                &.row-7 {
-                                    width: calc((100% / 7) - 15px);
-                                }
-
-                                &.row-6 {
-                                    width: calc((100% / 6) - 15px);
-                                }
-
-                                &.row-5 {
-                                    width: calc((100% / 5) - 15px);
-                                }
-
-                                &.row-4 {
-                                    width: calc((100% / 4) - 15px);
-                                }
-
-                                &.row-3 {
-                                    width: calc((100% / 3) - 15px);
-                                }
-
-                                &.row-2 {
-                                    width: calc((100% / 2) - 15px);
-                                }
-                                &.row-1 {
-                                    width: calc(75% - 15px);
-                                }
 
                                 label {
                                     display: block;
@@ -585,7 +584,6 @@
                                     color: $black;
                                     font-size: 13px;
                                     margin-bottom: -7px;
-                                    margin-left: 25px;
                                     position: relative;
                                     z-index: 1;
                                     background-color: #ffffff;
@@ -646,35 +644,20 @@
                         }
 
                         .pax-line {
-                            padding: 0.75rem;
-                            border: 1px solid $border-color;
                             display: flex;
                             align-items: center;
                             justify-content: space-between;
-                            background-color: rgba(237, 233, 254, 0.8);
-
-                            label {
-                                padding: 0.75rem;
-                                font-size: 0.875rem;
-                                font-weight: 700;
-                                color: $text-color;
-                            }
-
-                            input {
-                                width: 30%;
-                                height: 2rem;
-                                padding: 0 0.5rem;
-                                border: 1px solid $black;
-                                border-radius: 0.25rem;
-                                font-size: 0.875rem;
-                                outline: none;
-                            }
                         }
                     }
                 }
                 .bo-table {
                     display: block;
                     overflow: auto;
+                }
+            }
+            .bo-card-wrapper {
+                .bo-grid {
+                    flex-wrap: wrap;
                 }
             }
         }
@@ -685,10 +668,34 @@
 @media (max-width: 768px) {
     .bo-container {
         .bo-content-wrapper {
-            .bo-grid {
-                grid-template-columns: 1fr;
+            .bo-card-wrapper {
+                .bo-grid {
+                    .field {
+                        &.row-20,
+                        &.row-19,
+                        &.row-18,
+                        &.row-17,
+                        &.row-16,
+                        &.row-15,
+                        &.row-14,
+                        &.row-13,
+                        &.row-12,
+                        &.row-11,
+                        &.row-10,
+                        &.row-9,
+                        &.row-8,
+                        &.row-7,
+                        &.row-6,
+                        &.row-5,
+                        &.row-4,
+                        &.row-3,
+                        &.row-2,
+                        &.row-1 {
+                            width: 100%;
+                        }
+                    }
+                }
             }
-
             .bo-comments .comments-grid {
                 grid-template-columns: 1fr;
             }
