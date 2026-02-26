@@ -17,13 +17,13 @@
             <table class="bo-table" id="calcTable">
                 <thead>
                     <tr>
-                        <th style="width: 5%;">Code</th>
-                        <th style="width: 60%;">Libellè</th>
-                        <th style="width: 5%;">Com</th>
-                        <th style="width: 5%;">Prix</th>
-                        <th style="width: 5%;">Qté</th>
-                        <th style="width: 5%;">total</th>
-                        <th style="width: 3%;">S</th>
+                        <th>Code</th>
+                        <th>Libellè</th>
+                        <th>Com</th>
+                        <th>Prix</th>
+                        <th>Qté</th>
+                        <th>total</th>
+                        <th>S</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -225,34 +225,34 @@
             <h3>Ajouter une Ligne</h3>
             <div class="bo-grid">
 
-                <div class=" field row-18">
+                <div class=" field row-8">
                     <label for="code">Code</label>
                     <input type="text" placeholder="Code" id="code">
                 </div>
 
-                <div class="field row-1">
+                <div class="field row-2">
                     <label for="lib">Libellè</label>
                     <input id="lib" type="text" placeholder="Forfait lorem ipsum ...">
                 </div>
 
-                <div class="field row-14">
+                <div class="field row-7">
                     <label for="Com">Commission</label>
                     <input id="Com" type="text">
                 </div>
 
-                <div class="field row-18">
+                <div class="field row-7">
                     <label for="Price">Prix</label>
                     <input id="price" type="text">
                 </div>
 
-                <div class="field row-18">
+                <div class="field row-8">
                     <label for="qte">Quantité</label>
                     <input type="number" id="qte" value="1">
                 </div>
 
 
 
-                <div class="field row-18">
+                <div class="field row-8">
                     <label for="total">Total</label>
                     <input id="total" type="text">
                 </div>

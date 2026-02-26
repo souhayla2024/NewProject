@@ -51,7 +51,7 @@
             &.bo-card-table {
                 max-height: 580px;
                 overflow: auto;
-                max-width: 1380px;
+                //  max-width: 50%;
             }
             /* --- TABLES --- */
             .bo-table {
@@ -59,6 +59,8 @@
                 margin-top: 1rem;
                 font-size: 0.9rem;
                 width: 100%;
+                max-width: 800px;
+                overflow-x: auto;
                 th,
                 td {
                     border: 1px solid $border-color;
@@ -170,7 +172,7 @@
             padding: 15px;
             margin-bottom: 1.5rem;
             transition: transform 0.2s ease;
-            max-width: 1380px;
+            max-width: 840px;
 
             h2 {
                 margin-bottom: 15px;
