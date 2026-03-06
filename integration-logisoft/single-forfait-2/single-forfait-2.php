@@ -193,81 +193,89 @@
                     <!-- Les lignes ajoutées par le JS apparaîtront ici -->
                 </tbody>
             </table>
-        </div>
-        <!-- Ligne d'insertion -->
-        <div class="bo-card-wrapper">
-            <h3>Ajouter une chambre</h3>
-            <div class="bo-grid">
+            <!-- Ligne d'insertion -->
+            <div class="bo-card-wrapper">
 
-                <div class=" field row-14">
-                    <label for="code">Code</label>
-                    <input type="text" placeholder="Code" id="code">
+                <div class="bo-grid">
+
+                    <div class=" field row-14">
+                        <label for="code">Code</label>
+                        <input type="text" placeholder="Code" id="code">
+                    </div>
+
+                    <div class="field row-8">
+                        <label for="categorie">Catégorie</label>
+                        <select id="categorie">
+                            <option>Vue sur mer</option>
+                            <option>Vue jardin</option>
+                            <option>Suite</option>
+                        </select>
+                    </div>
+
+                    <div class="field row-10">
+                        <label for="debut">Début</label>
+                        <input type="date" id="debut">
+                    </div>
+
+                    <div class="field row-10">
+                        <label for="fin">Fin</label>
+                        <input type="date" id="fin">
+                    </div>
+
+                    <div class="field row-18">
+                        <label for="qte">Quantité</label>
+                        <input type="number" id="qte" value="1">
+                    </div>
+
+                    <div class="field row-10">
+                        <label for="occupation">Occupation</label>
+                        <select id="occupation">
+                            <option value="1">Single</option>
+                            <option value="2">Double</option>
+                            <option value="4">Quadrable</option>
+                        </select>
+                    </div>
+
+                    <div class="field row-10">
+                        <label for="adulte">Adultes</label>
+                        <select id="adulte"></select>
+                    </div>
+
+                    <div class="field row-10">
+                        <label for="enfant">Enfants</label>
+                        <select id="enfant"></select>
+                    </div>
+
+                    <div class="field row-10">
+                        <label for="bebe">Bébés</label>
+                        <select id="bebe"></select>
+                    </div>
+
+                    <div class="field row-6">
+                        <label for="prestation">Prestation</label>
+                        <select id="prestation">
+                            <option>All inclusive</option>
+                            <option>Demi pension</option>
+                            <option>LPD</option>
+                        </select>
+                    </div>
+
+
+
                 </div>
-
-                <div class="field row-8">
-                    <label for="categorie">Catégorie</label>
-                    <select id="categorie">
-                        <option>Vue sur mer</option>
-                        <option>Vue jardin</option>
-                        <option>Suite</option>
-                    </select>
+                <div class="field btn">
+                    <button class="btn-ad-element" id="btnAddRoom">Ajouter</button>
                 </div>
-
-                <div class="field row-10">
-                    <label for="debut">Début</label>
-                    <input type="date" id="debut">
+                <div class="popup-alert" id="popupAlert">
+                    <div class="popup-content">
+                        <p class="popup-message">Veuillez remplir tous les champs obligatoires
+                        </p>
+                        <button type="button" class="popup-close">OK</button>
+                    </div>
                 </div>
-
-                <div class="field row-10">
-                    <label for="fin">Fin</label>
-                    <input type="date" id="fin">
-                </div>
-
-                <div class="field row-18">
-                    <label for="qte">Quantité</label>
-                    <input type="number" id="qte" value="1">
-                </div>
-
-                <div class="field row-10">
-                    <label for="occupation">Occupation</label>
-                    <select id="occupation">
-                        <option value="1">Single</option>
-                        <option value="2">Double</option>
-                        <option value="4">Quadrable</option>
-                    </select>
-                </div>
-
-                <div class="field row-10">
-                    <label for="adulte">Adultes</label>
-                    <select id="adulte"></select>
-                </div>
-
-                <div class="field row-10">
-                    <label for="enfant">Enfants</label>
-                    <select id="enfant"></select>
-                </div>
-
-                <div class="field row-10">
-                    <label for="bebe">Bébés</label>
-                    <select id="bebe"></select>
-                </div>
-
-                <div class="field row-6">
-                    <label for="prestation">Prestation</label>
-                    <select id="prestation">
-                        <option>All inclusive</option>
-                        <option>Demi pension</option>
-                        <option>LPD</option>
-                    </select>
-                </div>
-
-
-
             </div>
-            <div class="field btn">
-                <button class="btn-ad-element" id="btnAddRoom">Ajouter</button>
-            </div>
         </div>
+
 
         <!-- Tableau Les détails -->
         <div class="bo-card">
@@ -276,14 +284,14 @@
             <table class="bo-table" id="occupantsTable">
                 <thead>
                     <tr>
-                        <th>Chambre</th>
-                        <th>Genre</th>
-                        <th>Nom</th>
-                        <th>Prénom</th>
-                        <th>Ass</th>
-                        <th>D.Naiss</th>
-                        <th>Cure</th>
-                        <th>BG</th>
+                        <th style="width:15%">Chambre</th>
+                        <th style="width:5%">Genre</th>
+                        <th style="width:10%">Nom</th>
+                        <th style="width:15%">Prénom</th>
+                        <th style="width:3%">Ass</th>
+                        <th style="width:10%">D.Naiss</th>
+                        <th style="width:25%">Cure</th>
+                        <th style="width:3%">BG</th>
                     </tr>
                 </thead>
                 <tbody>

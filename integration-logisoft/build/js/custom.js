@@ -213,139 +213,6 @@ addRowToTableOption();
 "use strict";
 
 $(document).ready(function () {
-  var $code = $("#code");
-  var $categorie = $("#categorie");
-  var $debut = $("#debut");
-  var $fin = $("#fin");
-  var $qte = $("#qte");
-  var $occupation = $("#occupation");
-  var $adulte = $("#adulte");
-  var $enfant = $("#enfant");
-  var $bebe = $("#bebe");
-  var $prestation = $("#prestation"); // <-- ajout
-
-  var $tableBody = $("#roomTable tbody");
-  var $paxDossier = $("#paxDossier");
-  var $totalAdultes = $("#totalAdultes");
-  var $totalEnfants = $("#totalEnfants");
-  var $totalBebes = $("#totalBebes");
-  var fixedCodeForPax = null;
-  function fillSelect($select) {
-    var max = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 10;
-    $select.empty();
-    for (var i = 0; i <= max; i++) {
-      $select.append("<option value=\"".concat(i, "\">").concat(i, "</option>"));
-    }
-    $select.val(0);
-  }
-  fillSelect($adulte);
-  fillSelect($enfant);
-  fillSelect($bebe);
-  function calculatePaxDossier() {
-    var codeMap = {};
-    var codes = [];
-    $("#roomTable tbody tr").each(function () {
-      var code = $(this).find("td:eq(0)").text().trim();
-      var occupation = $(this).find("td:eq(5)").text().trim();
-      var adultes = parseInt($(this).find("td:eq(6)").text()) || 0;
-      var enfants = parseInt($(this).find("td:eq(7)").text()) || 0;
-      var bebes = parseInt($(this).find("td:eq(8)").text()) || 0;
-      codes.push(code);
-      if (!codeMap[code]) {
-        codeMap[code] = {
-          occupation: occupation,
-          adultes: adultes,
-          enfants: enfants,
-          bebes: bebes
-        };
-      } else {
-        codeMap[code].adultes += adultes;
-        codeMap[code].enfants += enfants;
-        codeMap[code].bebes += bebes;
-      }
-    });
-
-    // Si le tableau est vide, vider pax/dossier
-    if (codes.length === 0) {
-      fixedCodeForPax = null;
-      $totalAdultes.val(0);
-      $totalEnfants.val(0);
-      $totalBebes.val(0);
-      $paxDossier.val(0);
-    } else {
-      if (!fixedCodeForPax) {
-        fixedCodeForPax = codes[0];
-      }
-      if (fixedCodeForPax && codeMap[fixedCodeForPax]) {
-        var room = codeMap[fixedCodeForPax];
-        $totalAdultes.val(room.adultes);
-        $totalEnfants.val(room.enfants);
-        $totalBebes.val(room.bebes);
-        $paxDossier.val(room.adultes + room.enfants + room.bebes);
-      }
-    }
-    updateOccupantsTableAll();
-  }
-  function updateOccupantsTableAll() {
-    var $body = $("#occupantsTable tbody");
-    $body.empty();
-    $("#roomTable tbody tr").each(function () {
-      var chambreCode = $(this).find("td:eq(0)").text().trim();
-      var chambreCat = $(this).find("td:eq(1)").text().trim();
-      var occupation = $(this).find("td:eq(5)").text().trim();
-      var adultes = parseInt($(this).find("td:eq(6)").text()) || 0;
-      var enfants = parseInt($(this).find("td:eq(7)").text()) || 0;
-      var bebes = parseInt($(this).find("td:eq(8)").text()) || 0;
-      var prestation = $(this).find("td:eq(9)").text().trim();
-      var firstRow = true;
-      function addRow(genre) {
-        var firstCol = firstRow ? "".concat(occupation, "<br><span class=\"code-ch\">").concat(chambreCode, "</span><br><span class=\"code-ch\">").concat(chambreCat, "</span>") : "";
-        $body.append("\n                    <tr>\n                        <td>".concat(firstCol, "</td>\n                        <td>").concat(genre, "</td>\n                        <td><input type=\"text\"></td>\n                        <td><input type=\"text\"></td>\n                        <td><input type=\"checkbox\"></td>\n                        <td><input type=\"date\"></td>\n                        <td>\n                            <select>\n                                <option value=\"\">--</option>\n                                <option value=\"oui\">Oui</option>\n                                <option value=\"non\">Non</option>\n                            </select>\n                        </td>\n                        <td><input type=\"checkbox\"></td>\n                    </tr>\n                "));
-        firstRow = false;
-      }
-      for (var i = 0; i < adultes; i++) addRow("M");
-      for (var _i = 0; _i < enfants; _i++) addRow("Chd");
-      for (var _i2 = 0; _i2 < bebes; _i2++) addRow("BB");
-    });
-  }
-  $("#btnAddRoom").on("click", function () {
-    if (!$code.val() || !$categorie.val() || !$debut.val() || !$fin.val()) {
-      alert("Veuillez remplir tous les champs obligatoires");
-      return;
-    }
-    if (parseInt($adulte.val()) === 0) {
-      alert("Le nombre d'adultes doit être supérieur à 0 pour ajouter une chambre");
-      return;
-    }
-    var occupationLabel = $occupation.find("option:selected").text();
-    var prestationLabel = $prestation.find("option:selected").text();
-    var row = "\n            <tr>\n                <td>".concat($code.val().trim().toUpperCase(), "</td>\n                <td>").concat($categorie.val(), "</td>\n                <td>").concat($debut.val(), "</td>\n                <td>").concat($fin.val(), "</td>\n                <td>").concat($qte.val(), "</td>\n                <td>").concat(occupationLabel, "</td>\n                <td>").concat($adulte.val(), "</td>\n                <td>").concat($enfant.val(), "</td>\n                <td>").concat($bebe.val(), "</td>\n                <td>").concat(prestationLabel, "</td> <!-- <-- ajout -->\n                <td>\n                    <button type=\"button\" class=\"btn-remove remove\">\n                        Supprimer\n                    </button>\n                </td>\n            </tr>\n        ");
-    $tableBody.append(row);
-    $(".remove").off().on("click", function () {
-      $(this).closest("tr").remove();
-
-      // Recalcul automatique et reset si tableau vide
-      fixedCodeForPax = null; // on réinitialise à chaque suppression
-      calculatePaxDossier();
-    });
-    // Reset formulaire
-    $code.val("");
-    $categorie.prop("selectedIndex", 0);
-    $debut.val("");
-    $fin.val("");
-    $qte.val(1);
-    $occupation.val("1");
-    fillSelect($adulte);
-    fillSelect($enfant);
-    fillSelect($bebe);
-    $prestation.prop("selectedIndex", 0);
-    calculatePaxDossier();
-  });
-  calculatePaxDossier();
-});
-"use strict";
-
-$(document).ready(function () {
   openSubMenu();
   closeInfo();
   currentTabActive();
@@ -485,6 +352,158 @@ $(document).ready(function () {
 "use strict";
 
 $(document).ready(function () {
+  var $code = $("#code");
+  var $categorie = $("#categorie");
+  var $debut = $("#debut");
+  var $fin = $("#fin");
+  var $qte = $("#qte");
+  var $occupation = $("#occupation");
+  var $adulte = $("#adulte");
+  var $enfant = $("#enfant");
+  var $bebe = $("#bebe");
+  var $prestation = $("#prestation"); // <-- ajout
+
+  var $tableBody = $("#roomTable tbody");
+  var $paxDossier = $("#paxDossier");
+  var $totalAdultes = $("#totalAdultes");
+  var $totalEnfants = $("#totalEnfants");
+  var $totalBebes = $("#totalBebes");
+  var fixedCodeForPax = null;
+  function fillSelect($select) {
+    var max = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 10;
+    $select.empty();
+    for (var i = 0; i <= max; i++) {
+      $select.append("<option value=\"".concat(i, "\">").concat(i, "</option>"));
+    }
+    $select.val(0);
+  }
+  fillSelect($adulte);
+  fillSelect($enfant);
+  fillSelect($bebe);
+  function calculatePaxDossier() {
+    var codeMap = {};
+    var codes = [];
+    $("#roomTable tbody tr").each(function () {
+      var code = $(this).find("td:eq(0)").text().trim();
+      var occupation = $(this).find("td:eq(5)").text().trim();
+      var adultes = parseInt($(this).find("td:eq(6)").text()) || 0;
+      var enfants = parseInt($(this).find("td:eq(7)").text()) || 0;
+      var bebes = parseInt($(this).find("td:eq(8)").text()) || 0;
+      codes.push(code);
+      if (!codeMap[code]) {
+        codeMap[code] = {
+          occupation: occupation,
+          adultes: adultes,
+          enfants: enfants,
+          bebes: bebes
+        };
+      } else {
+        codeMap[code].adultes += adultes;
+        codeMap[code].enfants += enfants;
+        codeMap[code].bebes += bebes;
+      }
+    });
+
+    // Si le tableau est vide, vider pax/dossier
+    if (codes.length === 0) {
+      fixedCodeForPax = null;
+      $totalAdultes.val(0);
+      $totalEnfants.val(0);
+      $totalBebes.val(0);
+      $paxDossier.val(0);
+    } else {
+      if (!fixedCodeForPax) {
+        fixedCodeForPax = codes[0];
+      }
+      if (fixedCodeForPax && codeMap[fixedCodeForPax]) {
+        var room = codeMap[fixedCodeForPax];
+        $totalAdultes.val(room.adultes);
+        $totalEnfants.val(room.enfants);
+        $totalBebes.val(room.bebes);
+        $paxDossier.val(room.adultes + room.enfants + room.bebes);
+      }
+    }
+    updateOccupantsTableAll();
+  }
+  function updateOccupantsTableAll() {
+    var $body = $("#occupantsTable tbody");
+    $body.empty();
+    $("#roomTable tbody tr").each(function () {
+      var chambreCode = $(this).find("td:eq(0)").text().trim();
+      var chambreCat = $(this).find("td:eq(1)").text().trim();
+      var occupation = $(this).find("td:eq(5)").text().trim();
+      var adultes = parseInt($(this).find("td:eq(6)").text()) || 0;
+      var enfants = parseInt($(this).find("td:eq(7)").text()) || 0;
+      var bebes = parseInt($(this).find("td:eq(8)").text()) || 0;
+      var prestation = $(this).find("td:eq(9)").text().trim();
+      var firstRow = true;
+      function addRow(genre) {
+        var firstCol = firstRow ? "".concat(occupation, "<br><span class=\"code-ch\">").concat(chambreCode, "</span><br><span class=\"code-ch\">").concat(chambreCat, "</span>") : "";
+        $body.append("\n                    <tr>\n                        <td>".concat(firstCol, "</td>\n                        <td>").concat(genre, "</td>\n                        <td><input type=\"text\"></td>\n                        <td><input type=\"text\"></td>\n                        <td><input type=\"checkbox\"></td>\n                        <td><input type=\"date\"></td>\n                        <td><input type=\"text\"></td>\n                        <td><input type=\"checkbox\"></td>\n                    </tr>\n                "));
+        firstRow = false;
+      }
+      for (var i = 0; i < adultes; i++) addRow("M");
+      for (var _i = 0; _i < enfants; _i++) addRow("Chd");
+      for (var _i2 = 0; _i2 < bebes; _i2++) addRow("BB");
+    });
+  }
+
+  /* ============================
+     POPUP ALERT FUNCTIONS
+  ============================ */
+
+  function showPopup(message) {
+    $("#popupAlert .popup-message").text(message);
+    $("#popupAlert").addClass("active");
+  }
+  // bouton OK
+  $(document).on("click", ".popup-close", function () {
+    $("#popupAlert").removeClass("active");
+  });
+  // fermer si clic dehors
+  $("#popupAlert").on("click", function (e) {
+    if (e.target === this) {
+      $(this).removeClass("active");
+    }
+  });
+  $("#btnAddRoom").on("click", function () {
+    if (!$code.val() || !$categorie.val() || !$debut.val() || !$fin.val()) {
+      showPopup();
+      return;
+    }
+    if (parseInt($adulte.val()) === 0) {
+      showPopup();
+      return;
+    }
+    var occupationLabel = $occupation.find("option:selected").text();
+    var prestationLabel = $prestation.find("option:selected").text();
+    var row = "\n            <tr>\n                <td>".concat($code.val().trim().toUpperCase(), "</td>\n                <td>").concat($categorie.val(), "</td>\n                <td>").concat($debut.val(), "</td>\n                <td>").concat($fin.val(), "</td>\n                <td>").concat($qte.val(), "</td>\n                <td>").concat(occupationLabel, "</td>\n                <td>").concat($adulte.val(), "</td>\n                <td>").concat($enfant.val(), "</td>\n                <td>").concat($bebe.val(), "</td>\n                <td>").concat(prestationLabel, "</td> <!-- <-- ajout -->\n                <td>\n                    <button type=\"button\" class=\"btn-remove remove\">\n                        Supprimer\n                    </button>\n                </td>\n            </tr>\n        ");
+    $tableBody.append(row);
+    $(".remove").off().on("click", function () {
+      $(this).closest("tr").remove();
+
+      // Recalcul automatique et reset si tableau vide
+      fixedCodeForPax = null; // on réinitialise à chaque suppression
+      calculatePaxDossier();
+    });
+    // Reset formulaire
+    $code.val("");
+    $categorie.prop("selectedIndex", 0);
+    $debut.val("");
+    $fin.val("");
+    $qte.val(1);
+    $occupation.val("1");
+    fillSelect($adulte);
+    fillSelect($enfant);
+    fillSelect($bebe);
+    $prestation.prop("selectedIndex", 0);
+    calculatePaxDossier();
+  });
+  calculatePaxDossier();
+});
+"use strict";
+
+$(document).ready(function () {
   RenderTable();
 });
 function RenderTable() {
@@ -612,6 +631,24 @@ function RenderTable() {
 "use strict";
 
 document.addEventListener("DOMContentLoaded", function () {
+  /* ============================
+     POPUP ALERT FUNCTIONS
+  ============================ */
+
+  function showPopup(message) {
+    $("#popupAlert .popup-message").text(message);
+    $("#popupAlert").addClass("active");
+  }
+  // bouton OK
+  $(document).on("click", ".popup-close", function () {
+    $("#popupAlert").removeClass("active");
+  });
+  // fermer si clic dehors
+  $("#popupAlert").on("click", function (e) {
+    if (e.target === this) {
+      $(this).removeClass("active");
+    }
+  });
   var btnAdd = document.getElementById("btnAddCalc");
   var tableBody = document.querySelector("#calcTable tbody");
   btnAdd.addEventListener("click", function (e) {
@@ -626,7 +663,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Vérification minimale
     if (!code || !lib || price <= 0) {
-      alert("Veuillez remplir au moins Code, Libellé et Prix");
+      showPopup();
       return;
     }
 

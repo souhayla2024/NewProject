@@ -13,261 +13,274 @@
 
         <!-- wrapper 1 -->
         <div class="bo-card bo-card-table ">
-            <h3>Table</h3>
-            <table class="bo-table" id="calcTable">
-                <thead>
-                    <tr>
-                        <th>Code</th>
-                        <th>Libellè</th>
-                        <th>Com</th>
-                        <th>Prix</th>
-                        <th>Qté</th>
-                        <th>total</th>
-                        <th>S</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>h125</td>
-                        <td>Forfait Adulte - Chambre standard triple N°1</td>
-                        <td>0.00</td>
-                        <td>392.00</td>
-                        <td>2</td>
-                        <td>784.00</td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>h125</td>
-                        <td>Forfait Adulte - Chambre standard triple N°1</td>
-                        <td>0.00</td>
-                        <td>392.00</td>
-                        <td>2</td>
-                        <td>784.00</td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>h125</td>
-                        <td>Forfait Adulte - Chambre standard triple N°1</td>
-                        <td>0.00</td>
-                        <td>392.00</td>
-                        <td>2</td>
-                        <td>784.00</td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>h125</td>
-                        <td>Forfait Adulte - Chambre standard triple N°1</td>
-                        <td>0.00</td>
-                        <td>392.00</td>
-                        <td>2</td>
-                        <td>784.00</td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>h125</td>
-                        <td>Forfait Adulte - Chambre standard triple N°1</td>
-                        <td>0.00</td>
-                        <td>392.00</td>
-                        <td>2</td>
-                        <td>784.00</td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>h125</td>
-                        <td>Forfait Adulte - Chambre standard triple N°1</td>
-                        <td>0.00</td>
-                        <td>392.00</td>
-                        <td>2</td>
-                        <td>784.00</td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>h125</td>
-                        <td>Forfait Adulte - Chambre standard triple N°1</td>
-                        <td>0.00</td>
-                        <td>392.00</td>
-                        <td>2</td>
-                        <td>784.00</td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>h125</td>
-                        <td>Forfait Adulte - Chambre standard triple N°1</td>
-                        <td>0.00</td>
-                        <td>392.00</td>
-                        <td>2</td>
-                        <td>784.00</td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>h125</td>
-                        <td>Forfait Adulte - Chambre standard triple N°1</td>
-                        <td>0.00</td>
-                        <td>392.00</td>
-                        <td>2</td>
-                        <td>784.00</td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>h125</td>
-                        <td>Forfait Adulte - Chambre standard triple N°1</td>
-                        <td>0.00</td>
-                        <td>392.00</td>
-                        <td>2</td>
-                        <td>784.00</td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>h125</td>
-                        <td>Forfait Adulte - Chambre standard triple N°1</td>
-                        <td>0.00</td>
-                        <td>392.00</td>
-                        <td>2</td>
-                        <td>784.00</td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>h125</td>
-                        <td>Forfait Adulte - Chambre standard triple N°1</td>
-                        <td>0.00</td>
-                        <td>392.00</td>
-                        <td>2</td>
-                        <td>784.00</td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>h125</td>
-                        <td>Forfait Adulte - Chambre standard triple N°1</td>
-                        <td>0.00</td>
-                        <td>392.00</td>
-                        <td>2</td>
-                        <td>784.00</td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>h125</td>
-                        <td>Forfait Adulte - Chambre standard triple N°1</td>
-                        <td>0.00</td>
-                        <td>392.00</td>
-                        <td>2</td>
-                        <td>784.00</td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>15</td>
-                        <td>Forfait Adulte - Chambre standard triple N°1</td>
-                        <td>0.00</td>
-                        <td>392.00</td>
-                        <td>2</td>
-                        <td>784.00</td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>h125</td>
-                        <td>Forfait Adulte - Chambre standard triple N°1</td>
-                        <td>0.00</td>
-                        <td>392.00</td>
-                        <td>2</td>
-                        <td>784.00</td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>h125</td>
-                        <td>Forfait Adulte - Chambre standard triple N°1</td>
-                        <td>0.00</td>
-                        <td>392.00</td>
-                        <td>2</td>
-                        <td>784.00</td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>h125</td>
-                        <td>Forfait Adulte - Chambre standard triple N°1</td>
-                        <td>0.00</td>
-                        <td>392.00</td>
-                        <td>2</td>
-                        <td>784.00</td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>h125</td>
-                        <td>Forfait Adulte - Chambre standard triple N°1</td>
-                        <td>0.00</td>
-                        <td>392.00</td>
-                        <td>2</td>
-                        <td>784.00</td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>h125</td>
-                        <td>Forfait Adulte - Chambre standard triple N°1</td>
-                        <td>0.00</td>
-                        <td>392.00</td>
-                        <td>2</td>
-                        <td>784.00</td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>h125</td>
-                        <td>Forfait Adulte - Chambre standard triple N°1</td>
-                        <td>0.00</td>
-                        <td>392.00</td>
-                        <td>2</td>
-                        <td>784.00</td>
-                        <td></td>
-                    </tr>
+            <div class="left-wrapper">
+                <h3>Table</h3>
+                <table class="bo-table" id="calcTable">
+                    <thead>
+                        <tr>
+                            <th>Code</th>
+                            <th>Libellè</th>
+                            <th>Com</th>
+                            <th>Prix</th>
+                            <th>Qté</th>
+                            <th>total</th>
+                            <th>S</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>h125</td>
+                            <td>Forfait Adulte - Chambre standard triple N°1</td>
+                            <td>0.00</td>
+                            <td>392.00</td>
+                            <td>2</td>
+                            <td>784.00</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>h125</td>
+                            <td>Forfait Adulte - Chambre standard triple N°1</td>
+                            <td>0.00</td>
+                            <td>392.00</td>
+                            <td>2</td>
+                            <td>784.00</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>h125</td>
+                            <td>Forfait Adulte - Chambre standard triple N°1</td>
+                            <td>0.00</td>
+                            <td>392.00</td>
+                            <td>2</td>
+                            <td>784.00</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>h125</td>
+                            <td>Forfait Adulte - Chambre standard triple N°1</td>
+                            <td>0.00</td>
+                            <td>392.00</td>
+                            <td>2</td>
+                            <td>784.00</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>h125</td>
+                            <td>Forfait Adulte - Chambre standard triple N°1</td>
+                            <td>0.00</td>
+                            <td>392.00</td>
+                            <td>2</td>
+                            <td>784.00</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>h125</td>
+                            <td>Forfait Adulte - Chambre standard triple N°1</td>
+                            <td>0.00</td>
+                            <td>392.00</td>
+                            <td>2</td>
+                            <td>784.00</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>h125</td>
+                            <td>Forfait Adulte - Chambre standard triple N°1</td>
+                            <td>0.00</td>
+                            <td>392.00</td>
+                            <td>2</td>
+                            <td>784.00</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>h125</td>
+                            <td>Forfait Adulte - Chambre standard triple N°1</td>
+                            <td>0.00</td>
+                            <td>392.00</td>
+                            <td>2</td>
+                            <td>784.00</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>h125</td>
+                            <td>Forfait Adulte - Chambre standard triple N°1</td>
+                            <td>0.00</td>
+                            <td>392.00</td>
+                            <td>2</td>
+                            <td>784.00</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>h125</td>
+                            <td>Forfait Adulte - Chambre standard triple N°1</td>
+                            <td>0.00</td>
+                            <td>392.00</td>
+                            <td>2</td>
+                            <td>784.00</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>h125</td>
+                            <td>Forfait Adulte - Chambre standard triple N°1</td>
+                            <td>0.00</td>
+                            <td>392.00</td>
+                            <td>2</td>
+                            <td>784.00</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>h125</td>
+                            <td>Forfait Adulte - Chambre standard triple N°1</td>
+                            <td>0.00</td>
+                            <td>392.00</td>
+                            <td>2</td>
+                            <td>784.00</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>h125</td>
+                            <td>Forfait Adulte - Chambre standard triple N°1</td>
+                            <td>0.00</td>
+                            <td>392.00</td>
+                            <td>2</td>
+                            <td>784.00</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>h125</td>
+                            <td>Forfait Adulte - Chambre standard triple N°1</td>
+                            <td>0.00</td>
+                            <td>392.00</td>
+                            <td>2</td>
+                            <td>784.00</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>15</td>
+                            <td>Forfait Adulte - Chambre standard triple N°1</td>
+                            <td>0.00</td>
+                            <td>392.00</td>
+                            <td>2</td>
+                            <td>784.00</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>h125</td>
+                            <td>Forfait Adulte - Chambre standard triple N°1</td>
+                            <td>0.00</td>
+                            <td>392.00</td>
+                            <td>2</td>
+                            <td>784.00</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>h125</td>
+                            <td>Forfait Adulte - Chambre standard triple N°1</td>
+                            <td>0.00</td>
+                            <td>392.00</td>
+                            <td>2</td>
+                            <td>784.00</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>h125</td>
+                            <td>Forfait Adulte - Chambre standard triple N°1</td>
+                            <td>0.00</td>
+                            <td>392.00</td>
+                            <td>2</td>
+                            <td>784.00</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>h125</td>
+                            <td>Forfait Adulte - Chambre standard triple N°1</td>
+                            <td>0.00</td>
+                            <td>392.00</td>
+                            <td>2</td>
+                            <td>784.00</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>h125</td>
+                            <td>Forfait Adulte - Chambre standard triple N°1</td>
+                            <td>0.00</td>
+                            <td>392.00</td>
+                            <td>2</td>
+                            <td>784.00</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>h125</td>
+                            <td>Forfait Adulte - Chambre standard triple N°1</td>
+                            <td>0.00</td>
+                            <td>392.00</td>
+                            <td>2</td>
+                            <td>784.00</td>
+                            <td></td>
+                        </tr>
 
-                </tbody>
-            </table>
+                    </tbody>
+                </table>
+            </div>
+            <div class="right-wrapper"></div>
         </div>
         <!-- Ligne d'insertion -->
         <div class="bo-card-wrapper">
-            <h3>Ajouter une Ligne</h3>
-            <div class="bo-grid">
+            <div class="bo-card-wrapper-content">
+                <h3>Ajouter une Ligne</h3>
+                <div class="bo-grid">
 
-                <div class=" field row-8">
-                    <label for="code">Code</label>
-                    <input type="text" placeholder="Code" id="code">
+                    <div class=" field row-8">
+                        <label for="code">Code</label>
+                        <input type="text" placeholder="Code" id="code">
+                    </div>
+
+                    <div class="field row-2">
+                        <label for="lib">Libellè</label>
+                        <input id="lib" type="text" placeholder="Forfait lorem ipsum ...">
+                    </div>
+
+                    <div class="field row-7">
+                        <label for="Com">Commission</label>
+                        <input id="Com" type="text">
+                    </div>
+
+                    <div class="field row-7">
+                        <label for="Price">Prix</label>
+                        <input id="price" type="text">
+                    </div>
+
+                    <div class="field row-8">
+                        <label for="qte">Quantité</label>
+                        <input type="number" id="qte" value="1">
+                    </div>
+
+
+
+                    <div class="field row-8">
+                        <label for="total">Total</label>
+                        <input id="total" type="text">
+                    </div>
+
                 </div>
-
-                <div class="field row-2">
-                    <label for="lib">Libellè</label>
-                    <input id="lib" type="text" placeholder="Forfait lorem ipsum ...">
+                <div class="field btn">
+                    <button class="btn-ad-element" id="btnAddCalc">Ajouter</button>
                 </div>
-
-                <div class="field row-7">
-                    <label for="Com">Commission</label>
-                    <input id="Com" type="text">
+                <div class="popup-alert" id="popupAlert">
+                    <div class="popup-content">
+                        <p class="popup-message">Veuillez remplir au moins Code, Libellé et Prix
+                        </p>
+                        <button type="button" class="popup-close">OK</button>
+                    </div>
                 </div>
-
-                <div class="field row-7">
-                    <label for="Price">Prix</label>
-                    <input id="price" type="text">
-                </div>
-
-                <div class="field row-8">
-                    <label for="qte">Quantité</label>
-                    <input type="number" id="qte" value="1">
-                </div>
-
-
-
-                <div class="field row-8">
-                    <label for="total">Total</label>
-                    <input id="total" type="text">
-                </div>
-
-            </div>
-            <div class="field btn">
-                <button class="btn-ad-element" id="btnAddCalc">Ajouter</button>
             </div>
         </div>
 
 
         <!-- wrapper 3 -->
         <div class="bo-card">
-            <h3>Résult</h3>
             <div class="group-calc-wrapper">
+                <h3>Résult</h3>
+
                 <div class="calc-wrapper">
 
                     <div class="calc-row">

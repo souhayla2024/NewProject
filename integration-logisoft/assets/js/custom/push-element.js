@@ -109,13 +109,7 @@ $(document).ready(function () {
                         <td><input type="text"></td>
                         <td><input type="checkbox"></td>
                         <td><input type="date"></td>
-                        <td>
-                            <select>
-                                <option value="">--</option>
-                                <option value="oui">Oui</option>
-                                <option value="non">Non</option>
-                            </select>
-                        </td>
+                        <td><input type="text"></td>
                         <td><input type="checkbox"></td>
                     </tr>
                 `);
@@ -128,16 +122,34 @@ $(document).ready(function () {
         });
     }
 
+    /* ============================
+       POPUP ALERT FUNCTIONS
+    ============================ */
+
+    function showPopup(message) {
+        $("#popupAlert .popup-message").text(message);
+        $("#popupAlert").addClass("active");
+    }
+    // bouton OK
+    $(document).on("click", ".popup-close", function () {
+        $("#popupAlert").removeClass("active");
+    });
+    // fermer si clic dehors
+    $("#popupAlert").on("click", function (e) {
+        if (e.target === this) {
+            $(this).removeClass("active");
+        }
+    });
+
     $("#btnAddRoom").on("click", function () {
         if (!$code.val() || !$categorie.val() || !$debut.val() || !$fin.val()) {
-            alert("Veuillez remplir tous les champs obligatoires");
+            showPopup();
             return;
         }
 
         if (parseInt($adulte.val()) === 0) {
-            alert(
-                "Le nombre d'adultes doit être supérieur à 0 pour ajouter une chambre",
-            );
+            showPopup();
+
             return;
         }
 

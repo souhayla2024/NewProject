@@ -1,4 +1,23 @@
 document.addEventListener("DOMContentLoaded", function () {
+    /* ============================
+       POPUP ALERT FUNCTIONS
+    ============================ */
+
+    function showPopup(message) {
+        $("#popupAlert .popup-message").text(message);
+        $("#popupAlert").addClass("active");
+    }
+    // bouton OK
+    $(document).on("click", ".popup-close", function () {
+        $("#popupAlert").removeClass("active");
+    });
+    // fermer si clic dehors
+    $("#popupAlert").on("click", function (e) {
+        if (e.target === this) {
+            $(this).removeClass("active");
+        }
+    });
+
     const btnAdd = document.getElementById("btnAddCalc");
     const tableBody = document.querySelector("#calcTable tbody");
 
@@ -14,7 +33,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         // Vérification minimale
         if (!code || !lib || price <= 0) {
-            alert("Veuillez remplir au moins Code, Libellé et Prix");
+            showPopup();
             return;
         }
 

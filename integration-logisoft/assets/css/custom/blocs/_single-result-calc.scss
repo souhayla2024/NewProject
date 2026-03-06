@@ -18,12 +18,14 @@
     /* --- BO CARD --- */
     .bo-content-wrapper {
         margin-top: 25px;
+
         .bo-card {
             background-color: $bg-white;
             border-radius: 8px;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
             padding: 15px;
             margin-bottom: 1.5rem;
+
             h2 {
                 margin-bottom: 15px;
                 color: #004080;
@@ -49,9 +51,22 @@
                 color: $black;
             }
             &.bo-card-table {
-                max-height: 580px;
-                overflow: auto;
-                //  max-width: 50%;
+                display: flex;
+                justify-content: space-between;
+                max-width: 100%;
+
+                .left-wrapper {
+                    max-height: 580px;
+                    overflow: auto;
+                    max-width: 70%;
+                    width: 100%;
+                }
+                .right-wrapper {
+                    width: calc(100% - (70% + 15px));
+                    border: 1px solid $pinky;
+                    border-radius: 15px;
+                    box-shadow: -10px 4px 12px 0 rgba(0, 0, 0, 0.09);
+                }
             }
             /* --- TABLES --- */
             .bo-table {
@@ -59,7 +74,7 @@
                 margin-top: 1rem;
                 font-size: 0.9rem;
                 width: 100%;
-                max-width: 800px;
+
                 overflow-x: auto;
                 th,
                 td {
@@ -79,16 +94,12 @@
                 }
             }
             .group-calc-wrapper {
+                max-width: 60%;
+                margin-left: auto;
                 .calc-wrapper {
                     display: flex;
                     flex-direction: column;
                     gap: 12px;
-
-                    // hr {
-                    //     border: none;
-                    //     border-top: 1px solid #e5e7eb;
-                    //     margin: 12px 0;
-                    // }
 
                     .calc-row {
                         display: flex;
@@ -102,6 +113,7 @@
                             flex: 1;
                             border-bottom: 1px solid #e5e7eb;
                             padding-bottom: 5px;
+                            text-align: right;
                         }
                         .row-label {
                             display: flex;
@@ -110,7 +122,7 @@
                             align-items: center;
                             gap: 8px;
                             text-align: right;
-                            width: 30%;
+                            width: 40%;
                             input {
                                 height: 35px;
                             }
@@ -172,163 +184,210 @@
             padding: 15px;
             margin-bottom: 1.5rem;
             transition: transform 0.2s ease;
-            max-width: 840px;
 
-            h2 {
-                margin-bottom: 15px;
-                color: #004080;
-                text-transform: uppercase;
-                strong {
-                    color: $pinky;
+            .bo-card-wrapper-content {
+                max-width: 70%;
+                width: 100%;
+                h2 {
+                    margin-bottom: 15px;
+                    color: #004080;
+                    text-transform: uppercase;
+                    strong {
+                        color: $pinky;
+                        text-transform: uppercase;
+                    }
+                }
+                h3 {
+                    font-size: 16px;
+                    font-weight: 600;
+                    margin-bottom: 15px;
+                    color: $black;
+                    border-left: 4px solid #004080;
+                    padding-left: 10px;
                     text-transform: uppercase;
                 }
-            }
-            h3 {
-                font-size: 16px;
-                font-weight: 600;
-                margin-bottom: 15px;
-                color: $black;
-                border-left: 4px solid #004080;
-                padding-left: 10px;
-                text-transform: uppercase;
-            }
 
-            h4 {
-                font-size: 16px;
-                margin: 15px 0 8px;
-                color: $black;
-            }
-            .bo-grid {
-                margin-bottom: 12px;
-                display: flex;
-                gap: 10px;
-                width: 100%;
-
-                .field {
+                h4 {
+                    font-size: 16px;
+                    margin: 15px 0 8px;
+                    color: $black;
+                }
+                .bo-grid {
+                    margin-bottom: 12px;
                     display: flex;
-                    flex-direction: column;
-                    label {
-                        display: block;
-                        font-weight: 400;
-                        color: $black;
-                        font-size: 13px;
-                        margin-bottom: -7px;
-                        margin-left: 2px;
-                        position: relative;
-                        z-index: 1;
-                        background-color: #ffffff;
-                        padding: 0 7px;
-                        border-radius: 40px;
-                        width: max-content;
-                    }
-                    input {
-                        height: 35px;
-                    }
-                    input,
-                    select,
-                    textarea {
-                        font-family: $Gilroy;
-                        width: 100%;
-                        padding: 10px 10px 8px;
-                        border: 1px solid #ccc;
-                        border-radius: 6px;
-                        font-size: 13px;
-                        transition: 0.2s;
-                        &:focus {
-                            border-color: #004080;
-                            box-shadow: 0 0 4px rgba(0, 64, 128, 0.3);
-                            outline: none;
+                    gap: 10px;
+                    width: 100%;
+
+                    .field {
+                        display: flex;
+                        flex-direction: column;
+                        label {
+                            display: block;
+                            font-weight: 400;
+                            color: $black;
+                            font-size: 13px;
+                            margin-bottom: -7px;
+                            margin-left: 2px;
+                            position: relative;
+                            z-index: 1;
+                            background-color: #ffffff;
+                            padding: 0 7px;
+                            border-radius: 40px;
+                            width: max-content;
+                        }
+                        input {
+                            height: 35px;
+                        }
+                        input,
+                        select,
+                        textarea {
+                            font-family: $Gilroy;
+                            width: 100%;
+                            padding: 10px 10px 8px;
+                            border: 1px solid #ccc;
+                            border-radius: 6px;
+                            font-size: 13px;
+                            transition: 0.2s;
+                            &:focus {
+                                border-color: #004080;
+                                box-shadow: 0 0 4px rgba(0, 64, 128, 0.3);
+                                outline: none;
+                            }
+                        }
+                        &.row-20 {
+                            width: calc((100% / 20) - 15px);
+                        }
+                        &.row-19 {
+                            width: calc((100% / 19) - 15px);
+                        }
+                        &.row-18 {
+                            width: calc((100% / 18) - 15px);
+                        }
+                        &.row-17 {
+                            width: calc((100% / 17) - 15px);
+                        }
+                        &.row-16 {
+                            width: calc((100% / 16) - 15px);
+                        }
+                        &.row-15 {
+                            width: calc((100% / 15) - 15px);
+                        }
+
+                        &.row-14 {
+                            width: calc((100% / 14) - 15px);
+                        }
+                        &.row-13 {
+                            width: calc((100% / 13) - 15px);
+                        }
+                        &.row-12 {
+                            width: calc((100% / 12) - 15px);
+                        }
+                        &.row-11 {
+                            width: calc((100% / 11) - 15px);
+                        }
+
+                        &.row-10 {
+                            width: calc((100% / 10) - 15px);
+                        }
+
+                        &.row-9 {
+                            width: calc((100% / 9) - 15px);
+                        }
+
+                        &.row-8 {
+                            width: calc((100% / 8) - 15px);
+                        }
+
+                        &.row-7 {
+                            width: calc((100% / 7) - 15px);
+                        }
+
+                        &.row-6 {
+                            width: calc((100% / 6) - 15px);
+                        }
+
+                        &.row-5 {
+                            width: calc((100% / 5) - 15px);
+                        }
+
+                        &.row-4 {
+                            width: calc((100% / 4) - 15px);
+                        }
+
+                        &.row-3 {
+                            width: calc((100% / 3) - 15px);
+                        }
+
+                        &.row-2 {
+                            width: calc((100% / 2) - 15px);
+                        }
+                        &.row-1 {
+                            width: calc(70% - 25px);
                         }
                     }
-                    &.row-20 {
-                        width: calc((100% / 20) - 15px);
-                    }
-                    &.row-19 {
-                        width: calc((100% / 19) - 15px);
-                    }
-                    &.row-18 {
-                        width: calc((100% / 18) - 15px);
-                    }
-                    &.row-17 {
-                        width: calc((100% / 17) - 15px);
-                    }
-                    &.row-16 {
-                        width: calc((100% / 16) - 15px);
-                    }
-                    &.row-15 {
-                        width: calc((100% / 15) - 15px);
-                    }
+                }
+                .btn {
+                    display: block;
+                    .btn-ad-element {
+                        font-family: $Roboto-Regular;
+                        font-size: 14px;
+                        display: block;
+                        margin-left: auto;
+                        background-color: $primary-color;
+                        color: $white;
+                        border: none;
+                        padding: 5px 40px;
+                        border-radius: 6px;
+                        cursor: pointer;
+                        transition: background 0.2s ease;
 
-                    &.row-14 {
-                        width: calc((100% / 14) - 15px);
-                    }
-                    &.row-13 {
-                        width: calc((100% / 13) - 15px);
-                    }
-                    &.row-12 {
-                        width: calc((100% / 12) - 15px);
-                    }
-                    &.row-11 {
-                        width: calc((100% / 11) - 15px);
-                    }
-
-                    &.row-10 {
-                        width: calc((100% / 10) - 15px);
-                    }
-
-                    &.row-9 {
-                        width: calc((100% / 9) - 15px);
-                    }
-
-                    &.row-8 {
-                        width: calc((100% / 8) - 15px);
-                    }
-
-                    &.row-7 {
-                        width: calc((100% / 7) - 15px);
-                    }
-
-                    &.row-6 {
-                        width: calc((100% / 6) - 15px);
-                    }
-
-                    &.row-5 {
-                        width: calc((100% / 5) - 15px);
-                    }
-
-                    &.row-4 {
-                        width: calc((100% / 4) - 15px);
-                    }
-
-                    &.row-3 {
-                        width: calc((100% / 3) - 15px);
-                    }
-
-                    &.row-2 {
-                        width: calc((100% / 2) - 15px);
-                    }
-                    &.row-1 {
-                        width: calc(70% - 25px);
+                        &:hover {
+                            background-color: $blue;
+                        }
                     }
                 }
-            }
-            .btn {
-                display: block;
-                .btn-ad-element {
-                    font-family: $Roboto-Regular;
-                    font-size: 14px;
-                    display: block;
-                    margin-left: auto;
-                    background-color: $primary-color;
-                    color: $white;
-                    border: none;
-                    padding: 5px 40px;
-                    border-radius: 6px;
-                    cursor: pointer;
-                    transition: background 0.2s ease;
+                .popup-alert {
+                    position: fixed;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    background: rgba(0, 0, 0, 0.5);
+                    display: none;
+                    justify-content: center;
+                    align-items: center;
+                    z-index: 9999;
+                    &.active {
+                        display: flex;
+                    }
 
-                    &:hover {
-                        background-color: $blue;
+                    .popup-content {
+                        background: #fff;
+                        padding: 25px;
+                        border-radius: 8px;
+                        width: 350px;
+                        text-align: center;
+                        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+                        animation: popupFade 0.25s ease;
+                        @keyframes popupFade {
+                            from {
+                                transform: scale(0.9);
+                                opacity: 0;
+                            }
+                            to {
+                                transform: scale(1);
+                                opacity: 1;
+                            }
+                        }
+                        button {
+                            margin-top: 15px;
+                            padding: 8px 18px;
+                            border: none;
+                            background: #0b2341;
+                            color: #fff;
+                            border-radius: 4px;
+                            cursor: pointer;
+                        }
                     }
                 }
             }
@@ -397,11 +456,24 @@
     .bo-container-second-page {
         .bo-content-wrapper {
             .bo-card {
-                /* --- CLIENT --- */
+                max-width: 100%;
+
+                &.bo-card-table {
+                    .left-wrapper {
+                        // max-width: 100%;
+                    }
+                    .right-wrapper {
+                    }
+                }
 
                 .bo-table {
                     display: block;
                     overflow: auto;
+                }
+            }
+            .bo-card-wrapper {
+                .bo-card-wrapper-content {
+                    // max-width: 100%;
                 }
             }
         }
@@ -477,68 +549,6 @@
                                 width: 60%;
                                 gap: 8px;
                             }
-                        }
-                    }
-                }
-            }
-            .bo-card-wrapper {
-                background-color: $bg-white;
-                border-radius: 8px;
-                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-                padding: 15px;
-                margin-bottom: 1.5rem;
-                transition: transform 0.2s ease;
-                h2 {
-                    margin-bottom: 15px;
-                    color: #004080;
-                    text-transform: uppercase;
-                    strong {
-                        color: $pinky;
-                        text-transform: uppercase;
-                    }
-                }
-                h3 {
-                    font-size: 16px;
-                    font-weight: 600;
-                    margin-bottom: 15px;
-                    color: $black;
-                    border-left: 4px solid #004080;
-                    padding-left: 10px;
-                    text-transform: uppercase;
-                }
-
-                h4 {
-                    font-size: 16px;
-                    margin: 15px 0 8px;
-                    color: $black;
-                }
-                .bo-grid {
-                    flex-direction: column;
-
-                    .field {
-                        display: flex;
-                        flex-direction: column;
-                        min-width: 75px;
-                        width: 100% !important;
-                    }
-                }
-                .btn {
-                    display: block;
-                    .btn-ad-element {
-                        font-family: $Roboto-Regular;
-                        font-size: 14px;
-                        display: block;
-                        margin-left: auto;
-                        background-color: $primary-color;
-                        color: $white;
-                        border: none;
-                        padding: 5px 40px;
-                        border-radius: 6px;
-                        cursor: pointer;
-                        transition: background 0.2s ease;
-
-                        &:hover {
-                            background-color: $blue;
                         }
                     }
                 }
